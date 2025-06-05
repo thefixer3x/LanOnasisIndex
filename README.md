@@ -78,7 +78,3 @@ MIT – Free to use, fork, and scale.
 ---
 
 **LanOnasisIndex**: Build fast. Launch smart. Iterate boldly.
-
----
-
-Let me know if you want to highlight specific features, add demo links, or tailor the messaging for a particular audience!
