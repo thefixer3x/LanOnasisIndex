@@ -1,80 +1,92 @@
-# LanOnasisIndex
+# Lan Onasis
 
-Welcome to **Lan Onasis** – the modern landing page for your next-gen fintech or SaaS launch.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/site-id/deploy-status)](https://app.netlify.com/sites/lanonasis/deploys)
 
-## 🚀 Overview
+Africa's leading AI-powered tech hub—offering intelligent compliance, risk, and B2B payment solutions through the VortexCore ecosystem across Financial Services, SMEs, E-commerce, Education, Logistics, Real Estate & Public Sector.
 
-LanOnasisIndex is a UX-first, modular landing page built for rapid deployment and easy scaling. Designed with founders, product managers, and agile teams in mind, it’s structured for fast iteration and future integrations.
+## Our Vision
 
-- **Tech Stack:** TypeScript • CSS • JavaScript • HTML  
-- **Infra Ready:** Deploy on Netlify, Vercel, or your favorite low-code platform  
-- **API-First:** Easily connect your backend (Supabase, Firebase, custom REST/GraphQL)  
-- **AI-Ready:** Built for future AI-driven features, automation, and insights
+Building Africa's most intelligent tech ecosystem—empowering entrepreneurs, fintechs, and institutions with secure, compliant, AI‑enhanced platforms across multiple industries.
 
----
+## The Vortex Ecosystem
 
-## ✨ Features
+Our modular, AI-enhanced infrastructure includes:
 
-- **Clean, Responsive Design:** Mobile-first, conversion-focused layouts
-- **Plug-and-Play Sections:** Hero, Features, Call-to-Action, Testimonials, Compliance
-- **Easy Customization:** Edit content, colors, and structure in minutes
-- **Scalable Structure:** Modular code, ready for feature branches and fast MVP pivots
-- **Compliance-Friendly:** Built with fintech best practices in mind
+- **VortexCore AI**: Your intelligent assistant for compliance and business solutions
+- **VortexComply**: Compliance-as-a-Service, KYC/KYB, and AML solutions
+- **VortexRisk (RiskGPT)**: AI-driven risk monitoring and analysis
+- **VortexShield**: Security infrastructure for cross-border safety
+- **VortexIQ**: Business intelligence engine for actionable insights
+- **VortexPay**: Instant vendor disbursements and B2B payments
+- **BizGenie**: Embedded AI for SME insights and cash flow guidance
 
----
+## Industries We Serve
 
-## 🚦 Quick Start
+- **Financial Services & Fintech**: Intelligent, compliant, borderless finance solutions
+- **SMEs & Business Services**: AI-powered growth and business intelligence
+- **E-commerce & Marketplaces**: Fast, trusted, global commerce solutions
+- **Education**: Smart, secure, scalable educational technology
+- **Logistics & Transportation**: Intelligent logistics and supply chain solutions
+- **Real Estate**: Secure, smart, seamless property technology
+- **Public Sector & NGOs**: Transparent, efficient, impactful governance solutions
 
-1. **Clone the repo:**  
-   ```bash
-   git clone https://github.com/thefixer3x/LanOnasisIndex.git
-   cd LanOnasisIndex
-   ```
-2. **Install dependencies:**  
-   ```bash
-   npm install
-   ```
-3. **Run locally:**  
-   ```bash
-   npm start
-   ```
-4. **Deploy:**  
-   - [ ] Connect to Netlify, Vercel, or your hosting of choice  
-   - [ ] Configure environment variables (if needed)
+## Development
 
----
+### Getting Started
 
-## 🛠️ Customization
+```bash
+# Install dependencies
+npm install
 
-- **Sections:**  
-  Edit or swap out sections in `/components`  
-- **Styling:**  
-  Update theme in `/styles`  
-- **Integrations:**  
-  Connect APIs or analytics in `/services`
+# Start development server
+npm run dev
 
----
+# Build for production
+npm run build
 
-## 🎯 Roadmap
+# Type check
+npm run type-check
 
-- [ ] Add AI-driven onboarding
-- [ ] One-click compliance docs
-- [ ] Integrations: Stripe, Plaid, Supabase, etc.
-- [ ] Multi-language support
+# Lint code
+npm run lint
+```
 
----
+### Deployment
 
-## 🤝 Contribute
+This project is automatically deployed to Netlify through GitHub Actions when changes are pushed to the main branch.
 
-Purposeful commits, clear branches. PRs welcome for bugfixes, features, or docs.  
-Follow the [contribution guidelines](CONTRIBUTING.md) for clarity and fast merges.
+### Performance Optimization
 
----
+- **Code Splitting**: Automatic vendor, animations, icons, and utils chunks
+- **Image Optimization**: Lazy loading and responsive images
+- **SEO**: Comprehensive meta tags, structured data, and sitemap
+- **Accessibility**: WCAG 2.1 compliant design
+- **Performance**: Optimized builds with Terser minification
 
-## 📄 License
+### Tech Stack
 
-MIT – Free to use, fork, and scale.
+- **Frontend**: React 18 + TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **3D Effects**: Three.js + Vanta.js
+- **Icons**: Lucide React
+- **SEO**: React Helmet Async
+- **Build Tool**: Vite
+- **Deployment**: Netlify
 
----
+### Browser Support
 
-**LanOnasisIndex**: Build fast. Launch smart. Iterate boldly.
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+### License
+
+MIT License - see LICENSE file for details.
+
+### Contact
+
+- Website: [www.lanonasis.com](https://www.lanonasis.com)
+- Email: info@lanonasis.com
+- Social: [@lanonasis](https://twitter.com/lanonasis)
