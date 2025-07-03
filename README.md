@@ -4,6 +4,10 @@
 
 Africa's leading AI-powered tech hub—offering intelligent compliance, risk, and B2B payment solutions through the VortexCore ecosystem across Financial Services, SMEs, E-commerce, Education, Logistics, Real Estate & Public Sector.
 
+## 🚀 Build Status
+
+**Last tested**: July 03, 2025 - Sentry disabled, clean deployment expected.
+
 ## Our Vision
 
 Building Africa's most intelligent tech ecosystem—empowering entrepreneurs, fintechs, and institutions with secure, compliant, AI‑enhanced platforms across multiple industries.
@@ -50,6 +54,16 @@ npm run type-check
 # Lint code
 npm run lint
 ```
+
+### PWA Features
+
+This site is a Progressive Web App with:
+- ✅ Offline support via Service Worker
+- ✅ Installable on mobile and desktop
+- ✅ App manifest with icons
+- ✅ Fast loading and caching
+
+To generate PWA icons, visit `/icon-generator.html` after deployment.
 
 ### Deployment
 
