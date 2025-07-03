@@ -9,13 +9,10 @@
   SENTRY_SKIP_AUTO_RELEASE = "true"
   SENTRY_DISABLED = "true"
 
-# Explicitly disable all auto-installed plugins
-[plugins]
-  # Disable Sentry plugin - installed via UI
-  # If you need Sentry later, configure with:
-  # SENTRY_ORG = "your-org"
-  # SENTRY_PROJECT = "your-project"
-  # SENTRY_AUTH_TOKEN = "your-token"
+# Note: Sentry plugin is installed via Netlify UI
+# To properly configure, add these env vars in Netlify:
+# SENTRY_ORG = "your-org"
+# SENTRY_PROJECT = "your-project"
 
 [[redirects]]
   from = "/*"
