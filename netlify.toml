@@ -7,10 +7,10 @@
   NPM_VERSION = "8"
 
 # Disable Sentry plugin to fix build errors
-[[plugins]]
-  package = "@sentry/netlify-build-plugin"
-  [plugins.inputs]
-    enabled = false
+# [[plugins]]
+#   package = "@sentry/netlify-build-plugin"
+#   [plugins.inputs]
+#     enabled = false
 
 [[redirects]]
   from = "/*"
