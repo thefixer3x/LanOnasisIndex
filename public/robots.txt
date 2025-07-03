@@ -1,5 +1,5 @@
 # Robots.txt for Lan Onasis
-# https://lanonasis.com
+# https://lanonasis.netlify.app
 
 # Allow all robots
 User-agent: *
@@ -13,7 +13,17 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://lanonasis.com/sitemap.xml
+Sitemap: https://lanonasis.netlify.app/sitemap.xml
+
+# Allow social media crawlers for better social sharing
+User-agent: facebookexternalhit/*
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
 
 # Block bad bots (optional)
 User-agent: AhrefsBot
