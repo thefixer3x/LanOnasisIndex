@@ -5,6 +5,9 @@
 [build.environment]
   NODE_VERSION = "18"
   NPM_VERSION = "8"
+  # Temporary fix for Sentry UI integration
+  SENTRY_SKIP_AUTO_RELEASE = "true"
+  SENTRY_DISABLED = "true"
 
 # Explicitly disable all auto-installed plugins
 [plugins]
