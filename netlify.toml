@@ -5,14 +5,6 @@
 [build.environment]
   NODE_VERSION = "18"
   NPM_VERSION = "8"
-  # Temporary fix for Sentry UI integration
-  SENTRY_SKIP_AUTO_RELEASE = "true"
-  SENTRY_DISABLED = "true"
-
-# Note: Sentry plugin is installed via Netlify UI
-# To properly configure, add these env vars in Netlify:
-# SENTRY_ORG = "your-org"
-# SENTRY_PROJECT = "your-project"
 
 [[redirects]]
   from = "/*"
