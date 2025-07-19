@@ -25,7 +25,11 @@
     "build": "bun vite build",
     "lint": "bun eslint .",
     "preview": "bun vite preview",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "i18n:validate": "cd ../.. && bun run i18n:validate",
+    "i18n:translate": "cd ../.. && bun run i18n:translate",
+    "i18n:coverage": "cd ../.. && bun run i18n:coverage",
+    "i18n:quality": "cd ../.. && bun run i18n:quality"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
