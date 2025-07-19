@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 import * as THREE from 'three';
 import {
   Menu,
@@ -827,6 +829,7 @@ function App() {
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-4">
+              <LanguageSwitcher />
               <button
                 onClick={() => setIsDark(!isDark)}
                 className="p-2 rounded-full hover:bg-white/10 transition-colors"
@@ -858,6 +861,9 @@ function App() {
               className="md:hidden bg-primary/95 backdrop-blur-lg overflow-hidden"
             >
               <div className="px-4 py-4 space-y-4">
+                <div className="flex justify-center mb-4">
+                  <LanguageSwitcher />
+                </div>
                 <button
                   onClick={() => handleSectionChange('home')}
                   className={`block w-full text-left hover:text-secondary transition-colors ${
