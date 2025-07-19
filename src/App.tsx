@@ -1,23 +1,19 @@
 import React, { useEffect, useState, useRef, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import * as THREE from 'three';
+
+// Define Vanta.NET types
+interface VantaNetEffect {
+  destroy: () => void;
+}
 import {
   Menu,
   X,
   Sun,
   Moon,
   ChevronRight,
-  Globe,
-  Shield,
-  Cpu,
-  Zap,
-  Building2,
   Users,
-  Target,
-  Phone,
-  Github,
   Twitter,
   Linkedin,
   Brain,
@@ -28,15 +24,8 @@ import {
   CreditCard,
   Lightbulb,
   ArrowRight,
-  Rocket,
-  Award,
-  TrendingUp,
-  Users2,
-  Globe2,
-  Sparkles,
   Facebook,
   Instagram,
-  Mail,
   Building,
   ShoppingCart,
   GraduationCap,
@@ -45,89 +34,23 @@ import {
   Landmark,
 } from 'lucide-react';
 
+import { HeroSection } from './components/HeroSection';
+import { Features } from './components/Features';
+import { DisplayCardsDemo } from './components/DisplayCardsDemo';
+import { LogoCarouselDemo } from './components/LogoCarouselDemo';
+import { PricingTable } from './components/PricingTable';
+import { Testimonials } from './components/Testimonials';
+import { CallToAction } from './components/CallToAction';
+
 const Timeline = React.lazy(() => import('./components/Timeline'));
 
-const timelineMilestones = [
-  {
-    year: '2020',
-    title: 'The Genesis',
-    description: 'Founded with a vision to transform African tech landscape through innovative solutions.',
-    icon: Rocket,
-  },
-  {
-    year: '2021',
-    title: 'VortexCore AI Launch',
-    description: 'Introduced our flagship AI platform, revolutionizing business intelligence and compliance.',
-    icon: Brain,
-  },
-  {
-    year: '2022',
-    title: 'Regional Expansion',
-    description: 'Expanded operations to 5 African countries, serving over 100 enterprise clients.',
-    icon: Globe2,
-  },
-  {
-    year: '2023',
-    title: 'Innovation Award',
-    description: 'Recognized as "Most Innovative FinTech Solution" at Africa Tech Summit.',
-    icon: Award,
-  },
-  {
-    year: '2024',
-    title: 'Strategic Partnerships',
-    description: 'Formed key partnerships with major financial institutions across the continent.',
-    icon: Users2,
-  },
-  {
-    year: '2025',
-    title: 'Global Recognition',
-    description: 'Achieved unicorn status and expanded services to international markets.',
-    icon: Sparkles,
-  },
-];
-
-interface TimelineMilestoneProps {
-  milestone: {
-    year: string;
-    title: string;
-    description: string;
-    icon: React.ElementType;
-  };
-  index: number;
-}
-
-const TimelineMilestone: React.FC<TimelineMilestoneProps> = ({ milestone, index }) => {
-  const { ref, inView } = useInView({
-    threshold: 0.2,
-    triggerOnce: true,
-  });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8"
-    >
-      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
-        <milestone.icon className="w-6 h-6 text-secondary" />
-      </div>
-      <div className="flex-1">
-        <div className="text-xl font-bold text-secondary mb-1">{milestone.year}</div>
-        <h3 className="text-xl font-semibold mb-2">{milestone.title}</h3>
-        <p className="text-gray-400">{milestone.description}</p>
-      </div>
-    </motion.div>
-  );
-};
 
 function App() {
   const [isDark, setIsDark] = useState(true);
-  const [isScrolled, setIsScrolled] = useState(false);
+  // Removed isScrolled state and scroll event listener.
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [vantaEffect, setVantaEffect] = useState<any>(null);
+  const [vantaEffect, setVantaEffect] = useState<VantaNetEffect | null>(null);
   const vantaRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
   const headerBackground = useTransform(
@@ -136,33 +59,9 @@ function App() {
     ['rgba(10, 25, 48, 0)', 'rgba(10, 25, 48, 0.9)']
   );
 
-  const timelineRef = useRef<HTMLDivElement>(null);
-  const [timelineWidth, setTimelineWidth] = useState(0);
-  const { scrollYProgress } = useScroll({
-    target: timelineRef,
-    offset: ["start end", "end start"]
-  });
-
-  const timelineY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, -150],
-  );
 
   useEffect(() => {
-    const updateTimelineWidth = () => {
-      if (timelineRef.current) {
-        setTimelineWidth(timelineRef.current.scrollWidth);
-      }
-    };
-
-    updateTimelineWidth();
-    window.addEventListener('resize', updateTimelineWidth);
-    return () => window.removeEventListener('resize', updateTimelineWidth);
-  }, []);
-
-  useEffect(() => {
-    let effect: any = null;
+    let effect: VantaNetEffect | null = null;
     
     const initVanta = async () => {
       try {
@@ -205,12 +104,6 @@ function App() {
       }
     };
   }, [vantaEffect]);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
@@ -518,10 +411,7 @@ function App() {
           <>
             <section 
               ref={vantaRef}
-              className="relative min-h-screen flex items-center justify-center overflow-hidden"
-              style={{
-                background: 'linear-gradient(135deg, #0a1930 0%, #1a2332 50%, #0a1930 100%)'
-              }}
+              className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0a1930] via-[#1a2332] to-[#0a1930]"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/20 to-primary pointer-events-none" />
               
@@ -653,16 +543,17 @@ function App() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-8">Our Vision</h2>
                     <ul className="space-y-4 mb-8">
                       {visionPoints.map((point, index) => (
-                        <motion.li
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          className="flex items-start"
-                        >
-                          <ChevronRight className="text-secondary mt-1 mr-2" size={20} />
-                          <span className="text-lg">{point}</span>
-                        </motion.li>
+                        <li key={index}>
+                          <motion.span
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="flex items-start"
+                          >
+                            <ChevronRight className="text-secondary mt-1 mr-2" size={20} />
+                            <span className="text-lg">{point}</span>
+                          </motion.span>
+                        </li>
                       ))}
                     </ul>
                     <p className="text-gray-400">
@@ -750,6 +641,15 @@ function App() {
 
   return (
     <div className="min-h-screen bg-primary text-white">
+      {/* --- New Modern Landing Page Sections --- */}
+      <HeroSection />
+      <Features />
+      <DisplayCardsDemo />
+      <LogoCarouselDemo />
+      <PricingTable />
+      <Testimonials />
+      <CallToAction />
+      {/* --- End New Sections --- */}
       <Helmet>
         <title>{getPageTitle()}</title>
         <meta name="description" content={getPageDescription()} />

@@ -1,0 +1,46 @@
+{
+  "app": {
+    "name": "LanOnasis",
+    "tagline": "Enterprise Solutions & Innovation"
+  },
+  "hero": {
+    "title": "Transform Your Business with LanOnasis",
+    "subtitle": "Cutting-edge enterprise solutions for the modern world",
+    "cta_primary": "Get Started",
+    "cta_secondary": "Learn More"
+  },
+  "features": {
+    "title": "Our Features",
+    "enterprise_ready": "Enterprise Ready",
+    "enterprise_ready_desc": "Built for scale with enterprise-grade security and reliability",
+    "ai_powered": "AI Powered",
+    "ai_powered_desc": "Leverage artificial intelligence to automate and optimize your workflows",
+    "cloud_native": "Cloud Native",
+    "cloud_native_desc": "Modern cloud architecture for maximum flexibility and performance"
+  },
+  "ecosystem": {
+    "title": "Our Ecosystem",
+    "vortexcore": "VortexCore - Personal Finance",
+    "vortexcore_saas": "VortexCore SaaS - Business Solutions",
+    "maple": "Maple - Appointment Scheduling",
+    "explore_all": "Explore All Solutions"
+  },
+  "pricing": {
+    "title": "Pricing Plans",
+    "starter": "Starter",
+    "professional": "Professional",
+    "enterprise": "Enterprise",
+    "contact_sales": "Contact Sales",
+    "per_month": "per month",
+    "most_popular": "Most Popular"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "get_in_touch": "Get in Touch",
+    "name": "Full Name",
+    "email": "Email Address",
+    "company": "Company",
+    "message": "Message",
+    "send_message": "Send Message"
+  }
+}
