@@ -52,7 +52,7 @@
     @apply relative px-8 py-4 rounded-full font-semibold text-white 
            transition-all duration-700 ease-out
            focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary
-           active:scale-95 overflow-hidden group;
+           active:scale-95 overflow-hidden;
     
     background: linear-gradient(135deg, 
       rgb(var(--color-secondary)) 0%, 
