@@ -25,7 +25,9 @@
     "url": "https://github.com/thefixer3x/LanOnasisIndex.git"
   },
   "scripts": {
-    "prototype": "vite preview --base=/prototype --outDir public/prototype",
+    "prototype:build": "vite build --emptyOutDir --outDir dist/prototype --base=/prototype/",
+    "prototype:preview": "vite preview --outDir dist/prototype",
+
 
     "dev": "vite",
     "build": "vite build",
