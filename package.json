@@ -1,10 +1,14 @@
 {
   "name": "lan-onasis-website",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "Lan Onasis - Africa's leading AI-powered tech hub offering intelligent compliance, risk, and B2B payment solutions",
   "keywords": [
+    "landing-prototype",
+    "ai-platform",
+    "lanonasis",
+
     "fintech",
     "AI",
     "compliance",
@@ -21,6 +25,8 @@
     "url": "https://github.com/thefixer3x/LanOnasisIndex.git"
   },
   "scripts": {
+    "prototype": "vite preview --base=/prototype --outDir public/prototype",
+
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
