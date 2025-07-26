@@ -94,7 +94,7 @@
 
   .btn-secondary {
     @apply relative px-8 py-4 rounded-full font-semibold text-secondary
-           transition-all duration-500 ease-out group overflow-hidden
+           transition-all duration-500 ease-out overflow-hidden
            focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary
            active:scale-95;
     
@@ -286,7 +286,7 @@
 
   /* ===== ENHANCED CARD SYSTEM ===== */
   .enhanced-card {
-    @apply relative p-8 rounded-3xl transition-all duration-700 group cursor-pointer;
+    @apply relative p-8 rounded-3xl transition-all duration-700 cursor-pointer;
     background: linear-gradient(145deg, 
       rgba(255, 255, 255, 0.08) 0%, 
       rgba(255, 255, 255, 0.03) 50%,
@@ -543,7 +543,7 @@
 
   .value-prop-item {
     @apply flex items-start space-x-4 p-4 rounded-xl 
-           transition-all duration-500 group hover:bg-white/5;
+           transition-all duration-500 hover:bg-white/5;
     border-left: 3px solid transparent;
   }
 
