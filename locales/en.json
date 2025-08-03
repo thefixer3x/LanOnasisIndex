@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "title": "Privacy-First Financial Infrastructure",
+    "subtitle": "Enterprise-grade privacy and security for the modern financial ecosystem",
+    "cta": "Learn More"
+  },
+  "features": {
+    "privacy": "Privacy Infrastructure",
+    "security": "Enterprise Security", 
+    "integration": "Seamless Integration"
+  },
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "solutions": "Solutions",
+    "company": "Company",
+    "contact": "Contact"
+  }
+}
