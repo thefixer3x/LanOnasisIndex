@@ -43,6 +43,11 @@ import {
   Truck,
   Home,
   Landmark,
+  Terminal,
+  Code2,
+  Key,
+  BookOpen,
+  CheckCircle,
 } from 'lucide-react';
 
 const Timeline = React.lazy(() => import('./components/Timeline'));
@@ -701,6 +706,197 @@ function App() {
               </div>
             </section>
 
+            {/* New Platform Services Section */}
+            <section id="platform-services" className="section-padding bg-gradient-to-br from-primary-light to-primary">
+              <div className="max-w-7xl mx-auto container-padding">
+                <div className="text-center mb-20">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="inline-block mb-6 px-4 py-1 rounded-full bg-secondary/10 border border-secondary/20"
+                  >
+                    <span className="text-secondary font-semibold">🚀 Newly Deployed Services</span>
+                  </motion.div>
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6">Platform Services Now Live</h2>
+                  <p className="text-gray-400 max-w-3xl mx-auto text-lg">
+                    Experience our latest suite of developer tools and enterprise services, now available for immediate integration
+                  </p>
+                </div>
+
+                {/* Service Cards Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                  {/* Memory-as-a-Service */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="group bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105 border border-white/10"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
+                      <Brain className="w-7 h-7 text-secondary" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">Memory-as-a-Service</h3>
+                    <p className="text-gray-400 mb-4">Vector-enabled memory storage for AI agents with semantic search and persistent context management.</p>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center gap-2 text-gray-300">
+                        <CheckCircle className="w-4 h-4 text-secondary" />
+                        <span>Dashboard UI at dashboard.lanonasis.com</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-gray-300">
+                        <CheckCircle className="w-4 h-4 text-secondary" />
+                        <span>REST API at api.lanonasis.com</span>
+                      </div>
+                    </div>
+                    <a href="https://dashboard.lanonasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
+                      Access Dashboard <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </motion.div>
+
+                  {/* CLI Tool */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="group bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105 border border-white/10"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
+                      <Terminal className="w-7 h-7 text-secondary" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">CLI Tool</h3>
+                    <p className="text-gray-400 mb-4">Professional command-line interface for memory management with MCP support.</p>
+                    <div className="bg-primary-dark/50 p-3 rounded-lg font-mono text-sm mb-4">
+                      <code className="text-secondary">npm install -g @lanonasis/cli</code>
+                    </div>
+                    <a href="https://www.npmjs.com/package/@lanonasis/cli" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
+                      View on npm <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </motion.div>
+
+                  {/* SDK */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="group bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105 border border-white/10"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
+                      <Code2 className="w-7 h-7 text-secondary" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">TypeScript SDK</h3>
+                    <p className="text-gray-400 mb-4">Complete SDK with React hooks for seamless memory integration in your applications.</p>
+                    <div className="bg-primary-dark/50 p-3 rounded-lg font-mono text-sm mb-4">
+                      <code className="text-secondary">npm install @lanonasis/sdk</code>
+                    </div>
+                    <a href="https://docs.lanonasis.com/sdk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
+                      SDK Documentation <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </motion.div>
+
+                  {/* API Key Management */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="group bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105 border border-white/10"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
+                      <Key className="w-7 h-7 text-secondary" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">API Key Management</h3>
+                    <p className="text-gray-400 mb-4">Secure key storage with MCP integration for zero-secret development workflows.</p>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center gap-2 text-gray-300">
+                        <CheckCircle className="w-4 h-4 text-secondary" />
+                        <span>Zero-trust proxy tokens</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-gray-300">
+                        <CheckCircle className="w-4 h-4 text-secondary" />
+                        <span>MCP protocol support</span>
+                      </div>
+                    </div>
+                    <a href="https://dashboard.lanonasis.com/keys" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
+                      Manage Keys <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </motion.div>
+
+                  {/* Developer Portal */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="group bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105 border border-white/10"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
+                      <BookOpen className="w-7 h-7 text-secondary" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">Developer Portal</h3>
+                    <p className="text-gray-400 mb-4">Comprehensive documentation, API reference, and interactive sandbox environment.</p>
+                    <a href="https://docs.lanonasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
+                      Explore Docs <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </motion.div>
+
+                  {/* MCP Integration */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    className="group bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105 border border-white/10"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
+                      <Cpu className="w-7 h-7 text-secondary" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">MCP Integration</h3>
+                    <p className="text-gray-400 mb-4">Model Context Protocol support for AI assistants and autonomous agents.</p>
+                    <div className="bg-primary-dark/50 p-3 rounded-lg font-mono text-sm mb-4">
+                      <code className="text-secondary">mcp.lanonasis.com/sse</code>
+                    </div>
+                    <a href="https://mcp.lanonasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
+                      MCP Endpoint <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </motion.div>
+                </div>
+
+                {/* Quick Start CTA */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-center bg-gradient-to-r from-secondary/10 to-secondary/5 rounded-2xl p-8 md:p-12 border border-secondary/20"
+                >
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Get Started?</h3>
+                  <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Join thousands of developers building intelligent applications with our Memory-as-a-Service platform.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                      href="https://dashboard.lanonasis.com/signup"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-secondary hover:bg-secondary-dark text-primary font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                    >
+                      Create Free Account <ArrowRight className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="https://docs.lanonasis.com/quickstart"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-secondary text-secondary hover:bg-secondary/10 font-semibold rounded-lg transition-all duration-300"
+                    >
+                      View Quick Start Guide
+                    </a>
+                  </div>
+                </motion.div>
+              </div>
+            </section>
+
             <section id="story" className="section-padding bg-primary-dark">
               <div className="max-w-7xl mx-auto container-padding">
                 <div className="text-center mb-20">
@@ -814,6 +1010,7 @@ function App() {
                 </button>
                 <a href="#vision" className="hover:text-secondary transition-colors">Our Vision</a>
                 <a href="#ecosystem" className="hover:text-secondary transition-colors">The Ecosystem</a>
+                <a href="#platform-services" className="hover:text-secondary transition-colors">Platform Services</a>
                 <button
                   onClick={() => handleSectionChange('industries')}
                   className={`hover:text-secondary transition-colors ${
@@ -868,6 +1065,7 @@ function App() {
                 </button>
                 <a href="#vision" className="block hover:text-secondary transition-colors">Our Vision</a>
                 <a href="#ecosystem" className="block hover:text-secondary transition-colors">The Ecosystem</a>
+                <a href="#platform-services" className="block hover:text-secondary transition-colors">Platform Services</a>
                 <button
                   onClick={() => handleSectionChange('industries')}
                   className={`block w-full text-left hover:text-secondary transition-colors ${
