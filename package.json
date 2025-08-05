@@ -36,6 +36,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@lan-onasis/ui-kit": "^0.1.0",
     "framer-motion": "^11.0.8",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
