@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from '@lanonasis/ui-kit';
+import { Button } from '@lan-onasis/ui-kit';
 
 interface ConnectionStatus {
   status: 'connecting' | 'connected' | 'error' | 'disconnected';
