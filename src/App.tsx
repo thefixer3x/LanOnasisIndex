@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { LanguageSwitcher } from './components/LanguageSwitcher';
+import MCPConnection from './components/MCPConnection';
 import * as THREE from 'three';
 import {
   Menu,
@@ -118,6 +119,11 @@ function App() {
     setActiveSection(section);
     setIsMobileMenuOpen(false);
   };
+
+  // Handle MCP connection route
+  if (window.location.pathname === '/mcp/connect' || activeSection === 'mcp') {
+    return <MCPConnection />;
+  }
 
   const products = [
     {
@@ -898,12 +904,24 @@ function App() {
               </button>
               <div className="hidden md:flex space-x-8">
                 <button
-                  onClick={() => handleSectionChange('home')}
-                  className={`hover:text-secondary transition-colors ${
-                    activeSection === 'home' ? 'text-secondary' : ''
+                  onClick={() => handleSectionChange('developers')}
+                  className={`px-4 py-2 rounded-lg transition-colors ${
+                    activeSection === 'developers'
+                      ? 'bg-secondary text-primary'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10'
                   }`}
                 >
-                  Home
+                  Developers
+                </button>
+                <button
+                  onClick={() => handleSectionChange('mcp')}
+                  className={`px-4 py-2 rounded-lg transition-colors ${
+                    activeSection === 'mcp'
+                      ? 'bg-secondary text-primary'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  MCP Connect
                 </button>
                 <a href="#vision" className="hover:text-secondary transition-colors">Our Vision</a>
                 <a href="#ecosystem" className="hover:text-secondary transition-colors">The Ecosystem</a>
