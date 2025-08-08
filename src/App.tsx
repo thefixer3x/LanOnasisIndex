@@ -64,10 +64,11 @@ function App() {
   const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null);
   const vantaRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
-  const headerBackground = useTransform(
+  // Convert to opacity value for class-based styling
+  const headerOpacity = useTransform(
     scrollY,
     [0, 100],
-    ['rgba(10, 25, 48, 0)', 'rgba(10, 25, 48, 0.9)']
+    [0, 0.9]
   );
 
   useEffect(() => {
@@ -426,10 +427,7 @@ function App() {
           <>
             <section 
               ref={vantaRef}
-              className="relative min-h-screen flex items-center justify-center overflow-hidden"
-              style={{
-                background: 'linear-gradient(135deg, #0a1930 0%, #1a2332 50%, #0a1930 100%)'
-              }}
+              className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/20 to-primary pointer-events-none" />
               
@@ -568,8 +566,10 @@ function App() {
                           transition={{ duration: 0.5, delay: index * 0.1 }}
                           className="flex items-start"
                         >
-                          <ChevronRight className="text-secondary mt-1 mr-2" size={20} />
-                          <span className="text-lg">{point}</span>
+                          <div className="flex items-start">
+                            <span className="text-primary mr-3 mt-1">▶</span>
+                            <span className="text-lg">{point}</span>
+                          </div>
                         </motion.li>
                       ))}
                     </ul>
@@ -890,8 +890,7 @@ function App() {
       </Helmet>
 
       <motion.nav
-        style={{ backgroundColor: headerBackground }}
-        className="fixed w-full z-50 backdrop-blur-lg"
+        className={`fixed w-full z-50 backdrop-blur-lg bg-primary bg-opacity-${Math.round(headerOpacity.get() * 100)}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
