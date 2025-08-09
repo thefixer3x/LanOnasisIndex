@@ -25,7 +25,9 @@
     "build": "bun run vite build",
     "lint": "bun run eslint .",
     "preview": "bun run vite preview",
-    "type-check": "bun run tsc --noEmit"
+    "type-check": "bun run tsc --noEmit",
+    "i18n:validate": "bun run scripts/validate-translations.js",
+    "i18n:check": "test -f locales/es.json && echo '✅ Translations exist' || echo '❌ Missing translations'"
   },
   "dependencies": {
     "@lan-onasis/ui-kit": "workspace:^",
