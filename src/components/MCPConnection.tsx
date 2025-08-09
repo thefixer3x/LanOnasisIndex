@@ -1,5 +1,25 @@
 import React, { useState } from 'react';
-import { Button } from '@lan-onasis/ui-kit';
+
+// Simple Button component for standalone deployment
+const Button: React.FC<{
+  onClick: () => void;
+  disabled?: boolean;
+  className?: string;
+  children: React.ReactNode;
+}> = ({ onClick, disabled, className, children }) => (
+  <button
+    type="button"
+    onClick={onClick}
+    disabled={disabled}
+    className={`px-4 py-2 rounded-md font-medium transition-colors ${
+      disabled 
+        ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
+        : 'bg-blue-600 hover:bg-blue-700 text-white'
+    } ${className || ''}`}
+  >
+    {children}
+  </button>
+);
 
 interface ConnectionStatus {
   status: 'connecting' | 'connected' | 'error' | 'disconnected';
