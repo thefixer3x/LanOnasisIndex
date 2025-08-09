@@ -44,18 +44,6 @@ interface VantaEffect {
   destroy: () => void;
 }
 
-// Define VantaModule type
-interface VantaModule {
-  default: (options: {
-    el: HTMLElement;
-    THREE: typeof THREE;
-    color: number;
-    backgroundColor: number;
-    points: number;
-    maxDistance: number;
-    spacing: number;
-  }) => VantaEffect;
-}
 
 function App() {
   const [isDark, setIsDark] = useState(true);
@@ -79,9 +67,9 @@ function App() {
         if (!vantaRef.current || vantaEffect) return;
         
         // Dynamically import Vanta to handle potential loading issues
-        const NET = await import('vanta/dist/vanta.net.min') as VantaModule;
+        const NET = await import('vanta/dist/vanta.net.min') as any;
         
-        effect = NET.default({
+        effect = NET.default.default({
           el: vantaRef.current,
           THREE,
           color: 0x00b4ff,
@@ -557,20 +545,20 @@ function App() {
                   </div>
                   <div>
                     <h2 className="text-3xl md:text-5xl font-bold mb-8">Our Vision</h2>
-                    <div className="space-y-4 mb-8">
+                    <ul className="space-y-4 mb-8">
                       {visionPoints.map((point, index) => (
-                        <motion.div
-                          key={index}
+                        <motion.li
+                          key={point.slice(0, 20)}
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.5, delay: index * 0.1 }}
                           className="flex items-start"
                         >
-                          <span className="text-primary mr-3 mt-1">▶</span>
+                          <span className="text-primary mr-3 mt-1" aria-hidden="true">▶</span>
                           <span className="text-lg">{point}</span>
-                        </motion.div>
+                        </motion.li>
                       ))}
-                    </div>
+                    </ul>
                     <p className="text-gray-400">
                       Lan Onasis isn't just pivoting—we're redefining modern business systems through innovative technology and forward-thinking solutions.
                     </p>

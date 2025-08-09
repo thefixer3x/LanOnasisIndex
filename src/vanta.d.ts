@@ -14,8 +14,9 @@ declare module 'vanta/dist/vanta.net.min' {
   }
 
   const NET: {
-    default: (options: VantaOptions) => VantaEffect;
+    default: {
+      default: (options: VantaOptions) => VantaEffect;
+    };
   };
-
   export = NET;
 }
