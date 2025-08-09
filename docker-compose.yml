@@ -20,7 +20,7 @@ services:
       - NODE_ENV=development
       # Add any env vars needed for local dev
       - VITE_API_URL=http://localhost:3000
-    command: npm run dev -- --host 0.0.0.0
+    command: bun run dev -- --host 0.0.0.0
 
   # Optional: Add a build test service
   build-test:
@@ -30,6 +30,6 @@ services:
     container_name: lan-onasis-build-test
     volumes:
       - ./dist:/app/dist
-    command: npm run build
+    command: bun run build
     profiles:
       - build
