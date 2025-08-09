@@ -557,22 +557,20 @@ function App() {
                   </div>
                   <div>
                     <h2 className="text-3xl md:text-5xl font-bold mb-8">Our Vision</h2>
-                    <ul className="space-y-4 mb-8">
+                    <div className="space-y-4 mb-8">
                       {visionPoints.map((point, index) => (
-                        <motion.li
+                        <motion.div
                           key={index}
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.5, delay: index * 0.1 }}
                           className="flex items-start"
                         >
-                          <div className="flex items-start">
-                            <span className="text-primary mr-3 mt-1">▶</span>
-                            <span className="text-lg">{point}</span>
-                          </div>
-                        </motion.li>
+                          <span className="text-primary mr-3 mt-1">▶</span>
+                          <span className="text-lg">{point}</span>
+                        </motion.div>
                       ))}
-                    </ul>
+                    </div>
                     <p className="text-gray-400">
                       Lan Onasis isn't just pivoting—we're redefining modern business systems through innovative technology and forward-thinking solutions.
                     </p>
