@@ -645,14 +645,14 @@ function App() {
                     <div className="space-y-2 text-sm">
                       <div className="flex items-center gap-2 text-gray-300">
                         <CheckCircle className="w-4 h-4 text-secondary" />
-                        <span>Dashboard UI at dashboard.lanonasis.com</span>
+                        <span>Dashboard UI at api.lanonasis.com</span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-300">
                         <CheckCircle className="w-4 h-4 text-secondary" />
                         <span>REST API at api.lanonasis.com</span>
                       </div>
                     </div>
-                    <a href="https://dashboard.lanonasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
+                    <a href="https://api.lanonasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
                       Access Dashboard <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
@@ -722,7 +722,7 @@ function App() {
                         <span>MCP protocol support</span>
                       </div>
                     </div>
-                    <a href="https://dashboard.lanonasis.com/keys" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
+                    <a href="https://api.lanonasis.com/keys" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
                       Manage Keys <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
@@ -780,7 +780,7 @@ function App() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                      href="https://dashboard.lanonasis.com/signup"
+                      href="https://api.lanonasis.com/signup"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-secondary hover:bg-secondary-dark text-primary font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
