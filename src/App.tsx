@@ -114,6 +114,57 @@ function App() {
     return <MCPConnection />;
   }
 
+  // Handle SSE auth route for registered users
+  if (window.location.pathname === '/sse') {
+    // Quick context-aware auth for existing users
+    React.useEffect(() => {
+      const handleSSEAuth = () => {
+        // Check if user has existing context/session
+        const hasContext = localStorage.getItem('lanonasis_context') || 
+                           sessionStorage.getItem('user_session') ||
+                           document.cookie.includes('lanonasis_auth');
+        
+        if (hasContext) {
+          // Direct route to dashboard for registered users
+          window.location.href = 'https://dashboard.lanonasis.com/auth?redirect=dashboard&context=sse';
+        } else {
+          // Show quick context setup for new users
+          window.location.href = 'https://dashboard.lanonasis.com/auth?redirect=onboard&context=sse';
+        }
+      };
+      
+      // Small delay to show loading state
+      setTimeout(handleSSEAuth, 800);
+    }, []);
+
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-primary via-primary-dark to-black flex items-center justify-center">
+        <div className="text-center">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8"
+          >
+            <Brain className="w-16 h-16 mx-auto text-secondary mb-4" />
+            <h1 className="text-2xl font-bold text-white mb-2">Contextualizing Your Session</h1>
+            <p className="text-gray-400">Connecting to your personalized AI ecosystem...</p>
+          </motion.div>
+          
+          <div className="flex items-center justify-center space-x-2 mb-6">
+            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce"></div>
+            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+          </div>
+          
+          <p className="text-sm text-gray-500">
+            Context is the foundation that makes all services intelligent
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   const products = [
     {
       name: "VortexCore AI",
