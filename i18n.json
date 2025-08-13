@@ -1,70 +1,26 @@
 {
   "version": 1.8,
-  "$schema": "https://lingo.dev/schema/i18n.json",
   "locale": {
     "source": "en",
     "targets": [
       "es",
-      "fr",
+      "fr", 
       "de",
       "ja",
-      "zh",
+      "zh", 
       "pt",
-      "ar"
+      "ar",
+      "ko",
+      "it", 
+      "ru"
     ]
   },
   "buckets": {
-    "vortexcore": {
-      "include": [
-        "locales/[locale].json"
-      ],
-      "exclude": [
-        "**/*test*",
-        "**/*node_modules*",
-        "**/*dist*",
-        "**/*build*"
-      ]
-    },
-    "vortexcore-saas": {
-      "include": [
-        "locales/[locale].json"
-      ],
-      "exclude": [
-        "**/*test*",
-        "**/*node_modules*",
-        "**/*dist*",
-        "**/*build*"
-      ]
-    },
-    "maple-site": {
-      "include": [
-        "locales/[locale].json"
-      ],
-      "exclude": [
-        "**/*test*",
-        "**/*node_modules*",
-        "**/*dist*",
-        "**/*build*"
-      ]
-    },
-    "lanonasis-index": {
-      "include": [
-        "locales/[locale].json"
-      ],
-      "exclude": [
-        "**/*test*",
-        "**/*node_modules*",
-        "**/*dist*",
-        "**/*build*"
-      ]
+    "main": {
+      "path": "./locales",
+      "format": "json",
+      "glob": "*.json"
     }
   },
-  "prompts": {
-    "system": "You are a professional translator for a fintech, SaaS, and privacy infrastructure company. Maintain brand consistency, technical accuracy, and professional tone. Preserve all HTML tags, placeholders like {{variable}}, and technical terms.",
-    "context": "This is part of the LAN Onasis ecosystem. Maintain consistent terminology for financial terms, privacy concepts, and technical infrastructure terms across all languages."
-  },
-  "ai": {
-    "temperature": 0.1,
-    "maxTokens": 2000
-  }
+  "$schema": "https://lingo.dev/schema/i18n.json"
 }

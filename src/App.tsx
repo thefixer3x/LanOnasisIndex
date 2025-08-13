@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import * as THREE from 'three';
 
@@ -14,7 +15,7 @@ import {
   Moon,
   ChevronRight,
   Users,
-  Twitter,
+  X as TwitterIcon,
   Linkedin,
   Brain,
   FileCheck,
@@ -50,10 +51,38 @@ import { LanguageSwitcher } from './components/LanguageSwitcher';
 import MCPConnection from './components/MCPConnection';
 import Developers from './components/Developers';
 
+// Simple GlareCard component (inline)
+const GlareCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
+  return (
+    <div className={`relative isolate w-[320px] [aspect-ratio:17/21] ${className}`}>
+      <div className="h-full rounded-lg border border-slate-800 bg-slate-950 overflow-hidden hover:border-slate-700 transition-colors">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+// Simple brand logo components (standalone)
+const SimpleBrandLogos = {
+  OpenAI: () => <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">AI</span></div>,
+  Stripe: () => <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">$</span></div>,
+  Supabase: () => <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">DB</span></div>,
+  Anthropic: () => <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">🤖</span></div>,
+  Vercel: () => <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">▲</span></div>,
+  GitHub: () => <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">💻</span></div>,
+  PayPal: () => <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">PP</span></div>,
+  AWS: () => <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">AWS</span></div>,
+  Azure: () => <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">AZ</span></div>,
+  Slack: () => <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">SL</span></div>,
+  Notion: () => <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">NO</span></div>,
+  Figma: () => <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center"><span className="text-xs text-white font-bold">FG</span></div>
+};
+
 const Timeline = React.lazy(() => import('./components/Timeline'));
 
 
 function App() {
+  const { t } = useTranslation();
   const [isDark, setIsDark] = useState(true);
   // Removed isScrolled state and scroll event listener.
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -198,8 +227,8 @@ function App() {
             className="mb-8"
           >
             <Brain className="w-16 h-16 mx-auto text-secondary mb-4" />
-            <h1 className="text-2xl font-bold text-white mb-2">Contextualizing Your Session</h1>
-            <p className="text-gray-400">Connecting to your personalized AI ecosystem...</p>
+            <h1 className="text-2xl font-bold text-white mb-2">{t('sse.title')}</h1>
+            <p className="text-gray-400">{t('sse.subtitle')}</p>
           </motion.div>
           
           <div className="flex items-center justify-center space-x-2 mb-6">
@@ -209,7 +238,7 @@ function App() {
           </div>
           
           <p className="text-sm text-gray-500">
-            Context is the foundation that makes all services intelligent
+            {t('sse.footer')}
           </p>
         </div>
       </div>
@@ -218,38 +247,38 @@ function App() {
 
   const products = [
     {
-      name: "VortexCore AI",
-      description: "Your intelligent assistant for compliance and business solutions",
+      name: t('products.vortexcore_ai.name'),
+      description: t('products.vortexcore_ai.description'),
       icon: Brain,
     },
     {
-      name: "VortexComply",
-      description: "Compliance-as-a-Service, KYC/KYB, and AML solutions",
+      name: t('products.vortexcomply.name'),
+      description: t('products.vortexcomply.description'),
       icon: FileCheck,
     },
     {
-      name: "VortexRisk",
-      description: "AI-driven risk monitoring and analysis",
+      name: t('products.vortexrisk.name'),
+      description: t('products.vortexrisk.description'),
       icon: AlertTriangle,
     },
     {
-      name: "VortexShield",
-      description: "Security infrastructure for cross-border safety",
+      name: t('products.vortexshield.name'),
+      description: t('products.vortexshield.description'),
       icon: Lock,
     },
     {
-      name: "VortexIQ",
-      description: "Business intelligence engine for actionable insights",
+      name: t('products.vortexiq.name'),
+      description: t('products.vortexiq.description'),
       icon: BarChart3,
     },
     {
-      name: "VortexPay",
-      description: "Instant vendor disbursements and B2B payments",
+      name: t('products.vortexpay.name'),
+      description: t('products.vortexpay.description'),
       icon: CreditCard,
     },
     {
-      name: "BizGenie",
-      description: "Embedded AI for SME insights and cash flow guidance",
+      name: t('products.bizgenie.name'),
+      description: t('products.bizgenie.description'),
       icon: Lightbulb,
     },
   ];
@@ -348,11 +377,7 @@ function App() {
     },
   ];
 
-  const visionPoints = [
-    "To build Africa's most intelligent tech ecosystem",
-    "To expand globally with secure, compliant, AI-enhanced platforms",
-    "To empower businesses and regulators to innovate without borders",
-  ];
+  const visionPoints = t('vision.points', { returnObjects: true }) as string[];
 
   const socialTags = [
     "#LanOnasis",
@@ -535,7 +560,7 @@ function App() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="inline-block mb-6 px-4 py-1 rounded-full bg-secondary/10 border border-secondary/20"
                 >
-                  <span className="text-secondary font-semibold">Introducing VortexCore AI</span>
+                  <span className="text-secondary font-semibold">{t('hero.badge')}</span>
                 </motion.div>
 
                 <motion.h1 
@@ -548,7 +573,7 @@ function App() {
                     className="ai-gradient-text ai-glow-effect ai-text-outline"
                     data-text="Powering Africa's Tech Revolution"
                   >
-                    Powering Africa's Tech Revolution
+                    {t('hero.title')}
                   </span>
                 </motion.h1>
 
@@ -558,7 +583,7 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                 >
-                  Building Africa's most intelligent tech ecosystem—empowering entrepreneurs, fintechs, and institutions with secure, compliant, AI‑enhanced platforms
+                  {t('hero.subtitle')}
                 </motion.p>
 
                 <motion.div 
@@ -573,7 +598,7 @@ function App() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Get Started Free
+                    {t('hero.cta_primary')}
                     <motion.span
                       className="ml-2 group-hover:translate-x-1 transition-transform"
                     >
@@ -587,7 +612,7 @@ function App() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Login
+                    {t('hero.cta_secondary')}
                     <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
                       →
                     </span>
@@ -635,6 +660,50 @@ function App() {
                   ease: "easeInOut"
                 }}
               />
+
+              {/* Floating Brand Icons */}
+              <motion.div
+                className="absolute top-[20%] left-[5%] opacity-20"
+                animate={{
+                  y: [0, -20, 0],
+                  rotate: [0, 360],
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              >
+                <SimpleBrandLogos.OpenAI />
+              </motion.div>
+              <motion.div
+                className="absolute top-[60%] right-[8%] opacity-20"
+                animate={{
+                  y: [0, 20, 0],
+                  rotate: [0, -360],
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              >
+                <SimpleBrandLogos.Stripe />
+              </motion.div>
+              <motion.div
+                className="absolute bottom-[30%] left-[80%] opacity-15"
+                animate={{
+                  x: [-20, 20, -20],
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  duration: 18,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <SimpleBrandLogos.Supabase />
+              </motion.div>
             </section>
 
             <section id="vision" className="section-padding bg-primary-light">
@@ -650,37 +719,23 @@ function App() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary/80 to-transparent mix-blend-multiply" />
                   </div>
                   <div>
-                    <h2 className="text-3xl md:text-5xl font-bold mb-8">Our Vision</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-8">{t('vision.title')}</h2>
                     <ul className="space-y-4 mb-8">
                       {visionPoints.map((point, index) => (
-<<<<<<< Updated upstream
-                        <li key={index}>
-                          <motion.span
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="flex items-start"
-                          >
-                            <ChevronRight className="text-secondary mt-1 mr-2" size={20} />
-                            <span className="text-lg">{point}</span>
-                          </motion.span>
-                        </li>
-=======
                         <motion.li
-                          key={point.slice(0, 20)}
+                          key={index}
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.5, delay: index * 0.1 }}
                           className="flex items-start"
                         >
-                            <span className="text-primary mr-3 mt-1" aria-hidden="true">▶</span>
-                            {point}
+                          <ChevronRight className="text-secondary mt-1 mr-2" size={20} />
+                          <span className="text-lg">{point}</span>
                         </motion.li>
->>>>>>> Stashed changes
                       ))}
                     </ul>
                     <p className="text-gray-400">
-                      Lan Onasis isn't just pivoting—we're redefining modern business systems through innovative technology and forward-thinking solutions.
+                      {t('vision.description')}
                     </p>
                   </div>
                 </div>
@@ -690,9 +745,9 @@ function App() {
             <section id="ecosystem" className="section-padding">
               <div className="max-w-7xl mx-auto container-padding">
                 <div className="text-center mb-20">
-                  <h2 className="text-3xl md:text-5xl font-bold mb-6">The Vortex Ecosystem</h2>
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6">{t('ecosystem.title')}</h2>
                   <p className="text-gray-400 max-w-2xl mx-auto">
-                    A comprehensive suite of intelligent solutions powering the future of business
+                    {t('ecosystem.subtitle')}
                   </p>
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -715,6 +770,60 @@ function App() {
               </div>
             </section>
 
+            {/* Brand Partners Section */}
+            <section className="section-padding bg-gradient-to-r from-primary-dark to-primary">
+              <div className="max-w-7xl mx-auto container-padding">
+                <div className="text-center mb-12">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4">Trusted by Leading Brands</h2>
+                  <p className="text-gray-400">Powering integrations with the world's most innovative platforms</p>
+                </div>
+                
+                {/* AI & Technology Partners */}
+                <div className="mb-16">
+                  <h3 className="text-xl font-semibold text-center mb-8 text-secondary">AI & Technology Partners</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                    <div className="flex justify-center p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+                      <SimpleBrandLogos.OpenAI />
+                    </div>
+                    <div className="flex justify-center p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+                      <SimpleBrandLogos.Anthropic />
+                    </div>
+                    <div className="flex justify-center p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+                      <SimpleBrandLogos.Supabase />
+                    </div>
+                    <div className="flex justify-center p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+                      <SimpleBrandLogos.Vercel />
+                    </div>
+                    <div className="flex justify-center p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+                      <SimpleBrandLogos.GitHub />
+                    </div>
+                    <div className="flex justify-center p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+                      <SimpleBrandLogos.OpenAI />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Payment & Financial Partners */}
+                <div className="mb-16">
+                  <h3 className="text-xl font-semibold text-center mb-8 text-accent">Payment & Financial Solutions</h3>
+                  <div className="flex flex-wrap justify-center gap-8">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all"
+                    >
+                      <SimpleBrandLogos.Stripe />
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="p-6 bg-white/5 rounded-xl hover:bg-white/10 transition-all"
+                    >
+                      <SimpleBrandLogos.PayPal />
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* New Platform Services Section */}
             <section id="platform-services" className="section-padding bg-gradient-to-br from-primary-light to-primary">
               <div className="max-w-7xl mx-auto container-padding">
@@ -725,11 +834,11 @@ function App() {
                     viewport={{ once: true }}
                     className="inline-block mb-6 px-4 py-1 rounded-full bg-secondary/10 border border-secondary/20"
                   >
-                    <span className="text-secondary font-semibold">🚀 Newly Deployed Services</span>
+                    <span className="text-secondary font-semibold">{t('platform_services.badge')}</span>
                   </motion.div>
-                  <h2 className="text-3xl md:text-5xl font-bold mb-6">Platform Services Now Live</h2>
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6">{t('platform_services.title')}</h2>
                   <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-                    Experience our latest suite of developer tools and enterprise services, now available for immediate integration
+                    {t('platform_services.subtitle')}
                   </p>
                 </div>
 
@@ -746,20 +855,20 @@ function App() {
                     <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
                       <Brain className="w-7 h-7 text-secondary" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3">Memory-as-a-Service</h3>
-                    <p className="text-gray-400 mb-4">Vector-enabled memory storage for AI agents with semantic search and persistent context management.</p>
+                    <h3 className="text-2xl font-bold mb-3">{t('platform_services.memory_service.title')}</h3>
+                    <p className="text-gray-400 mb-4">{t('platform_services.memory_service.description')}</p>
                     <div className="space-y-2 text-sm">
                       <div className="flex items-center gap-2 text-gray-300">
                         <CheckCircle className="w-4 h-4 text-secondary" />
-                        <span>Dashboard UI at api.lanonasis.com</span>
+                        <span>{t('platform_services.memory_service.dashboard')}</span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-300">
                         <CheckCircle className="w-4 h-4 text-secondary" />
-                        <span>REST API at api.lanonasis.com</span>
+                        <span>{t('platform_services.memory_service.api')}</span>
                       </div>
                     </div>
                     <a href="https://dashboard.lanonasis.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
-                      Access Dashboard <ArrowRight className="w-4 h-4" />
+                      {t('platform_services.memory_service.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
 
@@ -774,13 +883,13 @@ function App() {
                     <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
                       <Terminal className="w-7 h-7 text-secondary" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3">CLI Tool</h3>
-                    <p className="text-gray-400 mb-4">Professional command-line interface for memory management with MCP support.</p>
+                    <h3 className="text-2xl font-bold mb-3">{t('platform_services.cli_tool.title')}</h3>
+                    <p className="text-gray-400 mb-4">{t('platform_services.cli_tool.description')}</p>
                     <div className="bg-primary-dark/50 p-3 rounded-lg font-mono text-sm mb-4">
                       <code className="text-secondary">npm install -g @lanonasis/cli</code>
                     </div>
                     <a href="https://www.npmjs.com/package/@lanonasis/cli" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
-                      View on npm <ArrowRight className="w-4 h-4" />
+                      {t('platform_services.cli_tool.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
 
@@ -795,13 +904,13 @@ function App() {
                     <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
                       <Code2 className="w-7 h-7 text-secondary" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3">TypeScript SDK</h3>
-                    <p className="text-gray-400 mb-4">Complete SDK with React hooks for seamless memory integration in your applications.</p>
+                    <h3 className="text-2xl font-bold mb-3">{t('platform_services.sdk.title')}</h3>
+                    <p className="text-gray-400 mb-4">{t('platform_services.sdk.description')}</p>
                     <div className="bg-primary-dark/50 p-3 rounded-lg font-mono text-sm mb-4">
                       <code className="text-secondary">npm install @lanonasis/sdk</code>
                     </div>
                     <a href="https://docs.lanonasis.com/sdk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
-                      SDK Documentation <ArrowRight className="w-4 h-4" />
+                      {t('platform_services.sdk.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
 
@@ -816,20 +925,20 @@ function App() {
                     <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
                       <Key className="w-7 h-7 text-secondary" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3">API Key Management</h3>
-                    <p className="text-gray-400 mb-4">Secure key storage with MCP integration for zero-secret development workflows.</p>
+                    <h3 className="text-2xl font-bold mb-3">{t('platform_services.api_keys.title')}</h3>
+                    <p className="text-gray-400 mb-4">{t('platform_services.api_keys.description')}</p>
                     <div className="space-y-2 text-sm">
                       <div className="flex items-center gap-2 text-gray-300">
                         <CheckCircle className="w-4 h-4 text-secondary" />
-                        <span>Zero-trust proxy tokens</span>
+                        <span>{t('platform_services.api_keys.zero_trust')}</span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-300">
                         <CheckCircle className="w-4 h-4 text-secondary" />
-                        <span>MCP protocol support</span>
+                        <span>{t('platform_services.api_keys.mcp_support')}</span>
                       </div>
                     </div>
                     <a href="https://dashboard.lanonasis.com/dashboard/api-keys" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
-                      Manage Keys <ArrowRight className="w-4 h-4" />
+                      {t('platform_services.api_keys.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
 
@@ -844,10 +953,10 @@ function App() {
                     <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
                       <BookOpen className="w-7 h-7 text-secondary" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3">Developer Portal</h3>
-                    <p className="text-gray-400 mb-4">Comprehensive documentation, API reference, and interactive sandbox environment.</p>
+                    <h3 className="text-2xl font-bold mb-3">{t('platform_services.developer_portal.title')}</h3>
+                    <p className="text-gray-400 mb-4">{t('platform_services.developer_portal.description')}</p>
                     <a href="https://docs.lanonasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
-                      Explore Docs <ArrowRight className="w-4 h-4" />
+                      {t('platform_services.developer_portal.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
 
@@ -860,15 +969,15 @@ function App() {
                     className="group bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:transform hover:scale-105 border border-white/10"
                   >
                     <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-6">
-                      <Cpu className="w-7 h-7 text-secondary" />
+                      <Terminal className="w-7 h-7 text-secondary" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3">MCP Integration</h3>
-                    <p className="text-gray-400 mb-4">Model Context Protocol support for AI assistants and autonomous agents.</p>
+                    <h3 className="text-2xl font-bold mb-3">{t('platform_services.mcp_integration.title')}</h3>
+                    <p className="text-gray-400 mb-4">{t('platform_services.mcp_integration.description')}</p>
                     <div className="bg-primary-dark/50 p-3 rounded-lg font-mono text-sm mb-4">
                       <code className="text-secondary">mcp.lanonasis.com/sse</code>
                     </div>
                     <a href="https://mcp.lanonasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
-                      MCP Endpoint <ArrowRight className="w-4 h-4" />
+                      {t('platform_services.mcp_integration.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
                 </div>
@@ -880,9 +989,9 @@ function App() {
                   viewport={{ once: true }}
                   className="text-center bg-gradient-to-r from-secondary/10 to-secondary/5 rounded-2xl p-8 md:p-12 border border-secondary/20"
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Get Started?</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">{t('platform_services.quick_start.title')}</h3>
                   <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-                    Join thousands of developers building intelligent applications with our Memory-as-a-Service platform.
+                    {t('platform_services.quick_start.description')}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
@@ -891,7 +1000,7 @@ function App() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-secondary hover:bg-secondary-dark text-primary font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
                     >
-                      Create Free Account <ArrowRight className="w-5 h-5" />
+                      {t('platform_services.quick_start.cta_primary')} <ArrowRight className="w-5 h-5" />
                     </a>
                     <a
                       href="https://docs.lanonasis.com/quickstart"
@@ -899,19 +1008,50 @@ function App() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-secondary text-secondary hover:bg-secondary/10 font-semibold rounded-lg transition-all duration-300"
                     >
-                      View Quick Start Guide
+                      {t('platform_services.quick_start.cta_secondary')}
                     </a>
                   </div>
                 </motion.div>
               </div>
             </section>
 
+            {/* Cloud & Infrastructure Showcase */}
+            <section className="section-padding bg-gradient-to-br from-primary to-primary-dark">
+              <div className="max-w-7xl mx-auto container-padding">
+                <div className="text-center mb-12">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4">Enterprise Infrastructure</h2>
+                  <p className="text-gray-400">Built on world-class cloud platforms</p>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                  {[
+                    SimpleBrandLogos.AWS,
+                    SimpleBrandLogos.Azure,
+                    SimpleBrandLogos.AWS,
+                    SimpleBrandLogos.AWS,
+                    SimpleBrandLogos.AWS
+                  ].map((Icon, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-white/5 p-6 rounded-lg flex items-center justify-center hover:bg-white/10 transition-all group"
+                    >
+                      <div className="w-20 h-20 flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <Icon />
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
             <section id="story" className="section-padding bg-primary-dark">
               <div className="max-w-7xl mx-auto container-padding">
                 <div className="text-center mb-20">
-                  <h2 className="text-3xl md:text-5xl font-bold mb-6">Built by Visionaries</h2>
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6">{t('story.title')}</h2>
                   <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                    What began as a quest for consulting excellence evolved into a revolutionary movement.
+                    {t('story.subtitle')}
                   </p>
                 </div>
 
@@ -925,8 +1065,40 @@ function App() {
 
                 <div className="max-w-4xl mx-auto text-center mt-20">
                   <p className="text-xl leading-relaxed mb-12">
-                    From this vision, Lan Onasis was born, fueling the VortexCore revolution and shaping the future of tech.
+                    {t('story.conclusion')}
                   </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Productivity & Business Tools Showcase */}
+            <section className="py-16 bg-gradient-to-r from-secondary/10 to-accent/10">
+              <div className="max-w-7xl mx-auto container-padding">
+                <h3 className="text-2xl font-bold text-center mb-8">Productivity & Business Solutions</h3>
+                <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-4 mb-12">
+                  {[
+                    SimpleBrandLogos.Notion,
+                    SimpleBrandLogos.Slack,
+                    SimpleBrandLogos.Figma,
+                    SimpleBrandLogos.Figma,
+                    SimpleBrandLogos.Slack,
+                    SimpleBrandLogos.Figma,
+                    SimpleBrandLogos.Slack,
+                    SimpleBrandLogos.AWS
+                  ].map((Icon, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="bg-white/10 p-4 rounded-lg flex items-center justify-center hover:bg-white/20 transition-all"
+                    >
+                      <div className="w-12 h-12 flex items-center justify-center">
+                        <Icon />
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </section>
@@ -963,6 +1135,421 @@ function App() {
       <PricingTable />
       <Testimonials />
       <CallToAction />
+      
+      {/* Ecosystem & Products Showcase - GlareCards */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+              Our Creative Ecosystem
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Innovative products and solutions designed for businesses and individuals who dare to dream big
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+            <GlareCard className="bg-gradient-to-br from-blue-900/20 to-purple-900/20">
+              <div className="p-8 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-blue-500 rounded-lg mb-4 flex items-center justify-center">
+                    <Brain className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">VortexCore AI</h3>
+                  <p className="text-gray-300 mb-4">
+                    [Placeholder: Revolutionary AI platform that transforms how businesses operate and make decisions]
+                  </p>
+                </div>
+                <div className="flex items-center text-blue-400 font-medium">
+                  Explore Platform <ArrowRight className="ml-2 w-4 h-4" />
+                </div>
+              </div>
+            </GlareCard>
+
+            <GlareCard className="bg-gradient-to-br from-green-900/20 to-teal-900/20">
+              <div className="p-8 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-green-500 rounded-lg mb-4 flex items-center justify-center">
+                    <CreditCard className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">VortexPay</h3>
+                  <p className="text-gray-300 mb-4">
+                    [Placeholder: Next-generation payment solutions for modern businesses and creative entrepreneurs]
+                  </p>
+                </div>
+                <div className="flex items-center text-green-400 font-medium">
+                  Launch Dashboard <ArrowRight className="ml-2 w-4 h-4" />
+                </div>
+              </div>
+            </GlareCard>
+
+            <GlareCard className="bg-gradient-to-br from-purple-900/20 to-pink-900/20">
+              <div className="p-8 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-purple-500 rounded-lg mb-4 flex items-center justify-center">
+                    <Lightbulb className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">BizGenie</h3>
+                  <p className="text-gray-300 mb-4">
+                    [Placeholder: Creative business automation and workflow optimization for innovative minds]
+                  </p>
+                </div>
+                <div className="flex items-center text-purple-400 font-medium">
+                  Try Beta <ArrowRight className="ml-2 w-4 h-4" />
+                </div>
+              </div>
+            </GlareCard>
+
+            <GlareCard className="bg-gradient-to-br from-orange-900/20 to-red-900/20">
+              <div className="p-8 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-orange-500 rounded-lg mb-4 flex items-center justify-center">
+                    <FileCheck className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">VortexComply</h3>
+                  <p className="text-gray-300 mb-4">
+                    [Placeholder: Smart compliance and risk management for forward-thinking organizations]
+                  </p>
+                </div>
+                <div className="flex items-center text-orange-400 font-medium">
+                  Get Started <ArrowRight className="ml-2 w-4 h-4" />
+                </div>
+              </div>
+            </GlareCard>
+
+            <GlareCard className="bg-gradient-to-br from-cyan-900/20 to-blue-900/20">
+              <div className="p-8 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-cyan-500 rounded-lg mb-4 flex items-center justify-center">
+                    <BarChart3 className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">VortexRisk</h3>
+                  <p className="text-gray-300 mb-4">
+                    [Placeholder: Advanced risk assessment and mitigation tools for strategic decision-making]
+                  </p>
+                </div>
+                <div className="flex items-center text-cyan-400 font-medium">
+                  View Demo <ArrowRight className="ml-2 w-4 h-4" />
+                </div>
+              </div>
+            </GlareCard>
+
+            <GlareCard className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20">
+              <div className="p-8 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-indigo-500 rounded-lg mb-4 flex items-center justify-center">
+                    <Code2 className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Developer Hub</h3>
+                  <p className="text-gray-300 mb-4">
+                    [Placeholder: Comprehensive API ecosystem and developer tools for creative integrations]
+                  </p>
+                </div>
+                <div className="flex items-center text-indigo-400 font-medium">
+                  Access APIs <ArrowRight className="ml-2 w-4 h-4" />
+                </div>
+              </div>
+            </GlareCard>
+          </div>
+        </div>
+      </section>
+
+      {/* Creative Solutions for Individuals */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-cyan-600 bg-clip-text text-transparent">
+              Empowering Individual Creators
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Personal productivity and creative tools designed for entrepreneurs, freelancers, and visionaries
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+            <GlareCard className="bg-gradient-to-br from-emerald-900/20 to-teal-900/20">
+              <div className="p-8 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl mb-6 flex items-center justify-center">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white">Personal AI Assistant</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">
+                    [Placeholder: Your personal AI companion for productivity, creativity, and decision-making. Tailored specifically for individual needs and creative workflows]
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center text-emerald-400">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Smart scheduling & reminders
+                  </div>
+                  <div className="flex items-center text-emerald-400">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Creative project management
+                  </div>
+                  <div className="flex items-center text-emerald-400">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Personalized insights
+                  </div>
+                  <button className="w-full mt-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-3 px-6 rounded-lg font-medium hover:from-emerald-600 hover:to-teal-600 transition-all duration-300">
+                    Start Free Trial
+                  </button>
+                </div>
+              </div>
+            </GlareCard>
+
+            <GlareCard className="bg-gradient-to-br from-violet-900/20 to-fuchsia-900/20">
+              <div className="p-8 h-full flex flex-col justify-between">
+                <div>
+                  <div className="w-16 h-16 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-xl mb-6 flex items-center justify-center">
+                    <Terminal className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white">Creator Toolkit</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">
+                    [Placeholder: Comprehensive suite of tools for content creators, designers, and digital entrepreneurs to streamline their creative process]
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center text-violet-400">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Advanced content generation
+                  </div>
+                  <div className="flex items-center text-violet-400">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Brand consistency tools
+                  </div>
+                  <div className="flex items-center text-violet-400">
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    Performance analytics
+                  </div>
+                  <button className="w-full mt-6 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white py-3 px-6 rounded-lg font-medium hover:from-violet-600 hover:to-fuchsia-600 transition-all duration-300">
+                    Explore Tools
+                  </button>
+                </div>
+              </div>
+            </GlareCard>
+          </div>
+        </div>
+      </section>
+
+      {/* Innovation Hub */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-600 bg-clip-text text-transparent">
+              Innovation & Research
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Cutting-edge research and experimental projects that shape the future of business and creativity
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+            <GlareCard className="bg-gradient-to-br from-amber-900/20 to-orange-900/20">
+              <div className="p-6 h-full flex flex-col justify-between text-center">
+                <div>
+                  <div className="w-12 h-12 bg-amber-500 rounded-lg mb-4 flex items-center justify-center mx-auto">
+                    <BookOpen className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-3 text-white">AI Research Lab</h3>
+                  <p className="text-gray-300 text-sm mb-4">
+                    [Placeholder: Breakthrough research in artificial intelligence and machine learning]
+                  </p>
+                </div>
+                <div className="text-amber-400 font-medium text-sm">
+                  Explore Research
+                </div>
+              </div>
+            </GlareCard>
+
+            <GlareCard className="bg-gradient-to-br from-rose-900/20 to-pink-900/20">
+              <div className="p-6 h-full flex flex-col justify-between text-center">
+                <div>
+                  <div className="w-12 h-12 bg-rose-500 rounded-lg mb-4 flex items-center justify-center mx-auto">
+                    <Lock className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-3 text-white">Security Innovation</h3>
+                  <p className="text-gray-300 text-sm mb-4">
+                    [Placeholder: Next-gen cybersecurity and privacy protection solutions]
+                  </p>
+                </div>
+                <div className="text-rose-400 font-medium text-sm">
+                  Learn More
+                </div>
+              </div>
+            </GlareCard>
+
+            <GlareCard className="bg-gradient-to-br from-sky-900/20 to-blue-900/20">
+              <div className="p-6 h-full flex flex-col justify-between text-center">
+                <div>
+                  <div className="w-12 h-12 bg-sky-500 rounded-lg mb-4 flex items-center justify-center mx-auto">
+                    <Key className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-3 text-white">Blockchain Labs</h3>
+                  <p className="text-gray-300 text-sm mb-4">
+                    [Placeholder: Decentralized solutions and Web3 innovation projects]
+                  </p>
+                </div>
+                <div className="text-sky-400 font-medium text-sm">
+                  Join Beta
+                </div>
+              </div>
+            </GlareCard>
+
+            <GlareCard className="bg-gradient-to-br from-lime-900/20 to-green-900/20">
+              <div className="p-6 h-full flex flex-col justify-between text-center">
+                <div>
+                  <div className="w-12 h-12 bg-lime-500 rounded-lg mb-4 flex items-center justify-center mx-auto">
+                    <GraduationCap className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-3 text-white">Learning Platform</h3>
+                  <p className="text-gray-300 text-sm mb-4">
+                    [Placeholder: Educational resources for creative professionals and innovators]
+                  </p>
+                </div>
+                <div className="text-lime-400 font-medium text-sm">
+                  Start Learning
+                </div>
+              </div>
+            </GlareCard>
+          </div>
+        </div>
+      </section>
+
+      {/* Partners & Integrations - LogoCarousel */}
+      <section className="py-16 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Trusted by Industry Leaders
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Powering innovation for forward-thinking companies worldwide
+            </p>
+          </div>
+          
+          <div className="flex items-center justify-center py-8">
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60 hover:opacity-80 transition-opacity">
+              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
+                <span className="text-sm text-gray-400">Stripe</span>
+              </div>
+              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
+                <span className="text-sm text-gray-400">PayPal</span>
+              </div>
+              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
+                <span className="text-sm text-gray-400">OpenAI</span>
+              </div>
+              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
+                <span className="text-sm text-gray-400">Supabase</span>
+              </div>
+              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
+                <span className="text-sm text-gray-400">AWS</span>
+              </div>
+              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
+                <span className="text-sm text-gray-400">GitHub</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white mb-2">500+</div>
+              <div className="text-gray-400">Creative Businesses</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white mb-2">1M+</div>
+              <div className="text-gray-400">Transactions Processed</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-white mb-2">99.9%</div>
+              <div className="text-gray-400">Uptime Guarantee</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Built by Visionaries Timeline */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+              Built by Visionaries
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our journey of innovation and creativity - from concept to global impact
+            </p>
+          </div>
+          
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-400 to-pink-600 h-full"></div>
+            <div className="space-y-12">
+              {[
+                { year: "2020", title: "Foundation", description: "[Placeholder: The beginning of our journey - founded with a vision to revolutionize business creativity]", icon: "🚀" },
+                { year: "2021", title: "First Product Launch", description: "[Placeholder: VortexCore AI launched, transforming how businesses approach automation and decision-making]", icon: "🧠" },
+                { year: "2022", title: "Global Expansion", description: "[Placeholder: Expanded to serve creative businesses across 50+ countries with localized solutions]", icon: "🌍" },
+                { year: "2023", title: "Innovation Milestone", description: "[Placeholder: Breakthrough in AI-driven creativity tools, serving 100,000+ creative professionals]", icon: "💡" },
+                { year: "2024", title: "Future Vision", description: "[Placeholder: Pioneering the next generation of business creativity and innovation platforms]", icon: "✨" }
+              ].map((event, index) => (
+                <div key={event.year} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10">
+                      <div className="text-2xl mb-2">{event.icon}</div>
+                      <div className="text-purple-400 font-semibold text-lg">{event.year}</div>
+                      <h3 className="text-xl font-bold text-white mb-2">{event.title}</h3>
+                      <p className="text-gray-300 text-sm">{event.description}</p>
+                    </div>
+                  </div>
+                  <div className="relative z-10">
+                    <div className="w-4 h-4 bg-gradient-to-r from-purple-400 to-pink-600 rounded-full border-4 border-gray-900"></div>
+                  </div>
+                  <div className="w-1/2"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dynamic Cards Stack Demo */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+              Experience the Platform
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Interactive demos showcasing the power of our creative business solutions
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg flex items-center justify-center border border-white/10 hover:border-blue-400/50 transition-colors">
+                <div className="text-center">
+                  <BarChart3 className="w-16 h-16 text-blue-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-white">Analytics Dashboard</h3>
+                  <p className="text-gray-300">Live performance metrics</p>
+                </div>
+              </div>
+              <div className="h-64 bg-gradient-to-br from-green-500/20 to-teal-500/20 rounded-lg flex items-center justify-center border border-white/10 hover:border-green-400/50 transition-colors">
+                <div className="text-center">
+                  <Lightbulb className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-white">Smart Workflows</h3>
+                  <p className="text-gray-300">Automated creative processes</p>
+                </div>
+              </div>
+              <div className="h-64 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center border border-white/10 hover:border-purple-400/50 transition-colors">
+                <div className="text-center">
+                  <CreditCard className="w-16 h-16 text-purple-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-white">Payment Solutions</h3>
+                  <p className="text-gray-300">Integrated financial tools</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* --- End New Sections --- */}
       <Helmet>
         <title>{getPageTitle()}</title>
@@ -1005,7 +1592,8 @@ function App() {
       </Helmet>
 
       <motion.nav
-        className={`fixed w-full z-50 backdrop-blur-lg bg-primary bg-opacity-${Math.round(headerOpacity.get() * 100)}`}
+        className="fixed w-full z-50 backdrop-blur-lg bg-primary"
+        style={{ backgroundColor: headerOpacity }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
@@ -1014,7 +1602,7 @@ function App() {
                 onClick={() => handleSectionChange('home')}
                 className="text-2xl font-bold text-secondary hover:text-secondary/80 transition-colors"
               >
-                Lan Onasis
+                {t('app.name')}
               </button>
               <div className="hidden md:flex space-x-8">
                 <button
@@ -1025,31 +1613,19 @@ function App() {
                       : 'text-gray-300 hover:text-white hover:bg-white/10'
                   }`}
                 >
-                  Developers
+                  {t('navigation.developers')}
                 </button>
-                <button
-                  onClick={() => handleSectionChange('mcp')}
-                  className={`px-4 py-2 rounded-lg transition-colors ${
-                    activeSection === 'mcp'
-                      ? 'bg-secondary text-primary'
-                      : 'text-gray-300 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  MCP Connect
-                </button>
-                <a href="#vision" className="hover:text-secondary transition-colors">Our Vision</a>
-                <a href="#ecosystem" className="hover:text-secondary transition-colors">The Ecosystem</a>
-                <a href="#platform-services" className="hover:text-secondary transition-colors">Platform Services</a>
+                <a href="#ecosystem" className="hover:text-secondary transition-colors">{t('navigation.products')}</a>
                 <button
                   onClick={() => handleSectionChange('industries')}
                   className={`hover:text-secondary transition-colors ${
                     activeSection === 'industries' ? 'text-secondary' : ''
                   }`}
                 >
-                  Industries
+                  {t('navigation.industries')}
                 </button>
-                <a href="#story" className="hover:text-secondary transition-colors">Our Story</a>
-                <a href="#contact" className="hover:text-secondary transition-colors">Contact</a>
+                <a href="#platform-services" className="hover:text-secondary transition-colors">{t('navigation.services')}</a>
+                <a href="#contact" className="hover:text-secondary transition-colors">{t('navigation.contact')}</a>
               </div>
             </div>
             <div className="hidden md:flex items-center space-x-4">
@@ -1062,10 +1638,10 @@ function App() {
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
               <a href="https://dashboard.lanonasis.com/" className="btn-secondary mr-4">
-                Login
+                {t('navigation.login')}
               </a>
               <a href="https://dashboard.lanonasis.com/" className="btn-primary">
-                Sign Up Free
+                {t('navigation.signup')}
               </a>
             </div>
             <button 
@@ -1097,26 +1673,32 @@ function App() {
                     activeSection === 'home' ? 'text-secondary' : ''
                   }`}
                 >
-                  Home
+                  {t('navigation.home')}
                 </button>
-                <a href="#vision" className="block hover:text-secondary transition-colors">Our Vision</a>
-                <a href="#ecosystem" className="block hover:text-secondary transition-colors">The Ecosystem</a>
-                <a href="#platform-services" className="block hover:text-secondary transition-colors">Platform Services</a>
+                <button
+                  onClick={() => handleSectionChange('developers')}
+                  className={`block w-full text-left hover:text-secondary transition-colors ${
+                    activeSection === 'developers' ? 'text-secondary' : ''
+                  }`}
+                >
+                  {t('navigation.developers')}
+                </button>
+                <a href="#ecosystem" className="block hover:text-secondary transition-colors">Products</a>
                 <button
                   onClick={() => handleSectionChange('industries')}
                   className={`block w-full text-left hover:text-secondary transition-colors ${
                     activeSection === 'industries' ? 'text-secondary' : ''
                   }`}
                 >
-                  Industries
+                  {t('navigation.industries')}
                 </button>
-                <a href="#story" className="block hover:text-secondary transition-colors">Our Story</a>
+                <a href="#platform-services" className="block hover:text-secondary transition-colors">Services</a>
                 <a href="#contact" className="block hover:text-secondary transition-colors">Contact</a>
                 <a href="https://dashboard.lanonasis.com/" className="btn-secondary w-full mb-4 text-center block">
-                  Login
+                  {t('navigation.login')}
                 </a>
                 <a href="https://dashboard.lanonasis.com/" className="btn-primary w-full text-center block">
-                  Sign Up Free
+                  {t('navigation.signup')}
                 </a>
               </div>
             </motion.div>
@@ -1130,9 +1712,9 @@ function App() {
         <div className="max-w-7xl mx-auto container-padding">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Lan Onasis</h3>
+              <h3 className="text-xl font-bold mb-4">{t('app.name')}</h3>
               <p className="text-gray-400 mb-4">
-                Empowering African businesses through innovative technology solutions across multiple industries.
+                {t('footer.description')}
               </p>
               <div className="flex space-x-4">
                 <a 
@@ -1151,7 +1733,7 @@ function App() {
                   className="hover:text-secondary transition-colors"
                   aria-label="Follow us on Twitter"
                 >
-                  <Twitter size={24} />
+                  <TwitterIcon size={24} />
                 </a>
                 <a 
                   href="https://facebook.com/Lan-Onasis" 
@@ -1174,7 +1756,7 @@ function App() {
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Products</h4>
+              <h4 className="font-semibold mb-4">{t('footer.products_title')}</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-secondary transition-colors">VortexCore AI</a></li>
                 <li><a href="#" className="hover:text-secondary transition-colors">VortexComply</a></li>
@@ -1184,7 +1766,7 @@ function App() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Industries</h4>
+              <h4 className="font-semibold mb-4">{t('footer.industries_title')}</h4>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-secondary transition-colors">Financial Services</a></li>
                 <li><a href="#" className="hover:text-secondary transition-colors">SMEs & Business</a></li>
@@ -1196,7 +1778,7 @@ function App() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Get in Touch</h4>
+              <h4 className="font-semibold mb-4">{t('footer.get_in_touch')}</h4>
               <div className="space-y-4">
                 <p className="text-gray-400">
                   <a 
@@ -1217,22 +1799,22 @@ function App() {
                 <form className="space-y-4">
                   <input
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder={t('footer.email_placeholder')}
                     className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 focus:outline-none focus:border-secondary transition-colors"
                   />
                   <button type="submit" className="btn-primary w-full">
-                    Subscribe
+                    {t('navigation.subscribe')}
                   </button>
                 </form>
               </div>
             </div>
           </div>
           <div className="mt-16 pt-8 border-t border-white/10 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Lan Onasis. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} {t('app.name')}. {t('footer.copyright')}</p>
             <div className="mt-4 space-x-4 text-sm">
-              <a href="#" className="hover:text-secondary transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-secondary transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-secondary transition-colors">Cookie Policy</a>
+              <a href="#" className="hover:text-secondary transition-colors">{t('footer.privacy_policy')}</a>
+              <a href="#" className="hover:text-secondary transition-colors">{t('footer.terms_of_service')}</a>
+              <a href="#" className="hover:text-secondary transition-colors">{t('footer.cookie_policy')}</a>
             </div>
           </div>
         </div>

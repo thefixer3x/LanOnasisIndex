@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '../components/ui/button';
 import { ArrowRight, Zap, Shield, DollarSign, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './hero-section.css';
 
 interface HeroSectionProps {
@@ -11,18 +12,19 @@ interface HeroSectionProps {
 }
 
 const LanOnasisHero: React.FC<HeroSectionProps> = ({
-  companyName = "Lan Onasis",
-  platformName = "VortexCore AI",
-  tagline = "Powering Africa's Digital Future",
-  description = "Revolutionary AI platform driving innovation across compliance tech, financial services, and digital transformation throughout the African tech ecosystem."
+  companyName,
+  platformName,
+  tagline,
+  description
 }) => {
+  const { t } = useTranslation();
   const [currentFeature, setCurrentFeature] = useState(0);
   
   const features = [
-    { icon: Zap, text: "VortexCore AI Platform" },
-    { icon: Shield, text: "Compliance Technology" },
-    { icon: DollarSign, text: "Financial Services" },
-    { icon: Globe, text: "Digital Ecosystem" }
+    { icon: Zap, text: t('hero_section.features.vortexcore_ai') },
+    { icon: Shield, text: t('hero_section.features.compliance_tech') },
+    { icon: DollarSign, text: t('hero_section.features.financial_services') },
+    { icon: Globe, text: t('hero_section.features.digital_ecosystem') }
   ];
 
   useEffect(() => {
@@ -86,24 +88,24 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
             {/* Company Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 animate-fadeInUp">
               <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-              <span className="text-sm font-medium text-blue-400">{companyName}</span>
+              <span className="text-sm font-medium text-blue-400">{companyName || t('app.name')}</span>
             </div>
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp delay-200">
-              <span className="block mb-2">Transforming</span>
-              <span className="gradient-text block">Africa's Tech</span>
-              <span className="block">Ecosystem</span>
+              <span className="block mb-2">{t('hero_section.transforming')}</span>
+              <span className="gradient-text block">{t('hero_section.africas_tech')}</span>
+              <span className="block">{t('hero_section.ecosystem')}</span>
             </h1>
 
             {/* Tagline */}
             <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fadeInUp delay-400">
-              {tagline}
+              {tagline || t('hero_section.tagline')}
             </p>
 
             {/* Description */}
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed animate-fadeInUp delay-600">
-              {description}
+              {description || t('hero_section.description')}
             </p>
 
             {/* Feature Showcase */}
@@ -134,7 +136,7 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
                 className="group relative px-8 py-6 text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-full glow-effect hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
               >
                 <span className="flex items-center gap-2">
-                  Explore {platformName}
+                  {t('hero_section.explore_platform', { platformName: platformName || 'VortexCore AI' })}
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </Button>
@@ -144,7 +146,7 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
                 size="lg"
                 className="px-8 py-6 text-lg font-semibold rounded-full border-blue-500/30 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/50 transition-all duration-300"
               >
-                Learn More
+                {t('hero_section.learn_more')}
               </Button>
             </div>
 
@@ -152,15 +154,15 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 animate-fadeInUp delay-1200">
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400 mb-2">50+</div>
-                <div className="text-muted-foreground">African Markets</div>
+                <div className="text-muted-foreground">{t('hero_section.stats.african_markets')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400 mb-2">1M+</div>
-                <div className="text-muted-foreground">Transactions Processed</div>
+                <div className="text-muted-foreground">{t('hero_section.stats.transactions_processed')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400 mb-2">99.9%</div>
-                <div className="text-muted-foreground">Uptime Guarantee</div>
+                <div className="text-muted-foreground">{t('hero_section.stats.uptime_guarantee')}</div>
               </div>
             </div>
           </div>

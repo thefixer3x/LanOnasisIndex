@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // Simple Button component for standalone deployment
 const Button: React.FC<{
@@ -27,9 +28,10 @@ interface ConnectionStatus {
 }
 
 export const MCPConnection: React.FC = () => {
+  const { t } = useTranslation();
   const [connectionStatus, setConnectionStatus] = useState<ConnectionStatus>({
     status: 'disconnected',
-    message: 'Not connected'
+    message: t('mcp_connection.not_connected')
   });
   const [apiKey, setApiKey] = useState('');
   const [showInstructions, setShowInstructions] = useState(false);
@@ -122,23 +124,23 @@ export const MCPConnection: React.FC = () => {
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           {/* Header */}
           <div className="bg-gradient-to-r from-gray-800 to-gray-600 text-white p-8 text-center">
-            <h1 className="text-4xl font-bold mb-2">🔗 MCP Remote Connection</h1>
-            <p className="text-xl opacity-90">Connect external MCP clients to your Lanonasis Memory Service</p>
+            <h1 className="text-4xl font-bold mb-2">🔗 {t('mcp_connection.title')}</h1>
+            <p className="text-xl opacity-90">{t('mcp_connection.subtitle')}</p>
           </div>
 
           {/* Content */}
           <div className="p-8">
             {/* API Key Section */}
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">1. Get Your API Key</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">{t('mcp_connection.step1_title')}</h2>
               <p className="text-gray-600 mb-4">
-                First, you need an API key from your Lanonasis dashboard to authenticate MCP connections.
+                {t('mcp_connection.step1_description')}
               </p>
               <Button 
                 onClick={getApiKey}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium"
               >
-                Get API Key from Dashboard →
+                {t('mcp_connection.get_api_key')}
               </Button>
             </div>
 

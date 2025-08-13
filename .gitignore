@@ -76,3 +76,4 @@ temp/
 *.swp
 *.swo
 *~
+i18n.cache
