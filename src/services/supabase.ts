@@ -1,4 +1,26 @@
-import { createClient, Session } from '@supabase/supabase-js';
+import { createClient, Session, AuthError } from '@supabase/supabase-js';
+
+// Error handling utility to prevent leaking sensitive error details
+const handleAuthError = (error: AuthError | null) => {
+  if (!error) return null;
+  
+  // Log the actual error for debugging but return a generic message
+  console.error('Auth error:', error);
+  
+  // Return generic messages based on error type
+  if (error.message.includes('Email not confirmed')) {
+    return 'Please check your email to confirm your account';
+  } else if (error.message.includes('Invalid login credentials')) {
+    return 'Invalid email or password';
+  } else if (error.message.includes('Email already registered')) {
+    return 'An account with this email already exists';
+  } else if (error.message.includes('rate limit')) {
+    return 'Too many attempts. Please try again later';
+  }
+  
+  // Default generic message
+  return 'An authentication error occurred. Please try again later.';
+};
 
 // Shared Supabase instance across all platforms
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
@@ -22,7 +44,10 @@ export const signIn = async (email: string, password: string) => {
     email,
     password
   });
-  return { data, error };
+  return { 
+    data, 
+    error: error ? { message: handleAuthError(error) } : null
+  };
 };
 
 export const signUp = async (email: string, password: string) => {
@@ -30,17 +55,25 @@ export const signUp = async (email: string, password: string) => {
     email,
     password
   });
-  return { data, error };
+  return { 
+    data, 
+    error: error ? { message: handleAuthError(error) } : null
+  };
 };
 
 export const signOut = async () => {
   const { error } = await supabase.auth.signOut();
-  return { error };
+  return { 
+    error: error ? { message: handleAuthError(error) } : null
+  };
 };
 
 export const getCurrentUser = async () => {
   const { data: { user }, error } = await supabase.auth.getUser();
-  return { user, error };
+  return { 
+    user, 
+    error: error ? { message: handleAuthError(error) } : null
+  };
 };
 
 export const onAuthStateChange = (callback: (event: string, session: Session | null) => void) => {

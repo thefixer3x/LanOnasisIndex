@@ -94,8 +94,22 @@ export const MCPConnection: React.FC = () => {
       }
     };
 
-    navigator.clipboard.writeText(JSON.stringify(config, null, 2));
-    alert('Claude Desktop configuration copied to clipboard!');
+    navigator.clipboard.writeText(JSON.stringify(config, null, 2))
+      .then(() => {
+        // Use a toast notification instead of alert
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-4 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+        toast.textContent = 'Configuration copied to clipboard!';
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+      })
+      .catch(() => {
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-4 right-4 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+        toast.textContent = 'Failed to copy to clipboard';
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+      });
   };
 
   const getApiKey = () => {
@@ -188,7 +202,7 @@ export const MCPConnection: React.FC = () => {
                         "command": "npx",
                         "args": ["-y", "@lanonasis/cli", "mcp", "start"],
                         "env": {
-                          "LANONASIS_API_KEY": apiKey || "your-api-key-here"
+                          "LANONASIS_API_KEY": "<YOUR_API_KEY>"
                         }
                       }
                     }

@@ -2,22 +2,24 @@ name: Lingo.dev i18n - LAN Onasis Landing
 
 on:
   workflow_dispatch:
+    inputs:
+      force_sync:
+        description: 'Force sync all translations'
+        required: false
+        type: boolean
+        default: false
   push:
-    branches:
-      - main
-      - develop
-      - feat/*
+    branches: [main]
     paths:
-      - 'locales/en.json'
-      - 'i18n.json'
-      - 'src/**'
+      - 'apps/lanonasis-index/locales/**'
+      - 'apps/lanonasis-index/i18n.json'
+      - 'apps/lanonasis-index/src/**'
   pull_request:
-    branches:
-      - main
-      - develop
+    branches: [main]
     paths:
-      - 'locales/en.json'
-      - 'i18n.json'
+      - 'apps/lanonasis-index/locales/**'
+      - 'apps/lanonasis-index/i18n.json'
+      - 'apps/lanonasis-index/src/**'
 
 permissions:
   contents: write
@@ -27,6 +29,9 @@ jobs:
   i18n:
     name: Generate Translations
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/lanonasis-index
     steps:
       - uses: actions/checkout@v4
       

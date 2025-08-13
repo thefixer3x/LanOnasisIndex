@@ -104,50 +104,56 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(el);
     });
 
-    // CTA Button Actions
+    // CTA Button Actions using data-action attributes
     const ctaButtons = document.querySelectorAll('.btn--primary');
-    ctaButtons.forEach(button => {
-        button.addEventListener('click', function (e) {
-            const buttonText = this.textContent.trim();
-
-            // Handle different CTA actions
-            switch (buttonText) {
-                case 'Get Started':
-                case 'Start Free Trial':
-                    handleGetStarted();
-                    break;
-                case 'Request Demo':
-                    handleRequestDemo();
-                    break;
-                case 'Contact Sales':
-                case 'Contact Us':
-                    handleContactSales();
-                    break;
-                default:
-                    handleGetStarted();
-            }
+    if (ctaButtons && ctaButtons.length > 0) {
+        ctaButtons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                // Get action from data attribute or fallback to text content
+                const action = this.dataset.action || this.textContent.trim();
+                
+                // Handle different CTA actions
+                switch (action) {
+                    case 'get-started':
+                    case 'start-trial':
+                        handleGetStarted();
+                        break;
+                    case 'request-demo':
+                        handleRequestDemo();
+                        break;
+                    case 'contact-sales':
+                    case 'contact-us':
+                        handleContactSales();
+                        break;
+                    default:
+                        handleGetStarted();
+                }
+            });
         });
-    });
+    }
 
-    // Outline button actions
+    // Outline button actions using data-action attributes
     const outlineButtons = document.querySelectorAll('.btn--outline');
-    outlineButtons.forEach(button => {
-        button.addEventListener('click', function (e) {
-            const buttonText = this.textContent.trim();
-
-            switch (buttonText) {
-                case 'Learn More':
-                    handleLearnMore();
-                    break;
-                case 'Contact Sales':
-                case 'Contact Us':
-                    handleContactSales();
-                    break;
-                default:
-                    handleGetStarted();
-            }
+    if (outlineButtons && outlineButtons.length > 0) {
+        outlineButtons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                // Get action from data attribute or fallback to text content
+                const action = this.dataset.action || this.textContent.trim();
+                
+                switch (action) {
+                    case 'learn-more':
+                        handleLearnMore();
+                        break;
+                    case 'contact-sales':
+                    case 'contact-us':
+                        handleContactSales();
+                        break;
+                    default:
+                        handleGetStarted();
+                }
+            });
         });
-    });
+    }
 
     // CTA Handler Functions
     function handleGetStarted() {
@@ -174,7 +180,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // In a real application, this would open a form or redirect to a demo page
         setTimeout(() => {
-            alert('Thank you for your interest! Please email us at demo@lanonasis.com or call +234 (0) 123 456 789 to schedule your personalized demo.');
+            // Use notification system instead of alert for better UX
+            showNotification('Thank you for your interest! Please email us at demo@lanonasis.com to schedule your personalized demo.', 'info');
         }, 1000);
     }
 
@@ -212,13 +219,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Notification System
     function showNotification(message, type = 'info') {
+        if (!message || !document.body) return;
+        
         // Remove existing notifications
         const existingNotifications = document.querySelectorAll('.notification');
-        existingNotifications.forEach(notification => notification.remove());
+        if (existingNotifications) {
+            existingNotifications.forEach(notification => notification.remove());
+        }
 
         // Create notification element
         const notification = document.createElement('div');
         notification.className = `notification notification--${type}`;
+        
+        // Fix CSS template string - use proper variable interpolation
+        const borderColor = type === 'success' ? 'success' : 
+                           type === 'info' ? 'info' : 
+                           type === 'warning' ? 'warning' : 'primary';
+                           
         notification.style.cssText = `
             position: fixed;
             top: 100px;
@@ -227,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
             color: var(--color-text);
             padding: 16px 24px;
             border-radius: 8px;
-            border-left: 4px solid var(--color-${type === 'success' ? 'success' : info === 'info' ? 'info' : 'primary'});
+            border-left: 4px solid var(--color-${borderColor});
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             backdrop-filter: blur(10px);
             z-index: 1001;
@@ -241,32 +258,45 @@ document.addEventListener('DOMContentLoaded', function () {
         notification.textContent = message;
         document.body.appendChild(notification);
 
-        // Animate in
-        setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
-        }, 100);
+        // Add notification to DOM
+        document.body.appendChild(notification);
+        
+        // Animate in (use requestAnimationFrame for better performance)
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+        });
 
         // Auto remove after 5 seconds
-        setTimeout(() => {
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
+        const removeTimeout = setTimeout(() => {
+            if (notification) {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 300);
+            }
         }, 5000);
 
         // Click to dismiss
         notification.addEventListener('click', () => {
+            clearTimeout(removeTimeout);
             notification.style.transform = 'translateX(100%)';
             setTimeout(() => {
-                notification.remove();
+                if (notification.parentNode) {
+                    notification.remove();
+                }
             }, 300);
         });
     }
 
     // Platform cards hover effects
     const platformCards = document.querySelectorAll('.platform-card');
-    platformCards.forEach(card => {
-        card.addEventListener('mouseenter', function () {
+    if (platformCards && platformCards.length > 0) {
+        platformCards.forEach(card => {
+            card.addEventListener('mouseenter', function () {
             this.style.transform = 'translateY(-6px) scale(1.02)';
         });
 
@@ -321,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Trigger counter animation when hero section is visible
     const heroSection = document.querySelector('.hero');
-    if (heroSection) {
+    if (heroSection && 'IntersectionObserver' in window) {
         const heroObserver = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

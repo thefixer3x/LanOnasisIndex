@@ -161,11 +161,14 @@ async function runTests() {
       console.log(`SENTRY_ORG=${SENTRY_ORG}`);
       console.log(`SENTRY_PROJECT=${SENTRY_PROJECT}`);
       console.log(`SENTRY_AUTH_TOKEN=<your-token>`);
+      process.exit(0);
     } else {
       console.log('\n❌ Some tests failed. Check the configuration above.');
+      process.exit(1);
     }
   } catch (error) {
     console.error('\n❌ Test failed:', error.message);
+    process.exit(1);
   }
 }
 

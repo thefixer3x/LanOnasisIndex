@@ -16,7 +16,7 @@ Crawl-delay: 1
 Sitemap: https://lanonasis.com/sitemap.xml
 
 # Allow social media crawlers for better social sharing
-User-agent: facebookexternalhit/*
+User-agent: facebookexternalhit
 Allow: /
 
 User-agent: Twitterbot

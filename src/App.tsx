@@ -74,9 +74,15 @@ function App() {
         if (!vantaRef.current || vantaEffect) return;
         
         // Dynamically import Vanta to handle potential loading issues
-        const NET = await import('vanta/dist/vanta.net.min') as any;
+        // Using type assertion for the dynamic import
+        // This is necessary because the actual runtime structure of the module
+        // doesn't perfectly match the TypeScript definition
+        const VANTA = await import('vanta/dist/vanta.net.min');
         
-        effect = NET.default.default({
+        // Access the default export and initialize the effect
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const VantaNet = (VANTA as any).default.default;
+        effect = VantaNet({
           el: vantaRef.current,
           THREE,
           color: 0x00b4ff,
@@ -116,20 +122,47 @@ function App() {
     setIsMobileMenuOpen(false);
   };
 
-  // Handle MCP connection route
-  if (window.location.pathname === '/mcp/connect' || activeSection === 'mcp') {
-    return <MCPConnection />;
-  }
-
   // Handle SSE auth route for registered users
-  if (window.location.pathname === '/sse') {
-    // Quick context-aware auth for existing users
-    React.useEffect(() => {
+  useEffect(() => {
+    if (window.location.pathname === '/sse') {
       const handleSSEAuth = () => {
-        // Check if user has existing context/session
-        const hasContext = localStorage.getItem('lanonasis_context') || 
-                           sessionStorage.getItem('user_session') ||
-                           document.cookie.includes('lanonasis_auth');
+        // Check if user has existing context/session with robust parsing
+        let hasContext = false;
+        
+        try {
+          // Safely check localStorage
+          const contextData = localStorage.getItem('lanonasis_context');
+          if (contextData) {
+            // Try to parse if it's JSON, otherwise treat as truthy
+            try {
+              const parsed = JSON.parse(contextData);
+              hasContext = Boolean(parsed);
+            } catch {
+              hasContext = Boolean(contextData);
+            }
+          }
+          
+          // Check sessionStorage if not found
+          if (!hasContext) {
+            const sessionData = sessionStorage.getItem('user_session');
+            if (sessionData) {
+              try {
+                const parsed = JSON.parse(sessionData);
+                hasContext = Boolean(parsed);
+              } catch {
+                hasContext = Boolean(sessionData);
+              }
+            }
+          }
+          
+          // Check cookies as fallback
+          if (!hasContext) {
+            hasContext = document.cookie.includes('lanonasis_auth');
+          }
+        } catch (error) {
+          console.error('Error checking auth context:', error);
+          hasContext = false;
+        }
         
         if (hasContext) {
           // Direct route to dashboard for registered users
@@ -142,8 +175,16 @@ function App() {
       
       // Small delay to show loading state
       setTimeout(handleSSEAuth, 800);
-    }, []);
+    }
+  }, []);
 
+  // Handle MCP connection route
+  if (window.location.pathname === '/mcp/connect' || activeSection === 'mcp') {
+    return <MCPConnection />;
+  }
+
+  // Handle SSE auth route for registered users
+  if (window.location.pathname === '/sse') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-primary via-primary-dark to-black flex items-center justify-center">
         <div className="text-center">
@@ -160,8 +201,8 @@ function App() {
           
           <div className="flex items-center justify-center space-x-2 mb-6">
             <div className="w-2 h-2 bg-secondary rounded-full animate-bounce"></div>
-            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce delay-100"></div>
+            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce delay-200"></div>
           </div>
           
           <p className="text-sm text-gray-500">
@@ -607,6 +648,7 @@ function App() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-8">Our Vision</h2>
                     <ul className="space-y-4 mb-8">
                       {visionPoints.map((point, index) => (
+<<<<<<< Updated upstream
                         <li key={index}>
                           <motion.span
                             initial={{ opacity: 0, x: -20 }}
@@ -618,6 +660,18 @@ function App() {
                             <span className="text-lg">{point}</span>
                           </motion.span>
                         </li>
+=======
+                        <motion.li
+                          key={point.slice(0, 20)}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          className="flex items-start"
+                        >
+                            <span className="text-primary mr-3 mt-1" aria-hidden="true">▶</span>
+                            {point}
+                        </motion.li>
+>>>>>>> Stashed changes
                       ))}
                     </ul>
                     <p className="text-gray-400">

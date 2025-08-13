@@ -179,8 +179,47 @@ This plan outlines the steps to enhance the lanonasis-index landing page to show
 ## Rollback Plan
 
 If issues arise during implementation:
-1. Revert to feature/ui-refinements branch
-2. Restore previous component versions
-3. Remove new routes and navigation links
-4. Revert repository sync script changes
-5. Document issues and adjust implementation approach
+
+### Git Rollback
+```bash
+# Revert to previous branch
+git checkout main
+git branch -D feature/update-landing-page
+git fetch origin
+git reset --hard origin/main
+```
+
+### Component Rollback
+1. Remove new component files:
+   - `src/components/PlatformServices.tsx`
+   - `src/components/MCPConnection.tsx`
+2. Restore original routing in `src/App.tsx`
+3. Verify imports are cleaned up
+4. Run `bun run lint` to check for issues
+
+### Deployment Rollback
+```bash
+# Trigger previous deployment
+netlify deploy --prod --dir=dist-backup
+# Or revert via Netlify UI to previous deployment
+# Validate staging environment
+curl -I https://staging.lanonasis.com
+# Rollback DNS/CDN if needed via provider dashboard
+```
+
+### Verification Checks
+```bash
+# Run full test suite
+bun test
+# Run smoke tests
+bun run test:e2e
+# Run linters
+bun run lint
+# Compare performance metrics
+lighthouse https://lanonasis.com --output=json
+```
+
+### Documentation
+- Create issue ticket with rollback reason
+- Document in CHANGELOG.md
+- Update project board status links
