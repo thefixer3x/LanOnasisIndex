@@ -98,10 +98,6 @@ export function CardTransformed({
     }
   }, [calculatePosition])
 
-  // Set CSS variables using React's style object
-  // This is a valid approach to set CSS variables since they aren't "styles" directly
-  // but custom properties that the CSS file uses for styling
-  // Update element properties with useEffect instead of inline styles
   React.useEffect(() => {
     if (card.current) {
       card.current.style.setProperty('--card-transform', transformStyle);
