@@ -77,62 +77,60 @@ function getCardVariant(dark = true) {
 
 export function Testimonials() {
   return (
-    <section className={getSectionClass(true)}>
-      <div>
-        <h2 className="text-center text-4xl font-semibold">Client Testimonials</h2>
-        <p className="mx-auto mt-2 max-w-lg text-center text-sm text-gray-300">
-          Hear from our partners across Africa's financial and technology sectors
-        </p>
-      </div>
-      <ContainerScroll className="container h-[300vh]">
-        <div className="sticky left-0 top-0 h-svh w-full py-12">
-          <CardsContainer className="mx-auto size-full h-[450px] w-[350px]">
-            {TESTIMONIALS.map((testimonial, index) => (
-              <CardTransformed
-                arrayLength={TESTIMONIALS.length}
-                key={testimonial.id}
-                variant={getCardVariant(true)}
-                index={index + 2}
-                role="article"
-                aria-labelledby={`card-${testimonial.id}-title`}
-                aria-describedby={`card-${testimonial.id}-content`}
-              >
-                <div className="flex flex-col items-center space-y-4 text-center">
+    <section className="py-20 bg-gradient-to-b from-slate-900 to-black">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+            Client Testimonials
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Hear from our partners across Africa's financial and technology sectors
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {TESTIMONIALS.map((testimonial, index) => (
+            <div
+              key={testimonial.id}
+              className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-8 border border-slate-700 hover:border-slate-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10"
+            >
+              <div className="flex items-center mb-6">
+                <Avatar className="w-16 h-16 border-2 border-slate-600">
+                  <AvatarImage
+                    src={testimonial.avatarUrl}
+                    alt={`Portrait of ${testimonial.name}`}
+                    className="object-cover"
+                  />
+                  <AvatarFallback className="bg-slate-700 text-white text-lg font-semibold">
+                    {testimonial.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </AvatarFallback>
+                </Avatar>
+                <div className="ml-4">
+                  <h3 className="text-xl font-semibold text-white">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-blue-400 font-medium">
+                    {testimonial.profession}
+                  </p>
+                </div>
+                <div className="ml-auto">
                   <ReviewStars
-                    className={getReviewStarsClass(true)}
+                    className="text-yellow-400"
                     rating={testimonial.rating}
                   />
-                  <div className={`mx-auto w-4/5 text-lg ${getTextClass(true)}`}>
-                    <blockquote cite="#">{testimonial.description}</blockquote>
-                  </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Avatar className={getAvatarClass(true)}>
-                    <AvatarImage
-                      src={testimonial.avatarUrl}
-                      alt={`Portrait of ${testimonial.name}`}
-                    />
-                    <AvatarFallback>
-                      {testimonial.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <span className="block text-lg font-semibold tracking-tight md:text-xl">
-                      {testimonial.name}
-                    </span>
-                    <span className="block text-sm text-gray-400">
-                      {testimonial.profession}
-                    </span>
-                  </div>
-                </div>
-              </CardTransformed>
-            ))}
-          </CardsContainer>
+              </div>
+              
+              <blockquote className="text-gray-300 leading-relaxed text-lg italic">
+                "{testimonial.description}"
+              </blockquote>
+            </div>
+          ))}
         </div>
-      </ContainerScroll>
+      </div>
     </section>
   );
 }

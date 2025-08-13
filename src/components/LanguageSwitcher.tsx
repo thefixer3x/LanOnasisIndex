@@ -61,7 +61,7 @@ export const LanguageSwitcher: React.FC = () => {
       <button
         id={buttonId}
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-200"
+        className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-200 shadow-md hover:shadow-lg"
         aria-label="Select Language"
         aria-haspopup="true"
         aria-expanded={isOpen ? true : false}
@@ -93,7 +93,7 @@ export const LanguageSwitcher: React.FC = () => {
             id={menuId}
             role="menu"
             aria-labelledby={buttonId}
-            className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 z-50 overflow-hidden"
+            className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 z-[100] overflow-hidden"
           >
             <div className="py-2" role="presentation">
               {languages.map((lang) => (

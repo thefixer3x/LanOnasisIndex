@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Terminal, Rocket, Zap, Globe, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';

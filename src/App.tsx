@@ -51,11 +51,11 @@ import { LanguageSwitcher } from './components/LanguageSwitcher';
 import MCPConnection from './components/MCPConnection';
 import Developers from './components/Developers';
 
-// Simple GlareCard component (inline)
+// Responsive GlareCard component
 const GlareCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   return (
-    <div className={`relative isolate w-[320px] [aspect-ratio:17/21] ${className}`}>
-      <div className="h-full rounded-lg border border-slate-800 bg-slate-950 overflow-hidden hover:border-slate-700 transition-colors">
+    <div className={`relative isolate w-full max-w-sm mx-auto min-h-[400px] ${className}`}>
+      <div className="h-full rounded-lg border border-slate-800 bg-slate-950/80 backdrop-blur-sm overflow-hidden hover:border-slate-700 hover:bg-slate-900/80 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
         {children}
       </div>
     </div>
@@ -1148,7 +1148,7 @@ function App() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <GlareCard className="bg-gradient-to-br from-blue-900/20 to-purple-900/20">
               <div className="p-8 h-full flex flex-col justify-between">
                 <div>
@@ -1157,7 +1157,7 @@ function App() {
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-white">VortexCore AI</h3>
                   <p className="text-gray-300 mb-4">
-                    [Placeholder: Revolutionary AI platform that transforms how businesses operate and make decisions]
+                    Intelligent AI platform that automates compliance, streamlines operations, and delivers actionable insights for African businesses.
                   </p>
                 </div>
                 <div className="flex items-center text-blue-400 font-medium">
@@ -1174,7 +1174,7 @@ function App() {
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-white">VortexPay</h3>
                   <p className="text-gray-300 mb-4">
-                    [Placeholder: Next-generation payment solutions for modern businesses and creative entrepreneurs]
+                    Instant B2B payments and vendor disbursements with intelligent routing and multi-currency support across Africa.
                   </p>
                 </div>
                 <div className="flex items-center text-green-400 font-medium">
@@ -1191,7 +1191,7 @@ function App() {
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-white">BizGenie</h3>
                   <p className="text-gray-300 mb-4">
-                    [Placeholder: Creative business automation and workflow optimization for innovative minds]
+                    AI-powered business intelligence providing SME insights, cash flow forecasting, and automated financial guidance.
                   </p>
                 </div>
                 <div className="flex items-center text-purple-400 font-medium">
@@ -1208,7 +1208,7 @@ function App() {
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-white">VortexComply</h3>
                   <p className="text-gray-300 mb-4">
-                    [Placeholder: Smart compliance and risk management for forward-thinking organizations]
+                    Automated KYC, KYB, and AML compliance solutions ensuring regulatory adherence across African financial markets.
                   </p>
                 </div>
                 <div className="flex items-center text-orange-400 font-medium">
@@ -1223,9 +1223,9 @@ function App() {
                   <div className="w-12 h-12 bg-cyan-500 rounded-lg mb-4 flex items-center justify-center">
                     <BarChart3 className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">VortexRisk</h3>
+                  <h3 className="text-xl font-bold mb-3 text-white">RiskGPT</h3>
                   <p className="text-gray-300 mb-4">
-                    [Placeholder: Advanced risk assessment and mitigation tools for strategic decision-making]
+                    AI-driven risk assessment and real-time monitoring with predictive analytics for proactive business protection.
                   </p>
                 </div>
                 <div className="flex items-center text-cyan-400 font-medium">
@@ -1240,9 +1240,9 @@ function App() {
                   <div className="w-12 h-12 bg-indigo-500 rounded-lg mb-4 flex items-center justify-center">
                     <Code2 className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">Developer Hub</h3>
+                  <h3 className="text-xl font-bold mb-3 text-white">API Gateway</h3>
                   <p className="text-gray-300 mb-4">
-                    [Placeholder: Comprehensive API ecosystem and developer tools for creative integrations]
+                    Comprehensive REST and GraphQL APIs with SDKs, webhooks, and real-time integrations for seamless development.
                   </p>
                 </div>
                 <div className="flex items-center text-indigo-400 font-medium">
@@ -1266,7 +1266,7 @@ function App() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             <GlareCard className="bg-gradient-to-br from-emerald-900/20 to-teal-900/20">
               <div className="p-8 h-full flex flex-col justify-between">
                 <div>
@@ -1275,7 +1275,7 @@ function App() {
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-white">Personal AI Assistant</h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    [Placeholder: Your personal AI companion for productivity, creativity, and decision-making. Tailored specifically for individual needs and creative workflows]
+                    Your intelligent companion for productivity, financial planning, and business insights. Personalized AI that learns and adapts to your entrepreneurial journey.
                   </p>
                 </div>
                 <div className="space-y-3">
@@ -1306,7 +1306,7 @@ function App() {
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-white">Creator Toolkit</h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    [Placeholder: Comprehensive suite of tools for content creators, designers, and digital entrepreneurs to streamline their creative process]
+                    Professional suite of financial tools, payment processing, and compliance automation designed specifically for freelancers and creative entrepreneurs.
                   </p>
                 </div>
                 <div className="space-y-3">
@@ -1344,7 +1344,7 @@ function App() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             <GlareCard className="bg-gradient-to-br from-amber-900/20 to-orange-900/20">
               <div className="p-6 h-full flex flex-col justify-between text-center">
                 <div>
@@ -1353,7 +1353,7 @@ function App() {
                   </div>
                   <h3 className="text-lg font-bold mb-3 text-white">AI Research Lab</h3>
                   <p className="text-gray-300 text-sm mb-4">
-                    [Placeholder: Breakthrough research in artificial intelligence and machine learning]
+                    Advanced AI research in natural language processing, computer vision, and predictive analytics for African markets.
                   </p>
                 </div>
                 <div className="text-amber-400 font-medium text-sm">
@@ -1370,7 +1370,7 @@ function App() {
                   </div>
                   <h3 className="text-lg font-bold mb-3 text-white">Security Innovation</h3>
                   <p className="text-gray-300 text-sm mb-4">
-                    [Placeholder: Next-gen cybersecurity and privacy protection solutions]
+                    Zero-trust security architecture, encrypted communications, and privacy-preserving financial technologies.
                   </p>
                 </div>
                 <div className="text-rose-400 font-medium text-sm">
@@ -1387,7 +1387,7 @@ function App() {
                   </div>
                   <h3 className="text-lg font-bold mb-3 text-white">Blockchain Labs</h3>
                   <p className="text-gray-300 text-sm mb-4">
-                    [Placeholder: Decentralized solutions and Web3 innovation projects]
+                    Blockchain research for cross-border payments, smart contracts, and decentralized financial infrastructure.
                   </p>
                 </div>
                 <div className="text-sky-400 font-medium text-sm">
@@ -1404,7 +1404,7 @@ function App() {
                   </div>
                   <h3 className="text-lg font-bold mb-3 text-white">Learning Platform</h3>
                   <p className="text-gray-300 text-sm mb-4">
-                    [Placeholder: Educational resources for creative professionals and innovators]
+                    Fintech education, API documentation, developer tutorials, and business intelligence training programs.
                   </p>
                 </div>
                 <div className="text-lime-400 font-medium text-sm">
@@ -1416,57 +1416,6 @@ function App() {
         </div>
       </section>
 
-      {/* Partners & Integrations - LogoCarousel */}
-      <section className="py-16 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Trusted by Industry Leaders
-            </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              Powering innovation for forward-thinking companies worldwide
-            </p>
-          </div>
-          
-          <div className="flex items-center justify-center py-8">
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60 hover:opacity-80 transition-opacity">
-              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
-                <span className="text-sm text-gray-400">Stripe</span>
-              </div>
-              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
-                <span className="text-sm text-gray-400">PayPal</span>
-              </div>
-              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
-                <span className="text-sm text-gray-400">OpenAI</span>
-              </div>
-              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
-                <span className="text-sm text-gray-400">Supabase</span>
-              </div>
-              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
-                <span className="text-sm text-gray-400">AWS</span>
-              </div>
-              <div className="w-24 h-12 bg-white/10 rounded flex items-center justify-center">
-                <span className="text-sm text-gray-400">GitHub</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">500+</div>
-              <div className="text-gray-400">Creative Businesses</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">1M+</div>
-              <div className="text-gray-400">Transactions Processed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white mb-2">99.9%</div>
-              <div className="text-gray-400">Uptime Guarantee</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Built by Visionaries Timeline */}
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
