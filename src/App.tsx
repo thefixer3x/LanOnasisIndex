@@ -46,6 +46,9 @@ import { LogoCarouselDemo } from './components/LogoCarouselDemo';
 import { PricingTable } from './components/PricingTable';
 import { Testimonials } from './components/Testimonials';
 import { CallToAction } from './components/CallToAction';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
+import MCPConnection from './components/MCPConnection';
+import Developers from './components/Developers';
 
 const Timeline = React.lazy(() => import('./components/Timeline'));
 
@@ -389,6 +392,8 @@ function App() {
 
   const renderContent = () => {
     switch (activeSection) {
+      case 'developers':
+        return <Developers />;
       case 'industries':
         return (
           <section className="min-h-screen pt-20">
