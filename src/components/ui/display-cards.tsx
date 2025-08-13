@@ -23,7 +23,7 @@ interface DisplayCardsProps {
   cards: CardProps[];
 }
 
-export default function DisplayCards({ cards }: DisplayCardsProps) {
+export function DisplayCards({ cards }: DisplayCardsProps) {
   return (
     <div className="grid grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {cards.map((card, index) => (
