@@ -514,29 +514,31 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
                 >
-                  <motion.button 
+                  <motion.a
+                    href="https://dashboard.lanonasis.com/"
                     className="btn-primary flex items-center justify-center group"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Explore Our Ecosystem
+                    Get Started Free
                     <motion.span
                       className="ml-2 group-hover:translate-x-1 transition-transform"
                     >
                       <ArrowRight size={20} />
                     </motion.span>
-                  </motion.button>
+                  </motion.a>
                   
-                  <motion.button 
+                  <motion.a
+                    href="https://dashboard.lanonasis.com/"
                     className="btn-secondary group"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Watch Demo
+                    Login
                     <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      ▶
+                      →
                     </span>
-                  </motion.button>
+                  </motion.a>
                 </motion.div>
 
                 <motion.div
@@ -689,7 +691,7 @@ function App() {
                         <span>REST API at api.lanonasis.com</span>
                       </div>
                     </div>
-                    <a href="https://api.lanonasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
+                    <a href="https://dashboard.lanonasis.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
                       Access Dashboard <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
@@ -759,7 +761,7 @@ function App() {
                         <span>MCP protocol support</span>
                       </div>
                     </div>
-                    <a href="https://api.lanonasis.com/keys" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
+                    <a href="https://dashboard.lanonasis.com/dashboard/api-keys" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
                       Manage Keys <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
@@ -817,7 +819,7 @@ function App() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                      href="https://api.lanonasis.com/signup"
+                      href="https://dashboard.lanonasis.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-secondary hover:bg-secondary-dark text-primary font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
@@ -983,9 +985,12 @@ function App() {
               >
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              <button className="btn-primary">
-                Explore Our Ecosystem
-              </button>
+              <a href="https://dashboard.lanonasis.com/" className="btn-secondary mr-4">
+                Login
+              </a>
+              <a href="https://dashboard.lanonasis.com/" className="btn-primary">
+                Sign Up Free
+              </a>
             </div>
             <button 
               className="md:hidden"
@@ -1031,9 +1036,12 @@ function App() {
                 </button>
                 <a href="#story" className="block hover:text-secondary transition-colors">Our Story</a>
                 <a href="#contact" className="block hover:text-secondary transition-colors">Contact</a>
-                <button className="btn-primary w-full">
-                  Explore Our Ecosystem
-                </button>
+                <a href="https://dashboard.lanonasis.com/" className="btn-secondary w-full mb-4 text-center block">
+                  Login
+                </a>
+                <a href="https://dashboard.lanonasis.com/" className="btn-primary w-full text-center block">
+                  Sign Up Free
+                </a>
               </div>
             </motion.div>
           )}
