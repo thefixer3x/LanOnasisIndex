@@ -47,7 +47,6 @@ const Timeline = React.lazy(() => import('./components/Timeline'));
 
 function App() {
   const [isDark, setIsDark] = useState(true);
-  // Removed isScrolled state and scroll event listener.
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [vantaEffect, setVantaEffect] = useState<VantaNetEffect | null>(null);
