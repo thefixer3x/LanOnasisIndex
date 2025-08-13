@@ -3,18 +3,18 @@
  * Production-ready implementation with security, heartbeat, and full MCP protocol support
  */
 
-import { createClient } from '@supabase/supabase-js';
+// WebSocket MCP Client - no Supabase dependency needed
 
 export interface MCPMessage {
   jsonrpc: '2.0';
   id?: string | number;
   method?: string;
-  params?: any;
-  result?: any;
+  params?: Record<string, unknown>;
+  result?: unknown;
   error?: {
     code: number;
     message: string;
-    data?: any;
+    data?: unknown;
   };
 }
 
@@ -33,7 +33,7 @@ export interface ConnectionState {
   connectedAt: Date;
   lastActivity: Date;
   isAuthenticated: boolean;
-  capabilities?: any;
+  capabilities?: Record<string, unknown>;
 }
 
 export class EnhancedWebSocketMCPClient {
@@ -48,6 +48,7 @@ export class EnhancedWebSocketMCPClient {
   private currentReconnectAttempt: number = 0;
   private messageQueue: MCPMessage[] = [];
   private messageHandlers: Map<string | number, (response: MCPMessage) => void> = new Map();
+  private timeoutHandlers: Map<string | number, NodeJS.Timeout> = new Map();
   private heartbeatTimer: NodeJS.Timeout | null = null;
   private isAlive: boolean = false;
   private connectionState: ConnectionState | null = null;
@@ -137,6 +138,13 @@ export class EnhancedWebSocketMCPClient {
               const handler = this.messageHandlers.get(message.id);
               handler?.(message);
               this.messageHandlers.delete(message.id);
+              
+              // Clear associated timeout
+              const timeout = this.timeoutHandlers.get(message.id);
+              if (timeout) {
+                clearTimeout(timeout);
+                this.timeoutHandlers.delete(message.id);
+              }
             }
             
             // Handle general messages
@@ -235,13 +243,17 @@ export class EnhancedWebSocketMCPClient {
         }
       }
 
-      // Timeout handling
-      setTimeout(() => {
+      // Timeout handling with proper cleanup
+      const timeoutId = setTimeout(() => {
         if (this.messageHandlers.has(message.id!)) {
           this.messageHandlers.delete(message.id!);
+          this.timeoutHandlers.delete(message.id!);
           reject(new Error('Request timeout'));
         }
       }, this.timeout);
+      
+      // Store timeout for cleanup
+      this.timeoutHandlers.set(message.id, timeoutId);
     });
   }
 
@@ -273,15 +285,17 @@ export class EnhancedWebSocketMCPClient {
       connectedAt: new Date(),
       lastActivity: new Date(),
       isAuthenticated: true,
-      capabilities: response.result?.capabilities
+      capabilities: response.result && typeof response.result === 'object' ? (response.result as Record<string, unknown>).capabilities as Record<string, unknown> | undefined : undefined
     };
     
-    this.logger.info('MCP protocol initialized', {
-      sessionId: this.connectionState.sessionId,
-      capabilities: this.connectionState.capabilities
-    });
-    
-    this.eventHandlers.onAuthenticated?.(this.connectionState);
+    if (this.connectionState) {
+      this.logger.info('MCP protocol initialized', {
+        sessionId: this.connectionState.sessionId,
+        capabilities: this.connectionState.capabilities
+      });
+      
+      this.eventHandlers.onAuthenticated?.(this.connectionState);
+    }
   }
   
   async initialize(): Promise<MCPMessage> {
@@ -304,45 +318,25 @@ export class EnhancedWebSocketMCPClient {
 
   async listTools(): Promise<MCPMessage> {
     return this.send({
+      jsonrpc: '2.0',
       method: 'tools/list'
     });
   }
 
-  async callTool(name: string, args: any): Promise<MCPMessage> {
-    return this.send({
+  async callTool(name: string, args: Record<string, unknown>): Promise<unknown> {
+    const response = await this.send({
+      jsonrpc: '2.0',
       method: 'tools/call',
       params: {
         name,
         arguments: args
       }
     });
+    return response.result;
   }
 
-  async createMemory(title: string, content: string, type: string, tags?: string[]): Promise<MCPMessage> {
-    return this.callTool('create_memory', {
-      title,
-      content,
-      type,
-      tags: tags || []
-    });
-  }
-
-  async searchMemories(query: string, options?: {
-    type?: string;
-    limit?: number;
-    threshold?: number;
-  }): Promise<MCPMessage> {
-    return this.callTool('search_memories', {
-      query,
-      ...options
-    });
-  }
-
-  ping(): Promise<MCPMessage> {
-    return this.send({
-      jsonrpc: '2.0',
-      method: 'ping'
-    });
+  ping(): void {
+    this.send({ jsonrpc: '2.0', method: 'ping' });
   }
 
   close(): void {
@@ -358,6 +352,14 @@ export class EnhancedWebSocketMCPClient {
       clearInterval(this.heartbeatTimer);
       this.heartbeatTimer = null;
     }
+    
+    // Clear all pending timeouts
+    this.timeoutHandlers.forEach(timeout => clearTimeout(timeout));
+    this.timeoutHandlers.clear();
+    
+    // Clear message handlers
+    this.messageHandlers.clear();
+    
     this.connectionState = null;
     this.isAlive = false;
   }
@@ -366,7 +368,9 @@ export class EnhancedWebSocketMCPClient {
     this.heartbeatTimer = setInterval(() => {
       if (!this.isAlive) {
         this.logger.info('Heartbeat failed, terminating connection');
-        this.ws?.terminate?.() || this.ws?.close();
+        if (this.ws) {
+        this.ws.close();
+      }
         return;
       }
       
@@ -392,7 +396,11 @@ export class EnhancedWebSocketMCPClient {
     return this.ws !== null && this.ws.readyState === WebSocket.OPEN;
   }
 
-  on(event: 'open' | 'close' | 'error' | 'message', handler: Function): void {
+  on(event: 'open', handler: (event: Event) => void): void;
+  on(event: 'close', handler: (event: CloseEvent) => void): void;
+  on(event: 'error', handler: (event: Event) => void): void;
+  on(event: 'message', handler: (message: MCPMessage) => void): void;
+  on(event: 'open' | 'close' | 'error' | 'message', handler: unknown): void {
     switch (event) {
       case 'open':
         this.eventHandlers.onOpen = handler as (event: Event) => void;

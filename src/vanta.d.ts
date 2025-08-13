@@ -1,22 +1,37 @@
 declare module 'vanta/dist/vanta.net.min' {
-  interface VantaEffect {
-    destroy: () => void;
-  }
-
-  interface VantaOptions {
-    el: HTMLElement;
-    THREE: typeof import('three');
+  import * as THREE from 'three';
+  
+  interface VantaNetOptions {
+    el: HTMLElement | null;
+    THREE: typeof THREE;
     color: number;
     backgroundColor: number;
-    points: number;
-    maxDistance: number;
-    spacing: number;
+    points?: number;
+    maxDistance?: number;
+    spacing?: number;
   }
+<<<<<<< Updated upstream
+  
+  interface VantaNetEffect {
+    destroy: () => void;
+  }
+  
+  export default function NET(options: VantaNetOptions): VantaNetEffect;
+=======
 
+  // Updated export structure to match actual module
   const NET: {
     default: {
       default: (options: VantaOptions) => VantaEffect;
     };
   };
-  export = NET;
+  
+  // Default export structure
+  export default {
+    default: {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      default: (_: VantaOptions) => VantaEffect
+    }
+  };
+>>>>>>> Stashed changes
 }

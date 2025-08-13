@@ -13,10 +13,10 @@ Based on your audit report and the `api.lanonasis.com/auth/login` endpoint issue
 ### **Phase 1: Immediate Domain/Routing Fix**
 
 ```bash
-# Navigate to your monorepo
-cd ~/DevOps/_project_folders/lan-onasis-monorepo
-
-# Get Claude Code to analyze current auth setup
+# Test with Claude Desktop
+# Navigate to repository root
+cd <repo-root>
+# Run from repository root
 claude-code "Find all auth-related endpoints and routing configurations. Look for:
 - Any files handling /auth/login routes
 - Supabase auth configurations in each app  

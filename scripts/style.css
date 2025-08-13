@@ -26,12 +26,22 @@
     /* RGB versions for opacity control */
     --color-brown-600-rgb: 94, 82, 64;
     --color-teal-500-rgb: 33, 128, 141;
+    --color-teal-600-rgb: 29, 116, 128;
+    --color-teal-700-rgb: 26, 104, 115;
+    --color-teal-800-rgb: 41, 150, 161;
     --color-slate-900-rgb: 19, 52, 59;
     --color-slate-500-rgb: 98, 108, 113;
     --color-red-500-rgb: 192, 21, 47;
     --color-red-400-rgb: 255, 84, 89;
     --color-orange-500-rgb: 168, 75, 47;
     --color-orange-400-rgb: 230, 129, 97;
+    --color-cream-50-rgb: 252, 252, 249;
+    --color-cream-100-rgb: 255, 255, 253;
+    --color-gray-200-rgb: 245, 245, 245;
+    --color-gray-300-rgb: 167, 169, 169;
+    --color-gray-400-rgb: 119, 124, 124;
+    --color-charcoal-700-rgb: 31, 33, 33;
+    --color-charcoal-800-rgb: 38, 40, 40;
 
     /* Background color tokens (Light Mode) */
     --color-bg-1: rgba(59, 130, 246, 0.08);
@@ -1248,7 +1258,7 @@ select.form-control {
 }
 
 .pricing-card--featured::before {
-    content: 'Most Popular';
+    content: attr(data-featured-label);
     position: absolute;
     top: -12px;
     left: 50%;

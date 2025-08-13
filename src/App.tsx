@@ -1,16 +1,18 @@
 import React, { useEffect, useState, useRef, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { LanguageSwitcher } from './components/LanguageSwitcher';
-import MCPConnection from './components/MCPConnection';
 import * as THREE from 'three';
+
+// Define Vanta.NET types
+interface VantaNetEffect {
+  destroy: () => void;
+}
 import {
   Menu,
   X,
   Sun,
   Moon,
   ChevronRight,
-  Cpu,
   Users,
   Twitter,
   Linkedin,
@@ -37,39 +39,50 @@ import {
   CheckCircle,
 } from 'lucide-react';
 
-const Timeline = React.lazy(() => import('./components/Timeline'));
+import { HeroSection } from './components/HeroSection';
+import { Features } from './components/Features';
+import { DisplayCardsDemo } from './components/DisplayCardsDemo';
+import { LogoCarouselDemo } from './components/LogoCarouselDemo';
+import { PricingTable } from './components/PricingTable';
+import { Testimonials } from './components/Testimonials';
+import { CallToAction } from './components/CallToAction';
 
-// Define VantaEffect type
-interface VantaEffect {
-  destroy: () => void;
-}
+const Timeline = React.lazy(() => import('./components/Timeline'));
 
 
 function App() {
   const [isDark, setIsDark] = useState(true);
+  // Removed isScrolled state and scroll event listener.
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null);
+  const [vantaEffect, setVantaEffect] = useState<VantaNetEffect | null>(null);
   const vantaRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
   // Convert to opacity value for class-based styling
   const headerOpacity = useTransform(
     scrollY,
     [0, 100],
-    [0, 0.9]
+    ['rgba(10, 25, 48, 0)', 'rgba(10, 25, 48, 0.9)']
   );
 
+
   useEffect(() => {
-    let effect: VantaEffect | null = null;
+    let effect: VantaNetEffect | null = null;
     
     const initVanta = async () => {
       try {
         if (!vantaRef.current || vantaEffect) return;
         
         // Dynamically import Vanta to handle potential loading issues
-        const NET = await import('vanta/dist/vanta.net.min') as any;
+        // Using type assertion for the dynamic import
+        // This is necessary because the actual runtime structure of the module
+        // doesn't perfectly match the TypeScript definition
+        const VANTA = await import('vanta/dist/vanta.net.min');
         
-        effect = NET.default.default({
+        // Access the default export and initialize the effect
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const VantaNet = (VANTA as any).default.default;
+        effect = VantaNet({
           el: vantaRef.current,
           THREE,
           color: 0x00b4ff,
@@ -109,20 +122,47 @@ function App() {
     setIsMobileMenuOpen(false);
   };
 
-  // Handle MCP connection route
-  if (window.location.pathname === '/mcp/connect' || activeSection === 'mcp') {
-    return <MCPConnection />;
-  }
-
   // Handle SSE auth route for registered users
-  if (window.location.pathname === '/sse') {
-    // Quick context-aware auth for existing users
-    React.useEffect(() => {
+  useEffect(() => {
+    if (window.location.pathname === '/sse') {
       const handleSSEAuth = () => {
-        // Check if user has existing context/session
-        const hasContext = localStorage.getItem('lanonasis_context') || 
-                           sessionStorage.getItem('user_session') ||
-                           document.cookie.includes('lanonasis_auth');
+        // Check if user has existing context/session with robust parsing
+        let hasContext = false;
+        
+        try {
+          // Safely check localStorage
+          const contextData = localStorage.getItem('lanonasis_context');
+          if (contextData) {
+            // Try to parse if it's JSON, otherwise treat as truthy
+            try {
+              const parsed = JSON.parse(contextData);
+              hasContext = Boolean(parsed);
+            } catch {
+              hasContext = Boolean(contextData);
+            }
+          }
+          
+          // Check sessionStorage if not found
+          if (!hasContext) {
+            const sessionData = sessionStorage.getItem('user_session');
+            if (sessionData) {
+              try {
+                const parsed = JSON.parse(sessionData);
+                hasContext = Boolean(parsed);
+              } catch {
+                hasContext = Boolean(sessionData);
+              }
+            }
+          }
+          
+          // Check cookies as fallback
+          if (!hasContext) {
+            hasContext = document.cookie.includes('lanonasis_auth');
+          }
+        } catch (error) {
+          console.error('Error checking auth context:', error);
+          hasContext = false;
+        }
         
         if (hasContext) {
           // Direct route to dashboard for registered users
@@ -135,8 +175,16 @@ function App() {
       
       // Small delay to show loading state
       setTimeout(handleSSEAuth, 800);
-    }, []);
+    }
+  }, []);
 
+  // Handle MCP connection route
+  if (window.location.pathname === '/mcp/connect' || activeSection === 'mcp') {
+    return <MCPConnection />;
+  }
+
+  // Handle SSE auth route for registered users
+  if (window.location.pathname === '/sse') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-primary via-primary-dark to-black flex items-center justify-center">
         <div className="text-center">
@@ -153,8 +201,8 @@ function App() {
           
           <div className="flex items-center justify-center space-x-2 mb-6">
             <div className="w-2 h-2 bg-secondary rounded-full animate-bounce"></div>
-            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce delay-100"></div>
+            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce delay-200"></div>
           </div>
           
           <p className="text-sm text-gray-500">
@@ -466,7 +514,7 @@ function App() {
           <>
             <section 
               ref={vantaRef}
-              className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+              className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0a1930] via-[#1a2332] to-[#0a1930]"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/20 to-primary pointer-events-none" />
               
@@ -600,6 +648,19 @@ function App() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-8">Our Vision</h2>
                     <ul className="space-y-4 mb-8">
                       {visionPoints.map((point, index) => (
+<<<<<<< Updated upstream
+                        <li key={index}>
+                          <motion.span
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="flex items-start"
+                          >
+                            <ChevronRight className="text-secondary mt-1 mr-2" size={20} />
+                            <span className="text-lg">{point}</span>
+                          </motion.span>
+                        </li>
+=======
                         <motion.li
                           key={point.slice(0, 20)}
                           initial={{ opacity: 0, x: -20 }}
@@ -607,9 +668,10 @@ function App() {
                           transition={{ duration: 0.5, delay: index * 0.1 }}
                           className="flex items-start"
                         >
-                          <span className="text-primary mr-3 mt-1" aria-hidden="true">▶</span>
-                          <span className="text-lg">{point}</span>
+                            <span className="text-primary mr-3 mt-1" aria-hidden="true">▶</span>
+                            {point}
                         </motion.li>
+>>>>>>> Stashed changes
                       ))}
                     </ul>
                     <p className="text-gray-400">
@@ -888,6 +950,15 @@ function App() {
 
   return (
     <div className="min-h-screen bg-primary text-white">
+      {/* --- New Modern Landing Page Sections --- */}
+      <HeroSection />
+      <Features />
+      <DisplayCardsDemo />
+      <LogoCarouselDemo />
+      <PricingTable />
+      <Testimonials />
+      <CallToAction />
+      {/* --- End New Sections --- */}
       <Helmet>
         <title>{getPageTitle()}</title>
         <meta name="description" content={getPageDescription()} />

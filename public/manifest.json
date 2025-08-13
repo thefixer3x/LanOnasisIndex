@@ -1,7 +1,9 @@
 {
-  "name": "Lan Onasis - Africa's Intelligent Tech Ecosystem",
-  "short_name": "Lan Onasis",
+  "name": "LAN Onasis - Memory as a Service Platform",
+  "short_name": "LAN Onasis",
   "description": "Building Africa's most intelligent tech ecosystem with secure, compliant, and AI-enhanced platforms that empower entrepreneurs, regulators, fintechs, and institutions alike.",
+  "id": "/",
+  "scope": "/",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#0A1930",

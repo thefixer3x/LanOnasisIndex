@@ -18,6 +18,10 @@
             color: #0A1930;
             text-align: center;
         }
+        .description {
+            text-align: center;
+            color: #666;
+        }
         .icon-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -63,7 +67,7 @@
 <body>
     <div class="container">
         <h1>Lan Onasis PWA Icon Generator</h1>
-        <p style="text-align: center; color: #666;">Generate all required PWA icon sizes with your brand colors</p>
+        <p class="description">Generate all required PWA icon sizes with your brand colors</p>
         
         <div class="generate-all">
             <button onclick="generateAllIcons()">Generate All Icons</button>
@@ -115,33 +119,59 @@
         }
         
         function svgToCanvas(svgString, size, callback) {
-            const canvas = document.createElement('canvas');
-            canvas.width = size;
-            canvas.height = size;
-            const ctx = canvas.getContext('2d');
-            
-            const img = new Image();
-            const blob = new Blob([svgString], { type: 'image/svg+xml' });
-            const url = URL.createObjectURL(blob);
-            
-            img.onload = function() {
-                ctx.drawImage(img, 0, 0, size, size);
-                URL.revokeObjectURL(url);
-                callback(canvas);
-            };
-            
-            img.src = url;
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+                
+                const img = new Image();
+                const blob = new Blob([svgString], { type: 'image/svg+xml' });
+                const url = URL.createObjectURL(blob);
+                
+                img.onload = function() {
+                    try {
+                        ctx.drawImage(img, 0, 0, size, size);
+                        URL.revokeObjectURL(url);
+                        callback(canvas);
+                    } catch (error) {
+                        console.error('Error drawing image to canvas:', error);
+                        URL.revokeObjectURL(url);
+                    }
+                };
+                
+                img.onerror = function(error) {
+                    console.error('Error loading SVG image:', error);
+                    URL.revokeObjectURL(url);
+                };
+                
+                img.src = url;
+            } catch (error) {
+                console.error('Error converting SVG to canvas:', error);
+            }
         }
         
         function downloadCanvas(canvas, filename) {
-            canvas.toBlob(function(blob) {
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = filename;
-                a.click();
-                URL.revokeObjectURL(url);
-            }, 'image/png');
+            try {
+                canvas.toBlob(function(blob) {
+                    if (!blob) {
+                        console.error('Failed to create blob from canvas');
+                        return;
+                    }
+                    try {
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = filename;
+                        a.click();
+                        URL.revokeObjectURL(url);
+                    } catch (error) {
+                        console.error('Error downloading canvas:', error);
+                    }
+                }, 'image/png');
+            } catch (error) {
+                console.error('Error converting canvas to blob:', error);
+            }
         }
         
         function generateIcon(size) {

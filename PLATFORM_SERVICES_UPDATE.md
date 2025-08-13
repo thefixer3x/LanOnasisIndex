@@ -62,9 +62,11 @@ A comprehensive "Platform Services Now Live" section has been added to the main 
 
 ### Step 1: Build the Project
 ```bash
-cd /Users/seyederick/LanOnasisIndex
-npm install
-npm run build
+# Navigate to the repository root
+cd <repository-root>
+# Install dependencies and build
+bun install
+bun run build
 ```
 
 ### Step 2: Deploy to Netlify
@@ -81,9 +83,12 @@ netlify deploy --prod --dir=dist
 
 #### Option C: Git Push (if connected to GitHub)
 ```bash
+# Create a feature branch
+git checkout -b feat/platform-services
 git add .
-git commit -m "feat: Add platform services section with MaaS, CLI, SDK, and API key management"
-git push origin main
+git commit -m "feat: add platform services section"
+git push -u origin feat/platform-services
+# Then create a pull request for review
 ```
 
 ### Step 3: Verify Deployment

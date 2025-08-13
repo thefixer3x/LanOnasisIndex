@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 
 interface IconGeneratorProps {
   size: number;
@@ -6,7 +6,9 @@ interface IconGeneratorProps {
 }
 
 const IconGenerator: React.FC<IconGeneratorProps> = ({ size, format = 'svg' }) => {
-  const id = `lan-onasis-icon-${size}`;
+  // Generate unique IDs for SVG elements to prevent conflicts when multiple icons are rendered
+  const uniqueId = useId();
+  const id = `lan-onasis-icon-${uniqueId}`;
   
   // Create SVG content
   const svgContent = (
@@ -20,19 +22,19 @@ const IconGenerator: React.FC<IconGeneratorProps> = ({ size, format = 'svg' }) =
     >
       {/* Background with gradient */}
       <defs>
-        <linearGradient id={`gradient-${size}`} x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id={`gradient-${uniqueId}`} x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#0A1930" />
           <stop offset="50%" stopColor="#00B4FF" />
           <stop offset="100%" stopColor="#39FF14" />
         </linearGradient>
-        <linearGradient id={`bg-gradient-${size}`} x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id={`bg-gradient-${uniqueId}`} x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#0A1930" />
           <stop offset="100%" stopColor="#0F233A" />
         </linearGradient>
       </defs>
       
       {/* Background circle */}
-      <circle cx="256" cy="256" r="256" fill={`url(#bg-gradient-${size})`} />
+      <circle cx="256" cy="256" r="256" fill={`url(#bg-gradient-${uniqueId})`} />
       
       {/* Geometric pattern - representing network/ecosystem */}
       <g opacity="0.3">
@@ -47,7 +49,7 @@ const IconGenerator: React.FC<IconGeneratorProps> = ({ size, format = 'svg' }) =
         {/* Main L shape with gradient */}
         <path
           d="M -60 -80 L -60 60 L 60 60 L 60 20 L -20 20 L -20 -80 Z"
-          fill={`url(#gradient-${size})`}
+          fill={`url(#gradient-${uniqueId})`}
           opacity="0.9"
         />
         

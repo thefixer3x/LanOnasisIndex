@@ -22,10 +22,11 @@ build:
 	@echo "Build completed! Check ./dist directory"
 
 netlify-test:
-	@echo "Testing Netlify configuration..."
-	@docker run --rm -v $(PWD):/app -w /app node:18-alpine sh -c \
-		"npm ci && npm run build && echo 'Build successful!'"
-	stop:
+	@echo "Testing Netlify build locally..."
+	docker run --rm -v $(PWD):/app -w /app oven/bun:1.1.29-alpine sh -c "bun install --frozen-lockfile && bun run build"
+	@echo "Build successful!"
+
+stop:
 	docker-compose down
 
 logs:
