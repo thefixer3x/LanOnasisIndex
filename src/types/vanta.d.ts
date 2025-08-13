@@ -1,7 +1,7 @@
 declare module 'vanta/dist/vanta.net.min' {
   import * as THREE from 'three';
-  
-  interface VantaNetOptions {
+
+  export interface VantaNetOptions {
     el: HTMLElement | null;
     THREE: typeof THREE;
     color: number;
@@ -10,10 +10,10 @@ declare module 'vanta/dist/vanta.net.min' {
     maxDistance: number;
     spacing: number;
   }
-  
-  interface VantaNetEffect {
+
+  export interface VantaNetEffect {
     destroy: () => void;
   }
-  
+
   export default function NET(options: VantaNetOptions): VantaNetEffect;
 }

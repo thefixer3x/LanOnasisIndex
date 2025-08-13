@@ -1,16 +1,18 @@
 import React, { useEffect, useState, useRef, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { LanguageSwitcher } from './components/LanguageSwitcher';
-import MCPConnection from './components/MCPConnection';
 import * as THREE from 'three';
+
+// Define Vanta.NET types
+interface VantaNetEffect {
+  destroy: () => void;
+}
 import {
   Menu,
   X,
   Sun,
   Moon,
   ChevronRight,
-  Cpu,
   Users,
   Twitter,
   Linkedin,
@@ -37,30 +39,35 @@ import {
   CheckCircle,
 } from 'lucide-react';
 
-const Timeline = React.lazy(() => import('./components/Timeline'));
+import { HeroSection } from './components/HeroSection';
+import { Features } from './components/Features';
+import { DisplayCardsDemo } from './components/DisplayCardsDemo';
+import { LogoCarouselDemo } from './components/LogoCarouselDemo';
+import { PricingTable } from './components/PricingTable';
+import { Testimonials } from './components/Testimonials';
+import { CallToAction } from './components/CallToAction';
 
-// Define VantaEffect type
-interface VantaEffect {
-  destroy: () => void;
-}
+const Timeline = React.lazy(() => import('./components/Timeline'));
 
 
 function App() {
   const [isDark, setIsDark] = useState(true);
+  // Removed isScrolled state and scroll event listener.
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null);
+  const [vantaEffect, setVantaEffect] = useState<VantaNetEffect | null>(null);
   const vantaRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
   // Convert to opacity value for class-based styling
   const headerOpacity = useTransform(
     scrollY,
     [0, 100],
-    [0, 0.9]
+    ['rgba(10, 25, 48, 0)', 'rgba(10, 25, 48, 0.9)']
   );
 
+
   useEffect(() => {
-    let effect: VantaEffect | null = null;
+    let effect: VantaNetEffect | null = null;
     
     const initVanta = async () => {
       try {
@@ -466,7 +473,7 @@ function App() {
           <>
             <section 
               ref={vantaRef}
-              className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+              className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0a1930] via-[#1a2332] to-[#0a1930]"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/20 to-primary pointer-events-none" />
               
@@ -600,16 +607,17 @@ function App() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-8">Our Vision</h2>
                     <ul className="space-y-4 mb-8">
                       {visionPoints.map((point, index) => (
-                        <motion.li
-                          key={point.slice(0, 20)}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          className="flex items-start"
-                        >
-                          <span className="text-primary mr-3 mt-1" aria-hidden="true">▶</span>
-                          <span className="text-lg">{point}</span>
-                        </motion.li>
+                        <li key={index}>
+                          <motion.span
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="flex items-start"
+                          >
+                            <ChevronRight className="text-secondary mt-1 mr-2" size={20} />
+                            <span className="text-lg">{point}</span>
+                          </motion.span>
+                        </li>
                       ))}
                     </ul>
                     <p className="text-gray-400">
@@ -888,6 +896,15 @@ function App() {
 
   return (
     <div className="min-h-screen bg-primary text-white">
+      {/* --- New Modern Landing Page Sections --- */}
+      <HeroSection />
+      <Features />
+      <DisplayCardsDemo />
+      <LogoCarouselDemo />
+      <PricingTable />
+      <Testimonials />
+      <CallToAction />
+      {/* --- End New Sections --- */}
       <Helmet>
         <title>{getPageTitle()}</title>
         <meta name="description" content={getPageDescription()} />
