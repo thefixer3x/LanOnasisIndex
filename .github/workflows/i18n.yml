@@ -11,15 +11,15 @@ on:
   push:
     branches: [main]
     paths:
-      - 'apps/lanonasis-index/locales/**'
-      - 'apps/lanonasis-index/i18n.json'
-      - 'apps/lanonasis-index/src/**'
+      - 'locales/**'
+      - 'i18n.json'
+      - 'src/**'
   pull_request:
     branches: [main]
     paths:
-      - 'apps/lanonasis-index/locales/**'
-      - 'apps/lanonasis-index/i18n.json'
-      - 'apps/lanonasis-index/src/**'
+      - 'locales/**'
+      - 'i18n.json'
+      - 'src/**'
 
 permissions:
   contents: write
@@ -29,9 +29,6 @@ jobs:
   i18n:
     name: Generate Translations
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/lanonasis-index
     steps:
       - uses: actions/checkout@v4
       
