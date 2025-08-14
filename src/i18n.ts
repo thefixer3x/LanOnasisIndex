@@ -47,17 +47,19 @@ i18n
     },
   });
 
-// Set document direction based on language
-i18n.on('languageChanged', (lng) => {
-  const dir = ['ar', 'he', 'fa', 'ur'].includes(lng) ? 'rtl' : 'ltr';
-  document.documentElement.dir = dir;
-  document.documentElement.lang = lng;
-});
+// Set document direction based on language (guarded for non-browser builds)
+if (typeof document !== 'undefined') {
+  i18n.on('languageChanged', (lng) => {
+    const dir = ['ar', 'he', 'fa', 'ur'].includes(lng) ? 'rtl' : 'ltr';
+    document.documentElement.dir = dir;
+    document.documentElement.lang = lng;
+  });
 
-// Set initial direction
-const initialLang = i18n.language;
-const initialDir = ['ar', 'he', 'fa', 'ur'].includes(initialLang) ? 'rtl' : 'ltr';
-document.documentElement.dir = initialDir;
-document.documentElement.lang = initialLang;
+  // Set initial direction
+  const initialLang = i18n.language || 'en';
+  const initialDir = ['ar', 'he', 'fa', 'ur'].includes(initialLang) ? 'rtl' : 'ltr';
+  document.documentElement.dir = initialDir;
+  document.documentElement.lang = initialLang;
+}
 
 export default i18n;

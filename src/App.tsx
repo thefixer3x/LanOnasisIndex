@@ -37,6 +37,7 @@ import {
   Code2,
   Key,
   BookOpen,
+
   CheckCircle,
 } from 'lucide-react';
 
@@ -54,6 +55,7 @@ import Developers from './components/Developers';
 // Responsive GlareCard component
 const GlareCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   return (
+
     <div className={`relative isolate w-full max-w-sm mx-auto min-h-[400px] ${className}`}>
       <div className="h-full rounded-lg border border-slate-800 bg-slate-950/80 backdrop-blur-sm overflow-hidden hover:border-slate-700 hover:bg-slate-900/80 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
         {children}
@@ -402,6 +404,7 @@ function App() {
       case 'industries':
         return 'Discover how Lan Onasis transforms Financial Services, SMEs, E-commerce, Education, Logistics, Real Estate & Public Sector with AI-powered fintech solutions across Africa.';
       default:
+
         return 'Transform your business with Africa\'s leading AI-powered fintech ecosystem. Serving Financial Services, SMEs, E-commerce, Education, Logistics, Real Estate & Public Sector with secure compliance, smart payments, and intelligent risk management solutions.';
     }
   };
@@ -1059,6 +1062,7 @@ function App() {
                   <div className="flex items-center justify-center py-12">
                     <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-secondary"></div>
                   </div>
+
                 }>
                   <Timeline />
                 </Suspense>

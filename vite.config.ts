@@ -12,6 +12,7 @@ export default defineConfig({
     minify: 'terser',
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
+      external: ['i18next'], 
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],

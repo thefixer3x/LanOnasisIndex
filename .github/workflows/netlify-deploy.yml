@@ -20,23 +20,19 @@ jobs:
           bun-version: 1.1.29
 
       - name: Install dependencies
-        working-directory: apps/lanonasis-index
         run: bun install --frozen-lockfile
 
       - name: Build
-        working-directory: apps/lanonasis-index
         run: bun run build
 
       - name: Install Netlify CLI
         run: bun add -g netlify-cli
-        working-directory: apps/lanonasis-index
 
       - name: Deploy to Netlify
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         run: netlify deploy --prod --dir=dist
-        working-directory: apps/lanonasis-index
 
       - name: Comment on PR with deploy URL
         if: github.event_name == 'pull_request'
