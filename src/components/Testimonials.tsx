@@ -1,9 +1,6 @@
 "use client"
 
 import {
-  CardTransformed,
-  CardsContainer,
-  ContainerScroll,
   ReviewStars,
 } from "../components/blocks/animated-cards-stack"
 import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar"
@@ -51,14 +48,10 @@ const TESTIMONIALS = [
   },
 ];
 
-function getSectionClass(dark = true) {
-  return dark
+function getBackgroundClass(isDarkMode = true) {
+  return isDarkMode
     ? "bg-slate-900 text-white px-8 py-12"
-    : "bg-blue-50 px-8 py-12"
-}
-
-function getReviewStarsClass(dark = true) {
-  return dark ? "text-blue-400" : "text-blue-500"
+    : "bg-blue-50 px-8 py-12";
 }
 
 function getTextClass(dark = true) {
@@ -75,7 +68,14 @@ function getCardVariant(dark = true) {
   return dark ? "dark" : "light"
 }
 
+function getReviewStarsColorClass(isDarkMode: boolean): string {
+  const textColor = isDarkMode ? 'text-blue-400' : 'text-blue-500';
+  return textColor;
+}
+
 export function Testimonials() {
+  const isDarkMode = true; // Assuming dark mode is enabled for this example
+
   return (
     <section className="py-20 bg-gradient-to-b from-slate-900 to-black">
       <div className="max-w-7xl mx-auto px-6">
@@ -118,7 +118,7 @@ export function Testimonials() {
                 </div>
                 <div className="ml-auto">
                   <ReviewStars
-                    className="text-yellow-400"
+                    className={getReviewStarsColorClass(isDarkMode)}
                     rating={testimonial.rating}
                   />
                 </div>
