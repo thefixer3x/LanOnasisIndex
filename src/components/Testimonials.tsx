@@ -48,26 +48,6 @@ const TESTIMONIALS = [
   },
 ];
 
-function getBackgroundClass(isDarkMode = true) {
-  return isDarkMode
-    ? "bg-slate-900 text-white px-8 py-12"
-    : "bg-blue-50 px-8 py-12";
-}
-
-function getTextClass(dark = true) {
-  return dark ? "text-gray-200" : ""
-}
-
-function getAvatarClass(dark = true) {
-  return dark
-    ? "!size-12 border border-gray-700"
-    : "!size-12 border border-blue-200"
-}
-
-function getCardVariant(dark = true) {
-  return dark ? "dark" : "light"
-}
-
 function getReviewStarsColorClass(isDarkMode: boolean): string {
   const textColor = isDarkMode ? 'text-blue-400' : 'text-blue-500';
   return textColor;
@@ -89,7 +69,7 @@ export function Testimonials() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {TESTIMONIALS.map((testimonial, index) => (
+          {TESTIMONIALS.map((testimonial) => (
             <div
               key={testimonial.id}
               className="bg-slate-800/50 backdrop-blur-sm rounded-lg p-8 border border-slate-700 hover:border-slate-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10"
