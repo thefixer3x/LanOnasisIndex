@@ -45,9 +45,10 @@ import { HeroSection } from './components/HeroSection';
 import { Features } from './components/Features';
 import { DisplayCardsDemo } from './components/DisplayCardsDemo';
 import { LogoCarouselDemo } from './components/LogoCarouselDemo';
-import { PricingTable } from './components/PricingTable';
-import { Testimonials } from './components/Testimonials';
-import { CallToAction } from './components/CallToAction';
+// Commented out unused imports for backup file
+// import { PricingTable } from './components/PricingTable';
+// import { Testimonials } from './components/Testimonials';
+// import { CallToAction } from './components/CallToAction';
 import { LanguageSwitcher } from './components/LanguageSwitcher';
 import MCPConnection from './components/MCPConnection';
 import Developers from './components/Developers';

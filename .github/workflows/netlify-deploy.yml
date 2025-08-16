@@ -3,9 +3,21 @@ name: Deploy to Netlify
 on:
   push:
     branches:
-      - main  # or master, depending on your default branch name
+      - main
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'package.json'
+      - 'vite.config.ts'
+      - 'tsconfig.json'
   pull_request:
     types: [opened, synchronize]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'package.json'
+      - 'vite.config.ts'
+      - 'tsconfig.json'
 
 jobs:
   build-and-deploy:
