@@ -23,28 +23,20 @@ function App() {
       </Helmet>
 
       {/* Navigation */}
-      <nav className="nav-fixed">
-        <div className="container-padding">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/80 backdrop-blur-sm border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <span className="text-xl font-bold text-secondary">Lan Onasis</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-300 hover:text-secondary transition-colors duration-300">Features</a>
-              <a href="#ecosystem" className="text-gray-300 hover:text-secondary transition-colors duration-300">Ecosystem</a>
-              <a href="#pricing" className="text-gray-300 hover:text-secondary transition-colors duration-300">Pricing</a>
-              <a href="#testimonials" className="text-gray-300 hover:text-secondary transition-colors duration-300">Testimonials</a>
-              <a href="https://dashboard.lanonasis.com/" className="btn-primary text-sm">Get Started</a>
+              <a href="#features" className="text-gray-300 hover:text-secondary transition-colors">Features</a>
+              <a href="#ecosystem" className="text-gray-300 hover:text-secondary transition-colors">Ecosystem</a>
+              <a href="#pricing" className="text-gray-300 hover:text-secondary transition-colors">Pricing</a>
+              <a href="#testimonials" className="text-gray-300 hover:text-secondary transition-colors">Testimonials</a>
+              <a href="https://dashboard.lanonasis.com/" className="btn-primary text-sm px-4 py-2">Get Started</a>
             </div>
-            <div className="flex items-center space-x-2">
-              <LanguageSwitcher />
-              {/* Mobile menu button */}
-              <button className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
+            <LanguageSwitcher />
           </div>
         </div>
       </nav>
