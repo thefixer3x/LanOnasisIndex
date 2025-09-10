@@ -155,6 +155,57 @@
       "description": "Comprehensive documentation, API reference, and interactive sandbox environment.",
       "cta": "Explore Docs"
     },
+    "mcp_integration": {
+      "title": "MCP Integration",
+      "description": "Model Context Protocol support for AI assistants and autonomous agents.",
+      "cta": "MCP Endpoint"
+    },
+    "quick_start": {
+      "title": "Ready to Get Started?",
+      "description": "Join thousands of developers building intelligent applications with our Memory-as-a-Service platform.",
+      "cta_primary": "Create Free Account",
+      "cta_secondary": "View Quick Start Guide"
+    }
+  },
+  "story": {
+    "title": "Built by Visionaries",
+    "subtitle": "What began as a quest for consulting excellence evolved into a revolutionary movement.",
+    "conclusion": "From this vision, Lan Onasis was born, fueling the VortexCore revolution and shaping the future of tech."
+  },
+  "footer": {
+    "description": "Empowering African businesses through innovative technology solutions across multiple industries.",
+    "products_title": "Products",
+    "industries_title": "Industries",
+    "get_in_touch": "Get in Touch",
+    "email_placeholder": "Enter your email",
+    "copyright": "All rights reserved.",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service",
+    "cookie_policy": "Cookie Policy"
+  },
+  "developers_page": {
+    "title": "Developer Platform",
+    "subtitle": "Build the future of African fintech with our comprehensive AI development platform",
+    "ai_sdk": {
+      "title": "AI SDK",
+      "description": "Comprehensive toolkit for AI development"
+    },
+    "memory_service": {
+      "title": "Memory Service",
+      "description": "Vector-enabled memory storage and retrieval"
+    },
+    "vortexcore": {
+      "title": "VortexCore",
+      "description": "Advanced analytics and data processing"
+    },
+    "realtime_apis": {
+      "title": "Real-time APIs",
+      "description": "Lightning-fast API endpoints"
+    },
+    "global_scale": {
+      "title": "Global Scale",
+      "description": "Deploy across African markets"
+    },
     "community": {
       "title": "Community",
       "description": "Join our developer community"
@@ -181,128 +232,6 @@
       "african_markets": "African Markets",
       "transactions_processed": "Transactions Processed",
       "uptime_guarantee": "Uptime Guarantee"
-    }
-  },
-  "footer": {
-    "company_description": "Transforming Africa's financial technology landscape with AI-powered solutions.",
-    "platform_section": "Platform",
-    "resources_section": "Resources",
-    "social_links": {
-      "linkedin": "LinkedIn",
-      "twitter": "Twitter", 
-      "github": "GitHub"
-    },
-    "platform_links": {
-      "vortexcore_ai": "VortexCore AI",
-      "vortexpay": "VortexPay",
-      "bizgenie": "BizGenie",
-      "api_gateway": "API Gateway"
-    },
-    "resource_links": {
-      "documentation": "Documentation",
-      "dashboard": "Dashboard",
-      "support": "Support",
-      "contact": "Contact"
-    },
-    "copyright": "© 2024 Lan Onasis. All rights reserved."
-  },
-  "pricing": {
-    "plans": "Choose Your Plan",
-    "tiers": {
-      "starter": {
-        "name": "Starter",
-        "description": "Perfect for individuals and small projects",
-        "features": ["Basic Analytics", "5 Team Members", "Basic Support"]
-      },
-      "pro": {
-        "name": "Pro", 
-        "description": "Ideal for growing teams and businesses",
-        "features": ["Advanced Analytics", "Unlimited Team Members", "Priority Support"],
-        "badge": "Most Popular"
-      },
-      "enterprise": {
-        "name": "Enterprise",
-        "description": "For large organizations and enterprises", 
-        "features": ["Custom Analytics", "Dedicated Support", "API Access"]
-      }
-    }
-  },
-  "testimonials": {
-    "items": [
-      {
-        "name": "Michael O.",
-        "profession": "FinTech Director",
-        "description": "VortexCore AI has transformed our approach to compliance across multiple African markets. Their innovative solutions and quick turnaround time made our partnership incredibly successful."
-      },
-      {
-        "name": "Amina K.",
-        "profession": "Compliance Officer", 
-        "description": "The attention to detail and regulatory knowledge in Lan Onasis's compliance technology is exceptional. Their platform has significantly reduced our risk exposure across our operations in Ghana and Kenya."
-      },
-      {
-        "name": "Chike N.",
-        "profession": "Bank Executive",
-        "description": "Working with the Lan Onasis team was a game-changer for our digital transformation strategy. Their expertise in financial technology and deep understanding of African markets exceeded our expectations."
-      },
-      {
-        "name": "Fatima M.",
-        "profession": "RegTech Analyst",
-        "description": "The quality of Lan Onasis's financial services platform and communication throughout our implementation was outstanding. Their team truly understands the unique challenges of operating in emerging African markets."
-      }
-    ]
-  },
-  "display_cards": {
-    "vortexcore_ai": {
-      "title": "VortexCore AI",
-      "description": "Intelligent compliance automation and business insights",
-      "status": "Live"
-    },
-    "vortexpay": {
-      "title": "VortexPay",
-      "description": "Instant B2B payments with multi-currency support",
-      "status": "Active"
-    },
-    "bizgenie": {
-      "title": "BizGenie",
-      "description": "AI-powered SME insights and cash flow forecasting",
-      "status": "Beta"
-    }
-  },
-  "partners": {
-    "section_title": "Trusted by Industry Leaders",
-    "section_subtitle": "Partnering with Africa's leading financial institutions and global technology companies to drive innovation across the continent",
-    "financial_institutions": "Financial Institutions",
-    "technology_partners": "Technology Partners",
-    "financial": {
-      "ecobank": "Ecobank",
-      "first_bank": "First Bank Nigeria",
-      "standard_chartered": "Standard Chartered", 
-      "mtn": "MTN Group",
-      "access_bank": "Access Bank",
-      "safaricom": "Safaricom",
-      "gtbank": "Guaranty Trust Bank",
-      "absa": "Absa Group"
-    },
-    "tech": {
-      "stripe": "Stripe",
-      "paypal": "PayPal",
-      "openai": "OpenAI",
-      "supabase": "Supabase",
-      "github": "GitHub", 
-      "vercel": "Vercel",
-      "anthropic": "Anthropic",
-      "aws": "Amazon AWS",
-      "azure": "Microsoft Azure",
-      "slack": "Slack",
-      "notion": "Notion",
-      "figma": "Figma"
-    }
-  },
-  "timeline": {
-    "innovation_award": {
-      "year": "2023",
-      "title": "Innovation Award",
-      "description": "Recognized as \"Most Innovative FinTech Solution\" at Africa Tech Summit."
     }
   },
   "mcp_connection": {
@@ -358,5 +287,122 @@
       "delete_memory - Delete memories",
       "get_analytics - Get memory usage analytics"
     ]
+  },
+  "footer": {
+    "company_description": "Transforming Africa's financial technology landscape with AI-powered solutions.",
+    "platform_section": "Platform",
+    "resources_section": "Resources",
+    "social_links": {
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter", 
+      "github": "GitHub"
+    },
+    "platform_links": {
+      "vortexcore_ai": "VortexCore AI",
+      "vortexpay": "VortexPay",
+      "bizgenie": "BizGenie",
+      "api_gateway": "API Gateway"
+    },
+    "resource_links": {
+      "documentation": "Documentation",
+      "dashboard": "Dashboard",
+      "support": "Support",
+      "contact": "Contact"
+    },
+    "copyright": "© 2024 Lan Onasis. All rights reserved."
+  },
+  "pricing": {
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "description": "Perfect for individuals and small projects",
+        "features": ["Basic Analytics", "5 Team Members", "Basic Support"]
+      },
+      "pro": {
+        "name": "Pro", 
+        "description": "Ideal for growing teams and businesses",
+        "features": ["Advanced Analytics", "Unlimited Team Members", "Priority Support"],
+        "badge": "Most Popular"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "For large organizations and enterprises", 
+        "features": ["Custom Analytics", "Dedicated Support", "API Access"]
+      }
+    }
+  },
+  "testimonials": {
+    "items": [
+      {
+        "name": "Michael O.",
+        "profession": "FinTech Director",
+        "description": "VortexCore AI has transformed our approach to compliance across multiple African markets. Their innovative solutions and quick turnaround time made our partnership incredibly successful."
+      },
+      {
+        "name": "Amina K.",
+        "profession": "Compliance Officer", 
+        "description": "The attention to detail and regulatory knowledge in Lan Onasis's compliance technology is exceptional. Their platform has significantly reduced our risk exposure across our operations in Ghana and Kenya."
+      },
+      {
+        "name": "Chike N.",
+        "profession": "Bank Executive",
+        "description": "Working with the Lan Onasis team was a game-changer for our digital transformation strategy. Their expertise in financial technology and deep understanding of African markets exceeded our expectations."
+      },
+      {
+        "name": "Fatima M.",
+        "profession": "RegTech Analyst",
+        "description": "The quality of Lan Onasis's financial services platform and communication throughout our implementation was outstanding. Their team truly understands the unique challenges of operating in emerging African markets."
+      }
+    ]
+  },
+  "display_cards": {
+    "vortexcore_ai": {
+      "title": "VortexCore AI",
+      "description": "Intelligent compliance automation and business insights",
+      "status": "Live"
+    },
+    "vortexpay": {
+      "title": "VortexPay", 
+      "description": "Instant B2B payments with multi-currency support",
+      "status": "Active"
+    },
+    "bizgenie": {
+      "title": "BizGenie",
+      "description": "AI-powered SME insights and cash flow forecasting", 
+      "status": "Beta"
+    }
+  },
+  "partners": {
+    "financial": {
+      "ecobank": "Ecobank",
+      "first_bank": "First Bank Nigeria",
+      "standard_chartered": "Standard Chartered", 
+      "mtn": "MTN Group",
+      "access_bank": "Access Bank",
+      "safaricom": "Safaricom",
+      "gtbank": "Guaranty Trust Bank",
+      "absa": "Absa Group"
+    },
+    "tech": {
+      "stripe": "Stripe",
+      "paypal": "PayPal",
+      "openai": "OpenAI",
+      "supabase": "Supabase",
+      "github": "GitHub", 
+      "vercel": "Vercel",
+      "anthropic": "Anthropic",
+      "aws": "Amazon AWS",
+      "azure": "Microsoft Azure",
+      "slack": "Slack",
+      "notion": "Notion",
+      "figma": "Figma"
+    }
+  },
+  "timeline": {
+    "innovation_award": {
+      "year": "2023",
+      "title": "Innovation Award",
+      "description": "Recognized as \"Most Innovative FinTech Solution\" at Africa Tech Summit."
+    }
   }
 }

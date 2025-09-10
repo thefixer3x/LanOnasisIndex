@@ -1,39 +1,41 @@
+import { Zap, ArrowDownToDot, Sparkles } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-import { Sparkles, Zap, ArrowDownToDot } from "lucide-react";
+const PricingTable = () => {
+  const { t } = useTranslation();
+  
+  const tiers = [
+    {
+      name: t('pricing.tiers.starter.name'),
+      price: { monthly: 15, yearly: 144 },
+      description: t('pricing.tiers.starter.description'),
+      icon: <Zap className="w-7 h-7 text-gray-500 dark:text-gray-400 animate-bounce" />,
+      features: t('pricing.tiers.starter.features', { returnObjects: true }) as string[],
+      highlight: false,
+    },
+    {
+      name: t('pricing.tiers.pro.name'),
+      price: { monthly: 49, yearly: 470 },
+      description: t('pricing.tiers.pro.description'),
+      icon: <ArrowDownToDot className="w-7 h-7 text-blue-500 animate-pulse" />,
+      features: t('pricing.tiers.pro.features', { returnObjects: true }) as string[],
+      highlight: true,
+      badge: t('pricing.tiers.pro.badge'),
+    },
+    {
+      name: t('pricing.tiers.enterprise.name'),
+      price: { monthly: 199, yearly: 1900 },
+      description: t('pricing.tiers.enterprise.description'),
+      icon: <Sparkles className="w-7 h-7 text-yellow-500 animate-spin" />,
+      features: t('pricing.tiers.enterprise.features', { returnObjects: true }) as string[],
+      highlight: false,
+    },
+  ];
 
-const tiers = [
-  {
-    name: "Starter",
-    price: { monthly: 15, yearly: 144 },
-    description: "Perfect for individuals and small projects",
-    icon: <Zap className="w-7 h-7 text-gray-500 dark:text-gray-400 animate-bounce" />,
-    features: ["Basic Analytics", "5 Team Members", "Basic Support"],
-    highlight: false,
-  },
-  {
-    name: "Pro",
-    price: { monthly: 49, yearly: 470 },
-    description: "Ideal for growing teams and businesses",
-    icon: <ArrowDownToDot className="w-7 h-7 text-blue-500 animate-pulse" />,
-    features: ["Advanced Analytics", "Unlimited Team Members", "Priority Support"],
-    highlight: true,
-    badge: "Most Popular",
-  },
-  {
-    name: "Enterprise",
-    price: { monthly: 199, yearly: 1900 },
-    description: "For large organizations and enterprises",
-    icon: <Sparkles className="w-7 h-7 text-yellow-500 animate-spin" />,
-    features: ["Custom Analytics", "Dedicated Support", "API Access"],
-    highlight: false,
-  },
-];
-
-export function PricingTable() {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-8">Pricing Plans</h2>
+        <h2 className="text-3xl font-bold text-center mb-8">{t('pricing.plans')}</h2>
         <div className="flex flex-col md:flex-row gap-8 justify-center">
           {tiers.map((tier, idx) => (
             <div
@@ -61,4 +63,6 @@ export function PricingTable() {
       </div>
     </section>
   );
-}
+};
+
+export { PricingTable };

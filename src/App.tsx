@@ -30,16 +30,20 @@ function App() {
               <span className="text-xl font-bold text-secondary">Lan Onasis</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-300 hover:text-secondary transition-colors duration-300">Features</a>
-              <a href="#ecosystem" className="text-gray-300 hover:text-secondary transition-colors duration-300">Ecosystem</a>
-              <a href="#pricing" className="text-gray-300 hover:text-secondary transition-colors duration-300">Pricing</a>
-              <a href="#testimonials" className="text-gray-300 hover:text-secondary transition-colors duration-300">Testimonials</a>
-              <a href="https://dashboard.lanonasis.com/" className="btn-primary text-sm">Get Started</a>
+              <a href="#features" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.features')}</a>
+              <a href="#ecosystem" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.ecosystem')}</a>
+              <a href="#pricing" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.pricing')}</a>
+              <a href="#testimonials" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.testimonials')}</a>
+              <a href="https://dashboard.lanonasis.com/" className="btn-primary text-sm">{t('navigation.get_started')}</a>
             </div>
             <div className="flex items-center space-x-2">
               <LanguageSwitcher />
               {/* Mobile menu button */}
-              <button className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
+              <button 
+                className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+                aria-label="Open mobile menu"
+                title="Open mobile menu"
+              >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -86,37 +90,37 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
-              <h3 className="text-xl font-bold text-secondary mb-4">Lan Onasis</h3>
+              <h3 className="text-xl font-bold text-secondary mb-4">{t('app.name')}</h3>
               <p className="text-gray-400 mb-4">
-                Transforming Africa's financial technology landscape with AI-powered solutions.
+                {t('footer.company_description')}
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-secondary transition-colors">LinkedIn</a>
-                <a href="#" className="text-gray-400 hover:text-secondary transition-colors">Twitter</a>
-                <a href="#" className="text-gray-400 hover:text-secondary transition-colors">GitHub</a>
+                <a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.social_links.linkedin')}</a>
+                <a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.social_links.twitter')}</a>
+                <a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.social_links.github')}</a>
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Platform</h4>
+              <h4 className="font-semibold mb-4">{t('footer.platform_section')}</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">VortexCore AI</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">VortexPay</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">BizGenie</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">API Gateway</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.vortexcore_ai')}</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.vortexpay')}</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.bizgenie')}</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.api_gateway')}</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Resources</h4>
+              <h4 className="font-semibold mb-4">{t('footer.resources_section')}</h4>
               <ul className="space-y-2">
-                <li><a href="https://docs.lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">Documentation</a></li>
-                <li><a href="https://dashboard.lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">Dashboard</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">Support</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">Contact</a></li>
+                <li><a href="https://docs.lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.documentation')}</a></li>
+                <li><a href="https://dashboard.lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.dashboard')}</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.support')}</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.contact')}</a></li>
               </ul>
             </div>
           </div>
           <div className="border-t border-white/10 mt-8 pt-8 text-center">
-            <p className="text-gray-400">© 2024 Lan Onasis. All rights reserved.</p>
+            <p className="text-gray-400">{t('footer.copyright')}</p>
           </div>
         </div>
       </footer>

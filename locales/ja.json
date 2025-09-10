@@ -1,19 +1,113 @@
 {
-  "hero": {
-    "title": "プライバシー重視の金融インフラ",
-    "subtitle": "現代の金融エコシステムのためのエンタープライズグレードのプライバシーとセキュリティ",
-    "cta": "詳細を見る"
-  },
-  "features": {
-    "privacy": "プライバシーインフラ",
-    "security": "エンタープライズセキュリティ",
-    "integration": "シームレスな統合"
+  "app": {
+    "name": "Lan Onasis",
+    "tagline": "AI駆動のアフリカフィンテックソリューション",
+    "title": "Lan Onasis - AI駆動のアフリカフィンテックソリューション",
+    "description": "アフリカで最もスマートなテックエコシステムの構築—起業家、フィンテック、機関を安全で準拠したAI強化プラットフォームで支援"
   },
   "navigation": {
-    "home": "ホーム",
+    "developers": "開発者",
     "products": "製品",
-    "solutions": "ソリューション",
-    "company": "会社概要",
-    "contact": "お問い合わせ"
+    "industries": "業界",
+    "services": "サービス",
+    "contact": "お問い合わせ",
+    "home": "ホーム",
+    "login": "ログイン",
+    "signup": "無料登録",
+    "subscribe": "購読",
+    "features": "機能",
+    "ecosystem": "エコシステム",
+    "pricing": "料金",
+    "testimonials": "お客様の声",
+    "get_started": "始める",
+    "select_language": "言語選択"
+  },
+  "hero": {
+    "badge": "VortexCore AI の紹介",
+    "title": "アフリカのテック革命を推進",
+    "subtitle": "アフリカで最もスマートなテックエコシステムの構築—起業家、フィンテック、機関を安全で準拠したAI強化プラットフォームで支援",
+    "cta_primary": "無料で始める",
+    "cta_secondary": "ログイン"
+  },
+  "hero_section": {
+    "transforming": "変革",
+    "africas_tech": "アフリカのテック",
+    "ecosystem": "エコシステム",
+    "tagline": "アフリカのデジタル未来を推進",
+    "description": "コンプライアンステクノロジー、金融サービス、デジタル変革においてアフリカのテックエコシステム全体でイノベーションを推進する革命的なAIプラットフォーム。",
+    "features": {
+      "vortexcore_ai": "VortexCore AI プラットフォーム",
+      "compliance_tech": "コンプライアンステクノロジー",
+      "financial_services": "金融サービス",
+      "digital_ecosystem": "デジタルエコシステム"
+    },
+    "explore_platform": "{{platformName}}を探索",
+    "learn_more": "詳細を見る",
+    "stats": {
+      "african_markets": "アフリカ市場",
+      "transactions_processed": "処理済み取引",
+      "uptime_guarantee": "稼働時間保証"
+    }
+  },
+  "footer": {
+    "company_description": "AI駆動ソリューションでアフリカのフィンテック環境を変革。",
+    "platform_section": "プラットフォーム",
+    "resources_section": "リソース",
+    "social_links": {
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter",
+      "github": "GitHub"
+    },
+    "platform_links": {
+      "vortexcore_ai": "VortexCore AI",
+      "vortexpay": "VortexPay",
+      "bizgenie": "BizGenie",
+      "api_gateway": "API ゲートウェイ"
+    },
+    "resource_links": {
+      "documentation": "ドキュメント",
+      "dashboard": "ダッシュボード",
+      "support": "サポート",
+      "contact": "お問い合わせ"
+    },
+    "copyright": " 2024 Lan Onasis. "
+  },
+  "pricing": {
+    "plans": "プランを選択",
+    "tiers": {
+      "starter": {
+        "name": "スターター",
+        "description": "個人や小規模プロジェクトに最適",
+        "features": ["基本分析", "5チームメンバー", "基本サポート"]
+      },
+      "pro": {
+        "name": "プロ",
+        "description": "成長するチームや企業に最適",
+        "features": ["高度な分析", "無制限チームメンバー", "優先サポート"],
+        "badge": "最も人気"
+      },
+      "enterprise": {
+        "name": "エンタープライズ",
+        "description": "大規模組織や企業向け",
+        "features": ["カスタム分析", "専用サポート", "API アクセス"]
+      }
+    }
+  },
+  "display_cards": {
+    "vortexcore_ai": {
+      "title": "VortexCore AI",
+      "description": "インテリジェントなコンプライアンス自動化とビジネスインサイト",
+      "status": "ライブ"
+    },
+    "vortexpay": {
+      "title": "VortexPay",
+      "description": "マルチ通貨対応の即座のB2B決済",
+      "status": "アクティブ"
+    },
+    "bizgenie": {
+      "title": "BizGenie",
+      "description": "AI駆動のSMEインサイトとキャッシュフロー予測",
+      "status": "ベータ"
+    }
   }
 }

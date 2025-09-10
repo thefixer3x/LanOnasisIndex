@@ -3,23 +3,12 @@
   "locale": {
     "source": "en",
     "targets": [
-      "es",
-      "fr", 
-      "de",
-      "ja",
-      "zh", 
-      "pt",
-      "ar",
-      "ko",
-      "it", 
-      "ru"
+      "es", "fr", "de", "ja", "zh", "pt", "ar", "ru", "it", "ko"
     ]
   },
   "buckets": {
-    "main": {
-      "path": "./locales",
-      "format": "json",
-      "glob": "*.json"
+    "json": {
+      "include": ["locales/en.json"]
     }
   },
   "$schema": "https://lingo.dev/schema/i18n.json"

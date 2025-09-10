@@ -1,19 +1,113 @@
 {
-  "hero": {
-    "title": "隐私优先的金融基础设施",
-    "subtitle": "为现代金融生态系统提供企业级隐私和安全保障",
-    "cta": "了解更多"
-  },
-  "features": {
-    "privacy": "隐私基础设施",
-    "security": "企业级安全",
-    "integration": "无缝集成"
+  "app": {
+    "name": "Lan Onasis",
+    "tagline": "AI驱动的非洲金融科技解决方案",
+    "title": "Lan Onasis - AI驱动的非洲金融科技解决方案",
+    "description": "构建非洲最智能的科技生态系统—通过安全、合规和AI增强的平台赋能创业者、金融科技公司和机构"
   },
   "navigation": {
-    "home": "首页",
+    "developers": "开发者",
     "products": "产品",
-    "solutions": "解决方案",
-    "company": "公司",
-    "contact": "联系我们"
+    "industries": "行业",
+    "services": "服务",
+    "contact": "联系我们",
+    "home": "首页",
+    "login": "登录",
+    "signup": "免费注册",
+    "subscribe": "订阅",
+    "features": "功能",
+    "ecosystem": "生态系统",
+    "pricing": "价格",
+    "testimonials": "客户推荐",
+    "get_started": "开始使用",
+    "select_language": "选择语言"
+  },
+  "hero": {
+    "badge": "介绍 VortexCore AI",
+    "title": "推动非洲科技革命",
+    "subtitle": "构建非洲最智能的科技生态系统—通过安全、合规和AI增强的平台赋能创业者、金融科技公司和机构",
+    "cta_primary": "免费开始",
+    "cta_secondary": "登录"
+  },
+  "hero_section": {
+    "transforming": "变革",
+    "africas_tech": "非洲科技",
+    "ecosystem": "生态系统",
+    "tagline": "推动非洲数字未来",
+    "description": "革命性的AI平台，在合规技术、金融服务和数字化转型领域推动整个非洲科技生态系统的创新。",
+    "features": {
+      "vortexcore_ai": "VortexCore AI 平台",
+      "compliance_tech": "合规技术",
+      "financial_services": "金融服务",
+      "digital_ecosystem": "数字生态系统"
+    },
+    "explore_platform": "探索 {{platformName}}",
+    "learn_more": "了解更多",
+    "stats": {
+      "african_markets": "非洲市场",
+      "transactions_processed": "已处理交易",
+      "uptime_guarantee": "运行时间保证"
+    }
+  },
+  "footer": {
+    "company_description": "通过AI驱动的解决方案变革非洲金融科技格局。",
+    "platform_section": "平台",
+    "resources_section": "资源",
+    "social_links": {
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter",
+      "github": "GitHub"
+    },
+    "platform_links": {
+      "vortexcore_ai": "VortexCore AI",
+      "vortexpay": "VortexPay",
+      "bizgenie": "BizGenie",
+      "api_gateway": "API 网关"
+    },
+    "resource_links": {
+      "documentation": "文档",
+      "dashboard": "仪表板",
+      "support": "支持",
+      "contact": "联系我们"
+    },
+    "copyright": " 2024 Lan Onasis. 保留所有权利。"
+  },
+  "pricing": {
+    "plans": "选择您的计划",
+    "tiers": {
+      "starter": {
+        "name": "初学者",
+        "description": "适合个人和小型项目",
+        "features": ["基础分析", "5名团队成员", "基础支持"]
+      },
+      "pro": {
+        "name": "专业版",
+        "description": "适合成长型团队和企业",
+        "features": ["高级分析", "无限团队成员", "优先支持"],
+        "badge": "最受欢迎"
+      },
+      "enterprise": {
+        "name": "企业版",
+        "description": "适合大型组织和企业",
+        "features": ["定制分析", "专属支持", "API 访问"]
+      }
+    }
+  },
+  "display_cards": {
+    "vortexcore_ai": {
+      "title": "VortexCore AI",
+      "description": "智能合规自动化和业务洞察",
+      "status": "在线"
+    },
+    "vortexpay": {
+      "title": "VortexPay",
+      "description": "支持多货币的即时B2B支付",
+      "status": "活跃"
+    },
+    "bizgenie": {
+      "title": "BizGenie",
+      "description": "AI驱动的中小企业洞察和现金流预测",
+      "status": "测试版"
+    }
   }
 }

@@ -5,7 +5,7 @@ import { cn } from "../../lib/utils"
 import "./logo-carousel.css"
 
 interface LogoCarouselProps {
-  logos: { src: string; alt: string; href?: string }[]
+  logos: { src: string; alt: string; href?: string; fallback?: string }[]
   className?: string
   speed?: number
   direction?: "left" | "right"
@@ -72,7 +72,7 @@ export function LogoCarousel({
       >
         {logos.map((logo, idx) => (
           <div
-            className="w-[150px] flex items-center justify-center mx-6 rounded-lg bg-background p-4 shadow-sm"
+            className="w-[150px] flex items-center justify-center mx-6 rounded-lg bg-slate-800/50 p-4 shadow-sm border border-slate-700"
             key={idx}
           >
             {logo.href ? (
@@ -86,14 +86,38 @@ export function LogoCarousel({
                   src={logo.src}
                   alt={logo.alt}
                   className="h-10 w-auto object-contain saturate-0 opacity-80 hover:saturate-100 hover:opacity-100 transition-all duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
                 />
+                <div 
+                  className="logo-fallback w-full h-14 items-center justify-center bg-blue-600/20 rounded text-blue-400 font-bold text-sm"
+                >
+                  {logo.fallback || logo.alt.substring(0, 2).toUpperCase()}
+                </div>
               </a>
             ) : (
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="h-10 w-auto object-contain saturate-0 opacity-80 hover:saturate-100 hover:opacity-100 transition-all duration-300"
-              />
+              <>
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-10 w-auto object-contain saturate-0 opacity-80 hover:saturate-100 hover:opacity-100 transition-all duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
+                />
+                <div 
+                  className="logo-fallback w-full h-14 items-center justify-center bg-blue-600/20 rounded text-blue-400 font-bold text-sm"
+                >
+                  {logo.fallback || logo.alt.substring(0, 2).toUpperCase()}
+                </div>
+              </>
             )}
           </div>
         ))}
@@ -110,7 +134,7 @@ export function LogoCarousel({
       >
         {logos.map((logo, idx) => (
           <div
-            className="w-[150px] flex items-center justify-center mx-6 rounded-lg bg-background p-4 shadow-sm"
+            className="w-[150px] flex items-center justify-center mx-6 rounded-lg bg-slate-800/50 p-4 shadow-sm border border-slate-700"
             key={`duplicate-${idx}`}
           >
             {logo.href ? (
@@ -124,14 +148,38 @@ export function LogoCarousel({
                   src={logo.src}
                   alt={logo.alt}
                   className="h-10 w-auto object-contain saturate-0 opacity-80 hover:saturate-100 hover:opacity-100 transition-all duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
                 />
+                <div 
+                  className="logo-fallback w-full h-14 items-center justify-center bg-blue-600/20 rounded text-blue-400 font-bold text-sm"
+                >
+                  {logo.fallback || logo.alt.substring(0, 2).toUpperCase()}
+                </div>
               </a>
             ) : (
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="h-10 w-auto object-contain saturate-0 opacity-80 hover:saturate-100 hover:opacity-100 transition-all duration-300"
-              />
+              <>
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-10 w-auto object-contain saturate-0 opacity-80 hover:saturate-100 hover:opacity-100 transition-all duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
+                />
+                <div 
+                  className="logo-fallback w-full h-14 items-center justify-center bg-blue-600/20 rounded text-blue-400 font-bold text-sm"
+                >
+                  {logo.fallback || logo.alt.substring(0, 2).toUpperCase()}
+                </div>
+              </>
             )}
           </div>
         ))}

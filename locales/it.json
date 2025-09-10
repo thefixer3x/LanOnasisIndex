@@ -1,19 +1,113 @@
 {
-  "hero": {
-    "title": "Infrastruttura finanziaria con priorità alla privacy",
-    "subtitle": "Privacy e sicurezza di livello enterprise per l'ecosistema finanziario moderno",
-    "cta": "Scopri di più"
-  },
-  "features": {
-    "privacy": "Infrastruttura per la privacy",
-    "security": "Sicurezza enterprise",
-    "integration": "Integrazione senza interruzioni"
+  "app": {
+    "name": "Lan Onasis",
+    "tagline": "Soluzioni Fintech Africane Potenziate dall'IA",
+    "title": "Lan Onasis - Soluzioni Fintech Africane Potenziate dall'IA",
+    "description": "Costruire l'ecosistema tecnologico più intelligente dell'Africa—potenziando imprenditori, fintech e istituzioni con piattaforme sicure, conformi e potenziate dall'IA"
   },
   "navigation": {
-    "home": "Home",
+    "developers": "Sviluppatori",
     "products": "Prodotti",
-    "solutions": "Soluzioni",
-    "company": "Azienda",
-    "contact": "Contatti"
+    "industries": "Industrie",
+    "services": "Servizi",
+    "contact": "Contatti",
+    "home": "Home",
+    "login": "Accedi",
+    "signup": "Registrati Gratis",
+    "subscribe": "Iscriviti",
+    "features": "Funzionalità",
+    "ecosystem": "Ecosistema",
+    "pricing": "Prezzi",
+    "testimonials": "Testimonianze",
+    "get_started": "Inizia",
+    "select_language": "Seleziona Lingua"
+  },
+  "hero": {
+    "badge": "Presentazione di VortexCore AI",
+    "title": "Alimentare la Rivoluzione Tecnologica dell'Africa",
+    "subtitle": "Costruire l'ecosistema tecnologico più intelligente dell'Africa—potenziando imprenditori, fintech e istituzioni con piattaforme sicure, conformi e potenziate dall'IA",
+    "cta_primary": "Inizia Gratis",
+    "cta_secondary": "Accedi"
+  },
+  "hero_section": {
+    "transforming": "Trasformando",
+    "africas_tech": "Tech dell'Africa",
+    "ecosystem": "Ecosistema",
+    "tagline": "Alimentare il Futuro Digitale dell'Africa",
+    "description": "Piattaforma IA rivoluzionaria che guida l'innovazione nella tecnologia di conformità, servizi finanziari e trasformazione digitale in tutto l'ecosistema tecnologico africano.",
+    "features": {
+      "vortexcore_ai": "Piattaforma VortexCore AI",
+      "compliance_tech": "Tecnologia di Conformità",
+      "financial_services": "Servizi Finanziari",
+      "digital_ecosystem": "Ecosistema Digitale"
+    },
+    "explore_platform": "Esplora {{platformName}}",
+    "learn_more": "Scopri di Più",
+    "stats": {
+      "african_markets": "Mercati Africani",
+      "transactions_processed": "Transazioni Elaborate",
+      "uptime_guarantee": "Garanzia di Uptime"
+    }
+  },
+  "footer": {
+    "company_description": "Trasformare il panorama fintech dell'Africa con soluzioni potenziate dall'IA.",
+    "platform_section": "Piattaforma",
+    "resources_section": "Risorse",
+    "social_links": {
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter",
+      "github": "GitHub"
+    },
+    "platform_links": {
+      "vortexcore_ai": "VortexCore AI",
+      "vortexpay": "VortexPay",
+      "bizgenie": "BizGenie",
+      "api_gateway": "Gateway API"
+    },
+    "resource_links": {
+      "documentation": "Documentazione",
+      "dashboard": "Dashboard",
+      "support": "Supporto",
+      "contact": "Contatti"
+    },
+    "copyright": "© 2024 Lan Onasis. Tutti i diritti riservati."
+  },
+  "pricing": {
+    "plans": "Scegli il Tuo Piano",
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "description": "Perfetto per individui e piccoli progetti",
+        "features": ["Analytics di Base", "5 Membri del Team", "Supporto di Base"]
+      },
+      "pro": {
+        "name": "Pro",
+        "description": "Ideale per team e aziende in crescita",
+        "features": ["Analytics Avanzate", "Membri del Team Illimitati", "Supporto Prioritario"],
+        "badge": "Più Popolare"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "Per grandi organizzazioni e aziende",
+        "features": ["Analytics Personalizzate", "Supporto Dedicato", "Accesso API"]
+      }
+    }
+  },
+  "display_cards": {
+    "vortexcore_ai": {
+      "title": "VortexCore AI",
+      "description": "Automazione intelligente della conformità e insights aziendali",
+      "status": "Live"
+    },
+    "vortexpay": {
+      "title": "VortexPay",
+      "description": "Pagamenti B2B istantanei con supporto multi-valuta",
+      "status": "Attivo"
+    },
+    "bizgenie": {
+      "title": "BizGenie",
+      "description": "Insights PMI potenziati dall'IA e previsioni del flusso di cassa",
+      "status": "Beta"
+    }
   }
 }

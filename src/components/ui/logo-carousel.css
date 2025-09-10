@@ -47,3 +47,7 @@
 .group:hover .group-hover\:\[animation-play-state\:paused\] {
   animation-play-state: paused;
 }
+
+.logo-fallback {
+  display: none;
+}

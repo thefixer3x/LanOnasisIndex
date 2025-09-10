@@ -1,42 +1,45 @@
 "use client";
 
 import DisplayCards from "../components/ui/display-cards";
-import { Sparkles } from "lucide-react";
+import { Sparkles } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const defaultCards = [
-  {
-    icon: <Sparkles className="size-4 text-blue-300" />,
-    title: "VortexCore AI",
-    description: "Intelligent compliance automation and business insights",
-    date: "Live",
-    iconClassName: "text-blue-500",
-    titleClassName: "text-blue-500",
-    className:
-      "[grid-area:stack] hover:-translate-y-4 bg-slate-800/80 border border-slate-700 rounded-xl p-6 transition-all duration-300 hover:bg-slate-700/80 hover:border-slate-600",
-  },
-  {
-    icon: <Sparkles className="size-4 text-green-300" />,
-    title: "VortexPay",
-    description: "Instant B2B payments with multi-currency support",
-    date: "Active",
-    iconClassName: "text-green-500",
-    titleClassName: "text-green-500",
-    className:
-      "[grid-area:stack] translate-x-6 translate-y-4 hover:-translate-y-2 bg-slate-800/80 border border-slate-700 rounded-xl p-6 transition-all duration-300 hover:bg-slate-700/80 hover:border-slate-600",
-  },
-  {
-    icon: <Sparkles className="size-4 text-purple-300" />,
-    title: "BizGenie",
-    description: "AI-powered SME insights and cash flow forecasting",
-    date: "Beta",
-    iconClassName: "text-purple-500",
-    titleClassName: "text-purple-500",
-    className:
-      "[grid-area:stack] translate-x-12 translate-y-8 hover:translate-y-4 bg-slate-800/80 border border-slate-700 rounded-xl p-6 transition-all duration-300 hover:bg-slate-700/80 hover:border-slate-600",
-  },
-];
+const DisplayCardsDemo = () => {
+  const { t } = useTranslation();
+  
+  const defaultCards = [
+    {
+      icon: <Sparkles className="size-4 text-blue-300" />,
+      title: t('display_cards.vortexcore_ai.title'),
+      description: t('display_cards.vortexcore_ai.description'),
+      date: t('display_cards.vortexcore_ai.status'),
+      iconClassName: "text-blue-500",
+      titleClassName: "text-blue-500",
+      className:
+        "bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:border-blue-300",
+    },
+    {
+      icon: <Sparkles className="size-4 text-green-300" />,
+      title: t('display_cards.vortexpay.title'),
+      description: t('display_cards.vortexpay.description'),
+      date: t('display_cards.vortexpay.status'),
+      iconClassName: "text-green-500",
+      titleClassName: "text-green-500",
+      className:
+        "bg-gradient-to-br from-green-50 to-green-100 border-green-200 hover:border-green-300",
+    },
+    {
+      icon: <Sparkles className="size-4 text-purple-300" />,
+      title: t('display_cards.bizgenie.title'),
+      description: t('display_cards.bizgenie.description'),
+      date: t('display_cards.bizgenie.status'),
+      iconClassName: "text-purple-500",
+      titleClassName: "text-purple-500",
+      className:
+        "[grid-area:stack] translate-x-12 translate-y-8 hover:translate-y-4 bg-slate-800/80 border border-slate-700 rounded-xl p-6 transition-all duration-300 hover:bg-slate-700/80 hover:border-slate-600",
+    },
+  ];
 
-function DisplayCardsDemo() {
   return (
     <section className="py-20 bg-gradient-to-b from-slate-900 to-black">
       <div className="max-w-7xl mx-auto px-6">

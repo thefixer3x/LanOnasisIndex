@@ -6,110 +6,130 @@ import '../components/ui/logo-carousel.css'
 // Financial Institution Partners
 const financialPartners = [
   {
-    src: "https://cdn.cdnlogo.com/logos/e/57/ecobank.svg",
+    src: "https://logo.clearbit.com/ecobank.com",
     alt: "Ecobank",
-    href: "https://ecobank.com"
+    href: "https://ecobank.com",
+    fallback: "EB"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/f/38/first-bank-nigeria.svg", 
+    src: "https://logo.clearbit.com/firstbanknigeria.com", 
     alt: "First Bank Nigeria",
-    href: "https://firstbanknigeria.com"
+    href: "https://firstbanknigeria.com",
+    fallback: "FBN"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/s/84/standard-chartered.svg",
+    src: "https://logo.clearbit.com/sc.com",
     alt: "Standard Chartered",
-    href: "https://standardchartered.com"
+    href: "https://standardchartered.com",
+    fallback: "SC"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/m/17/mtn.svg",
+    src: "https://logo.clearbit.com/mtn.com",
     alt: "MTN Group",
-    href: "https://mtn.com"
+    href: "https://mtn.com",
+    fallback: "MTN"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/a/26/access-bank.svg",
+    src: "https://logo.clearbit.com/accessbankplc.com",
     alt: "Access Bank",
-    href: "https://accessbankplc.com"
+    href: "https://accessbankplc.com",
+    fallback: "AB"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/s/96/safaricom.svg",
+    src: "https://logo.clearbit.com/safaricom.co.ke",
     alt: "Safaricom",
-    href: "https://safaricom.co.ke"
+    href: "https://safaricom.co.ke",
+    fallback: "SF"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/g/95/guaranty-trust-bank.svg",
+    src: "https://logo.clearbit.com/gtbank.com",
     alt: "Guaranty Trust Bank",
-    href: "https://gtbank.com"
+    href: "https://gtbank.com",
+    fallback: "GTB"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/a/17/absa.svg",
+    src: "https://logo.clearbit.com/absa.africa",
     alt: "Absa Group",
-    href: "https://absa.africa"
+    href: "https://absa.africa",
+    fallback: "ABSA"
   }
-]
+];
 
 // Technology Partners
 const techPartners = [
   {
-    src: "https://cdn.cdnlogo.com/logos/s/96/stripe.svg",
+    src: "https://logo.clearbit.com/stripe.com",
     alt: "Stripe",
-    href: "https://stripe.com"
+    href: "https://stripe.com",
+    fallback: "ST"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/p/29/paypal.svg",
+    src: "https://logo.clearbit.com/paypal.com",
     alt: "PayPal", 
-    href: "https://paypal.com"
+    href: "https://paypal.com",
+    fallback: "PP"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/o/56/openai.svg",
+    src: "https://logo.clearbit.com/openai.com",
     alt: "OpenAI",
-    href: "https://openai.com"
+    href: "https://openai.com",
+    fallback: "AI"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/s/91/supabase.svg",
+    src: "https://logo.clearbit.com/supabase.com",
     alt: "Supabase",
-    href: "https://supabase.com"
+    href: "https://supabase.com",
+    fallback: "SB"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/g/69/github.svg",
+    src: "https://logo.clearbit.com/github.com",
     alt: "GitHub",
-    href: "https://github.com"
+    href: "https://github.com",
+    fallback: "GH"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/v/84/vercel.svg",
+    src: "https://logo.clearbit.com/vercel.com",
     alt: "Vercel",
-    href: "https://vercel.com"
+    href: "https://vercel.com",
+    fallback: "VC"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/a/88/anthropic.svg",
+    src: "https://logo.clearbit.com/anthropic.com",
     alt: "Anthropic",
-    href: "https://anthropic.com"
+    href: "https://anthropic.com",
+    fallback: "AN"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/a/13/amazon-web-services.svg",
+    src: "https://logo.clearbit.com/aws.amazon.com",
     alt: "Amazon AWS",
-    href: "https://aws.amazon.com"
+    href: "https://aws.amazon.com",
+    fallback: "AWS"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/m/44/microsoft-azure.svg",
+    src: "https://logo.clearbit.com/azure.microsoft.com",
     alt: "Microsoft Azure",
-    href: "https://azure.microsoft.com"
+    href: "https://azure.microsoft.com",
+    fallback: "AZ"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/s/75/slack.svg",
+    src: "https://logo.clearbit.com/slack.com",
     alt: "Slack",
-    href: "https://slack.com"
+    href: "https://slack.com",
+    fallback: "SL"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/n/53/notion.svg",
+    src: "https://logo.clearbit.com/notion.so",
     alt: "Notion",
-    href: "https://notion.so"
+    href: "https://notion.so",
+    fallback: "NO"
   },
   {
-    src: "https://cdn.cdnlogo.com/logos/f/30/figma.svg",
+    src: "https://logo.clearbit.com/figma.com",
     alt: "Figma",
-    href: "https://figma.com"
+    href: "https://figma.com",
+    fallback: "FG"
   }
-]
+];
 
 export function LogoCarouselDemo() {
   return (

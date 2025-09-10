@@ -1,19 +1,113 @@
 {
-  "hero": {
-    "title": "البنية التحتية المالية التي تضع الخصوصية أولاً",
-    "subtitle": "خصوصية وأمان بمستوى المؤسسات للنظام المالي الحديث",
-    "cta": "اعرف المزيد"
-  },
-  "features": {
-    "privacy": "بنية تحتية للخصوصية",
-    "security": "أمان المؤسسات",
-    "integration": "تكامل سلس"
+  "app": {
+    "name": "لان أوناسيس",
+    "tagline": "حلول التكنولوجيا المالية الأفريقية المدعومة بالذكاء الاصطناعي",
+    "title": "لان أوناسيس - حلول التكنولوجيا المالية الأفريقية المدعومة بالذكاء الاصطناعي",
+    "description": "بناء النظام البيئي التكنولوجي الأكثر ذكاءً في أفريقيا—تمكين رواد الأعمال وشركات التكنولوجيا المالية والمؤسسات بمنصات آمنة ومتوافقة ومحسّنة بالذكاء الاصطناعي"
   },
   "navigation": {
-    "home": "الرئيسية",
+    "developers": "المطورون",
     "products": "المنتجات",
-    "solutions": "الحلول",
-    "company": "الشركة",
-    "contact": "اتصل بنا"
+    "industries": "الصناعات",
+    "services": "الخدمات",
+    "contact": "اتصل بنا",
+    "home": "الرئيسية",
+    "login": "تسجيل الدخول",
+    "signup": "التسجيل مجاناً",
+    "subscribe": "اشتراك",
+    "features": "المميزات",
+    "ecosystem": "النظام البيئي",
+    "pricing": "الأسعار",
+    "testimonials": "الشهادات",
+    "get_started": "ابدأ الآن",
+    "select_language": "اختر اللغة"
+  },
+  "hero": {
+    "badge": "تقديم VortexCore AI",
+    "title": "تشغيل ثورة التكنولوجيا الأفريقية",
+    "subtitle": "بناء النظام البيئي التكنولوجي الأكثر ذكاءً في أفريقيا—تمكين رواد الأعمال وشركات التكنولوجيا المالية والمؤسسات بمنصات آمنة ومتوافقة ومحسّنة بالذكاء الاصطناعي",
+    "cta_primary": "ابدأ مجاناً",
+    "cta_secondary": "تسجيل الدخول"
+  },
+  "hero_section": {
+    "transforming": "تحويل",
+    "africas_tech": "تكنولوجيا أفريقيا",
+    "ecosystem": "النظام البيئي",
+    "tagline": "تشغيل المستقبل الرقمي لأفريقيا",
+    "description": "منصة ذكاء اصطناعي ثورية تقود الابتكار في تكنولوجيا الامتثال والخدمات المالية والتحول الرقمي في جميع أنحاء النظام البيئي التكنولوجي الأفريقي.",
+    "features": {
+      "vortexcore_ai": "منصة VortexCore AI",
+      "compliance_tech": "تكنولوجيا الامتثال",
+      "financial_services": "الخدمات المالية",
+      "digital_ecosystem": "النظام البيئي الرقمي"
+    },
+    "explore_platform": "استكشف {{platformName}}",
+    "learn_more": "اعرف المزيد",
+    "stats": {
+      "african_markets": "الأسواق الأفريقية",
+      "transactions_processed": "المعاملات المعالجة",
+      "uptime_guarantee": "ضمان وقت التشغيل"
+    }
+  },
+  "footer": {
+    "company_description": "تحويل مشهد التكنولوجيا المالية في أفريقيا بحلول مدعومة بالذكاء الاصطناعي.",
+    "platform_section": "المنصة",
+    "resources_section": "الموارد",
+    "social_links": {
+      "linkedin": "لينكد إن",
+      "twitter": "تويتر",
+      "github": "جيت هاب"
+    },
+    "platform_links": {
+      "vortexcore_ai": "VortexCore AI",
+      "vortexpay": "VortexPay",
+      "bizgenie": "BizGenie",
+      "api_gateway": "بوابة API"
+    },
+    "resource_links": {
+      "documentation": "الوثائق",
+      "dashboard": "لوحة التحكم",
+      "support": "الدعم",
+      "contact": "اتصل بنا"
+    },
+    "copyright": " 2024 لان أوناسيس. جميع الحقوق محفوظة."
+  },
+  "pricing": {
+    "plans": "اختر خطتك",
+    "tiers": {
+      "starter": {
+        "name": "المبتدئ",
+        "description": "مثالي للأفراد والمشاريع الصغيرة",
+        "features": ["تحليلات أساسية", "5 أعضاء فريق", "دعم أساسي"]
+      },
+      "pro": {
+        "name": "احترافي",
+        "description": "مثالي للفرق والشركات النامية",
+        "features": ["تحليلات متقدمة", "أعضاء فريق غير محدودين", "دعم أولوية"],
+        "badge": "الأكثر شعبية"
+      },
+      "enterprise": {
+        "name": "المؤسسات",
+        "description": "للمنظمات والشركات الكبيرة",
+        "features": ["تحليلات مخصصة", "دعم مخصص", "وصول API"]
+      }
+    }
+  },
+  "display_cards": {
+    "vortexcore_ai": {
+      "title": "VortexCore AI",
+      "description": "أتمتة ذكية للامتثال ورؤى الأعمال",
+      "status": "مباشر"
+    },
+    "vortexpay": {
+      "title": "VortexPay",
+      "description": "مدفوعات B2B فورية مع دعم متعدد العملات",
+      "status": "نشط"
+    },
+    "bizgenie": {
+      "title": "BizGenie",
+      "description": "رؤى الشركات الصغيرة والمتوسطة مدعومة بالذكاء الاصطناعي وتوقع التدفق النقدي",
+      "status": "تجريبي"
+    }
   }
 }
