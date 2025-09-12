@@ -16,7 +16,7 @@
     "signup": "Sign Up Free",
     "subscribe": "Subscribe",
     "features": "Features",
-    "ecosystem": "Ecosystem", 
+    "ecosystem": "Ecosystem",
     "pricing": "Pricing",
     "testimonials": "Testimonials",
     "get_started": "Get Started",
@@ -189,7 +189,7 @@
     "resources_section": "Resources",
     "social_links": {
       "linkedin": "LinkedIn",
-      "twitter": "Twitter", 
+      "twitter": "Twitter",
       "github": "GitHub"
     },
     "platform_links": {
@@ -212,18 +212,30 @@
       "starter": {
         "name": "Starter",
         "description": "Perfect for individuals and small projects",
-        "features": ["Basic Analytics", "5 Team Members", "Basic Support"]
+        "features": [
+          "Basic Analytics",
+          "5 Team Members",
+          "Basic Support"
+        ]
       },
       "pro": {
-        "name": "Pro", 
+        "name": "Pro",
         "description": "Ideal for growing teams and businesses",
-        "features": ["Advanced Analytics", "Unlimited Team Members", "Priority Support"],
+        "features": [
+          "Advanced Analytics",
+          "Unlimited Team Members",
+          "Priority Support"
+        ],
         "badge": "Most Popular"
       },
       "enterprise": {
         "name": "Enterprise",
-        "description": "For large organizations and enterprises", 
-        "features": ["Custom Analytics", "Dedicated Support", "API Access"]
+        "description": "For large organizations and enterprises",
+        "features": [
+          "Custom Analytics",
+          "Dedicated Support",
+          "API Access"
+        ]
       }
     }
   },
@@ -236,7 +248,7 @@
       },
       {
         "name": "Amina K.",
-        "profession": "Compliance Officer", 
+        "profession": "Compliance Officer",
         "description": "The attention to detail and regulatory knowledge in Lan Onasis's compliance technology is exceptional. Their platform has significantly reduced our risk exposure across our operations in Ghana and Kenya."
       },
       {
@@ -276,7 +288,7 @@
     "financial": {
       "ecobank": "Ecobank",
       "first_bank": "First Bank Nigeria",
-      "standard_chartered": "Standard Chartered", 
+      "standard_chartered": "Standard Chartered",
       "mtn": "MTN Group",
       "access_bank": "Access Bank",
       "safaricom": "Safaricom",
@@ -288,7 +300,7 @@
       "paypal": "PayPal",
       "openai": "OpenAI",
       "supabase": "Supabase",
-      "github": "GitHub", 
+      "github": "GitHub",
       "vercel": "Vercel",
       "anthropic": "Anthropic",
       "aws": "Amazon AWS",
@@ -352,7 +364,7 @@
     ],
     "mcp_tools": [
       "create_memory - Create new memories",
-      "search_memories - Search existing memories", 
+      "search_memories - Search existing memories",
       "list_memories - List all memories",
       "update_memory - Update existing memories",
       "delete_memory - Delete memories",
