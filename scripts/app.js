@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
             button.addEventListener('click', function (e) {
                 // Get action from data attribute or fallback to text content
                 const action = this.dataset.action || this.textContent.trim();
-                
+
                 // Handle different CTA actions
                 switch (action) {
                     case 'get-started':
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
             button.addEventListener('click', function (e) {
                 // Get action from data attribute or fallback to text content
                 const action = this.dataset.action || this.textContent.trim();
-                
+
                 switch (action) {
                     case 'learn-more':
                         handleLearnMore();
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Notification System
     function showNotification(message, type = 'info') {
         if (!message || !document.body) return;
-        
+
         // Remove existing notifications
         const existingNotifications = document.querySelectorAll('.notification');
         if (existingNotifications) {
@@ -230,12 +230,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // Create notification element
         const notification = document.createElement('div');
         notification.className = `notification notification--${type}`;
-        
+
         // Fix CSS template string - use proper variable interpolation
-        const borderColor = type === 'success' ? 'success' : 
-                           type === 'info' ? 'info' : 
-                           type === 'warning' ? 'warning' : 'primary';
-                           
+        const borderColor = type === 'success' ? 'success' :
+            type === 'info' ? 'info' :
+                type === 'warning' ? 'warning' : 'primary';
+
         notification.style.cssText = `
             position: fixed;
             top: 100px;
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Add notification to DOM
         document.body.appendChild(notification);
-        
+
         // Animate in (use requestAnimationFrame for better performance)
         requestAnimationFrame(() => {
             setTimeout(() => {
@@ -297,92 +297,92 @@ document.addEventListener('DOMContentLoaded', function () {
     if (platformCards && platformCards.length > 0) {
         platformCards.forEach(card => {
             card.addEventListener('mouseenter', function () {
-            this.style.transform = 'translateY(-6px) scale(1.02)';
+                this.style.transform = 'translateY(-6px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
         });
 
-        card.addEventListener('mouseleave', function () {
-            this.style.transform = 'translateY(0) scale(1)';
+        // Pricing cards interaction
+        const pricingCards = document.querySelectorAll('.pricing-card');
+        pricingCards.forEach(card => {
+            card.addEventListener('click', function (e) {
+                // Don't trigger if clicking on a button
+                if (e.target.tagName === 'BUTTON') return;
+
+                // Remove active state from all cards
+                pricingCards.forEach(c => c.classList.remove('pricing-card--active'));
+
+                // Add active state to clicked card
+                this.classList.add('pricing-card--active');
+
+                // Add active state styles
+                this.style.borderColor = 'var(--color-primary)';
+                this.style.boxShadow = '0 8px 24px rgba(33, 128, 141, 0.2)';
+            });
         });
-    });
 
-    // Pricing cards interaction
-    const pricingCards = document.querySelectorAll('.pricing-card');
-    pricingCards.forEach(card => {
-        card.addEventListener('click', function (e) {
-            // Don't trigger if clicking on a button
-            if (e.target.tagName === 'BUTTON') return;
+        // Stats counter animation
+        function animateCounters() {
+            const statNumbers = document.querySelectorAll('.stat-number');
 
-            // Remove active state from all cards
-            pricingCards.forEach(c => c.classList.remove('pricing-card--active'));
+            statNumbers.forEach(stat => {
+                const finalValue = stat.textContent;
+                const numericValue = parseInt(finalValue.replace(/\D/g, ''));
+                const suffix = finalValue.replace(/\d/g, '');
 
-            // Add active state to clicked card
-            this.classList.add('pricing-card--active');
-
-            // Add active state styles
-            this.style.borderColor = 'var(--color-primary)';
-            this.style.boxShadow = '0 8px 24px rgba(33, 128, 141, 0.2)';
-        });
-    });
-
-    // Stats counter animation
-    function animateCounters() {
-        const statNumbers = document.querySelectorAll('.stat-number');
-
-        statNumbers.forEach(stat => {
-            const finalValue = stat.textContent;
-            const numericValue = parseInt(finalValue.replace(/\D/g, ''));
-            const suffix = finalValue.replace(/\d/g, '');
-
-            if (numericValue) {
-                let currentValue = 0;
-                const increment = numericValue / 30; // Animation duration
-                const timer = setInterval(() => {
-                    currentValue += increment;
-                    if (currentValue >= numericValue) {
-                        stat.textContent = finalValue;
-                        clearInterval(timer);
-                    } else {
-                        stat.textContent = Math.floor(currentValue) + suffix;
-                    }
-                }, 50);
-            }
-        });
-    }
-
-    // Trigger counter animation when hero section is visible
-    const heroSection = document.querySelector('.hero');
-    if (heroSection && 'IntersectionObserver' in window) {
-        const heroObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    heroObserver.unobserve(entry.target);
+                if (numericValue) {
+                    let currentValue = 0;
+                    const increment = numericValue / 30; // Animation duration
+                    const timer = setInterval(() => {
+                        currentValue += increment;
+                        if (currentValue >= numericValue) {
+                            stat.textContent = finalValue;
+                            clearInterval(timer);
+                        } else {
+                            stat.textContent = Math.floor(currentValue) + suffix;
+                        }
+                    }, 50);
                 }
             });
-        }, { threshold: 0.5 });
+        }
 
-        heroObserver.observe(heroSection);
-    }
+        // Trigger counter animation when hero section is visible
+        const heroSection = document.querySelector('.hero');
+        if (heroSection && 'IntersectionObserver' in window) {
+            const heroObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        heroObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
 
-    // Add loading state management
-    window.addEventListener('load', function () {
-        document.body.classList.add('loaded');
+            heroObserver.observe(heroSection);
+        }
 
-        // Trigger initial animations
-        setTimeout(() => {
-            const heroContent = document.querySelector('.hero-content');
-            if (heroContent) {
-                heroContent.style.opacity = '1';
-                heroContent.style.transform = 'translateY(0)';
-            }
-        }, 100);
-    });
+        // Add loading state management
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
 
-    // Add CSS for loading state
-    if (!document.querySelector('#loading-styles')) {
-        const loadingStyles = document.createElement('style');
-        loadingStyles.id = 'loading-styles';
-        loadingStyles.textContent = `
+            // Trigger initial animations
+            setTimeout(() => {
+                const heroContent = document.querySelector('.hero-content');
+                if (heroContent) {
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transform = 'translateY(0)';
+                }
+            }, 100);
+        });
+
+        // Add CSS for loading state
+        if (!document.querySelector('#loading-styles')) {
+            const loadingStyles = document.createElement('style');
+            loadingStyles.id = 'loading-styles';
+            loadingStyles.textContent = `
             .hero-content {
                 opacity: 0;
                 transform: translateY(20px);
@@ -402,6 +402,59 @@ document.addEventListener('DOMContentLoaded', function () {
                 opacity: 0.9;
             }
         `;
-        document.head.appendChild(loadingStyles);
+            document.head.appendChild(loadingStyles);
+        }
+    });
+
+// Add scroll-to-top functionality
+function addScrollToTop() {
+    // Create scroll-to-top button if it doesn't exist
+    let scrollToTopBtn = document.getElementById('scroll-to-top');
+    if (!scrollToTopBtn) {
+        scrollToTopBtn = document.createElement('button');
+        scrollToTopBtn.id = 'scroll-to-top';
+        scrollToTopBtn.innerHTML = '↑';
+        scrollToTopBtn.setAttribute('aria-label', 'Scroll to top');
+        scrollToTopBtn.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        `;
+        document.body.appendChild(scrollToTopBtn);
     }
-});
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.style.opacity = '1';
+            scrollToTopBtn.style.visibility = 'visible';
+        } else {
+            scrollToTopBtn.style.opacity = '0';
+            scrollToTopBtn.style.visibility = 'hidden';
+        }
+    });
+
+    // Scroll to top when clicked
+    scrollToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Initialize scroll-to-top functionality
+addScrollToTop();
+
