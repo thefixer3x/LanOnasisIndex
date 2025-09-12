@@ -1,15 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import './index.css';
 import './i18n';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HelmetProvider>
-      <App />
-    </HelmetProvider>
+    <App />
   </StrictMode>
 );
 
@@ -20,7 +17,7 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
       .register('/sw.js')
       .then((registration) => {
         console.log('Service Worker registered:', registration);
-        
+
         // Check for updates periodically
         setInterval(() => {
           registration.update();

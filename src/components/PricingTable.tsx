@@ -3,32 +3,35 @@ import { useTranslation } from 'react-i18next';
 
 const PricingTable = () => {
   const { t } = useTranslation();
-  
+
   const tiers = [
     {
       name: t('pricing.tiers.starter.name'),
-      price: { monthly: 15, yearly: 144 },
+      price: t('pricing.tiers.starter.price', { returnObjects: true }) as { monthly: number; yearly: number },
       description: t('pricing.tiers.starter.description'),
       icon: <Zap className="w-7 h-7 text-gray-500 dark:text-gray-400 animate-bounce" />,
       features: t('pricing.tiers.starter.features', { returnObjects: true }) as string[],
       highlight: false,
+      cta: t('pricing.tiers.starter.cta'),
     },
     {
       name: t('pricing.tiers.pro.name'),
-      price: { monthly: 49, yearly: 470 },
+      price: t('pricing.tiers.pro.price', { returnObjects: true }) as { monthly: number; yearly: number },
       description: t('pricing.tiers.pro.description'),
       icon: <ArrowDownToDot className="w-7 h-7 text-blue-500 animate-pulse" />,
       features: t('pricing.tiers.pro.features', { returnObjects: true }) as string[],
       highlight: true,
       badge: t('pricing.tiers.pro.badge'),
+      cta: t('pricing.tiers.pro.cta'),
     },
     {
       name: t('pricing.tiers.enterprise.name'),
-      price: { monthly: 199, yearly: 1900 },
+      price: t('pricing.tiers.enterprise.price', { returnObjects: true }) as { monthly: number; yearly: number },
       description: t('pricing.tiers.enterprise.description'),
       icon: <Sparkles className="w-7 h-7 text-yellow-500 animate-spin" />,
       features: t('pricing.tiers.enterprise.features', { returnObjects: true }) as string[],
       highlight: false,
+      cta: t('pricing.tiers.enterprise.cta'),
     },
   ];
 
@@ -56,7 +59,7 @@ const PricingTable = () => {
                   </li>
                 ))}
               </ul>
-              <button className={`w-full py-2 px-4 rounded ${tier.highlight ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'} font-semibold hover:opacity-90 transition`}>Choose Plan</button>
+              <button className={`w-full py-2 px-4 rounded ${tier.highlight ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'} font-semibold hover:opacity-90 transition`}>{tier.cta}</button>
             </div>
           ))}
         </div>

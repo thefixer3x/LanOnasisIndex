@@ -19,7 +19,7 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
 }) => {
   const { t } = useTranslation();
   const [currentFeature, setCurrentFeature] = useState(0);
-  
+
   const features = [
     { icon: Zap, text: t('hero_section.features.vortexcore_ai') },
     { icon: Shield, text: t('hero_section.features.compliance_tech') },
@@ -33,7 +33,7 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
       const len = (path as SVGPathElement).getTotalLength();
       (path as HTMLElement).style.strokeDasharray = `${len}px`;
       (path as HTMLElement).style.strokeDashoffset = `${len}px`;
-      
+
       setTimeout(() => {
         (path as HTMLElement).style.transition = 'stroke-dashoffset 3s ease-in-out';
         (path as HTMLElement).style.strokeDashoffset = '0px';
@@ -57,7 +57,7 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
           <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-[100px] bg-blue-500/20 animate-pulse-slow"></div>
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full blur-[80px] bg-blue-400/15 animate-float"></div>
           <div className="absolute top-1/2 right-1/3 w-48 h-48 rounded-full blur-[60px] bg-blue-600/10 animate-pulse-slow pulse-delay-1000"></div>
-          
+
           {/* Circuit Pattern */}
           <div className="absolute inset-0 opacity-10 animate-circuit">
             <div className="w-full h-full bg-[repeating-linear-gradient(90deg,transparent,transparent_50px,rgba(59,130,246,0.1)_50px,rgba(59,130,246,0.1)_52px)] bg-[repeating-linear-gradient(0deg,transparent,transparent_50px,rgba(59,130,246,0.1)_50px,rgba(59,130,246,0.1)_52px)]"></div>
@@ -67,16 +67,16 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
         {/* Animated SVG Lines */}
         <div className="absolute inset-0 pointer-events-none">
           <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
-            <path 
-              className="animation-line" 
+            <path
+              className="animation-line"
               d="M0 400 Q300 200 600 400 T1200 400"
             />
-            <path 
-              className="animation-line delay-path-500" 
+            <path
+              className="animation-line delay-path-500"
               d="M0 200 Q400 100 800 300 Q1000 400 1200 200"
             />
-            <path 
-              className="animation-line delay-path-1000" 
+            <path
+              className="animation-line delay-path-1000"
               d="M200 0 Q400 200 600 100 Q800 0 1000 200 Q1100 300 1200 100"
             />
           </svg>
@@ -92,9 +92,9 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp delay-200">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp delay-200 leading-tight">
               <span className="block mb-2">{t('hero_section.transforming')}</span>
-              <span className="gradient-text block">{t('hero_section.africas_tech')}</span>
+              <span className="gradient-text block mb-2">{t('hero_section.africas_tech')}</span>
               <span className="block">{t('hero_section.ecosystem')}</span>
             </h1>
 
@@ -114,13 +114,12 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
                 const Icon = feature.icon;
                 const isActive = index === currentFeature;
                 return (
-                  <div 
+                  <div
                     key={index}
-                    className={`flex items-center gap-3 px-6 py-3 rounded-full border transition-all duration-500 ${
-                      isActive 
-                        ? 'bg-blue-500/20 border-blue-500/50 text-blue-400 glow-effect' 
+                    className={`flex items-center gap-3 px-6 py-3 rounded-full border transition-all duration-500 ${isActive
+                        ? 'bg-blue-500/20 border-blue-500/50 text-blue-400 glow-effect'
                         : 'bg-background/50 border-border text-muted-foreground hover:border-blue-500/30'
-                    }`}
+                      }`}
                   >
                     <Icon className={`w-5 h-5 ${isActive ? 'animate-pulse' : ''}`} />
                     <span className="font-medium">{feature.text}</span>
@@ -131,8 +130,8 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fadeInUp delay-1000">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="group relative px-8 py-6 text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-full glow-effect hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
               >
                 <span className="flex items-center gap-2">
@@ -140,9 +139,9 @@ const LanOnasisHero: React.FC<HeroSectionProps> = ({
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </Button>
-              
-              <Button 
-                variant="outline" 
+
+              <Button
+                variant="outline"
                 size="lg"
                 className="px-8 py-6 text-lg font-semibold rounded-full border-blue-500/30 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500/50 transition-all duration-300"
               >
