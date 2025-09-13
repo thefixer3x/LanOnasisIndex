@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
@@ -10,9 +10,35 @@ import { PricingTable } from './components/PricingTable';
 import { Testimonials } from './components/Testimonials';
 import { CallToAction } from './components/CallToAction';
 import { LanguageSwitcher } from './components/LanguageSwitcher';
+import { AuthPage } from './components/auth/AuthPage';
 
 function App() {
   const { t } = useTranslation();
+  const [currentPage, setCurrentPage] = useState('home');
+
+  useEffect(() => {
+    // Simple routing based on hash
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'auth' || hash === 'login' || hash === 'signup') {
+        setCurrentPage('auth');
+      } else {
+        setCurrentPage('home');
+      }
+    };
+
+    // Check initial hash
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Show auth page if routed to auth
+  if (currentPage === 'auth') {
+    return <AuthPage />;
+  }
 
   return (
     <div className="min-h-screen bg-primary text-white">
@@ -34,6 +60,7 @@ function App() {
               <a href="#ecosystem" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.ecosystem')}</a>
               <a href="#pricing" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.pricing')}</a>
               <a href="#testimonials" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.testimonials')}</a>
+              <a href="#auth" className="text-gray-300 hover:text-secondary transition-colors duration-300">Sign In</a>
               <a href="https://dashboard.lanonasis.com/" className="btn-primary text-sm">{t('navigation.get_started')}</a>
             </div>
             <div className="flex items-center space-x-2">
