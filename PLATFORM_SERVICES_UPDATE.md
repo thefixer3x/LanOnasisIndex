@@ -12,35 +12,35 @@ A comprehensive "Platform Services Now Live" section has been added to the main 
 
 #### 🧠 Memory-as-a-Service
 - Vector-enabled memory storage for AI agents
-- Dashboard UI at `dashboard.lanonasis.com`
-- REST API at `api.lanonasis.com`
+- Dashboard UI at `dashboard.LanOnasis.com`
+- REST API at `api.LanOnasis.com`
 - Semantic search and persistent context management
 
 #### 🛠️ CLI Tool
 - Professional command-line interface
-- Installation: `npm install -g @lanonasis/cli`
+- Installation: `npm install -g @LanOnasis/cli`
 - MCP support for AI assistants
-- Link: [npmjs.com/package/@lanonasis/cli](https://www.npmjs.com/package/@lanonasis/cli)
+- Link: [npmjs.com/package/@LanOnasis/cli](https://www.npmjs.com/package/@LanOnasis/cli)
 
 #### 📦 TypeScript SDK
 - Complete SDK with React hooks
-- Installation: `npm install @lanonasis/sdk`
-- Documentation at `docs.lanonasis.com/sdk`
+- Installation: `npm install @LanOnasis/sdk`
+- Documentation at `docs.LanOnasis.com/sdk`
 
 #### 🔐 API Key Management
 - Secure key storage with zero-trust architecture
 - MCP integration for zero-secret workflows
 - Proxy token generation
-- Management UI at `dashboard.lanonasis.com/keys`
+- Management UI at `dashboard.LanOnasis.com/keys`
 
 #### 📚 Developer Portal
-- Comprehensive documentation at `docs.lanonasis.com`
+- Comprehensive documentation at `docs.LanOnasis.com`
 - API reference and interactive sandbox
 - Quick start guides
 
 #### 🤖 MCP Integration
 - Model Context Protocol support
-- Endpoint: `mcp.lanonasis.com/sse`
+- Endpoint: `mcp.LanOnasis.com/sse`
 - AI assistant integration
 
 ### 2. **Navigation Updates**
@@ -48,8 +48,8 @@ A comprehensive "Platform Services Now Live" section has been added to the main 
 - Links to new section: `#platform-services`
 
 ### 3. **Quick Start CTA**
-- "Create Free Account" button → `dashboard.lanonasis.com/signup`
-- "View Quick Start Guide" → `docs.lanonasis.com/quickstart`
+- "Create Free Account" button → `dashboard.LanOnasis.com/signup`
+- "View Quick Start Guide" → `docs.LanOnasis.com/quickstart`
 
 ### 4. **Visual Design**
 - Gradient background from primary-light to primary
@@ -78,7 +78,7 @@ netlify deploy --prod --dir=dist
 
 #### Option B: Via Netlify Dashboard
 1. Go to [app.netlify.com](https://app.netlify.com)
-2. Select the "lanonasis" site
+2. Select the "LanOnasis" site
 3. Drag and drop the `dist` folder to deploy
 
 #### Option C: Git Push (if connected to GitHub)
@@ -102,22 +102,22 @@ After deployment, verify:
 ## 🔗 Related Deployments Needed
 
 ### 1. Dashboard Deployment
-- **Site**: `dashboard.lanonasis.com`
-- **Source**: `/lanonasis-maas/dashboard/dist`
+- **Site**: `dashboard.LanOnasis.com`
+- **Source**: `/LanOnasis-maas/dashboard/dist`
 - **Status**: Built and ready
 
 ### 2. Documentation Site
-- **Site**: `docs.lanonasis.com`
-- **Source**: `/lanonasis-maas/docs`
+- **Site**: `docs.LanOnasis.com`
+- **Source**: `/LanOnasis-maas/docs`
 - **Status**: Needs build and deployment
 
 ### 3. MCP Endpoint
-- **Site**: `mcp.lanonasis.com`
+- **Site**: `mcp.LanOnasis.com`
 - **Source**: Configuration needed
 - **Status**: Pending setup
 
 ### 4. NPM Package Updates
-- **Package**: `@lanonasis/cli` v1.2.0
+- **Package**: `@LanOnasis/cli` v1.2.0
 - **Features**: API key management commands
 - **Status**: Ready to publish
 
@@ -155,12 +155,12 @@ Total size: ~1.05 MB
 
 ## 🎯 Post-Deployment Checklist
 
-- [ ] Main site updated at lanonasis.com
+- [ ] Main site updated at LanOnasis.com
 - [ ] Platform Services section is live
 - [ ] All service links are functional
-- [ ] Dashboard accessible at dashboard.lanonasis.com
-- [ ] Documentation accessible at docs.lanonasis.com
-- [ ] MCP endpoint configured at mcp.lanonasis.com
+- [ ] Dashboard accessible at dashboard.LanOnasis.com
+- [ ] Documentation accessible at docs.LanOnasis.com
+- [ ] MCP endpoint configured at mcp.LanOnasis.com
 - [ ] CLI v1.2.0 published to npm
 - [ ] Analytics tracking deployment success
 

@@ -1,6 +1,6 @@
 # Lan Onasis
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/site-id/deploy-status)](https://app.netlify.com/sites/lanonasis/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/site-id/deploy-status)](https://app.netlify.com/sites/LanOnasis/deploys)
 
 Africa's leading AI-powered tech hub—offering intelligent compliance, risk, and B2B payment solutions through the VortexCore ecosystem across Financial Services, SMEs, E-commerce, Education, Logistics, Real Estate & Public Sector.
 
@@ -101,6 +101,6 @@ MIT License - see LICENSE file for details.
 
 ### Contact
 
-- Website: [www.lanonasis.com](https://www.lanonasis.com)
-- Email: info@lanonasis.com
-- Social: [@lanonasis](https://twitter.com/lanonasis)
+- Website: [www.LanOnasis.com](https://www.LanOnasis.com)
+- Email: info@LanOnasis.com
+- Social: [@LanOnasis](https://twitter.com/LanOnasis)

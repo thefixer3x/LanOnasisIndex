@@ -1,7 +1,7 @@
 # MCP Auth Flow Debugging & Fix Plan
 
 ## 🚨 **Current Issue Analysis**
-Based on your audit report and the `api.lanonasis.com/auth/login` endpoint issue, you have:
+Based on your audit report and the `api.LanOnasis.com/auth/login` endpoint issue, you have:
 
 1. **Multiple Supabase instances** across different apps
 2. **Domain routing conflicts** between API and auth endpoints  
@@ -21,7 +21,7 @@ claude-code "Find all auth-related endpoints and routing configurations. Look fo
 - Any files handling /auth/login routes
 - Supabase auth configurations in each app  
 - API gateway or routing configurations
-- Domain-specific auth configs in apps/lanonasis-maas/"
+- Domain-specific auth configs in apps/LanOnasis-maas/"
 ```
 
 ### **Phase 2: Identify Routing Conflicts**
@@ -29,7 +29,7 @@ claude-code "Find all auth-related endpoints and routing configurations. Look fo
 ```bash
 # Check for conflicting auth routes
 claude-code "Search for all occurrences of '/auth' routes across the codebase and identify conflicts between:
-- apps/lanonasis-maas/ auth routes
+- apps/LanOnasis-maas/ auth routes
 - apps/maple-site/ auth routes  
 - apps/vortexcore/ auth routes
 - Any API gateway configurations"
@@ -39,7 +39,7 @@ claude-code "Search for all occurrences of '/auth' routes across the codebase an
 
 ```bash
 # Implement unified auth service
-claude-code "Create a unified auth service that handles routing for api.lanonasis.com/auth/* endpoints. The service should:
+claude-code "Create a unified auth service that handles routing for api.LanOnasis.com/auth/* endpoints. The service should:
 1. Route /auth/login to appropriate Supabase instance based on app context
 2. Handle callbacks consistently across CLI, web, and VS Code interfaces  
 3. Implement JWT project_scope validation as mentioned in the audit
@@ -52,7 +52,7 @@ Based on your audit, these are the key files to examine:
 
 ### **1. Current Auth Implementations**
 ```
-apps/lanonasis-maas/src/integrations/supabase/client.ts
+apps/LanOnasis-maas/src/integrations/supabase/client.ts
 apps/maple-site/src/integrations/supabase/client.ts  
 services/memory-service/src/services/memoryService.ts
 ```
@@ -60,7 +60,7 @@ services/memory-service/src/services/memoryService.ts
 ### **2. Edge Functions (Need JWT project_scope)**
 ```
 apps/vortexcore/supabase/functions/
-apps/lanonasis-maas/netlify/functions/
+apps/LanOnasis-maas/netlify/functions/
 ```
 
 ### **3. Environment Configs (Per-app isolation needed)**
@@ -73,7 +73,7 @@ apps/*/src/integrations/supabase/ (client configs)
 
 ### **Step 1: Create Unified Auth Router**
 ```typescript
-// apps/lanonasis-maas/src/routes/auth.ts
+// apps/LanOnasis-maas/src/routes/auth.ts
 export async function createUnifiedAuthRouter() {
   const router = express.Router();
   
@@ -139,7 +139,7 @@ Run these in sequence to get Claude Code working on your specific issue:
 
 ```bash
 # 1. Analyze current routing problem
-claude-code "Examine the api.lanonasis.com/auth/login endpoint. Show me:
+claude-code "Examine the api.LanOnasis.com/auth/login endpoint. Show me:
 - Where this route is defined
 - What's causing it to fail
 - How it differs from working auth flows in other apps
@@ -147,14 +147,14 @@ claude-code "Examine the api.lanonasis.com/auth/login endpoint. Show me:
 
 # 2. Check Supabase auth configs  
 claude-code "Compare Supabase auth configurations across:
-- apps/lanonasis-maas/supabase/
+- apps/LanOnasis-maas/supabase/
 - apps/maple-site/supabase/  
 - packages/onasis-core/supabase/
 Identify inconsistencies in auth providers, redirect URLs, or JWT settings"
 
 # 3. Implement fix
 claude-code "Fix the auth routing issue by:
-1. Creating a unified auth service that handles api.lanonasis.com/auth/* routes
+1. Creating a unified auth service that handles api.LanOnasis.com/auth/* routes
 2. Implementing proper project_scope detection and validation
 3. Setting up consistent callback handling for CLI/web/VS Code interfaces
 4. Adding the missing core.logs logging as mentioned in the audit"
@@ -164,8 +164,8 @@ claude-code "Fix the auth routing issue by:
 
 To help Claude Code give you the most targeted fix:
 
-1. **What error are you seeing** at `api.lanonasis.com/auth/login`? (404, 500, CORS, etc?)
-2. **Which app** should handle this endpoint? (lanonasis-maas, maple-site, or vortexcore?)
+1. **What error are you seeing** at `api.LanOnasis.com/auth/login`? (404, 500, CORS, etc?)
+2. **Which app** should handle this endpoint? (LanOnasis-maas, maple-site, or vortexcore?)
 3. **What interface** is trying to hit this? (CLI tool, web app, VS Code extension?)
 4. **Current deployment setup?** (Vercel, Netlify, self-hosted for the API domain?)
 

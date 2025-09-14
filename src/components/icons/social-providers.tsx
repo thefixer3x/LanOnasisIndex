@@ -1,4 +1,4 @@
-// Social Provider Icons for OAuth - Lanonasis Brand Kit Component
+// Social Provider Icons for OAuth - LanOnasis Brand Kit Component
 
 export const GoogleIcon = () => (
   <svg className="h-4 w-4" viewBox="0 0 24 24">

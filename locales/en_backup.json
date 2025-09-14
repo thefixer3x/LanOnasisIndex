@@ -129,8 +129,8 @@
     "memory_service": {
       "title": "Memory-as-a-Service",
       "description": "Vector-enabled memory storage for AI agents with semantic search and persistent context management.",
-      "dashboard": "Dashboard UI at api.lanonasis.com",
-      "api": "REST API at api.lanonasis.com",
+      "dashboard": "Dashboard UI at api.LanOnasis.com",
+      "api": "REST API at api.LanOnasis.com",
       "cta": "Access Dashboard"
     },
     "cli_tool": {
@@ -236,9 +236,9 @@
   },
   "mcp_connection": {
     "title": "MCP Remote Connection",
-    "subtitle": "Connect external MCP clients to your Lanonasis Memory Service",
+    "subtitle": "Connect external MCP clients to your LanOnasis Memory Service",
     "step1_title": "1. Get Your API Key",
-    "step1_description": "First, you need an API key from your Lanonasis dashboard to authenticate MCP connections.",
+    "step1_description": "First, you need an API key from your LanOnasis dashboard to authenticate MCP connections.",
     "get_api_key": "Get API Key from Dashboard →",
     "step2_title": "2. Test Your Connection",
     "api_key_label": "Enter your API Key:",
@@ -272,12 +272,12 @@
       "Go to Settings → Developer → MCP Servers",
       "Add the configuration shown above",
       "Restart Claude Desktop",
-      "You should see \"lanonasis-memory\" tools available"
+      "You should see \"LanOnasis-memory\" tools available"
     ],
     "cursor_steps": [
-      "Install the Lanonasis extension from the marketplace",
+      "Install the LanOnasis extension from the marketplace",
       "Set your API key in extension settings",
-      "Use Ctrl+Shift+P → \"Lanonasis: Connect Memory Service\""
+      "Use Ctrl+Shift+P → \"LanOnasis: Connect Memory Service\""
     ],
     "mcp_tools": [
       "create_memory - Create new memories",

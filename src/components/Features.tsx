@@ -1,61 +1,69 @@
-
-import { Zap, Cpu, Fingerprint, Pencil, Settings2, Sparkles } from "lucide-react";
+import { Zap, Shield, DollarSign, Brain, BarChart3, CreditCard } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 export function Features() {
+  const { t } = useTranslation();
+  
+  const platformFeatures = [
+    {
+      icon: Brain,
+      name: t('products.vortexcore_ai.name'),
+      description: t('products.vortexcore_ai.description'),
+    },
+    {
+      icon: Shield,
+      name: t('products.vortexcomply.name'),
+      description: t('products.vortexcomply.description'),
+    },
+    {
+      icon: BarChart3,
+      name: t('products.vortexrisk.name'),
+      description: t('products.vortexrisk.description'),
+    },
+    {
+      icon: Zap,
+      name: t('products.vortexshield.name'),
+      description: t('products.vortexshield.description'),
+    },
+    {
+      icon: BarChart3,
+      name: t('products.vortexiq.name'),
+      description: t('products.vortexiq.description'),
+    },
+    {
+      icon: CreditCard,
+      name: t('products.vortexpay.name'),
+      description: t('products.vortexpay.description'),
+    },
+  ];
+
   return (
-    <section className="py-12 md:py-20">
+    <section className="py-12 md:py-20 bg-gray-50">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-        <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
-          <h2 className="text-balance text-4xl font-medium lg:text-5xl">
-            The foundation for creative teams management
+        <div className="relative z-10 mx-auto max-w-3xl space-y-6 text-center md:space-y-12">
+          <h2 className="text-balance text-4xl font-medium lg:text-5xl text-gray-900">
+            Powering Africa's Digital Transformation
           </h2>
-          <p>
-            Lyra is evolving to be more than just the models. It supports an entire set of APIs and platforms helping developers and businesses innovate.
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Our comprehensive AI-powered platform suite enables businesses across Africa to innovate, 
+            comply, and scale with confidence in the digital economy.
           </p>
         </div>
-        <div className="relative mx-auto grid max-w-2xl lg:max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <Zap className="size-4" />
-              <h3 className="text-sm font-medium">Faaast</h3>
-            </div>
-            <p className="text-sm">It supports an entire helping developers and innovate.</p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Cpu className="size-4" />
-              <h3 className="text-sm font-medium">Powerful</h3>
-            </div>
-            <p className="text-sm">It supports an entire helping developers and businesses.</p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Fingerprint className="size-4" />
-              <h3 className="text-sm font-medium">Secure</h3>
-            </div>
-            <p className="text-sm">Security is baked into every layer.</p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Settings2 className="size-4" />
-              <h3 className="text-sm font-medium">Customizable</h3>
-            </div>
-            <p className="text-sm">Easily adapt features to your needs.</p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Sparkles className="size-4" />
-              <h3 className="text-sm font-medium">Delightful</h3>
-            </div>
-            <p className="text-sm">Beautiful UI and smooth interactions.</p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Pencil className="size-4" />
-              <h3 className="text-sm font-medium">Creative</h3>
-            </div>
-            <p className="text-sm">Empower your team's creativity.</p>
-          </div>
+        <div className="relative mx-auto grid max-w-2xl lg:max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {platformFeatures.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div key={index} className="space-y-4 p-6 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900">{feature.name}</h3>
+                </div>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

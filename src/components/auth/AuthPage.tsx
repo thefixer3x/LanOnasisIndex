@@ -1,4 +1,4 @@
-// Professional Auth Page - Lanonasis Index
+// Professional Auth Page - LanOnasis Index
 // Provides elegant authentication interface for business users
 
 import { useState, useEffect } from "react";
@@ -39,7 +39,7 @@ export const AuthPage = () => {
             </svg>
           </div>
           <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
-            Lanonasis Platform
+            LanOnasis Platform
           </h1>
           <p className="text-sm text-gray-600 mt-1">
             The future of AI-powered business tools

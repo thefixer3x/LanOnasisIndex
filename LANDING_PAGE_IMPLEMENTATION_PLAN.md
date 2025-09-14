@@ -1,12 +1,12 @@
 # Lan Onasis Landing Page Enhancement Implementation Plan
 
 ## Overview
-This plan outlines the steps to enhance the lanonasis-index landing page to showcase all platform services and provide a redirect to the development interface at api.lanonasis.com. The implementation will follow the component integration map and adhere to the Onasis-CORE architecture separation principles.
+This plan outlines the steps to enhance the LanOnasis-index landing page to showcase all platform services and provide a redirect to the development interface at api.LanOnasis.com. The implementation will follow the component integration map and adhere to the Onasis-CORE architecture separation principles.
 
 ## Phase 1: Repository Setup and Integration
 
-### Task 1.1: Add lanonasis-maas as a submodule
-- Add lanonasis-maas repository as a submodule in the monorepo
+### Task 1.1: Add LanOnasis-maas as a submodule
+- Add LanOnasis-maas repository as a submodule in the monorepo
 - Configure proper paths in package.json workspaces
 - Update turbo.json to include the new package
 
@@ -79,7 +79,7 @@ This plan outlines the steps to enhance the lanonasis-index landing page to show
 
 ### Task 7.1: Create Developers Route
 - Create new src/routes/Developers.tsx
-- Implement redirect to api.lanonasis.com
+- Implement redirect to api.LanOnasis.com
 - Add SEO metadata for developer resources
 
 ### Task 7.2: Add Navigation Link
@@ -169,7 +169,7 @@ This plan outlines the steps to enhance the lanonasis-index landing page to show
 ## Success Criteria
 
 1. All platform services are clearly showcased on the landing page
-2. Developer hub redirects properly to api.lanonasis.com
+2. Developer hub redirects properly to api.LanOnasis.com
 3. All new UI components are responsive and visually appealing
 4. Repository synchronization script works reliably
 5. Enhanced landing page passes all CI/CD checks
@@ -203,7 +203,7 @@ git reset --hard origin/main
 netlify deploy --prod --dir=dist-backup
 # Or revert via Netlify UI to previous deployment
 # Validate staging environment
-curl -I https://staging.lanonasis.com
+curl -I https://staging.LanOnasis.com
 # Rollback DNS/CDN if needed via provider dashboard
 ```
 
@@ -216,7 +216,7 @@ bun run test:e2e
 # Run linters
 bun run lint
 # Compare performance metrics
-lighthouse https://lanonasis.com --output=json
+lighthouse https://LanOnasis.com --output=json
 ```
 
 ### Documentation

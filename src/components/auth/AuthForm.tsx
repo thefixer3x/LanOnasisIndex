@@ -1,5 +1,5 @@
-// Professional Auth Form - Lanonasis Brand Kit Component
-// Integrates with Central Auth at api.lanonasis.com
+// Professional Auth Form - LanOnasis Brand Kit Component
+// Integrates with Central Auth at api.LanOnasis.com
 
 import { useState } from "react";
 import { cn } from "../../lib/utils";
@@ -85,7 +85,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
       // Redirect to central auth instead of handling locally
       const currentUrl = window.location.origin;
       const redirectUrl = encodeURIComponent(`${currentUrl}/dashboard`);
-      const authUrl = `https://api.lanonasis.com/auth/${mode === 'register' ? 'signup' : 'login'}?platform=dashboard&redirect_url=${redirectUrl}`;
+      const authUrl = `https://api.LanOnasis.com/auth/${mode === 'register' ? 'signup' : 'login'}?platform=dashboard&redirect_url=${redirectUrl}`;
       
       // Show loading toast
       toast({
@@ -106,7 +106,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
       // Redirect to central OAuth instead of direct Supabase
       const currentUrl = window.location.origin;
       const redirectUrl = encodeURIComponent(`${currentUrl}/dashboard`);
-      const oauthUrl = `https://api.lanonasis.com/auth/oauth?provider=${provider}&platform=dashboard&redirect_url=${redirectUrl}`;
+      const oauthUrl = `https://api.LanOnasis.com/auth/oauth?provider=${provider}&platform=dashboard&redirect_url=${redirectUrl}`;
       
       toast({
         title: `Connecting to ${provider.charAt(0).toUpperCase() + provider.slice(1)}...`,
@@ -166,7 +166,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900">{title}</h1>
           <p className="text-sm text-gray-600 mt-2">{subtitle}</p>
-          <div className="mt-1 text-xs text-gray-500">Powered by Lanonasis Platform</div>
+          <div className="mt-1 text-xs text-gray-500">Powered by LanOnasis Platform</div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -231,7 +231,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
                   <button
                     type="button"
                     onClick={() => {
-                      const forgotUrl = `https://api.lanonasis.com/auth/forgot-password?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + '/dashboard')}`;
+                      const forgotUrl = `https://api.LanOnasis.com/auth/forgot-password?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + '/dashboard')}`;
                       window.location.href = forgotUrl;
                     }}
                     className="text-xs text-blue-600 hover:text-blue-800 hover:underline"
@@ -399,7 +399,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
               type="button"
               onClick={() => {
                 const newMode = mode === 'login' ? 'register' : 'login';
-                const authUrl = `https://api.lanonasis.com/auth/${newMode === 'register' ? 'signup' : 'login'}?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + '/dashboard')}`;
+                const authUrl = `https://api.LanOnasis.com/auth/${newMode === 'register' ? 'signup' : 'login'}?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + '/dashboard')}`;
                 window.location.href = authUrl;
               }}
               className="text-blue-600 hover:text-blue-800 hover:underline font-medium"
@@ -409,10 +409,10 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
           </div>
           <div>
             <a 
-              href="https://lanonasis.com" 
+              href="https://LanOnasis.com" 
               className="text-gray-500 hover:text-gray-700 hover:underline text-xs"
             >
-              Learn more about Lanonasis Platform
+              Learn more about LanOnasis Platform
             </a>
           </div>
           <div className="text-xs text-gray-400">

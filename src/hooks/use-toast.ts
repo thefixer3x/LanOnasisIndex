@@ -1,4 +1,4 @@
-// Simple toast hook for Lanonasis Index
+// Simple toast hook for LanOnasis Index
 import { useState, useCallback } from 'react';
 
 interface ToastOptions {

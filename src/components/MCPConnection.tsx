@@ -51,7 +51,7 @@ export const MCPConnection: React.FC = () => {
     });
 
     try {
-      const response = await fetch('https://api.lanonasis.com/.netlify/functions/mcp-sse', {
+      const response = await fetch('https://api.LanOnasis.com/.netlify/functions/mcp-sse', {
         method: 'GET',
         headers: {
           'X-API-Key': apiKey,
@@ -86,9 +86,9 @@ export const MCPConnection: React.FC = () => {
   const copyClaudeConfig = () => {
     const config = {
       "mcpServers": {
-        "lanonasis-memory": {
+        "LanOnasis-memory": {
           "command": "npx",
-          "args": ["-y", "@lanonasis/cli", "mcp", "start"],
+          "args": ["-y", "@LanOnasis/cli", "mcp", "start"],
           "env": {
             "LANONASIS_API_KEY": apiKey || "your-api-key-here"
           }
@@ -115,7 +115,7 @@ export const MCPConnection: React.FC = () => {
   };
 
   const getApiKey = () => {
-    window.open('https://api.lanonasis.com', '_blank');
+    window.open('https://api.LanOnasis.com', '_blank');
   };
 
   return (
@@ -200,9 +200,9 @@ export const MCPConnection: React.FC = () => {
                 <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto mb-4">
                   <pre>{JSON.stringify({
                     "mcpServers": {
-                      "lanonasis-memory": {
+                      "LanOnasis-memory": {
                         "command": "npx",
-                        "args": ["-y", "@lanonasis/cli", "mcp", "start"],
+                        "args": ["-y", "@LanOnasis/cli", "mcp", "start"],
                         "env": {
                           "LANONASIS_API_KEY": "<YOUR_API_KEY>"
                         }
@@ -243,16 +243,16 @@ export const MCPConnection: React.FC = () => {
                       <li>Go to Settings → Developer → MCP Servers</li>
                       <li>Add the configuration shown above</li>
                       <li>Restart Claude Desktop</li>
-                      <li>You should see "lanonasis-memory" tools available</li>
+                      <li>You should see "LanOnasis-memory" tools available</li>
                     </ol>
                   </div>
 
                   <div>
                     <h4 className="font-bold text-gray-700 mb-2">For Cursor/Windsurf:</h4>
                     <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                      <li>Install the Lanonasis extension from the marketplace</li>
+                      <li>Install the LanOnasis extension from the marketplace</li>
                       <li>Set your API key in extension settings</li>
-                      <li>Use Ctrl+Shift+P → "Lanonasis: Connect Memory Service"</li>
+                      <li>Use Ctrl+Shift+P → "LanOnasis: Connect Memory Service"</li>
                     </ol>
                   </div>
 
@@ -279,13 +279,13 @@ export const MCPConnection: React.FC = () => {
               </p>
               <div className="space-x-4">
                 <Button 
-                  onClick={() => window.open('https://docs.lanonasis.com', '_blank')}
+                  onClick={() => window.open('https://docs.LanOnasis.com', '_blank')}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium"
                 >
                   📚 Documentation
                 </Button>
                 <Button 
-                  onClick={() => window.open('mailto:support@lanonasis.com', '_blank')}
+                  onClick={() => window.open('mailto:support@LanOnasis.com', '_blank')}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium"
                 >
                   ✉️ Contact Support

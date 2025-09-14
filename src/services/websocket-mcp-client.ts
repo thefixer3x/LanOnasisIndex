@@ -1,5 +1,5 @@
 /**
- * Enhanced WebSocket MCP Client for Lanonasis
+ * Enhanced WebSocket MCP Client for LanOnasis
  * Production-ready implementation with security, heartbeat, and full MCP protocol support
  */
 
@@ -63,7 +63,7 @@ export class EnhancedWebSocketMCPClient {
 
   constructor(options: ConnectionOptions) {
     this.apiKey = options.apiKey;
-    this.endpoint = options.endpoint || 'wss://dashboard.lanonasis.com/mcp/sse';
+    this.endpoint = options.endpoint || 'wss://dashboard.LanOnasis.com/mcp/sse';
     this.reconnectAttempts = options.reconnectAttempts || 3;
     this.reconnectDelay = options.reconnectDelay || 1000;
     this.heartbeatInterval = options.heartbeatInterval || 30000; // 30 seconds
@@ -273,7 +273,7 @@ export class EnhancedWebSocketMCPClient {
           }
         },
         clientInfo: {
-          name: 'lanonasis-websocket-client',
+          name: 'LanOnasis-websocket-client',
           version: '1.0.0'
         }
       }
@@ -309,7 +309,7 @@ export class EnhancedWebSocketMCPClient {
         protocolVersion: '2024-11-05',
         capabilities: this.connectionState.capabilities,
         serverInfo: {
-          name: 'lanonasis-mcp-server',
+          name: 'LanOnasis-mcp-server',
           version: '1.0.0'
         }
       }

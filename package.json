@@ -1,5 +1,5 @@
 {
-  "name": "lanonasis-index",
+  "name": "LanOnasis-index",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -15,7 +15,7 @@
   ],
   "author": "Lan Onasis",
   "license": "MIT",
-  "homepage": "https://lanonasis.com",
+  "homepage": "https://LanOnasis.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/thefixer3x/LanOnasisIndex.git"

@@ -61,7 +61,7 @@ function App() {
               <a href="#pricing" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.pricing')}</a>
               <a href="#testimonials" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.testimonials')}</a>
               <a href="#auth" className="text-gray-300 hover:text-secondary transition-colors duration-300">Sign In</a>
-              <a href="https://dashboard.lanonasis.com/" className="btn-primary text-sm">{t('navigation.get_started')}</a>
+              <a href="https://dashboard.LanOnasis.com/" className="btn-primary text-sm">{t('navigation.get_started')}</a>
             </div>
             <div className="flex items-center space-x-2">
               <LanguageSwitcher />
@@ -139,8 +139,8 @@ function App() {
             <div>
               <h4 className="font-semibold mb-4">{t('footer.resources_section')}</h4>
               <ul className="space-y-2">
-                <li><a href="https://docs.lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.documentation')}</a></li>
-                <li><a href="https://dashboard.lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.dashboard')}</a></li>
+                <li><a href="https://docs.LanOnasis.com" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.documentation')}</a></li>
+                <li><a href="https://dashboard.LanOnasis.com" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.dashboard')}</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.support')}</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.contact')}</a></li>
               </ul>

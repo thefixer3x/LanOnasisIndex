@@ -2,11 +2,11 @@
 
    /help for help, /status for your current setup
 
-   cwd: /Users/seyederick/DevOps/_project_folders/lan-onasis-monorepo/apps/lanonasis-index
+   cwd: /Users/seyederick/DevOps/_project_folders/lan-onasis-monorepo/apps/LanOnasis-index
 ⏺ Compact summary (ctrl+r to expand)
   ⎿  Read public/test.html (16 lines)
   ⎿  Read ../../.claude/settings.local.json (15 lines)
-  ⎿ Read ../lanonasis-maas/src/config/environment.ts (59 
+  ⎿ Read ../LanOnasis-maas/src/config/environment.ts (59 
     lines)
   ⎿  Read .env.example (15 lines)
   ⎿  Read src/main.tsx (33 lines)
@@ -22,34 +22,34 @@
   ⎿  Kept model as Default (recommended)
 
 > added some files to the servicees folder. can you review 
-  them please? lanonasis-maas
+  them please? LanOnasis-maas
 
 ⏺ I'll review the files in the services folder of the
-  lanonasis-maas app.
+  LanOnasis-maas app.
 
-⏺ List(../lanonasis-maas)
+⏺ List(../LanOnasis-maas)
   ⎿  Listed 484 paths (ctrl+r to expand)
 
 ⏺ Let me check the services folder specifically:
 
-⏺ List(../lanonasis-maas/src/services)
+⏺ List(../LanOnasis-maas/src/services)
   ⎿  Listed 9 paths (ctrl+r to expand)
 
-⏺ Read(../lanonasis-maas/src/services/apiKeyService.ts)
+⏺ Read(../LanOnasis-maas/src/services/apiKeyService.ts)
   ⎿  Read 666 lines (ctrl+r to expand)
-  ⎿  ../lanonasis-maas/CLAUDE.md
+  ⎿  ../LanOnasis-maas/CLAUDE.md
 
-⏺ Read(../lanonasis-maas/src/services/memoryService.ts)
+⏺ Read(../LanOnasis-maas/src/services/memoryService.ts)
   ⎿  Read 523 lines (ctrl+r to expand)
 
-⏺ Read(../lanonasis-maas/src/services/memoryService-aligned.
+⏺ Read(../LanOnasis-maas/src/services/memoryService-aligned.
       ts)
   ⎿  Read 518 lines (ctrl+r to expand)
 
 ⏺ Services Folder Review
 
   I've reviewed the three service files in the
-  lanonasis-maas/src/services folder:
+  LanOnasis-maas/src/services folder:
 
   1. apiKeyService.ts (665 lines)
 
@@ -158,7 +158,7 @@
 
   Core Schema Changes (Database)
 
-⏺ Read(../lanonasis-maas/src/db/schema.sql)
+⏺ Read(../LanOnasis-maas/src/db/schema.sql)
   ⎿  Read 50 lines (ctrl+r to expand)
 
 ⏺ Minimal Changes Needed
@@ -173,8 +173,8 @@
 
   2. Add Group Types for Different Use Cases
 
-⏺ Update(../lanonasis-maas/src/db/schema.sql)
-  ⎿  Updated ../lanonasis-maas/src/db/schema.sql with 1     
+⏺ Update(../LanOnasis-maas/src/db/schema.sql)
+  ⎿  Updated ../LanOnasis-maas/src/db/schema.sql with 1     
      addition
         6    CREATE TYPE memory_type AS ENUM ('context', 
             'project', 'knowledge', 'reference', 'personal', 
@@ -190,8 +190,8 @@
        11    -- Organizations table
        12    CREATE TABLE organizations (
 
-⏺ Update(../lanonasis-maas/src/db/schema.sql)
-  ⎿  Updated ../lanonasis-maas/src/db/schema.sql with 8     
+⏺ Update(../LanOnasis-maas/src/db/schema.sql)
+  ⎿  Updated ../LanOnasis-maas/src/db/schema.sql with 8     
      additions and 3 removals
         8    CREATE TYPE plan_type AS ENUM ('free', 'pro', 
             'enterprise');
@@ -237,8 +237,8 @@
 
 ⏺ 3. Update Service Imports and References
 
-⏺ Update(../lanonasis-maas/src/services/memoryService.ts)
-  ⎿  Updated ../lanonasis-maas/src/services/memoryService.ts
+⏺ Update(../LanOnasis-maas/src/services/memoryService.ts)
+  ⎿  Updated ../LanOnasis-maas/src/services/memoryService.ts
      with 1 addition and 1 removal
        73      /**
        74       * Create a new memory entry
@@ -330,7 +330,7 @@
 ⏺ List(../..)
   ⎿  Listed 1020 paths (ctrl+r to expand)
 
-⏺ Read(../lanonasis-maas/src/db/schema-aligned.sql)
+⏺ Read(../LanOnasis-maas/src/db/schema-aligned.sql)
   ⎿  Read 287 lines (ctrl+r to expand)
 
 ⏺ Perfect! I found the existing schema-aligned.sql that
@@ -463,27 +463,27 @@
 ⏺ I'll help you extract the complete Supabase memory service
    endpoints and workflow paths.
 
-⏺ Read(../lanonasis-maas/src/routes/memory.ts)
+⏺ Read(../LanOnasis-maas/src/routes/memory.ts)
   ⎿  Read 665 lines (ctrl+r to expand)
 
-⏺ Read(../lanonasis-maas/src/routes/auth.ts)
+⏺ Read(../LanOnasis-maas/src/routes/auth.ts)
   ⎿  Read 390 lines (ctrl+r to expand)
 
-⏺ Read(../lanonasis-maas/src/server.ts)
+⏺ Read(../LanOnasis-maas/src/server.ts)
   ⎿  Read 50 lines (ctrl+r to expand)
 
 ⏺ Now let me check the complete Supabase configuration and
   deployed endpoints:
 
-⏺ Read(../lanonasis-maas/supabase/config.toml)
+⏺ Read(../LanOnasis-maas/supabase/config.toml)
   ⎿  Read 335 lines (ctrl+r to expand)
 
 ⏺ Complete Supabase Memory Service API Endpoints & Workflow
 
   🏗️ Base Configuration
 
-  Supabase Project: lanonasis-maas
-  API Base URL: https://api.lanonasis.com/api/v1
+  Supabase Project: LanOnasis-maas
+  API Base URL: https://api.LanOnasis.com/api/v1
   Database: PostgreSQL + pgvector (vector extensions
   enabled)
   Realtime: Enabled for live collaboration features
@@ -750,13 +750,13 @@
 
   # 1. Register & Login
   curl -X POST
-  https://api.lanonasis.com/api/v1/auth/register \
+  https://api.LanOnasis.com/api/v1/auth/register \
     -H "Content-Type: application/json" \
     -d '{"email":"team@example.com","password":"secure123","
   organization_name":"Team Alpha"}'
 
   # 2. Create Memory
-  curl -X POST https://api.lanonasis.com/api/v1/memory \
+  curl -X POST https://api.LanOnasis.com/api/v1/memory \
     -H "Authorization: Bearer $JWT_TOKEN" \
     -H "Content-Type: application/json" \
     -d '{"title":"Sprint Planning","content":"Team discussed
@@ -765,14 +765,14 @@
 
   # 3. Search Memories  
   curl -X POST
-  https://api.lanonasis.com/api/v1/memory/search \
+  https://api.LanOnasis.com/api/v1/memory/search \
     -H "Authorization: Bearer $JWT_TOKEN" \
     -H "Content-Type: application/json" \
     -d '{"query":"sprint objectives team 
   planning","limit":5,"threshold":0.8}'
 
   # 4. Setup MCP Tool
-  curl -X POST https://api.lanonasis.com/api/v1/mcp/tools \
+  curl -X POST https://api.LanOnasis.com/api/v1/mcp/tools \
     -H "Authorization: Bearer $JWT_TOKEN" \
     -H "Content-Type: application/json" \
     -d '{"toolId":"claude-assistant","toolName":"Claude 
@@ -844,13 +844,13 @@
 ⏺ Let me search for the actual deployed URLs and memory
   service endpoints:
 
-⏺ Bash(grep -r "api\.lanonasis\.com" /Users/seyederick/DevOp
+⏺ Bash(grep -r "api\.LanOnasis\.com" /Users/seyederick/DevOp
       s/_project_folders/lan-onasis-monorepo
       --include="*.ts" --include="*.js" --include="*.md"
       2>/dev/null | hea…)
   ⎿ /Users/seyederick/DevOps/_project_folders/lan-onasis-mon
     orepo/SERVICE_FUNCTIONALITY_TEST_REPORT.md:- Mode: PRODU
-    CTION (routes to api.lanonasis.com)
+    CTION (routes to api.LanOnasis.com)
     … +36 lines (ctrl+r to expand)
 
 
@@ -874,18 +874,18 @@
 
   Primary Endpoints
 
-  - Main API: https://api.lanonasis.com
+  - Main API: https://api.LanOnasis.com
   - Supabase Project:
   https://mxtsdgkwzjzlttpotole.supabase.co
   (sd-ghost-protocol)
-  - Dashboard: https://dashboard.lanonasis.com
-  - Documentation: https://docs.lanonasis.com
-  - MCP Endpoint: https://mcp.lanonasis.com/sse
+  - Dashboard: https://dashboard.LanOnasis.com
+  - Documentation: https://docs.LanOnasis.com
+  - MCP Endpoint: https://mcp.LanOnasis.com/sse
 
   Repository Sources
 
   - Production Deployment:
-  https://github.com/lanonasis/lanonasis-maas.git
+  https://github.com/LanOnasis/LanOnasis-maas.git
   - SD-Ghost Core:
   https://github.com/thefixer3x/Onasis-CORE.git
   - Development: /Users/seyederick/DevOps/_project_folders/l
@@ -893,7 +893,7 @@
 
   🔗 Complete API Endpoint Map
 
-  Base URL: https://api.lanonasis.com/api/v1
+  Base URL: https://api.LanOnasis.com/api/v1
 
   🔐 Authentication Endpoints
 
@@ -1177,20 +1177,20 @@
   NPM Packages Available
 
   # Memory Service CLI
-  npx -y @lanonasis/cli auth login
-  npx -y @lanonasis/cli memory create --title "Notes"
+  npx -y @LanOnasis/cli auth login
+  npx -y @LanOnasis/cli memory create --title "Notes"
   --content "Content" --type project
 
   # Memory Client SDK  
-  npm install @lanonasis/memory-client
-  npm install @lanonasis/cli
+  npm install @LanOnasis/memory-client
+  npm install @LanOnasis/cli
 
   Example SDK Usage
 
-  import { MemoryClient } from '@lanonasis/memory-client';
+  import { MemoryClient } from '@LanOnasis/memory-client';
 
   const client = new MemoryClient({
-    apiUrl: 'https://api.lanonasis.com/api/v1',
+    apiUrl: 'https://api.LanOnasis.com/api/v1',
     token: 'jwt_token'
   });
 
@@ -1281,7 +1281,7 @@
 ⏺ Perfect! There it is. Now let me check another file to get
    more complete endpoint information:
 
-⏺ Read(../lanonasis-maas/PRODUCTION.md)
+⏺ Read(../LanOnasis-maas/PRODUCTION.md)
   ⎿  Read 100 lines (ctrl+r to expand)
 
 ⏺ Excellent! Now I have the complete picture. Let me check
@@ -1307,10 +1307,10 @@
 
   Production Endpoints
 
-  - Memory API: https://api.lanonasis.com/api/v1
-  - Dashboard: https://dashboard.lanonasis.com
-  - Documentation: https://docs.lanonasis.com
-  - MCP Endpoint: https://mcp.lanonasis.com/sse
+  - Memory API: https://api.LanOnasis.com/api/v1
+  - Dashboard: https://dashboard.LanOnasis.com
+  - Documentation: https://docs.LanOnasis.com
+  - MCP Endpoint: https://mcp.LanOnasis.com/sse
 
   🔗 Complete SD-Ghost-Protocol Memory Service Endpoints
 
@@ -1535,7 +1535,7 @@
   ai-router/health
 
   # Production API Health (proxied)
-  GET https://api.lanonasis.com/api/v1/health
+  GET https://api.LanOnasis.com/api/v1/health
 
   🗄️ Database Schema (sd-ghost-protocol)
 
@@ -1600,9 +1600,9 @@
 
   Layer 3: Production API (Netlify)
 
-  - URL: https://api.lanonasis.com
+  - URL: https://api.LanOnasis.com
   - Netlify deployment of the memory service
-  - Different codebase from lanonasis-maas repo
+  - Different codebase from LanOnasis-maas repo
 
   Let me check the VPS server routing:
 
@@ -1676,16 +1676,16 @@
 
   Layer 3: Production Memory Service (Netlify)
 
-  URL: https://api.lanonasis.com/api/v1
-  Source: lanonasis-maas repository
+  URL: https://api.LanOnasis.com/api/v1
+  Source: LanOnasis-maas repository
   Different codebase - the full Memory Service with
   authentication, organizations, etc.
 
   # Production memory service (different from
   sd-ghost-protocol)
-  POST https://api.lanonasis.com/api/v1/memory
-  GET https://api.lanonasis.com/api/v1/memory/search
-  POST https://api.lanonasis.com/api/v1/auth/login
+  POST https://api.LanOnasis.com/api/v1/memory
+  GET https://api.LanOnasis.com/api/v1/memory/search
+  POST https://api.LanOnasis.com/api/v1/auth/login
 
   The Key Difference:
 
@@ -1697,9 +1697,9 @@
   chat_sessions
   - No authentication wrapper - uses raw Supabase auth
 
-  lanonasis-maas (Production API)
+  LanOnasis-maas (Production API)
 
-  - API: https://api.lanonasis.com (Netlify deployment)
+  - API: https://api.LanOnasis.com (Netlify deployment)
   - Schema: Enterprise with organizations, users, roles,
   plans
   - Full REST API with JWT auth, rate limiting, swagger docs
@@ -1732,7 +1732,7 @@
   For production memory service:
 
   # Full enterprise API
-  POST https://api.lanonasis.com/api/v1/memory/search
+  POST https://api.LanOnasis.com/api/v1/memory/search
   Authorization: Bearer <jwt_token>
 
   The VPS server is specifically for AI services privacy 
@@ -1758,7 +1758,7 @@
   others will.
 
 
-  i noticed the ochestrator in this lanonasis-maas was 
+  i noticed the ochestrator in this LanOnasis-maas was 
   commented out? why?
 
 ⏺ Ah, now I understand! Thank you for clarifying. You're
@@ -1773,7 +1773,7 @@
     - vortexcore.app (with nginx + SSL certificates)
 
   Let me check why the orchestrator is commented out in
-  lanonasis-maas:
+  LanOnasis-maas:
 
 ⏺ Search(pattern: "orchestrator|Orchestrator", output_mode:
         "content")
@@ -1786,10 +1786,10 @@
 ⏺ Search(pattern: "OrchestratorInterface")
   ⎿  Found 0 files 
 
-⏺ List(../lanonasis-maas/src/components)
+⏺ List(../LanOnasis-maas/src/components)
   ⎿  Listed 12 paths (ctrl+r to expand)
 
-⏺ Read(../lanonasis-maas/src/components/orchestrator/Orchest
+⏺ Read(../LanOnasis-maas/src/components/orchestrator/Orchest
       ratorInterface.tsx)
   ⎿  Read 396 lines (ctrl+r to expand)
 
@@ -1849,7 +1849,7 @@
       asis-monorepo -name "*orchestrator*" -type d
       2>/dev/null)
   ⎿ /Users/seyederick/DevOps/_project_folders/lan-onasis-mon
-    orepo/apps/lanonasis-maas/dist/components/orchestrator
+    orepo/apps/LanOnasis-maas/dist/components/orchestrator
     /Users/seyederick/DevOps/_project_folders/lan-onasis-mon
     … +7 lines (ctrl+r to expand)
 

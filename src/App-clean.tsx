@@ -34,7 +34,7 @@ function App() {
               <a href="#ecosystem" className="text-gray-300 hover:text-secondary transition-colors">Ecosystem</a>
               <a href="#pricing" className="text-gray-300 hover:text-secondary transition-colors">Pricing</a>
               <a href="#testimonials" className="text-gray-300 hover:text-secondary transition-colors">Testimonials</a>
-              <a href="https://dashboard.lanonasis.com/" className="btn-primary text-sm px-4 py-2">Get Started</a>
+              <a href="https://dashboard.LanOnasis.com/" className="btn-primary text-sm px-4 py-2">Get Started</a>
             </div>
             <LanguageSwitcher />
           </div>
@@ -100,8 +100,8 @@ function App() {
             <div>
               <h4 className="font-semibold mb-4">Resources</h4>
               <ul className="space-y-2">
-                <li><a href="https://docs.lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">Documentation</a></li>
-                <li><a href="https://dashboard.lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">Dashboard</a></li>
+                <li><a href="https://docs.LanOnasis.com" className="text-gray-400 hover:text-secondary transition-colors">Documentation</a></li>
+                <li><a href="https://dashboard.LanOnasis.com" className="text-gray-400 hover:text-secondary transition-colors">Dashboard</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">Support</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">Contact</a></li>
               </ul>
