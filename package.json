@@ -31,7 +31,7 @@
     "i18n:coverage": "cd ../.. && bun run i18n:coverage",
     "i18n:quality": "cd ../.. && bun run i18n:quality",
     "i18n": "npx lingo.dev@latest i18n",
-    "i18n:check": "test -f locales/es.json && echo '✅ Translations exist' || echo '❌ Missing translations'",
+    "i18n:check": "test -f locales/es.json && echo '\u2705 Translations exist' || echo '\u274c Missing translations'",
     "i18n:generate": "node scripts/generate-missing-translations.js",
     "i18n:status": "node scripts/translate-content.js",
     "i18n:fix": "bun run i18n:generate && bun run i18n:validate"
@@ -52,7 +52,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
-    "@tailwindcss/postcss": "^4.1.13",
     "@types/bun": "^1.2.22",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
@@ -65,7 +64,7 @@
     "globals": "^16.4.0",
     "lingo.dev": "^0.111.8",
     "postcss": "^8.5.6",
-    "tailwindcss": "4.1.13",
+    "tailwindcss": "^3.4.17",
     "terser": "^5.44.0",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.44.0",

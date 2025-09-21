@@ -1,14 +1,12 @@
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        primary: '#0a1930',
-        'primary-light': '#0f233a',
-        'primary-dark': '#050f1c',
-        'primary-darker': '#030a14',
-        secondary: '#00b4ff',
-        accent: '#39ff14',
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+        accent: 'rgb(var(--color-accent) / <alpha-value>)',
       },
       fontFamily: {
         inter: ['Inter', 'system-ui', 'sans-serif'],
