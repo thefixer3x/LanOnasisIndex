@@ -48,14 +48,14 @@ export default defineConfig({
     minify: 'terser',
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
-      external: ['i18next'], 
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           animations: ['framer-motion'],
           icons: ['lucide-react'],
           three: ['three', 'vanta'],
-          utils: ['react-intersection-observer', 'react-helmet-async']
+          utils: ['react-intersection-observer', 'react-helmet-async'],
+          i18n: ['i18next', 'react-i18next', 'i18next-browser-languagedetector']
         }
       }
     }
