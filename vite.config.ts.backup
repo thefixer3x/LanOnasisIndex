@@ -14,7 +14,7 @@ const stripLucideSourcemaps = () => ({
       .replace(/\/\/#[ \t]*sourceMappingURL=.*\n?/g, '')
       .replace(/\/\/# sourceMappingURL=.*\n?/g, '')
       .replace(/\/\*# sourceMappingURL=.*\*\//g, '');
-
+    
     return cleaned === code ? null : { code: cleaned, map: null };
   }
 });
@@ -34,7 +34,14 @@ const suppressSourceMapWarnings = () => ({
 });
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [stripLucideSourcemaps(), suppressSourceMapWarnings(), react()],
+  optimizeDeps: {
+    exclude: ['lucide-react']
+  },
+  esbuild: {
+    // Ignore source map errors
+    logOverride: { 'this-is-undefined-in-esm': 'silent' }
+  },
   build: {
     outDir: 'dist',
     sourcemap: false,
