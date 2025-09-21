@@ -11,6 +11,9 @@ import { Testimonials } from './components/Testimonials';
 import { CallToAction } from './components/CallToAction';
 import { LanguageSwitcher } from './components/LanguageSwitcher';
 import { AuthPage } from './components/auth/AuthPage';
+import { PlatformServices } from './components/PlatformServices';
+import Timeline from './components/Timeline';
+import { Industries } from './components/Industries';
 
 function App() {
   const { t } = useTranslation();
@@ -57,7 +60,10 @@ function App() {
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#features" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.features')}</a>
+              <a href="#industries" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.industries')}</a>
+              <a href="#platform-services" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.services')}</a>
               <a href="#ecosystem" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.ecosystem')}</a>
+              <a href="#story" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.story')}</a>
               <a href="#pricing" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.pricing')}</a>
               <a href="#testimonials" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.testimonials')}</a>
               <a href="#auth" className="text-gray-300 hover:text-secondary transition-colors duration-300">Sign In</a>
@@ -90,6 +96,12 @@ function App() {
           <Features />
         </section>
         
+        {/* Platform Services */}
+        <PlatformServices />
+
+        {/* Industries */}
+        <Industries />
+
         {/* Platform Demo */}
         <DisplayCardsDemo />
         
@@ -97,12 +109,27 @@ function App() {
         <section id="ecosystem">
           <LogoCarouselDemo />
         </section>
-        
+
         {/* Pricing */}
         <section id="pricing">
           <PricingTable />
         </section>
-        
+
+        {/* Story */}
+        <section id="story" className="py-20 bg-gradient-to-b from-slate-900 to-black">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-300 to-pink-400 bg-clip-text text-transparent">
+                {t('story_section.title')}
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                {t('story_section.subtitle')}
+              </p>
+            </div>
+            <Timeline />
+          </div>
+        </section>
+
         {/* Testimonials */}
         <section id="testimonials">
           <Testimonials />

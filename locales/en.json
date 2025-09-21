@@ -19,6 +19,7 @@
     "ecosystem": "Ecosystem",
     "pricing": "Pricing",
     "testimonials": "Testimonials",
+    "story": "Our Story",
     "get_started": "Get Started",
     "select_language": "Select Language"
   },
@@ -70,40 +71,83 @@
     "financial_services": {
       "name": "Financial Services & Fintech",
       "hero": "Reimagining Finance: Intelligent, Compliant, Borderless",
-      "description": "Power your bank or fintech with VortexCore AI. Instantly onboard clients, automate KYC/KYB/AML, and enable secure cross-border payments—all within a modular, API-driven ecosystem."
+      "description": "Power your bank or fintech with VortexCore AI. Instantly onboard clients, automate KYC/KYB/AML, and enable secure cross-border payments—all within a modular, API-driven ecosystem.",
+      "value_props": [
+        "Seamless, compliant, and intelligent infrastructure for payments, compliance, and risk management",
+        "Embedded finance and cross-border B2B payments",
+        "AI-driven compliance (KYC, KYB, AML), fraud detection, and dynamic risk profiling",
+        "Banking-as-a-Service APIs and RegTech for banks and fintechs"
+      ]
     },
     "smes": {
       "name": "SMEs & Business Services",
       "hero": "Empowering SMEs: Your Growth, Our Genius",
-      "description": "Meet BizGenie—your AI-powered business co-pilot. Track cash flow, get inventory alerts, and receive smart recommendations to scale."
+      "description": "Meet BizGenie—your AI-powered business co-pilot. Track cash flow, get inventory alerts, and receive smart recommendations to scale.",
+      "value_props": [
+        "All-in-one platform for vendor verification, payments, working capital, and business intelligence",
+        "Embedded AI assistant (BizGenie) for cash flow, inventory, and actionable insights",
+        "Tiered onboarding for financial inclusion and growth",
+        "Automated compliance and risk management for small businesses"
+      ]
     },
     "ecommerce": {
       "name": "E-commerce & Marketplaces",
       "hero": "E-commerce, Evolved: Fast, Trusted, Global",
-      "description": "VortexPay delivers instant vendor payouts and multi-currency transfers, while VortexComply automates merchant onboarding and compliance."
+      "description": "VortexPay delivers instant vendor payouts and multi-currency transfers, while VortexComply automates merchant onboarding and compliance.",
+      "value_props": [
+        "Instant vendor disbursements, multi-currency payments, and automated compliance",
+        "Smart matching of buyers/sellers, dynamic pricing, and procurement optimization",
+        "Business intelligence for inventory, sales, and risk management",
+        "Seamless marketplace integration with full API support"
+      ]
     },
     "education": {
       "name": "Education",
       "hero": "Transforming Education: Smart, Secure, Scalable",
-      "description": "Digital transformation for school management, payments, and compliance with easy onboarding solutions for institutions and students."
+      "description": "Digital transformation for school management, payments, and compliance with easy onboarding solutions for institutions and students.",
+      "value_props": [
+        "Digital transformation for school management, payments, and compliance",
+        "Easy onboarding and payment solutions for institutions and students",
+        "Business intelligence for operational efficiency",
+        "Secure student data management and financial tracking"
+      ]
     },
     "logistics": {
       "name": "Logistics & Transportation",
       "hero": "Moving Forward: Intelligent Logistics Solutions",
-      "description": "Real-time payments, vendor verification, and compliance for logistics providers with fleet management integration."
+      "description": "Real-time payments, vendor verification, and compliance for logistics providers with fleet management integration.",
+      "value_props": [
+        "Real-time payments, vendor verification, and compliance for logistics providers",
+        "Fleet management integration and secure cross-border settlements",
+        "Supply chain optimization with AI-driven insights",
+        "Automated documentation and regulatory compliance"
+      ]
     },
     "real_estate": {
       "name": "Real Estate",
       "hero": "Real Estate Reimagined: Secure, Smart, Seamless",
-      "description": "Secure payment rails, compliance automation, and business intelligence for property transactions with trusted onboarding."
+      "description": "Secure payment rails, compliance automation, and business intelligence for property transactions with trusted onboarding.",
+      "value_props": [
+        "Secure payment rails, compliance automation, and business intelligence for property transactions",
+        "Trusted onboarding and risk management for real estate professionals",
+        "Automated property verification and due diligence",
+        "Cross-border investment facilitation with compliance"
+      ]
     },
     "public_sector": {
       "name": "Public Sector & NGOs",
       "hero": "Public Innovation: Transparent, Efficient, Impactful",
-      "description": "Digital compliance, payments, and financial inclusion tools for government and NGOs with secure, scalable infrastructure."
+      "description": "Digital compliance, payments, and financial inclusion tools for government and NGOs with secure, scalable infrastructure.",
+      "value_props": [
+        "Digital compliance, payments, and financial inclusion tools for government and NGOs",
+        "Secure, scalable infrastructure for public sector innovation and empowerment",
+        "Transparent fund management and impact tracking",
+        "Citizen services digitization with AI-powered efficiency"
+      ]
     },
     "value_props": "Key Value Propositions:",
     "learn_more": "Learn More",
+    "learn_more_suffix": "solutions by Lan Onasis",
     "cta_title": "Ready to Transform Your Industry?",
     "cta_subtitle": "Join the revolution. Let's build the future of your sector together with AI-powered solutions.",
     "cta_primary": "Schedule a Consultation",
@@ -150,11 +194,16 @@
       "mcp_support": "MCP protocol support",
       "cta": "Manage Keys"
     },
-    "developer_portal": {
-      "title": "Developer Portal",
-      "description": "Comprehensive documentation, API reference, and interactive sandbox environment.",
-      "cta": "Explore Docs"
-    },
+  "developer_portal": {
+    "title": "Developer Portal",
+    "description": "Comprehensive documentation, API reference, and interactive sandbox environment.",
+    "cta": "Explore Docs"
+  },
+  "mcp": {
+    "title": "MCP Integration",
+    "description": "Model Context Protocol support for intelligent assistants with secure Lan Onasis tooling access.",
+    "cta": "Connect via MCP"
+  },
     "community": {
       "title": "Community",
       "description": "Join our developer community"
@@ -370,5 +419,9 @@
       "delete_memory - Delete memories",
       "get_analytics - Get memory usage analytics"
     ]
+  },
+  "story_section": {
+    "title": "Our Story",
+    "subtitle": "From launching pioneering AI platforms to empowering enterprises across Africa, our journey is rooted in innovation and trust."
   }
 }

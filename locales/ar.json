@@ -20,7 +20,8 @@
     "pricing": "الأسعار",
     "testimonials": "الشهادات",
     "get_started": "ابدأ الآن",
-    "select_language": "اختر اللغة"
+    "select_language": "اختر اللغة",
+    "story": "Our Story"
   },
   "hero": {
     "badge": "تقديم VortexCore AI",
@@ -78,18 +79,30 @@
       "starter": {
         "name": "المبتدئ",
         "description": "مثالي للأفراد والمشاريع الصغيرة",
-        "features": ["تحليلات أساسية", "5 أعضاء فريق", "دعم أساسي"]
+        "features": [
+          "تحليلات أساسية",
+          "5 أعضاء فريق",
+          "دعم أساسي"
+        ]
       },
       "pro": {
         "name": "احترافي",
         "description": "مثالي للفرق والشركات النامية",
-        "features": ["تحليلات متقدمة", "أعضاء فريق غير محدودين", "دعم أولوية"],
+        "features": [
+          "تحليلات متقدمة",
+          "أعضاء فريق غير محدودين",
+          "دعم أولوية"
+        ],
         "badge": "الأكثر شعبية"
       },
       "enterprise": {
         "name": "المؤسسات",
         "description": "للمنظمات والشركات الكبيرة",
-        "features": ["تحليلات مخصصة", "دعم مخصص", "وصول API"]
+        "features": [
+          "تحليلات مخصصة",
+          "دعم مخصص",
+          "وصول API"
+        ]
       }
     }
   },
@@ -109,5 +122,306 @@
       "description": "رؤى الشركات الصغيرة والمتوسطة مدعومة بالذكاء الاصطناعي وتوقع التدفق النقدي",
       "status": "تجريبي"
     }
+  },
+  "ecosystem": {
+    "subtitle": "A comprehensive suite of intelligent solutions powering the future of business",
+    "title": "The Vortex Ecosystem"
+  },
+  "industries": {
+    "cta_primary": "Schedule a Consultation",
+    "cta_secondary": "Explore Our Ecosystem",
+    "cta_subtitle": "Join the revolution. Let's build the future of your sector together with AI-powered solutions.",
+    "cta_title": "Ready to Transform Your Industry?",
+    "ecommerce": {
+      "description": "VortexPay delivers instant vendor payouts and multi-currency transfers, while VortexComply automates merchant onboarding and compliance.",
+      "hero": "E-commerce, Evolved: Fast, Trusted, Global",
+      "name": "E-commerce & Marketplaces",
+      "value_props": {
+        "0": "Instant vendor disbursements, multi-currency payments, and automated compliance",
+        "1": "Smart matching of buyers/sellers, dynamic pricing, and procurement optimization",
+        "2": "Business intelligence for inventory, sales, and risk management",
+        "3": "Seamless marketplace integration with full API support"
+      }
+    },
+    "education": {
+      "description": "Digital transformation for school management, payments, and compliance with easy onboarding solutions for institutions and students.",
+      "hero": "Transforming Education: Smart, Secure, Scalable",
+      "name": "Education",
+      "value_props": {
+        "0": "Digital transformation for school management, payments, and compliance",
+        "1": "Easy onboarding and payment solutions for institutions and students",
+        "2": "Business intelligence for operational efficiency",
+        "3": "Secure student data management and financial tracking"
+      }
+    },
+    "financial_services": {
+      "description": "Power your bank or fintech with VortexCore AI. Instantly onboard clients, automate KYC/KYB/AML, and enable secure cross-border payments—all within a modular, API-driven ecosystem.",
+      "hero": "Reimagining Finance: Intelligent, Compliant, Borderless",
+      "name": "Financial Services & Fintech",
+      "value_props": {
+        "0": "Seamless, compliant, and intelligent infrastructure for payments, compliance, and risk management",
+        "1": "Embedded finance and cross-border B2B payments",
+        "2": "AI-driven compliance (KYC, KYB, AML), fraud detection, and dynamic risk profiling",
+        "3": "Banking-as-a-Service APIs and RegTech for banks and fintechs"
+      }
+    },
+    "learn_more": "Learn More",
+    "learn_more_suffix": "solutions by Lan Onasis",
+    "logistics": {
+      "description": "Real-time payments, vendor verification, and compliance for logistics providers with fleet management integration.",
+      "hero": "Moving Forward: Intelligent Logistics Solutions",
+      "name": "Logistics & Transportation",
+      "value_props": {
+        "0": "Real-time payments, vendor verification, and compliance for logistics providers",
+        "1": "Fleet management integration and secure cross-border settlements",
+        "2": "Supply chain optimization with AI-driven insights",
+        "3": "Automated documentation and regulatory compliance"
+      }
+    },
+    "public_sector": {
+      "description": "Digital compliance, payments, and financial inclusion tools for government and NGOs with secure, scalable infrastructure.",
+      "hero": "Public Innovation: Transparent, Efficient, Impactful",
+      "name": "Public Sector & NGOs",
+      "value_props": {
+        "0": "Digital compliance, payments, and financial inclusion tools for government and NGOs",
+        "1": "Secure, scalable infrastructure for public sector innovation and empowerment",
+        "2": "Transparent fund management and impact tracking",
+        "3": "Citizen services digitization with AI-powered efficiency"
+      }
+    },
+    "real_estate": {
+      "description": "Secure payment rails, compliance automation, and business intelligence for property transactions with trusted onboarding.",
+      "hero": "Real Estate Reimagined: Secure, Smart, Seamless",
+      "name": "Real Estate",
+      "value_props": {
+        "0": "Secure payment rails, compliance automation, and business intelligence for property transactions",
+        "1": "Trusted onboarding and risk management for real estate professionals",
+        "2": "Automated property verification and due diligence",
+        "3": "Cross-border investment facilitation with compliance"
+      }
+    },
+    "smes": {
+      "description": "Meet BizGenie—your AI-powered business co-pilot. Track cash flow, get inventory alerts, and receive smart recommendations to scale.",
+      "hero": "Empowering SMEs: Your Growth, Our Genius",
+      "name": "SMEs & Business Services",
+      "value_props": {
+        "0": "All-in-one platform for vendor verification, payments, working capital, and business intelligence",
+        "1": "Embedded AI assistant (BizGenie) for cash flow, inventory, and actionable insights",
+        "2": "Tiered onboarding for financial inclusion and growth",
+        "3": "Automated compliance and risk management for small businesses"
+      }
+    },
+    "subtitle": "Transforming sectors across Africa and beyond with intelligent, compliant, and scalable solutions",
+    "title": "Industries We Empower",
+    "value_props": "Key Value Propositions:"
+  },
+  "mcp_connection": {
+    "api_key_label": "Enter your API Key:",
+    "api_key_placeholder": "your-api-key-here",
+    "available_tools": "Available MCP Tools:",
+    "claude_desktop_setup": "For Claude Desktop:",
+    "claude_steps": {
+      "0": "Open Claude Desktop application",
+      "1": "Go to Settings → Developer → MCP Servers",
+      "2": "Add the configuration shown above",
+      "3": "Restart Claude Desktop",
+      "4": "You should see \"LanOnasis-memory\" tools available"
+    },
+    "config_copied": "Configuration copied to clipboard!",
+    "connection_error": "Connection error",
+    "connection_failed": "Connection failed",
+    "connection_successful": "Connection successful! Your API key is valid.",
+    "contact_support": "✉️ Contact Support",
+    "copy_configuration": "📋 Copy Configuration",
+    "copy_failed": "Failed to copy to clipboard",
+    "cursor_setup": "For Cursor/Windsurf:",
+    "cursor_steps": {
+      "0": "Install the LanOnasis extension from the marketplace",
+      "1": "Set your API key in extension settings",
+      "2": "Use Ctrl+Shift+P → \"LanOnasis: Connect Memory Service\""
+    },
+    "detailed_instructions_title": "Detailed Setup Instructions",
+    "documentation": "📚 Documentation",
+    "enter_api_key": "Please enter your API key",
+    "get_api_key": "Get API Key from Dashboard →",
+    "hide_instructions": "Hide Detailed Instructions",
+    "invalid_api_key": "Invalid API key. Please check your key and try again.",
+    "mcp_tools": {
+      "0": "create_memory - Create new memories",
+      "1": "search_memories - Search existing memories",
+      "2": "list_memories - List all memories",
+      "3": "update_memory - Update existing memories",
+      "4": "delete_memory - Delete memories",
+      "5": "get_analytics - Get memory usage analytics"
+    },
+    "need_help_description": "If you're having trouble connecting, check our documentation or contact support.",
+    "need_help_title": "Need Help?",
+    "not_connected": "Not connected",
+    "show_instructions": "Show Detailed Instructions",
+    "step1_description": "First, you need an API key from your LanOnasis dashboard to authenticate MCP connections.",
+    "step1_title": "1. Get Your API Key",
+    "step2_title": "2. Test Your Connection",
+    "step3_description": "Add this configuration to your Claude Desktop MCP settings:",
+    "step3_title": "3. Configure Claude Desktop",
+    "subtitle": "Connect external MCP clients to your LanOnasis Memory Service",
+    "test_connection": "Test Connection",
+    "testing": "Testing...",
+    "testing_connection": "Testing connection...",
+    "title": "MCP Remote Connection"
+  },
+  "partners": {
+    "financial": {
+      "absa": "Absa Group",
+      "access_bank": "Access Bank",
+      "ecobank": "Ecobank",
+      "first_bank": "First Bank Nigeria",
+      "gtbank": "Guaranty Trust Bank",
+      "mtn": "MTN Group",
+      "safaricom": "Safaricom",
+      "standard_chartered": "Standard Chartered"
+    },
+    "financial_institutions": "Financial Institutions",
+    "section_subtitle": "Partnering with Africa's leading financial institutions and global technology companies to drive innovation across the continent",
+    "section_title": "Trusted by Industry Leaders",
+    "tech": {
+      "anthropic": "Anthropic",
+      "aws": "Amazon AWS",
+      "azure": "Microsoft Azure",
+      "figma": "Figma",
+      "github": "GitHub",
+      "notion": "Notion",
+      "openai": "OpenAI",
+      "paypal": "PayPal",
+      "slack": "Slack",
+      "stripe": "Stripe",
+      "supabase": "Supabase",
+      "vercel": "Vercel"
+    },
+    "technology_partners": "Technology Partners"
+  },
+  "platform_services": {
+    "api_keys": {
+      "cta": "Manage Keys",
+      "description": "Secure key storage with MCP integration for zero-secret development workflows.",
+      "mcp_support": "MCP protocol support",
+      "title": "API Key Management",
+      "zero_trust": "Zero-trust proxy tokens"
+    },
+    "badge": "🚀 Newly Deployed Services",
+    "cli_tool": {
+      "cta": "View on npm",
+      "description": "Professional command-line interface for memory management with MCP support.",
+      "title": "CLI Tool"
+    },
+    "community": {
+      "description": "Join our developer community",
+      "title": "Community"
+    },
+    "developer_portal": {
+      "cta": "Explore Docs",
+      "description": "Comprehensive documentation, API reference, and interactive sandbox environment.",
+      "title": "Developer Portal"
+    },
+    "get_started_title": "Get Started Today",
+    "mcp": {
+      "cta": "Connect via MCP",
+      "description": "Model Context Protocol support for intelligent assistants with secure Lan Onasis tooling access.",
+      "title": "MCP Integration"
+    },
+    "memory_service": {
+      "api": "REST API at api.LanOnasis.com",
+      "cta": "Access Dashboard",
+      "dashboard": "Dashboard UI at api.LanOnasis.com",
+      "description": "Vector-enabled memory storage for AI agents with semantic search and persistent context management.",
+      "title": "Memory-as-a-Service"
+    },
+    "sdk": {
+      "cta": "SDK Documentation",
+      "description": "Complete SDK with React hooks for seamless memory integration in your applications.",
+      "title": "TypeScript SDK"
+    },
+    "sign_up_free": "Sign Up Free",
+    "subtitle": "Experience our latest suite of developer tools and enterprise services, now available for immediate integration",
+    "title": "Platform Services Now Live",
+    "view_documentation": "View Documentation"
+  },
+  "products": {
+    "bizgenie": {
+      "description": "Embedded AI for SME insights and cash flow guidance",
+      "name": "BizGenie"
+    },
+    "vortexcomply": {
+      "description": "Compliance-as-a-Service, KYC/KYB, and AML solutions",
+      "name": "VortexComply"
+    },
+    "vortexcore_ai": {
+      "description": "Your intelligent assistant for compliance and business solutions",
+      "name": "VortexCore AI"
+    },
+    "vortexiq": {
+      "description": "Business intelligence engine for actionable insights",
+      "name": "VortexIQ"
+    },
+    "vortexpay": {
+      "description": "Instant vendor disbursements and B2B payments",
+      "name": "VortexPay"
+    },
+    "vortexrisk": {
+      "description": "AI-driven risk monitoring and analysis",
+      "name": "VortexRisk"
+    },
+    "vortexshield": {
+      "description": "Security infrastructure for cross-border safety",
+      "name": "VortexShield"
+    }
+  },
+  "sse": {
+    "footer": "Context is the foundation that makes all services intelligent",
+    "subtitle": "Connecting to your personalized AI ecosystem...",
+    "title": "Contextualizing Your Session"
+  },
+  "story_section": {
+    "subtitle": "From launching pioneering AI platforms to empowering enterprises across Africa, our journey is rooted in innovation and trust.",
+    "title": "Our Story"
+  },
+  "testimonials": {
+    "items": {
+      "0": {
+        "description": "VortexCore AI has transformed our approach to compliance across multiple African markets. Their innovative solutions and quick turnaround time made our partnership incredibly successful.",
+        "name": "Michael O.",
+        "profession": "FinTech Director"
+      },
+      "1": {
+        "description": "The attention to detail and regulatory knowledge in Lan Onasis's compliance technology is exceptional. Their platform has significantly reduced our risk exposure across our operations in Ghana and Kenya.",
+        "name": "Amina K.",
+        "profession": "Compliance Officer"
+      },
+      "2": {
+        "description": "Working with the Lan Onasis team was a game-changer for our digital transformation strategy. Their expertise in financial technology and deep understanding of African markets exceeded our expectations.",
+        "name": "Chike N.",
+        "profession": "Bank Executive"
+      },
+      "3": {
+        "description": "The quality of Lan Onasis's financial services platform and communication throughout our implementation was outstanding. Their team truly understands the unique challenges of operating in emerging African markets.",
+        "name": "Fatima M.",
+        "profession": "RegTech Analyst"
+      }
+    }
+  },
+  "timeline": {
+    "innovation_award": {
+      "description": "Recognized as \"Most Innovative FinTech Solution\" at Africa Tech Summit.",
+      "title": "Innovation Award",
+      "year": "2023"
+    }
+  },
+  "vision": {
+    "description": "Lan Onasis isn't just pivoting—we're redefining modern business systems through innovative technology and forward-thinking solutions.",
+    "points": {
+      "0": "To build Africa's most intelligent tech ecosystem",
+      "1": "To expand globally with secure, compliant, AI-enhanced platforms",
+      "2": "To empower businesses and regulators to innovate without borders"
+    },
+    "title": "Our Vision"
   }
 }
