@@ -1,12 +1,6 @@
 # Lan Onasis
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/site-id/deploy-status)](https://app.netlify.com/sites/LanOnasis/deploys)
-
 Africa's leading AI-powered tech hub—offering intelligent compliance, risk, and B2B payment solutions through the VortexCore ecosystem across Financial Services, SMEs, E-commerce, Education, Logistics, Real Estate & Public Sector.
-
-## 🚀 Build Status
-
-**Last tested**: July 03, 2025 - Sentry disabled, clean deployment expected.
 
 ## Our Vision
 
@@ -62,8 +56,6 @@ This site is a Progressive Web App with:
 - ✅ Installable on mobile and desktop
 - ✅ App manifest with icons
 - ✅ Fast loading and caching
-
-To generate PWA icons, visit `/icon-generator.html` after deployment.
 
 ### Deployment
 
