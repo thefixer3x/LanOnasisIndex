@@ -1,106 +1,115 @@
 # Lan Onasis
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/site-id/deploy-status)](https://app.netlify.com/sites/LanOnasis/deploys)
+> Africa's leading AI-powered tech hub offering intelligent compliance, risk, and B2B payment solutions
 
-Africa's leading AI-powered tech hub—offering intelligent compliance, risk, and B2B payment solutions through the VortexCore ecosystem across Financial Services, SMEs, E-commerce, Education, Logistics, Real Estate & Public Sector.
+This repository contains the official website and landing page for Lan Onasis, showcasing the VortexCore ecosystem—a modular platform providing enterprise-grade solutions across multiple sectors including Financial Services, SMEs, E-commerce, Education, Logistics, Real Estate, and Public Sector.
 
-## 🚀 Build Status
-
-**Last tested**: July 03, 2025 - Sentry disabled, clean deployment expected.
-
-## Our Vision
-
-Building Africa's most intelligent tech ecosystem—empowering entrepreneurs, fintechs, and institutions with secure, compliant, AI‑enhanced platforms across multiple industries.
-
-## The Vortex Ecosystem
-
-Our modular, AI-enhanced infrastructure includes:
-
-- **VortexCore AI**: Your intelligent assistant for compliance and business solutions
-- **VortexComply**: Compliance-as-a-Service, KYC/KYB, and AML solutions
-- **VortexRisk (RiskGPT)**: AI-driven risk monitoring and analysis
-- **VortexShield**: Security infrastructure for cross-border safety
-- **VortexIQ**: Business intelligence engine for actionable insights
-- **VortexPay**: Instant vendor disbursements and B2B payments
-- **BizGenie**: Embedded AI for SME insights and cash flow guidance
-
-## Industries We Serve
-
-- **Financial Services & Fintech**: Intelligent, compliant, borderless finance solutions
-- **SMEs & Business Services**: AI-powered growth and business intelligence
-- **E-commerce & Marketplaces**: Fast, trusted, global commerce solutions
-- **Education**: Smart, secure, scalable educational technology
-- **Logistics & Transportation**: Intelligent logistics and supply chain solutions
-- **Real Estate**: Secure, smart, seamless property technology
-- **Public Sector & NGOs**: Transparent, efficient, impactful governance solutions
-
-## Development
-
-### Getting Started
+## 🚀 Quick Start
 
 ```bash
-# Install dependencies
-npm install
+# Install dependencies (using Bun)
+bun install
 
 # Start development server
-npm run dev
+bun run dev
 
 # Build for production
-npm run build
+bun run build
 
-# Type check
-npm run type-check
-
-# Lint code
-npm run lint
+# Preview production build
+bun run preview
 ```
 
-### PWA Features
+## 📋 Prerequisites
 
-This site is a Progressive Web App with:
-- ✅ Offline support via Service Worker
-- ✅ Installable on mobile and desktop
-- ✅ App manifest with icons
-- ✅ Fast loading and caching
+- **Node.js** >= 18.0.0
+- **Bun** >= 1.0.0 (recommended) or npm
 
-To generate PWA icons, visit `/icon-generator.html` after deployment.
+## 🛠️ Tech Stack
 
-### Deployment
+| Category | Technology |
+|----------|-----------|
+| **Framework** | React 19 + TypeScript |
+| **Build Tool** | Vite 7 |
+| **Styling** | Tailwind CSS 3 |
+| **Animations** | Framer Motion |
+| **3D Graphics** | Three.js + Vanta.js |
+| **Icons** | Lucide React |
+| **Internationalization** | i18next + react-i18next |
+| **SEO** | React Helmet Async |
+| **Deployment** | Netlify |
 
-This project is automatically deployed to Netlify through GitHub Actions when changes are pushed to the main branch.
+## 🌍 Internationalization
 
-### Performance Optimization
+The site supports multiple languages:
+- English (en)
+- Spanish (es)
+- French (fr)
+- German (de)
+- Italian (it)
+- Arabic (ar)
 
-- **Code Splitting**: Automatic vendor, animations, icons, and utils chunks
-- **Image Optimization**: Lazy loading and responsive images
-- **SEO**: Comprehensive meta tags, structured data, and sitemap
-- **Accessibility**: WCAG 2.1 compliant design
-- **Performance**: Optimized builds with Terser minification
+Translation management:
+```bash
+# Validate translations
+bun run i18n:validate
 
-### Tech Stack
+# Check translation status
+bun run i18n:check
 
-- **Frontend**: React 18 + TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **3D Effects**: Three.js + Vanta.js
-- **Icons**: Lucide React
-- **SEO**: React Helmet Async
-- **Build Tool**: Vite
-- **Deployment**: Netlify
+# Generate missing translations
+bun run i18n:generate
+```
 
-### Browser Support
+## 🏗️ Project Structure
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+```
+src/
+├── components/       # React components
+│   ├── ui/          # Reusable UI components
+│   ├── auth/        # Authentication components
+│   └── blocks/      # Page sections
+├── services/        # External service integrations
+├── hooks/           # Custom React hooks
+├── lib/             # Utility functions
+└── types/           # TypeScript type definitions
+```
 
-### License
+## 📦 Available Scripts
 
-MIT License - see LICENSE file for details.
+| Command | Description |
+|---------|-------------|
+| `bun run dev` | Start development server |
+| `bun run build` | Build for production |
+| `bun run preview` | Preview production build |
+| `bun run lint` | Run ESLint |
+| `bun run type-check` | Run TypeScript type checking |
 
-### Contact
+## 🎨 Features
 
-- Website: [www.LanOnasis.com](https://www.LanOnasis.com)
-- Email: info@LanOnasis.com
-- Social: [@LanOnasis](https://twitter.com/LanOnasis)
+- **Progressive Web App (PWA)**: Offline support, installable on mobile and desktop
+- **Responsive Design**: Mobile-first approach with full desktop support
+- **Optimized Performance**: Code splitting, lazy loading, and asset optimization
+- **SEO Ready**: Comprehensive meta tags, structured data, and sitemap
+- **Accessible**: WCAG 2.1 compliant design
+- **Modern UI**: Smooth animations and interactive 3D effects
+
+## 🚢 Deployment
+
+The application is automatically deployed to Netlify on push to the main branch. Build configuration is managed in `netlify.toml`.
+
+**Live Site**: [www.LanOnasis.com](https://www.LanOnasis.com)
+
+## 🤝 Contributing
+
+This is a private repository for the Lan Onasis platform. For questions or support, contact the development team.
+
+## 📄 License
+
+MIT License
+
+## 📧 Contact
+
+- **Website**: [www.LanOnasis.com](https://www.LanOnasis.com)
+- **Email**: info@LanOnasis.com
+- **Repository**: [github.com/thefixer3x/LanOnasisIndex](https://github.com/thefixer3x/LanOnasisIndex)
