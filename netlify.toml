@@ -21,6 +21,26 @@
 [build.processing.html]
   pretty_urls = true
 
+# Force HTTPS and canonical domain (non-www)
+[[redirects]]
+  from = "http://lanonasis.com/*"
+  to = "https://lanonasis.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.lanonasis.com/*"
+  to = "https://lanonasis.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.lanonasis.com/*"
+  to = "https://lanonasis.com/:splat"
+  status = 301
+  force = true
+
+# SPA fallback - must come after the canonical domain redirects
 [[redirects]]
   from = "/*"
   to = "/index.html"
