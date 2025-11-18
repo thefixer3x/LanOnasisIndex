@@ -5,7 +5,13 @@ import { useState } from "react";
 import { cn } from "../../lib/utils";
 import { Eye, EyeOff } from "lucide-react";
 import { useToast } from "../../hooks/use-toast";
-import { GoogleIcon, GitHubIcon, LinkedInIcon, DiscordIcon, AppleIcon } from "../icons/social-providers";
+import {
+  GoogleIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  DiscordIcon,
+  AppleIcon,
+} from "../icons/social-providers";
 import { Button } from "../ui/button";
 
 type AuthMode = "login" | "register" | "forgot-password";
@@ -17,13 +23,18 @@ interface AuthFormProps {
   className?: string;
 }
 
-export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthFormProps) => {
+export const AuthForm = ({
+  mode,
+  onSubmit,
+  isLoading = false,
+  className,
+}: AuthFormProps) => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
     confirmPassword: "",
-    name: ""
+    name: "",
   });
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -31,7 +42,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    
+
     // Clear error when typing
     if (errors[name]) {
       setErrors((prev) => {
@@ -44,14 +55,14 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
-    
+
     // Validate email
     if (!formData.email) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Email is invalid";
     }
-    
+
     // Validate password for login and register
     if (mode !== "forgot-password") {
       if (!formData.password) {
@@ -60,40 +71,40 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
         newErrors.password = "Password must be at least 6 characters";
       }
     }
-    
+
     // Additional validations for register
     if (mode === "register") {
       if (!formData.name) {
         newErrors.name = "Name is required";
       }
-      
+
       if (!formData.confirmPassword) {
         newErrors.confirmPassword = "Please confirm your password";
       } else if (formData.password !== formData.confirmPassword) {
         newErrors.confirmPassword = "Passwords do not match";
       }
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (validate()) {
       // Redirect to central auth instead of handling locally
       const currentUrl = window.location.origin;
       const redirectUrl = encodeURIComponent(`${currentUrl}/dashboard`);
-      const authUrl = `https://api.LanOnasis.com/auth/${mode === 'register' ? 'signup' : 'login'}?platform=dashboard&redirect_url=${redirectUrl}`;
-      
+      const authUrl = `https://api.LanOnasis.com/auth/${mode === "register" ? "signup" : "login"}?platform=dashboard&redirect_url=${redirectUrl}`;
+
       // Show loading toast
       toast({
         title: "Redirecting to authentication...",
         description: "You will be redirected to our secure login portal",
         variant: "default",
       });
-      
+
       // Small delay for user feedback, then redirect
       setTimeout(() => {
         window.location.href = authUrl;
@@ -101,26 +112,30 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
     }
   };
 
-  const handleSocialLogin = async (provider: 'google' | 'github' | 'linkedin' | 'discord' | 'apple') => {
+  const handleSocialLogin = async (
+    provider: "google" | "github" | "linkedin" | "discord" | "apple"
+  ) => {
     try {
       // Redirect to central OAuth instead of direct Supabase
       const currentUrl = window.location.origin;
-      const redirectUrl = encodeURIComponent(`${currentUrl}/dashboard`);
-      const oauthUrl = `https://api.LanOnasis.com/auth/oauth?provider=${provider}&platform=dashboard&redirect_url=${redirectUrl}`;
-      
+      const redirectUri = encodeURIComponent(`${currentUrl}/dashboard`);
+      const oauthUrl = `https://api.lanonasis.com/auth/oauth?provider=${provider}&project_scope=dashboard&redirect_uri=${redirectUri}`;
+
       toast({
         title: `Connecting to ${provider.charAt(0).toUpperCase() + provider.slice(1)}...`,
         description: "You will be redirected to complete authentication",
         variant: "default",
       });
-      
+
       // Small delay for user feedback, then redirect
       setTimeout(() => {
         window.location.href = oauthUrl;
       }, 800);
-      
     } catch (error: unknown) {
-      const errorMessage = error instanceof Error ? error.message : `Failed to login with ${provider}`;
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : `Failed to login with ${provider}`;
       toast({
         title: "Login failed",
         description: errorMessage,
@@ -137,7 +152,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
       buttonText: "Sign in",
       footerText: "Don't have an account?",
       footerLinkText: "Create account",
-      footerLinkPath: "/auth/register"
+      footerLinkPath: "/auth/register",
     },
     register: {
       title: "Create an account",
@@ -145,7 +160,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
       buttonText: "Create account",
       footerText: "Already have an account?",
       footerLinkText: "Sign in",
-      footerLinkPath: "/auth/login"
+      footerLinkPath: "/auth/login",
     },
     "forgot-password": {
       title: "Reset your password",
@@ -153,27 +168,40 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
       buttonText: "Send reset link",
       footerText: "Remember your password?",
       footerLinkText: "Back to login",
-      footerLinkPath: "/auth/login"
-    }
+      footerLinkPath: "/auth/login",
+    },
   };
 
-  const { title, subtitle, buttonText, footerText, footerLinkText } = formConfig[mode];
+  const { title, subtitle, buttonText, footerText, footerLinkText } =
+    formConfig[mode];
 
   return (
-    <div className={cn("bg-white/90 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-200/60 w-full max-w-md mx-auto overflow-hidden", className)}>
+    <div
+      className={cn(
+        "bg-white/90 backdrop-blur-md shadow-2xl rounded-2xl border border-gray-200/60 w-full max-w-md mx-auto overflow-hidden",
+        className
+      )}
+    >
       <div className="p-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900">{title}</h1>
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+            {title}
+          </h1>
           <p className="text-sm text-gray-600 mt-2">{subtitle}</p>
-          <div className="mt-1 text-xs text-gray-500">Powered by LanOnasis Platform</div>
+          <div className="mt-1 text-xs text-gray-500">
+            Powered by LanOnasis Platform
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name Field (Register only) */}
           {mode === "register" && (
             <div className="space-y-2">
-              <label htmlFor="name" className="text-sm font-medium text-gray-700">
+              <label
+                htmlFor="name"
+                className="text-sm font-medium text-gray-700"
+              >
                 Full Name
               </label>
               <input
@@ -191,14 +219,19 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
                 autoComplete="name"
               />
               {errors.name && (
-                <p className="text-red-600 text-xs mt-1" role="alert">{errors.name}</p>
+                <p className="text-red-600 text-xs mt-1" role="alert">
+                  {errors.name}
+                </p>
               )}
             </div>
           )}
 
           {/* Email Field */}
           <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="text-sm font-medium text-gray-700"
+            >
               Email Address
             </label>
             <input
@@ -216,7 +249,9 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
               autoComplete="email"
             />
             {errors.email && (
-              <p className="text-red-600 text-xs mt-1" role="alert">{errors.email}</p>
+              <p className="text-red-600 text-xs mt-1" role="alert">
+                {errors.email}
+              </p>
             )}
           </div>
 
@@ -224,14 +259,17 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
           {mode !== "forgot-password" && (
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="password"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Password
                 </label>
                 {mode === "login" && (
                   <button
                     type="button"
                     onClick={() => {
-                      const forgotUrl = `https://api.LanOnasis.com/auth/forgot-password?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + '/dashboard')}`;
+                      const forgotUrl = `https://api.LanOnasis.com/auth/forgot-password?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + "/dashboard")}`;
                       window.location.href = forgotUrl;
                     }}
                     className="text-xs text-blue-600 hover:text-blue-800 hover:underline"
@@ -253,7 +291,9 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
                   )}
                   placeholder="••••••••"
                   aria-label="Password"
-                  autoComplete={mode === "login" ? "current-password" : "new-password"}
+                  autoComplete={
+                    mode === "login" ? "current-password" : "new-password"
+                  }
                 />
                 <button
                   type="button"
@@ -269,7 +309,9 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
                 </button>
               </div>
               {errors.password && (
-                <p className="text-red-600 text-xs mt-1" role="alert">{errors.password}</p>
+                <p className="text-red-600 text-xs mt-1" role="alert">
+                  {errors.password}
+                </p>
               )}
             </div>
           )}
@@ -277,7 +319,10 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
           {/* Confirm Password Field (Register only) */}
           {mode === "register" && (
             <div className="space-y-2">
-              <label htmlFor="confirmPassword" className="text-sm font-medium text-gray-700">
+              <label
+                htmlFor="confirmPassword"
+                className="text-sm font-medium text-gray-700"
+              >
                 Confirm Password
               </label>
               <div className="relative">
@@ -289,7 +334,8 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
                   onChange={handleChange}
                   className={cn(
                     "w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300",
-                    errors.confirmPassword && "border-red-500 focus:ring-red-500"
+                    errors.confirmPassword &&
+                      "border-red-500 focus:ring-red-500"
                   )}
                   placeholder="••••••••"
                   aria-label="Confirm Password"
@@ -297,7 +343,9 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
                 />
               </div>
               {errors.confirmPassword && (
-                <p className="text-red-600 text-xs mt-1" role="alert">{errors.confirmPassword}</p>
+                <p className="text-red-600 text-xs mt-1" role="alert">
+                  {errors.confirmPassword}
+                </p>
               )}
             </div>
           )}
@@ -310,9 +358,25 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
           >
             {isLoading ? (
               <>
-                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                <svg
+                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
                 </svg>
                 Processing...
               </>
@@ -330,7 +394,9 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
                 <div className="w-full border-t border-gray-300"></div>
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-white px-2 text-gray-500">Or continue with</span>
+                <span className="bg-white px-2 text-gray-500">
+                  Or continue with
+                </span>
               </div>
             </div>
 
@@ -339,7 +405,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
               <div className="grid grid-cols-2 gap-3">
                 <button
                   type="button"
-                  onClick={() => handleSocialLogin('google')}
+                  onClick={() => handleSocialLogin("google")}
                   disabled={isLoading}
                   className="flex items-center justify-center space-x-2 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
@@ -348,7 +414,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
                 </button>
                 <button
                   type="button"
-                  onClick={() => handleSocialLogin('github')}
+                  onClick={() => handleSocialLogin("github")}
                   disabled={isLoading}
                   className="flex items-center justify-center space-x-2 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
@@ -356,12 +422,12 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
                   <span>GitHub</span>
                 </button>
               </div>
-              
+
               {/* Secondary providers - 3 columns */}
               <div className="grid grid-cols-3 gap-3">
                 <button
                   type="button"
-                  onClick={() => handleSocialLogin('linkedin')}
+                  onClick={() => handleSocialLogin("linkedin")}
                   disabled={isLoading}
                   className="flex items-center justify-center space-x-1 rounded-lg border border-gray-300 bg-white px-3 py-3 text-xs font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
@@ -370,7 +436,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
                 </button>
                 <button
                   type="button"
-                  onClick={() => handleSocialLogin('discord')}
+                  onClick={() => handleSocialLogin("discord")}
                   disabled={isLoading}
                   className="flex items-center justify-center space-x-1 rounded-lg border border-gray-300 bg-white px-3 py-3 text-xs font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
@@ -379,7 +445,7 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
                 </button>
                 <button
                   type="button"
-                  onClick={() => handleSocialLogin('apple')}
+                  onClick={() => handleSocialLogin("apple")}
                   disabled={isLoading}
                   className="flex items-center justify-center space-x-1 rounded-lg border border-gray-300 bg-white px-3 py-3 text-xs font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
@@ -398,8 +464,8 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
             <button
               type="button"
               onClick={() => {
-                const newMode = mode === 'login' ? 'register' : 'login';
-                const authUrl = `https://api.LanOnasis.com/auth/${newMode === 'register' ? 'signup' : 'login'}?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + '/dashboard')}`;
+                const newMode = mode === "login" ? "register" : "login";
+                const authUrl = `https://api.LanOnasis.com/auth/${newMode === "register" ? "signup" : "login"}?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + "/dashboard")}`;
                 window.location.href = authUrl;
               }}
               className="text-blue-600 hover:text-blue-800 hover:underline font-medium"
@@ -408,8 +474,8 @@ export const AuthForm = ({ mode, onSubmit, isLoading = false, className }: AuthF
             </button>
           </div>
           <div>
-            <a 
-              href="https://LanOnasis.com" 
+            <a
+              href="https://LanOnasis.com"
               className="text-gray-500 hover:text-gray-700 hover:underline text-xs"
             >
               Learn more about LanOnasis Platform
