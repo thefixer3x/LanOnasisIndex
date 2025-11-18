@@ -25,7 +25,7 @@ interface AuthFormProps {
 
 export const AuthForm = ({
   mode,
-  onSubmit,
+  onSubmit: _onSubmit,
   isLoading = false,
   className,
 }: AuthFormProps) => {
