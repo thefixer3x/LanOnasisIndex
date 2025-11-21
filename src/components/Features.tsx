@@ -1,4 +1,4 @@
-import { Zap, Shield, DollarSign, Brain, BarChart3, CreditCard } from "lucide-react";
+import { Zap, Shield, DollarSign, Brain, BarChart3, CreditCard, Lock } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 
 export function Features() {
@@ -34,6 +34,11 @@ export function Features() {
       icon: CreditCard,
       name: t('products.vortexpay.name'),
       description: t('products.vortexpay.description'),
+    },
+    {
+      icon: Lock,
+      name: t('products.vortexsecure.name'),
+      description: t('products.vortexsecure.description'),
     },
   ];
 

@@ -63,6 +63,7 @@
       "vortexcore_ai": "VortexCore AI",
       "vortexpay": "VortexPay",
       "bizgenie": "BizGenie",
+      "vortexsecure": "VortexSecure",
       "api_gateway": "API Gateway"
     },
     "resource_links": {

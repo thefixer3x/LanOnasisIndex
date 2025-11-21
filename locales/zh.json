@@ -31,7 +31,7 @@
     "cta_secondary": "登录"
   },
   "hero_section": {
-    "transforming": "变革",
+    "transforming": "变��",
     "africas_tech": "非洲科技",
     "ecosystem": "生态系统",
     "tagline": "推动非洲数字未来",
@@ -63,6 +63,7 @@
       "vortexcore_ai": "VortexCore AI",
       "vortexpay": "VortexPay",
       "bizgenie": "BizGenie",
+      "vortexsecure": "VortexSecure",
       "api_gateway": "API 网关"
     },
     "resource_links": {
@@ -114,7 +115,7 @@
     },
     "vortexpay": {
       "title": "VortexPay",
-      "description": "支持多货币的即时B2B支付",
+      "description": "支��多货币的即时B2B支付",
       "status": "活跃"
     },
     "bizgenie": {

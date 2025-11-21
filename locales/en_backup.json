@@ -63,6 +63,10 @@
     "bizgenie": {
       "name": "BizGenie",
       "description": "Embedded AI for SME insights and cash flow guidance"
+    },
+    "vortexsecure": {
+      "name": "VortexSecure",
+      "description": "Advanced encryption and data protection for sensitive transactions"
     }
   },
   "industries": {
@@ -350,6 +354,7 @@
       "vortexcore_ai": "VortexCore AI",
       "vortexpay": "VortexPay",
       "bizgenie": "BizGenie",
+      "vortexsecure": "VortexSecure",
       "api_gateway": "API Gateway"
     },
     "resource_links": {
