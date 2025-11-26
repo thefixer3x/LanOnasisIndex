@@ -197,7 +197,7 @@ export function Industries() {
           </p>
           <div className="flex flex-col gap-4 md:flex-row md:justify-center">
             <a
-              href="https://dashboard.LanOnasis.com/consultation"
+              href="https://dashboard.lanonasis.com/consultation"
               className="btn-primary inline-flex items-center justify-center gap-2"
             >
               {t('industries.cta_primary')}

@@ -483,7 +483,7 @@
   🏗️ Base Configuration
 
   Supabase Project: LanOnasis-maas
-  API Base URL: https://api.LanOnasis.com/api/v1
+  API Base URL: https://api.lanonasis.com/api/v1
   Database: PostgreSQL + pgvector (vector extensions
   enabled)
   Realtime: Enabled for live collaboration features
@@ -750,13 +750,13 @@
 
   # 1. Register & Login
   curl -X POST
-  https://api.LanOnasis.com/api/v1/auth/register \
+  https://api.lanonasis.com/api/v1/auth/register \
     -H "Content-Type: application/json" \
     -d '{"email":"team@example.com","password":"secure123","
   organization_name":"Team Alpha"}'
 
   # 2. Create Memory
-  curl -X POST https://api.LanOnasis.com/api/v1/memory \
+  curl -X POST https://api.lanonasis.com/api/v1/memory \
     -H "Authorization: Bearer $JWT_TOKEN" \
     -H "Content-Type: application/json" \
     -d '{"title":"Sprint Planning","content":"Team discussed
@@ -765,14 +765,14 @@
 
   # 3. Search Memories  
   curl -X POST
-  https://api.LanOnasis.com/api/v1/memory/search \
+  https://api.lanonasis.com/api/v1/memory/search \
     -H "Authorization: Bearer $JWT_TOKEN" \
     -H "Content-Type: application/json" \
     -d '{"query":"sprint objectives team 
   planning","limit":5,"threshold":0.8}'
 
   # 4. Setup MCP Tool
-  curl -X POST https://api.LanOnasis.com/api/v1/mcp/tools \
+  curl -X POST https://api.lanonasis.com/api/v1/mcp/tools \
     -H "Authorization: Bearer $JWT_TOKEN" \
     -H "Content-Type: application/json" \
     -d '{"toolId":"claude-assistant","toolName":"Claude 
@@ -850,7 +850,7 @@
       2>/dev/null | hea…)
   ⎿ /Users/seyederick/DevOps/_project_folders/lan-onasis-mon
     orepo/SERVICE_FUNCTIONALITY_TEST_REPORT.md:- Mode: PRODU
-    CTION (routes to api.LanOnasis.com)
+    CTION (routes to api.lanonasis.com)
     … +36 lines (ctrl+r to expand)
 
 
@@ -874,13 +874,13 @@
 
   Primary Endpoints
 
-  - Main API: https://api.LanOnasis.com
+  - Main API: https://api.lanonasis.com
   - Supabase Project:
   https://mxtsdgkwzjzlttpotole.supabase.co
   (sd-ghost-protocol)
-  - Dashboard: https://dashboard.LanOnasis.com
-  - Documentation: https://docs.LanOnasis.com
-  - MCP Endpoint: https://mcp.LanOnasis.com/sse
+  - Dashboard: https://dashboard.lanonasis.com
+  - Documentation: https://docs.lanonasis.com
+  - MCP Endpoint: https://mcp.lanonasis.com/sse
 
   Repository Sources
 
@@ -893,7 +893,7 @@
 
   🔗 Complete API Endpoint Map
 
-  Base URL: https://api.LanOnasis.com/api/v1
+  Base URL: https://api.lanonasis.com/api/v1
 
   🔐 Authentication Endpoints
 
@@ -1177,20 +1177,20 @@
   NPM Packages Available
 
   # Memory Service CLI
-  npx -y @LanOnasis/cli auth login
-  npx -y @LanOnasis/cli memory create --title "Notes"
+  npx -y @lanonasis/cli auth login
+  npx -y @lanonasis/cli memory create --title "Notes"
   --content "Content" --type project
 
   # Memory Client SDK  
-  npm install @LanOnasis/memory-client
-  npm install @LanOnasis/cli
+  npm install @lanonasis/memory-client
+  npm install @lanonasis/cli
 
   Example SDK Usage
 
-  import { MemoryClient } from '@LanOnasis/memory-client';
+  import { MemoryClient } from '@lanonasis/memory-client';
 
   const client = new MemoryClient({
-    apiUrl: 'https://api.LanOnasis.com/api/v1',
+    apiUrl: 'https://api.lanonasis.com/api/v1',
     token: 'jwt_token'
   });
 
@@ -1307,10 +1307,10 @@
 
   Production Endpoints
 
-  - Memory API: https://api.LanOnasis.com/api/v1
-  - Dashboard: https://dashboard.LanOnasis.com
-  - Documentation: https://docs.LanOnasis.com
-  - MCP Endpoint: https://mcp.LanOnasis.com/sse
+  - Memory API: https://api.lanonasis.com/api/v1
+  - Dashboard: https://dashboard.lanonasis.com
+  - Documentation: https://docs.lanonasis.com
+  - MCP Endpoint: https://mcp.lanonasis.com/sse
 
   🔗 Complete SD-Ghost-Protocol Memory Service Endpoints
 
@@ -1535,7 +1535,7 @@
   ai-router/health
 
   # Production API Health (proxied)
-  GET https://api.LanOnasis.com/api/v1/health
+  GET https://api.lanonasis.com/api/v1/health
 
   🗄️ Database Schema (sd-ghost-protocol)
 
@@ -1600,7 +1600,7 @@
 
   Layer 3: Production API (Netlify)
 
-  - URL: https://api.LanOnasis.com
+  - URL: https://api.lanonasis.com
   - Netlify deployment of the memory service
   - Different codebase from LanOnasis-maas repo
 
@@ -1676,16 +1676,16 @@
 
   Layer 3: Production Memory Service (Netlify)
 
-  URL: https://api.LanOnasis.com/api/v1
+  URL: https://api.lanonasis.com/api/v1
   Source: LanOnasis-maas repository
   Different codebase - the full Memory Service with
   authentication, organizations, etc.
 
   # Production memory service (different from
   sd-ghost-protocol)
-  POST https://api.LanOnasis.com/api/v1/memory
-  GET https://api.LanOnasis.com/api/v1/memory/search
-  POST https://api.LanOnasis.com/api/v1/auth/login
+  POST https://api.lanonasis.com/api/v1/memory
+  GET https://api.lanonasis.com/api/v1/memory/search
+  POST https://api.lanonasis.com/api/v1/auth/login
 
   The Key Difference:
 
@@ -1699,7 +1699,7 @@
 
   LanOnasis-maas (Production API)
 
-  - API: https://api.LanOnasis.com (Netlify deployment)
+  - API: https://api.lanonasis.com (Netlify deployment)
   - Schema: Enterprise with organizations, users, roles,
   plans
   - Full REST API with JWT auth, rate limiting, swagger docs
@@ -1732,7 +1732,7 @@
   For production memory service:
 
   # Full enterprise API
-  POST https://api.LanOnasis.com/api/v1/memory/search
+  POST https://api.lanonasis.com/api/v1/memory/search
   Authorization: Bearer <jwt_token>
 
   The VPS server is specifically for AI services privacy 

@@ -330,9 +330,9 @@
       "title": "MCP Integration"
     },
     "memory_service": {
-      "api": "REST API at api.LanOnasis.com",
+      "api": "REST API at api.lanonasis.com",
       "cta": "Access Dashboard",
-      "dashboard": "Dashboard UI at api.LanOnasis.com",
+      "dashboard": "Dashboard UI at api.lanonasis.com",
       "description": "Vector-enabled memory storage for AI agents with semantic search and persistent context management.",
       "title": "Memory-as-a-Service"
     },

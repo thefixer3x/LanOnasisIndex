@@ -40,7 +40,7 @@ export default function Developers() {
                 Comprehensive REST API documentation with interactive examples and endpoint specifications.
               </p>
               <a 
-                href="https://api.LanOnasis.com/docs" 
+                href="https://api.lanonasis.com/docs" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium"
@@ -62,7 +62,7 @@ export default function Developers() {
                 Download our SDKs and CLI tools for seamless integration with your development workflow.
               </p>
               <a 
-                href="https://api.LanOnasis.com/developers/sdk" 
+                href="https://api.lanonasis.com/developers/sdk" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-green-400 hover:text-green-300 font-medium"
@@ -84,7 +84,7 @@ export default function Developers() {
                 Generate and manage API keys for secure access to Memory Service features.
               </p>
               <a 
-                href="https://api.LanOnasis.com/dashboard" 
+                href="https://api.lanonasis.com/dashboard" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium"
@@ -106,7 +106,7 @@ export default function Developers() {
                 Learn how to store, retrieve, and manage AI memories across your applications.
               </p>
               <a 
-                href="https://api.LanOnasis.com/developers/memory" 
+                href="https://api.lanonasis.com/developers/memory" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-yellow-400 hover:text-yellow-300 font-medium"
@@ -128,7 +128,7 @@ export default function Developers() {
                 Connect external AI agents to Lan Onasis Memory Service via our MCP endpoint.
               </p>
               <a 
-                href="https://api.LanOnasis.com/mcp" 
+                href="https://api.lanonasis.com/mcp" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-red-400 hover:text-red-300 font-medium"
@@ -150,7 +150,7 @@ export default function Developers() {
                 Explore all platform services and their integration capabilities.
               </p>
               <a 
-                href="https://api.LanOnasis.com" 
+                href="https://api.lanonasis.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium"
@@ -170,12 +170,12 @@ export default function Developers() {
             <p className="text-gray-400">
               Need help with integration? Visit our developer portal at{' '}
               <a 
-                href="https://api.LanOnasis.com" 
+                href="https://api.lanonasis.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-blue-300 underline"
               >
-                api.LanOnasis.com
+                api.lanonasis.com
               </a>
             </p>
           </motion.div>

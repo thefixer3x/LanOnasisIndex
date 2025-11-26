@@ -51,7 +51,7 @@ export const MCPConnection: React.FC = () => {
     });
 
     try {
-      const response = await fetch('https://api.LanOnasis.com/.netlify/functions/mcp-sse', {
+      const response = await fetch('https://api.lanonasis.com/.netlify/functions/mcp-sse', {
         method: 'GET',
         headers: {
           'X-API-Key': apiKey,
@@ -88,7 +88,7 @@ export const MCPConnection: React.FC = () => {
       "mcpServers": {
         "LanOnasis-memory": {
           "command": "npx",
-          "args": ["-y", "@LanOnasis/cli", "mcp", "start"],
+          "args": ["-y", "@lanonasis/cli", "mcp", "start"],
           "env": {
             "LANONASIS_API_KEY": apiKey || "your-api-key-here"
           }
@@ -115,7 +115,7 @@ export const MCPConnection: React.FC = () => {
   };
 
   const getApiKey = () => {
-    window.open('https://api.LanOnasis.com', '_blank');
+    window.open('https://api.lanonasis.com', '_blank');
   };
 
   return (
@@ -202,7 +202,7 @@ export const MCPConnection: React.FC = () => {
                     "mcpServers": {
                       "LanOnasis-memory": {
                         "command": "npx",
-                        "args": ["-y", "@LanOnasis/cli", "mcp", "start"],
+                        "args": ["-y", "@lanonasis/cli", "mcp", "start"],
                         "env": {
                           "LANONASIS_API_KEY": "<YOUR_API_KEY>"
                         }
@@ -279,13 +279,13 @@ export const MCPConnection: React.FC = () => {
               </p>
               <div className="space-x-4">
                 <Button 
-                  onClick={() => window.open('https://docs.LanOnasis.com', '_blank')}
+                  onClick={() => window.open('https://docs.lanonasis.com', '_blank')}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium"
                 >
                   📚 Documentation
                 </Button>
                 <Button 
-                  onClick={() => window.open('mailto:support@LanOnasis.com', '_blank')}
+                  onClick={() => window.open('mailto:support@lanonasis.com', '_blank')}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium"
                 >
                   ✉️ Contact Support

@@ -177,8 +177,8 @@
     "memory_service": {
       "title": "Memory-as-a-Service",
       "description": "Vector-enabled memory storage for AI agents with semantic search and persistent context management.",
-      "dashboard": "Dashboard UI at api.LanOnasis.com",
-      "api": "REST API at api.LanOnasis.com",
+      "dashboard": "Dashboard UI at api.lanonasis.com",
+      "api": "REST API at api.lanonasis.com",
       "cta": "Access Dashboard"
     },
     "cli_tool": {

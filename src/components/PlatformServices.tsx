@@ -14,23 +14,23 @@ const serviceCards = (
       t('platform_services.memory_service.api')
     ],
     ctaLabel: t('platform_services.memory_service.cta'),
-    ctaHref: 'https://dashboard.LanOnasis.com/'
+    ctaHref: 'https://dashboard.lanonasis.com/'
   },
   {
     title: t('platform_services.cli_tool.title'),
     description: t('platform_services.cli_tool.description'),
     icon: Terminal,
-    codeSample: 'npm install -g @LanOnasis/cli',
+    codeSample: 'npm install -g @lanonasis/cli',
     ctaLabel: t('platform_services.cli_tool.cta'),
-    ctaHref: 'https://www.npmjs.com/package/@LanOnasis/cli'
+    ctaHref: 'https://www.npmjs.com/package/@lanonasis/cli'
   },
   {
     title: t('platform_services.sdk.title'),
     description: t('platform_services.sdk.description'),
     icon: Code2,
-    codeSample: 'npm install @LanOnasis/sdk',
+    codeSample: 'npm install @lanonasis/sdk',
     ctaLabel: t('platform_services.sdk.cta'),
-    ctaHref: 'https://docs.LanOnasis.com/sdk'
+    ctaHref: 'https://docs.lanonasis.com/sdk'
   },
   {
     title: t('platform_services.api_keys.title'),
@@ -41,21 +41,21 @@ const serviceCards = (
       t('platform_services.api_keys.mcp_support')
     ],
     ctaLabel: t('platform_services.api_keys.cta'),
-    ctaHref: 'https://dashboard.LanOnasis.com/keys'
+    ctaHref: 'https://dashboard.lanonasis.com/keys'
   },
   {
     title: t('platform_services.developer_portal.title'),
     description: t('platform_services.developer_portal.description'),
     icon: BookOpen,
     ctaLabel: t('platform_services.developer_portal.cta'),
-    ctaHref: 'https://docs.LanOnasis.com'
+    ctaHref: 'https://docs.lanonasis.com'
   },
   {
     title: t('platform_services.mcp.title'),
     description: t('platform_services.mcp.description'),
     icon: Cpu,
     ctaLabel: t('platform_services.mcp.cta'),
-    ctaHref: 'https://mcp.LanOnasis.com'
+    ctaHref: 'https://mcp.lanonasis.com'
   }
 ];
 
@@ -133,14 +133,14 @@ export function PlatformServices() {
 
         <div className="mt-16 flex flex-col items-center gap-4 md:flex-row md:justify-center">
           <a
-            href="https://dashboard.LanOnasis.com/signup"
+            href="https://dashboard.lanonasis.com/signup"
             className="inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-secondary/20 transition-transform hover:-translate-y-0.5"
           >
             {t('platform_services.sign_up_free')}
             <ArrowRight className="h-4 w-4" />
           </a>
           <a
-            href="https://docs.LanOnasis.com/quickstart"
+            href="https://docs.lanonasis.com/quickstart"
             className="inline-flex items-center gap-2 rounded-full border border-secondary/40 px-6 py-3 text-sm font-semibold text-secondary transition hover:border-secondary/70"
           >
             {t('platform_services.view_documentation')}

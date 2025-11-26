@@ -98,7 +98,7 @@ src/
 
 The application is automatically deployed to Netlify on push to the main branch. Build configuration is managed in `netlify.toml`.
 
-**Live Site**: [www.LanOnasis.com](https://www.LanOnasis.com)
+**Live Site**: [www.lanonasis.com](https://www.lanonasis.com)
 
 ## 🤝 Contributing
 
@@ -110,6 +110,6 @@ MIT License
 
 ## 📧 Contact
 
-- **Website**: [www.LanOnasis.com](https://www.LanOnasis.com)
-- **Email**: info@LanOnasis.com
+- **Website**: [www.lanonasis.com](https://www.lanonasis.com)
+- **Email**: info@lanonasis.com
 - **Repository**: [github.com/thefixer3x/LanOnasisIndex](https://github.com/thefixer3x/LanOnasisIndex)

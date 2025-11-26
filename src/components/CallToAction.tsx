@@ -16,7 +16,7 @@ export function CallToAction() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
-            href="https://dashboard.LanOnasis.com/" 
+            href="https://dashboard.lanonasis.com/" 
             className="inline-block px-8 py-3 bg-white text-primary rounded-lg font-semibold shadow hover:bg-gray-100 transition"
           >
             {t('hero.cta_primary')}

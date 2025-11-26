@@ -1,7 +1,7 @@
 # MCP Auth Flow Debugging & Fix Plan
 
 ## 🚨 **Current Issue Analysis**
-Based on your audit report and the `api.LanOnasis.com/auth/login` endpoint issue, you have:
+Based on your audit report and the `api.lanonasis.com/auth/login` endpoint issue, you have:
 
 1. **Multiple Supabase instances** across different apps
 2. **Domain routing conflicts** between API and auth endpoints  
@@ -39,7 +39,7 @@ claude-code "Search for all occurrences of '/auth' routes across the codebase an
 
 ```bash
 # Implement unified auth service
-claude-code "Create a unified auth service that handles routing for api.LanOnasis.com/auth/* endpoints. The service should:
+claude-code "Create a unified auth service that handles routing for api.lanonasis.com/auth/* endpoints. The service should:
 1. Route /auth/login to appropriate Supabase instance based on app context
 2. Handle callbacks consistently across CLI, web, and VS Code interfaces  
 3. Implement JWT project_scope validation as mentioned in the audit
@@ -139,7 +139,7 @@ Run these in sequence to get Claude Code working on your specific issue:
 
 ```bash
 # 1. Analyze current routing problem
-claude-code "Examine the api.LanOnasis.com/auth/login endpoint. Show me:
+claude-code "Examine the api.lanonasis.com/auth/login endpoint. Show me:
 - Where this route is defined
 - What's causing it to fail
 - How it differs from working auth flows in other apps
@@ -154,7 +154,7 @@ Identify inconsistencies in auth providers, redirect URLs, or JWT settings"
 
 # 3. Implement fix
 claude-code "Fix the auth routing issue by:
-1. Creating a unified auth service that handles api.LanOnasis.com/auth/* routes
+1. Creating a unified auth service that handles api.lanonasis.com/auth/* routes
 2. Implementing proper project_scope detection and validation
 3. Setting up consistent callback handling for CLI/web/VS Code interfaces
 4. Adding the missing core.logs logging as mentioned in the audit"
@@ -164,7 +164,7 @@ claude-code "Fix the auth routing issue by:
 
 To help Claude Code give you the most targeted fix:
 
-1. **What error are you seeing** at `api.LanOnasis.com/auth/login`? (404, 500, CORS, etc?)
+1. **What error are you seeing** at `api.lanonasis.com/auth/login`? (404, 500, CORS, etc?)
 2. **Which app** should handle this endpoint? (LanOnasis-maas, maple-site, or vortexcore?)
 3. **What interface** is trying to hit this? (CLI tool, web app, VS Code extension?)
 4. **Current deployment setup?** (Vercel, Netlify, self-hosted for the API domain?)

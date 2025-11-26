@@ -1,5 +1,5 @@
 // Professional Auth Form - LanOnasis Brand Kit Component
-// Integrates with Central Auth at api.LanOnasis.com
+// Integrates with Central Auth at api.lanonasis.com
 
 import { useState } from "react";
 import { cn } from "../../lib/utils";
@@ -96,7 +96,7 @@ export const AuthForm = ({
       // Redirect to central auth instead of handling locally
       const currentUrl = window.location.origin;
       const redirectUrl = encodeURIComponent(`${currentUrl}/dashboard`);
-      const authUrl = `https://api.LanOnasis.com/auth/${mode === "register" ? "signup" : "login"}?platform=dashboard&redirect_url=${redirectUrl}`;
+      const authUrl = `https://api.lanonasis.com/auth/${mode === "register" ? "signup" : "login"}?platform=dashboard&redirect_url=${redirectUrl}`;
 
       // Show loading toast
       toast({
@@ -269,7 +269,7 @@ export const AuthForm = ({
                   <button
                     type="button"
                     onClick={() => {
-                      const forgotUrl = `https://api.LanOnasis.com/auth/forgot-password?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + "/dashboard")}`;
+                      const forgotUrl = `https://api.lanonasis.com/auth/forgot-password?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + "/dashboard")}`;
                       window.location.href = forgotUrl;
                     }}
                     className="text-xs text-blue-600 hover:text-blue-800 hover:underline"
@@ -465,7 +465,7 @@ export const AuthForm = ({
               type="button"
               onClick={() => {
                 const newMode = mode === "login" ? "register" : "login";
-                const authUrl = `https://api.LanOnasis.com/auth/${newMode === "register" ? "signup" : "login"}?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + "/dashboard")}`;
+                const authUrl = `https://api.lanonasis.com/auth/${newMode === "register" ? "signup" : "login"}?platform=dashboard&redirect_url=${encodeURIComponent(window.location.origin + "/dashboard")}`;
                 window.location.href = authUrl;
               }}
               className="text-blue-600 hover:text-blue-800 hover:underline font-medium"
@@ -475,7 +475,7 @@ export const AuthForm = ({
           </div>
           <div>
             <a
-              href="https://LanOnasis.com"
+              href="https://lanonasis.com"
               className="text-gray-500 hover:text-gray-700 hover:underline text-xs"
             >
               Learn more about LanOnasis Platform

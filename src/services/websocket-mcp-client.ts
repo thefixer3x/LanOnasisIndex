@@ -63,7 +63,7 @@ export class EnhancedWebSocketMCPClient {
 
   constructor(options: ConnectionOptions) {
     this.apiKey = options.apiKey;
-    this.endpoint = options.endpoint || 'wss://dashboard.LanOnasis.com/mcp/sse';
+    this.endpoint = options.endpoint || 'wss://dashboard.lanonasis.com/mcp/sse';
     this.reconnectAttempts = options.reconnectAttempts || 3;
     this.reconnectDelay = options.reconnectDelay || 1000;
     this.heartbeatInterval = options.heartbeatInterval || 30000; // 30 seconds

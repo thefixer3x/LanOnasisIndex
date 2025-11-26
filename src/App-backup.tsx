@@ -201,10 +201,10 @@ function App() {
         
         if (hasContext) {
           // Direct route to dashboard for registered users
-          window.location.href = 'https://dashboard.LanOnasis.com/auth?redirect=dashboard&context=sse';
+          window.location.href = 'https://dashboard.lanonasis.com/auth?redirect=dashboard&context=sse';
         } else {
           // Show quick context setup for new users
-          window.location.href = 'https://dashboard.LanOnasis.com/auth?redirect=onboard&context=sse';
+          window.location.href = 'https://dashboard.lanonasis.com/auth?redirect=onboard&context=sse';
         }
       };
       
@@ -597,7 +597,7 @@ function App() {
                   transition={{ duration: 0.5, delay: 0.8 }}
                 >
                   <motion.a
-                    href="https://dashboard.LanOnasis.com/"
+                    href="https://dashboard.lanonasis.com/"
                     className="btn-primary flex items-center justify-center group"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -611,7 +611,7 @@ function App() {
                   </motion.a>
                   
                   <motion.a
-                    href="https://dashboard.LanOnasis.com/"
+                    href="https://dashboard.lanonasis.com/"
                     className="btn-secondary group"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -871,7 +871,7 @@ function App() {
                         <span>{t('platform_services.memory_service.api')}</span>
                       </div>
                     </div>
-                    <a href="https://dashboard.LanOnasis.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
+                    <a href="https://dashboard.lanonasis.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
                       {t('platform_services.memory_service.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
@@ -890,9 +890,9 @@ function App() {
                     <h3 className="text-2xl font-bold mb-3">{t('platform_services.cli_tool.title')}</h3>
                     <p className="text-gray-400 mb-4">{t('platform_services.cli_tool.description')}</p>
                     <div className="bg-primary-dark/50 p-3 rounded-lg font-mono text-sm mb-4">
-                      <code className="text-secondary">npm install -g @LanOnasis/cli</code>
+                      <code className="text-secondary">npm install -g @lanonasis/cli</code>
                     </div>
-                    <a href="https://www.npmjs.com/package/@LanOnasis/cli" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
+                    <a href="https://www.npmjs.com/package/@lanonasis/cli" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
                       {t('platform_services.cli_tool.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
@@ -911,9 +911,9 @@ function App() {
                     <h3 className="text-2xl font-bold mb-3">{t('platform_services.sdk.title')}</h3>
                     <p className="text-gray-400 mb-4">{t('platform_services.sdk.description')}</p>
                     <div className="bg-primary-dark/50 p-3 rounded-lg font-mono text-sm mb-4">
-                      <code className="text-secondary">npm install @LanOnasis/sdk</code>
+                      <code className="text-secondary">npm install @lanonasis/sdk</code>
                     </div>
-                    <a href="https://docs.LanOnasis.com/sdk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
+                    <a href="https://docs.lanonasis.com/sdk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
                       {t('platform_services.sdk.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
@@ -941,7 +941,7 @@ function App() {
                         <span>{t('platform_services.api_keys.mcp_support')}</span>
                       </div>
                     </div>
-                    <a href="https://dashboard.LanOnasis.com/dashboard/api-keys" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
+                    <a href="https://dashboard.lanonasis.com/dashboard/api-keys" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
                       {t('platform_services.api_keys.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
@@ -959,7 +959,7 @@ function App() {
                     </div>
                     <h3 className="text-2xl font-bold mb-3">{t('platform_services.developer_portal.title')}</h3>
                     <p className="text-gray-400 mb-4">{t('platform_services.developer_portal.description')}</p>
-                    <a href="https://docs.LanOnasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
+                    <a href="https://docs.lanonasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-secondary hover:text-secondary-light transition-colors">
                       {t('platform_services.developer_portal.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
@@ -978,9 +978,9 @@ function App() {
                     <h3 className="text-2xl font-bold mb-3">{t('platform_services.mcp_integration.title')}</h3>
                     <p className="text-gray-400 mb-4">{t('platform_services.mcp_integration.description')}</p>
                     <div className="bg-primary-dark/50 p-3 rounded-lg font-mono text-sm mb-4">
-                      <code className="text-secondary">mcp.LanOnasis.com/sse</code>
+                      <code className="text-secondary">mcp.lanonasis.com/sse</code>
                     </div>
-                    <a href="https://mcp.LanOnasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
+                    <a href="https://mcp.lanonasis.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-secondary hover:text-secondary-light transition-colors">
                       {t('platform_services.mcp_integration.cta')} <ArrowRight className="w-4 h-4" />
                     </a>
                   </motion.div>
@@ -999,7 +999,7 @@ function App() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                      href="https://dashboard.LanOnasis.com/"
+                      href="https://dashboard.lanonasis.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-secondary hover:bg-secondary-dark text-primary font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
@@ -1007,7 +1007,7 @@ function App() {
                       {t('platform_services.quick_start.cta_primary')} <ArrowRight className="w-5 h-5" />
                     </a>
                     <a
-                      href="https://docs.LanOnasis.com/quickstart"
+                      href="https://docs.lanonasis.com/quickstart"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-secondary text-secondary hover:bg-secondary/10 font-semibold rounded-lg transition-all duration-300"
@@ -1144,7 +1144,7 @@ function App() {
               <a href="#ecosystem" className="text-gray-300 hover:text-secondary transition-colors">Ecosystem</a>
               <a href="#solutions" className="text-gray-300 hover:text-secondary transition-colors">Solutions</a>
               <a href="#developers" className="text-gray-300 hover:text-secondary transition-colors">Developers</a>
-              <a href="https://dashboard.LanOnasis.com/" className="btn-primary text-sm px-4 py-2">Get Started</a>
+              <a href="https://dashboard.lanonasis.com/" className="btn-primary text-sm px-4 py-2">Get Started</a>
             </div>
             <LanguageSwitcher />
           </div>
@@ -1456,10 +1456,10 @@ function App() {
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://LanOnasis.com/${activeSection === 'home' ? '' : activeSection}`} />
+        <meta property="og:url" content={`https://lanonasis.com/${activeSection === 'home' ? '' : activeSection}`} />
         <meta property="og:title" content={getPageTitle()} />
         <meta property="og:description" content={getPageDescription()} />
-        <meta property="og:image" content="https://LanOnasis.com/og-image.png" />
+        <meta property="og:image" content="https://lanonasis.com/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Lan Onasis" />
@@ -1470,13 +1470,13 @@ function App() {
         <meta name="twitter:creator" content="@LanOnasis" />
         <meta name="twitter:title" content={getPageTitle()} />
         <meta name="twitter:description" content={getPageDescription()} />
-        <meta name="twitter:image" content="https://LanOnasis.com/twitter-image.png" />
+        <meta name="twitter:image" content="https://lanonasis.com/twitter-image.png" />
         
         {/* Additional Meta Tags */}
         <meta name="author" content="Lan Onasis" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
-        <link rel="canonical" href={`https://LanOnasis.com/${activeSection === 'home' ? '' : activeSection}`} />
+        <link rel="canonical" href={`https://lanonasis.com/${activeSection === 'home' ? '' : activeSection}`} />
         
         {/* Industry-specific meta tags for Industries page */}
         {activeSection === 'industries' && (
@@ -1535,10 +1535,10 @@ function App() {
               >
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              <a href="https://dashboard.LanOnasis.com/" className="btn-secondary mr-4">
+              <a href="https://dashboard.lanonasis.com/" className="btn-secondary mr-4">
                 {t('navigation.login')}
               </a>
-              <a href="https://dashboard.LanOnasis.com/" className="btn-primary">
+              <a href="https://dashboard.lanonasis.com/" className="btn-primary">
                 {t('navigation.signup')}
               </a>
             </div>
@@ -1592,10 +1592,10 @@ function App() {
                 </button>
                 <a href="#platform-services" className="block hover:text-secondary transition-colors">Services</a>
                 <a href="#contact" className="block hover:text-secondary transition-colors">Contact</a>
-                <a href="https://dashboard.LanOnasis.com/" className="btn-secondary w-full mb-4 text-center block">
+                <a href="https://dashboard.lanonasis.com/" className="btn-secondary w-full mb-4 text-center block">
                   {t('navigation.login')}
                 </a>
-                <a href="https://dashboard.LanOnasis.com/" className="btn-primary w-full text-center block">
+                <a href="https://dashboard.lanonasis.com/" className="btn-primary w-full text-center block">
                   {t('navigation.signup')}
                 </a>
               </div>
@@ -1680,19 +1680,19 @@ function App() {
               <div className="space-y-4">
                 <p className="text-gray-400">
                   <a 
-                    href="https://www.LanOnasis.com" 
+                    href="https://www.lanonasis.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="hover:text-secondary transition-colors"
                   >
-                    www.LanOnasis.com
+                    www.lanonasis.com
                   </a>
                 </p>
                 <a 
-                  href="mailto:info@LanOnasis.com"
+                  href="mailto:info@lanonasis.com"
                   className="text-gray-400 hover:text-secondary transition-colors block"
                 >
-                  info@LanOnasis.com
+                  info@lanonasis.com
                 </a>
                 <form className="space-y-4">
                   <input

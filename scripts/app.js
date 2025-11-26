@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // In a real application, this would open a form or redirect to a demo page
         setTimeout(() => {
             // Use notification system instead of alert for better UX
-            showNotification('Thank you for your interest! Please email us at demo@LanOnasis.com to schedule your personalized demo.', 'info');
+            showNotification('Thank you for your interest! Please email us at demo@lanonasis.com to schedule your personalized demo.', 'info');
         }, 1000);
     }
 
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        showNotification('Contact our sales team at info@LanOnasis.com', 'info');
+        showNotification('Contact our sales team at info@lanonasis.com', 'info');
     }
 
     function handleLearnMore() {
