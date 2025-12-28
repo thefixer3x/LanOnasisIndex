@@ -75,6 +75,10 @@
     "typescript-eslint": "^8.44.0",
     "vite": "^7.1.12"
   },
+  "resolutions": {
+    "next": "15.4.10",
+    "systeminformation": "^5.27.14"
+  },
   "engines": {
     "node": ">=18.0.0",
     "bun": ">=1.0.0"
