@@ -21,6 +21,76 @@
 [build.processing.html]
   pretty_urls = true
 
+# ===========================================
+# BOT/SCANNER BLOCKING - Return 410 Gone for probed paths
+# These paths don't exist and never will - tell bots to stop
+# ===========================================
+
+# Block common API probing paths
+[[redirects]]
+  from = "/api/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.env"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.env.*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/graphql"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.git/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/config/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/debug/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# ===========================================
+# HTTPS REDIRECTS
+# ===========================================
+
 # Force HTTPS and canonical domain (non-www)
 [[redirects]]
   from = "http://lanonasis.com/*"
