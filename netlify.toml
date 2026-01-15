@@ -403,6 +403,23 @@
   force = true
 
 # ============================================
+# DASHBOARD REDIRECT
+# ============================================
+
+# Redirect /dashboard to actual dashboard subdomain
+[[redirects]]
+  from = "/dashboard"
+  to = "https://dashboard.lanonasis.com"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dashboard/*"
+  to = "https://dashboard.lanonasis.com/:splat"
+  status = 301
+  force = true
+
+# ============================================
 # HTTPS REDIRECTS
 # ============================================
 
