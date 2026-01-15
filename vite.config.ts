@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
 
 const stripLucideSourcemaps = () => ({
   name: 'strip-lucide-sourcemaps',
@@ -36,11 +35,6 @@ const suppressSourceMapWarnings = () => ({
 
 export default defineConfig({
   plugins: [react()],
-  resolve: {
-    alias: {
-      '@lanonasis/shared-auth': path.resolve(__dirname, '../../packages/shared-auth/src/index.ts')
-    }
-  },
   build: {
     outDir: 'dist',
     sourcemap: false,

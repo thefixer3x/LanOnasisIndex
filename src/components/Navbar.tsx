@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useSSO } from '@lanonasis/shared-auth';
+import { useSSO } from '../lib/sso';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useState } from 'react';
 
