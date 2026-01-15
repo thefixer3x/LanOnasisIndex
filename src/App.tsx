@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
@@ -9,7 +9,7 @@ import { LogoCarouselDemo } from './components/LogoCarouselDemo';
 import { PricingTable } from './components/PricingTable';
 import { Testimonials } from './components/Testimonials';
 import { CallToAction } from './components/CallToAction';
-import { LanguageSwitcher } from './components/LanguageSwitcher';
+import { Navbar } from './components/Navbar';
 import { AuthPage } from './components/auth/AuthPage';
 import { PlatformServices } from './components/PlatformServices';
 import Timeline from './components/Timeline';
@@ -51,40 +51,8 @@ function App() {
         <meta name="keywords" content="African fintech, AI technology, compliance automation, risk management, B2B payments, business intelligence" />
       </Helmet>
 
-      {/* Navigation */}
-      <nav className="nav-fixed">
-        <div className="container-padding">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
-              <span className="text-xl font-bold text-secondary">Lan Onasis</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.features')}</a>
-              <a href="#industries" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.industries')}</a>
-              <a href="#platform-services" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.services')}</a>
-              <a href="#ecosystem" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.ecosystem')}</a>
-              <a href="#story" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.story')}</a>
-              <a href="#pricing" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.pricing')}</a>
-              <a href="#testimonials" className="text-gray-300 hover:text-secondary transition-colors duration-300">{t('navigation.testimonials')}</a>
-              <a href="#auth" className="text-gray-300 hover:text-secondary transition-colors duration-300">Sign In</a>
-              <a href="https://dashboard.lanonasis.com/" className="btn-primary text-sm">{t('navigation.get_started')}</a>
-            </div>
-            <div className="flex items-center space-x-2">
-              <LanguageSwitcher />
-              {/* Mobile menu button */}
-              <button 
-                className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
-                aria-label="Open mobile menu"
-                title="Open mobile menu"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* Navigation - SSO-aware */}
+      <Navbar />
 
       {/* Main Content */}
       <main>
