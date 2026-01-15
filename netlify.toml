@@ -1,6 +1,11 @@
+# ============================================
+# LanOnasis Security Configuration v2.0
+# ============================================
+
 [build]
   publish = "dist"
   command = "bun install && bun run build"
+  edge_functions = "netlify/edge-functions"
 
 [build.environment]
   BUN_VERSION = "1.2.2"
@@ -21,18 +26,12 @@
 [build.processing.html]
   pretty_urls = true
 
-# ===========================================
-# BOT/SCANNER BLOCKING - Return 410 Gone for probed paths
-# These paths don't exist and never will - tell bots to stop
-# ===========================================
+# ============================================
+# SENSITIVE FILE BLOCKING
+# These return true 404s, not your SPA index.html
+# ============================================
 
-# Block common API probing paths
-[[redirects]]
-  from = "/api/*"
-  to = "/404.html"
-  status = 410
-  force = true
-
+# Environment files
 [[redirects]]
   from = "/.env"
   to = "/404.html"
@@ -45,12 +44,168 @@
   status = 410
   force = true
 
+# Git directory
 [[redirects]]
-  from = "/admin/*"
+  from = "/.git/*"
   to = "/404.html"
   status = 410
   force = true
 
+[[redirects]]
+  from = "/.gitignore"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# Config files
+[[redirects]]
+  from = "/.htaccess"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.htpasswd"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-config.php"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/config.php"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/config.yml"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/config.yaml"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/config/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# Package manager files
+[[redirects]]
+  from = "/.npmrc"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.yarnrc"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/package-lock.json"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/yarn.lock"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/bun.lock"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# IDE/Editor files
+[[redirects]]
+  from = "/.vscode/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.idea/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# Backup/temp files
+[[redirects]]
+  from = "/*.bak"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/*.old"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/*.sql"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/*.log"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# ============================================
+# HONEYPOT / ATTACK VECTOR BLOCKING
+# ============================================
+
+# API probing (we don't have an API)
+[[redirects]]
+  from = "/api/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# Webhook probing
+[[redirects]]
+  from = "/webhook"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/webhook/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/hooks"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/callback"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# WordPress probing
 [[redirects]]
   from = "/wp-admin/*"
   to = "/404.html"
@@ -64,19 +219,87 @@
   force = true
 
 [[redirects]]
-  from = "/graphql"
+  from = "/wp-content/*"
   to = "/404.html"
   status = 410
   force = true
 
 [[redirects]]
-  from = "/.git/*"
+  from = "/wp-includes/*"
   to = "/404.html"
   status = 410
   force = true
 
 [[redirects]]
-  from = "/config/*"
+  from = "/wordpress/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/xmlrpc.php"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wlwmanifest.xml"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# Database admin probing
+[[redirects]]
+  from = "/phpmyadmin/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/pma/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/myadmin/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/mysql/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# Admin panels
+[[redirects]]
+  from = "/admin"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/administrator"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/console/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/manager/*"
   to = "/404.html"
   status = 410
   force = true
@@ -87,9 +310,101 @@
   status = 410
   force = true
 
-# ===========================================
+# PHP files (we don't run PHP)
+[[redirects]]
+  from = "/*.php"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# CGI (we don't use it)
+[[redirects]]
+  from = "/cgi-bin/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# Shell/exec attempts
+[[redirects]]
+  from = "/shell"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/cmd"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/exec"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# GraphQL probing
+[[redirects]]
+  from = "/graphql"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/graphiql"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# API doc probing
+[[redirects]]
+  from = "/swagger-ui/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/api-docs"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# Kubernetes/container probing
+[[redirects]]
+  from = "/actuator/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# Version control
+[[redirects]]
+  from = "/.svn/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.hg/*"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# Server status pages
+[[redirects]]
+  from = "/server-status"
+  to = "/404.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/server-info"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# ============================================
 # HTTPS REDIRECTS
-# ===========================================
+# ============================================
 
 # Force HTTPS and canonical domain (non-www)
 [[redirects]]
@@ -110,11 +425,26 @@
   status = 301
   force = true
 
-# SPA fallback - must come after the canonical domain redirects
+# ============================================
+# EDGE FUNCTION CONFIGURATION
+# ============================================
+
+[[edge_functions]]
+  path = "/*"
+  function = "security-shield"
+
+# ============================================
+# SPA FALLBACK - MUST BE LAST
+# ============================================
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# ============================================
+# SECURITY HEADERS
+# ============================================
 
 [[headers]]
   for = "/*"
@@ -123,8 +453,24 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Permissions-Policy = "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(self), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Robots-Tag = "noarchive"
 
+# Sensitive file headers
+[[headers]]
+  for = "/.env*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate"
+    X-Robots-Tag = "noindex, nofollow"
+
+# Static assets - allow caching
 [[headers]]
   for = "/assets/*"
   [headers.values]
@@ -144,3 +490,4 @@
   for = "*.woff2"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
