@@ -37,6 +37,7 @@
     "i18n:fix": "bun run i18n:generate && bun run i18n:validate"
   },
   "dependencies": {
+    "@lanonasis/shared-auth": "workspace:*",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-slot": "^1.2.4",
     "class-variance-authority": "^0.7.1",
