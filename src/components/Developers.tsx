@@ -27,37 +27,37 @@ const Developers = () => {
               icon: Code,
               title: t('developers_page.ai_sdk.title'),
               description: t('developers_page.ai_sdk.description'),
-              link: 'https://api.lanonasis.com/ai-sdk'
+              link: 'https://docs.lanonasis.com/sdks/overview'
             },
             {
               icon: Terminal,
               title: t('developers_page.memory_service.title'),
               description: t('developers_page.memory_service.description'),
-              link: 'https://api.lanonasis.com/memory'
+              link: 'https://docs.lanonasis.com/memory/overview'
             },
             {
               icon: Rocket,
               title: t('developers_page.vortexcore.title'),
               description: t('developers_page.vortexcore.description'),
-              link: 'https://api.lanonasis.com/vortexcore'
+              link: 'https://docs.lanonasis.com/mcp/production-server'
             },
             {
               icon: Zap,
               title: t('developers_page.realtime_apis.title'),
               description: t('developers_page.realtime_apis.description'),
-              link: 'https://api.lanonasis.com/docs'
+              link: 'https://docs.lanonasis.com/mcp/overview'
             },
             {
               icon: Globe,
               title: t('developers_page.global_scale.title'),
               description: t('developers_page.global_scale.description'),
-              link: 'https://api.lanonasis.com/regions'
+              link: 'https://docs.lanonasis.com/api/overview'
             },
             {
               icon: Users,
               title: t('developers_page.community.title'),
               description: t('developers_page.community.description'),
-              link: 'https://api.lanonasis.com/community'
+              link: 'https://docs.lanonasis.com/support'
             }
           ].map((feature, index) => (
             <motion.div
@@ -84,13 +84,13 @@ const Developers = () => {
           <h2 className="text-3xl font-bold text-white mb-8">{t('developers_page.get_started_title')}</h2>
           <div className="space-x-4">
             <button
-              onClick={() => window.open('https://api.lanonasis.com/docs', '_blank')}
+              onClick={() => window.open('https://docs.lanonasis.com', '_blank')}
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition-colors inline-flex items-center gap-2"
             >
               {t('developers_page.view_documentation')}
             </button>
             <button
-              onClick={() => window.open('https://api.lanonasis.com/signup', '_blank')}
+              onClick={() => window.open('https://dashboard.lanonasis.com/signup', '_blank')}
               className="bg-transparent border border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg transition-colors"
             >
               {t('developers_page.sign_up_free')}

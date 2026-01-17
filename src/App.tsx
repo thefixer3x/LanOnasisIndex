@@ -117,28 +117,28 @@ function App() {
                 {t('footer.company_description')}
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.social_links.linkedin')}</a>
-                <a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.social_links.twitter')}</a>
-                <a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.social_links.github')}</a>
+                <a href="https://www.linkedin.com/company/lan-onasis" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.social_links.linkedin')}</a>
+                <a href="https://x.com/LanOnasis" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.social_links.twitter')}</a>
+                <a href="https://github.com/lanonasis" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.social_links.github')}</a>
               </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4">{t('footer.platform_section')}</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.vortexcore_ai')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.vortexpay')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.bizgenie')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.vortexsecure')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.api_gateway')}</a></li>
+                <li><a href="https://vortexshield.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.vortexcore_ai')}</a></li>
+                <li><a href="https://vortexshield.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.vortexpay')}</a></li>
+                <li><span className="text-gray-500 cursor-not-allowed">{t('footer.platform_links.bizgenie')} <span className="text-xs opacity-60">(Coming Soon)</span></span></li>
+                <li><a href="https://vortexshield.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.vortexsecure')}</a></li>
+                <li><a href="https://api.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.api_gateway')}</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">{t('footer.resources_section')}</h4>
               <ul className="space-y-2">
-                <li><a href="https://docs.lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.documentation')}</a></li>
-                <li><a href="https://dashboard.lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.dashboard')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.support')}</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.contact')}</a></li>
+                <li><a href="https://docs.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.documentation')}</a></li>
+                <li><a href="https://dashboard.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.dashboard')}</a></li>
+                <li><a href="mailto:support@lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.support')}</a></li>
+                <li><a href="mailto:info@lanonasis.com" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.resource_links.contact')}</a></li>
               </ul>
             </div>
           </div>

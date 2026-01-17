@@ -41,7 +41,7 @@ const serviceCards = (
       t('platform_services.api_keys.mcp_support')
     ],
     ctaLabel: t('platform_services.api_keys.cta'),
-    ctaHref: 'https://dashboard.lanonasis.com/keys'
+    ctaHref: 'https://vortexshield.lanonasis.com'
   },
   {
     title: t('platform_services.developer_portal.title'),
@@ -55,7 +55,7 @@ const serviceCards = (
     description: t('platform_services.mcp.description'),
     icon: Cpu,
     ctaLabel: t('platform_services.mcp.cta'),
-    ctaHref: 'https://mcp.lanonasis.com'
+    ctaHref: 'https://api.lanonasis.com'
   }
 ];
 

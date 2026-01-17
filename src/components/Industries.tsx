@@ -154,10 +154,8 @@ export function Industries() {
 
                   <div className="mt-8 space-y-2">
                     <a
-                      href="https://lanonasis.com/industries"
+                      href="#industries"
                       className="btn-primary inline-flex items-center gap-2"
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       {t('industries.learn_more')}
                       <ArrowRight className="h-4 w-4" />
@@ -197,7 +195,7 @@ export function Industries() {
           </p>
           <div className="flex flex-col gap-4 md:flex-row md:justify-center">
             <a
-              href="https://dashboard.lanonasis.com/consultation"
+              href="mailto:sales@lanonasis.com?subject=Consultation%20Request"
               className="btn-primary inline-flex items-center justify-center gap-2"
             >
               {t('industries.cta_primary')}

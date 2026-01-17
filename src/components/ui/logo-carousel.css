@@ -50,4 +50,7 @@
 
 .logo-fallback {
   display: none;
+  min-width: 80px;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.3);
 }

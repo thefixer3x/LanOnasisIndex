@@ -19,11 +19,9 @@ export function Navbar() {
   const navLinks = [
     { href: '#features', label: t('navigation.features') },
     { href: '#industries', label: t('navigation.industries') },
-    { href: '#platform-services', label: t('navigation.services') },
+    { href: '#pricing', label: t('navigation.pricing') },
     { href: '#ecosystem', label: t('navigation.ecosystem') },
     { href: '#story', label: t('navigation.story') },
-    { href: '#pricing', label: t('navigation.pricing') },
-    { href: '#testimonials', label: t('navigation.testimonials') },
   ];
 
   return (
@@ -73,20 +71,12 @@ export function Navbar() {
                 </a>
               </div>
             ) : (
-              <>
-                <a
-                  href={getLoginUrl(window.location.href)}
-                  className="text-gray-300 hover:text-secondary transition-colors duration-300"
-                >
-                  Sign In
-                </a>
-                <a
-                  href="https://dashboard.lanonasis.com/"
-                  className="btn-primary text-sm"
-                >
-                  {t('navigation.get_started')}
-                </a>
-              </>
+              <a
+                href="https://dashboard.lanonasis.com/"
+                className="btn-primary text-sm"
+              >
+                {t('navigation.get_started')}
+              </a>
             )}
           </div>
 
@@ -160,20 +150,12 @@ export function Navbar() {
                     </a>
                   </div>
                 ) : (
-                  <div className="flex flex-col space-y-3">
-                    <a
-                      href={getLoginUrl(window.location.href)}
-                      className="text-gray-300 hover:text-secondary transition-colors duration-300"
-                    >
-                      Sign In
-                    </a>
-                    <a
-                      href="https://dashboard.lanonasis.com/"
-                      className="btn-primary text-sm text-center"
-                    >
-                      {t('navigation.get_started')}
-                    </a>
-                  </div>
+                  <a
+                    href="https://dashboard.lanonasis.com/"
+                    className="btn-primary text-sm text-center"
+                  >
+                    {t('navigation.get_started')}
+                  </a>
                 )}
               </div>
             </div>
