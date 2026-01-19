@@ -111,7 +111,8 @@ export function useSSO(config: SSOConfig = {}) {
 
   // Initial auth check
   useEffect(() => {
-    checkAuthState();
+    const timer = setTimeout(checkAuthState, 0);
+    return () => clearTimeout(timer);
   }, [checkAuthState]);
 
   // Poll for cookie changes (cookies don't trigger events)
