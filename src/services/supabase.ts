@@ -4,7 +4,7 @@ import {
   parseUserCookie,
   COOKIE_NAMES,
   type SSOUser,
-} from '@lanonasis/shared-auth';
+} from '@lanonasis/oauth-client/react';
 
 // Auth gateway URL
 const AUTH_GATEWAY_URL = import.meta.env.VITE_AUTH_GATEWAY_URL || 'https://auth.lanonasis.com';
