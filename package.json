@@ -38,7 +38,7 @@
     "i18n:fix": "bun run i18n:generate && bun run i18n:validate"
   },
   "dependencies": {
-    "@lanonasis/oauth-client": "npm:@lanonasis/oauth-client@2.0.0",
+    "@lanonasis/oauth-client": "npm:@lanonasis/oauth-client@2.0.4",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-slot": "^1.2.4",
     "class-variance-authority": "^0.7.1",
@@ -66,7 +66,7 @@
     "@vitejs/plugin-react": "^5.1.2",
     "autoprefixer": "^10.4.23",
     "eslint": "^9.39.2",
-    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.26",
     "globals": "^17.0.0",
     "lingo.dev": "^0.118.0",
