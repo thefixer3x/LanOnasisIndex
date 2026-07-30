@@ -37,8 +37,8 @@ const Developers = () => {
             },
             {
               icon: Rocket,
-              title: t('developers_page.vortexcore.title'),
-              description: t('developers_page.vortexcore.description'),
+              title: t('developers_page.continuity_layer.title'),
+              description: t('developers_page.continuity_layer.description'),
               link: 'https://docs.lanonasis.com/mcp/production-server'
             },
             {

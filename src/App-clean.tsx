@@ -91,7 +91,7 @@ function App() {
             <div>
               <h4 className="font-semibold mb-4">Platform</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">VortexCore AI</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">Continuity Concierge</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">VortexPay</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">BizGenie</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-secondary transition-colors">API Gateway</a></li>

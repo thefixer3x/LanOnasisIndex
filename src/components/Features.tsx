@@ -1,4 +1,4 @@
-import { Zap, Shield, DollarSign, Brain, BarChart3, CreditCard, Lock } from "lucide-react";
+import { Zap, Shield, Brain, BarChart3, CreditCard, Lock } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 
 export function Features() {
@@ -7,8 +7,8 @@ export function Features() {
   const platformFeatures = [
     {
       icon: Brain,
-      name: t('products.vortexcore_ai.name'),
-      description: t('products.vortexcore_ai.description'),
+      name: t('products.continuity_concierge.name'),
+      description: t('products.continuity_concierge.description'),
     },
     {
       icon: Shield,

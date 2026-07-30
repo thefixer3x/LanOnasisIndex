@@ -19,6 +19,8 @@ export function Navbar() {
   const navLinks = [
     { href: '#features', label: t('navigation.features') },
     { href: '#industries', label: t('navigation.industries') },
+    { href: '#why', label: 'Why continuity' },
+    { href: '#how', label: 'How it works' },
     { href: '#pricing', label: t('navigation.pricing') },
     { href: '#ecosystem', label: t('navigation.ecosystem') },
     { href: '#story', label: t('navigation.story') },

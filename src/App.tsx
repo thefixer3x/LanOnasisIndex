@@ -12,6 +12,8 @@ import { CallToAction } from './components/CallToAction';
 import { Navbar } from './components/Navbar';
 import { AuthPage } from './components/auth/AuthPage';
 import { PlatformServices } from './components/PlatformServices';
+import { HowPage } from './components/HowPage';
+import { WhyPage } from './components/WhyPage';
 import Timeline from './components/Timeline';
 import { Industries } from './components/Industries';
 
@@ -22,9 +24,15 @@ function App() {
   useEffect(() => {
     // Simple routing based on hash
     const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
+      const raw = window.location.hash.replace('#', '');
+      // strip a leading slash so "#/how" and "#how" both work
+      const hash = raw.startsWith('/') ? raw.slice(1) : raw;
       if (hash === 'auth' || hash === 'login' || hash === 'signup') {
         setCurrentPage('auth');
+      } else if (hash === 'how') {
+        setCurrentPage('how');
+      } else if (hash === 'why') {
+        setCurrentPage('why');
       } else {
         setCurrentPage('home');
       }
@@ -38,9 +46,15 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  // Show auth page if routed to auth
+  // Route to dedicated pages first
   if (currentPage === 'auth') {
     return <AuthPage />;
+  }
+  if (currentPage === 'how') {
+    return <HowPage />;
+  }
+  if (currentPage === 'why') {
+    return <WhyPage />;
   }
 
   return (
@@ -125,10 +139,10 @@ function App() {
             <div>
               <h4 className="font-semibold mb-4">{t('footer.platform_section')}</h4>
               <ul className="space-y-2">
-                <li><a href="https://vortexshield.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.vortexcore_ai')}</a></li>
-                <li><a href="https://vortexshield.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.vortexpay')}</a></li>
-                <li><span className="text-gray-500 cursor-not-allowed">{t('footer.platform_links.bizgenie')} <span className="text-xs opacity-60">(Coming Soon)</span></span></li>
-                <li><a href="https://vortexshield.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.vortexsecure')}</a></li>
+                <li><a href="https://dashboard.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.continuity_concierge')}</a></li>
+                <li><a href="https://dashboard.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.continuity_cli')}</a></li>
+                <li><a href="https://dashboard.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.continuity_sdk')}</a></li>
+                <li><a href="https://api.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.api_keys')}</a></li>
                 <li><a href="https://api.lanonasis.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.platform_links.api_gateway')}</a></li>
               </ul>
             </div>

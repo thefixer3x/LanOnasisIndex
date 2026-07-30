@@ -29,8 +29,8 @@ const timelineMilestones = [
   },
   {
     year: '2021',
-    title: 'VortexCore AI Launch',
-    description: 'Introduced our flagship AI platform, revolutionizing business intelligence and compliance.',
+    title: 'Continuity foundation',
+    description: 'Introduced the first longitudinal layer for carrying decisions and open threads across working sessions.',
     icon: Brain,
   },
   {

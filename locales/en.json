@@ -1,9 +1,9 @@
 {
   "app": {
     "name": "Lan Onasis",
-    "tagline": "AI-Powered African Fintech Solutions",
-    "title": "Lan Onasis - AI-Powered African Fintech Solutions",
-    "description": "Building Africa's most intelligent tech ecosystem—empowering entrepreneurs, fintechs, and institutions with secure, compliant, AI‑enhanced platforms"
+    "tagline": "Continuity intelligence for thinking partners",
+    "title": "Lan Onasis — Continuity intelligence",
+    "description": "A continuity concierge that carries your decisions, threads, and momentum across sessions, projects, and tools — built so the next defensible step is always close at hand."
   },
   "navigation": {
     "developers": "Developers",
@@ -24,220 +24,267 @@
     "select_language": "Select Language"
   },
   "hero": {
-    "badge": "Introducing VortexCore AI",
-    "title": "Powering Africa's Tech Revolution",
-    "subtitle": "Building Africa's most intelligent tech ecosystem—empowering entrepreneurs, fintechs, and institutions with secure, compliant, AI‑enhanced platforms",
-    "cta_primary": "Get Started Free",
-    "cta_secondary": "Login"
+    "badge": "Continuity intelligence",
+    "title": "Continuity intelligence",
+    "subtitle": "A continuity concierge that carries your decisions, threads, and momentum across sessions, projects, and tools.",
+    "cta_primary": "See how it works",
+    "cta_secondary": "Why continuity"
   },
   "sse": {
-    "title": "Contextualizing Your Session",
-    "subtitle": "Connecting to your personalized AI ecosystem...",
-    "footer": "Context is the foundation that makes all services intelligent"
+    "title": "Carrying your context forward",
+    "subtitle": "Reconnecting the threads you are still working on...",
+    "footer": "Continuity is the foundation that makes every session intelligent."
   },
   "products": {
-    "vortexcore_ai": {
-      "name": "VortexCore AI",
-      "description": "Your intelligent assistant for compliance and business solutions"
+    "continuity_concierge": {
+      "name": "Continuity Concierge",
+      "description": "A longitudinal thinking partner that carries your decisions across time."
     },
-    "vortexcomply": {
-      "name": "VortexComply",
-      "description": "Compliance-as-a-Service, KYC/KYB, and AML solutions"
+    "thread_capture": {
+      "name": "Thread Capture",
+      "description": "Save a moment, a decision, or a half-formed idea — the thread stays alive."
     },
-    "vortexrisk": {
-      "name": "VortexRisk",
-      "description": "AI-driven risk monitoring and analysis"
+    "continuity_briefing": {
+      "name": "Continuity Briefing",
+      "description": "Open the dashboard and pick up where you left off, not where you last saved."
     },
-    "vortexshield": {
-      "name": "VortexShield",
-      "description": "Security infrastructure for cross-border safety"
-    },
-    "vortexiq": {
-      "name": "VortexIQ",
-      "description": "Business intelligence engine for actionable insights"
-    },
-    "vortexpay": {
-      "name": "VortexPay",
-      "description": "Instant vendor disbursements and B2B payments"
-    },
-    "bizgenie": {
-      "name": "BizGenie",
-      "description": "Embedded AI for SME insights and cash flow guidance"
-    },
-    "vortexsecure": {
-      "name": "VortexSecure",
-      "description": "Advanced encryption and data protection for sensitive transactions"
+    "longitudinal_layer": {
+      "name": "Longitudinal Layer",
+      "description": "A continuity layer that sits above GitHub, ClickUp, and your notes."
     }
   },
   "industries": {
-    "title": "Industries We Empower",
-    "subtitle": "Transforming sectors across Africa and beyond with intelligent, compliant, and scalable solutions",
-    "financial_services": {
-      "name": "Financial Services & Fintech",
-      "hero": "Reimagining Finance: Intelligent, Compliant, Borderless",
-      "description": "Power your bank or fintech with VortexCore AI. Instantly onboard clients, automate KYC/KYB/AML, and enable secure cross-border payments—all within a modular, API-driven ecosystem.",
+    "title": "Where continuity shows up",
+    "subtitle": "Continuity shows up wherever the work crosses days, tools, and teammates. Pick the one that sounds like your week.",
+    "knowledge_work": {
+      "name": "Knowledge work",
+      "hero": "Pick up where the last thread left off.",
+      "description": "A continuity concierge that carries decisions, threads, and momentum across the tools you already use, so Monday does not start from zero.",
       "value_props": [
-        "Seamless, compliant, and intelligent infrastructure for payments, compliance, and risk management",
-        "Embedded finance and cross-border B2B payments",
-        "AI-driven compliance (KYC, KYB, AML), fraud detection, and dynamic risk profiling",
-        "Banking-as-a-Service APIs and RegTech for banks and fintechs"
+        "Carry decisions across notes, PRs, and planning docs without losing provenance",
+        "Surface the threads most likely to be relevant right now, not just the most recent",
+        "Bias toward one durable next step over ten flashy suggestions",
+        "Stay the decision-maker — the Concierge is your chief of staff, not your autopilot"
       ]
     },
-    "smes": {
-      "name": "SMEs & Business Services",
-      "hero": "Empowering SMEs: Your Growth, Our Genius",
-      "description": "Meet BizGenie—your AI-powered business co-pilot. Track cash flow, get inventory alerts, and receive smart recommendations to scale.",
+    "engineering_teams": {
+      "name": "Engineering teams",
+      "hero": "Continuity across services, repos, and rotations.",
+      "description": "A continuity layer that follows your codebase across services, repos, and on-call rotations, so context does not die at the boundary of a shift.",
       "value_props": [
-        "All-in-one platform for vendor verification, payments, working capital, and business intelligence",
-        "Embedded AI assistant (BizGenie) for cash flow, inventory, and actionable insights",
-        "Tiered onboarding for financial inclusion and growth",
-        "Automated compliance and risk management for small businesses"
+        "Carry architectural decisions across services and repos",
+        "Pick up threads across on-call shifts without re-reading three weeks of Slack",
+        "Hold decisions made in PR review alongside the planning doc they came from",
+        "Defensible next steps you can hand to the next engineer on rotation"
       ]
     },
-    "ecommerce": {
-      "name": "E-commerce & Marketplaces",
-      "hero": "E-commerce, Evolved: Fast, Trusted, Global",
-      "description": "VortexPay delivers instant vendor payouts and multi-currency transfers, while VortexComply automates merchant onboarding and compliance.",
+    "research": {
+      "name": "Research & strategy",
+      "hero": "Hold the thread across a long investigation.",
+      "description": "Continuity for research that takes longer than a meeting — keep the half-formed ideas, the dead ends, and the question you actually answered last week.",
       "value_props": [
-        "Instant vendor disbursements, multi-currency payments, and automated compliance",
-        "Smart matching of buyers/sellers, dynamic pricing, and procurement optimization",
-        "Business intelligence for inventory, sales, and risk management",
-        "Seamless marketplace integration with full API support"
+        "Keep long-running investigations alive between working sessions",
+        "Hold open questions alongside the evidence you have already gathered",
+        "Surface what you concluded last week, not just what you saved last week",
+        "Maintain the thread across literature, interviews, and prototypes"
       ]
     },
-    "education": {
-      "name": "Education",
-      "hero": "Transforming Education: Smart, Secure, Scalable",
-      "description": "Digital transformation for school management, payments, and compliance with easy onboarding solutions for institutions and students.",
-      "value_props": [
-        "Digital transformation for school management, payments, and compliance",
-        "Easy onboarding and payment solutions for institutions and students",
-        "Business intelligence for operational efficiency",
-        "Secure student data management and financial tracking"
-      ]
-    },
-    "logistics": {
-      "name": "Logistics & Transportation",
-      "hero": "Moving Forward: Intelligent Logistics Solutions",
-      "description": "Real-time payments, vendor verification, and compliance for logistics providers with fleet management integration.",
-      "value_props": [
-        "Real-time payments, vendor verification, and compliance for logistics providers",
-        "Fleet management integration and secure cross-border settlements",
-        "Supply chain optimization with AI-driven insights",
-        "Automated documentation and regulatory compliance"
-      ]
-    },
-    "real_estate": {
-      "name": "Real Estate",
-      "hero": "Real Estate Reimagined: Secure, Smart, Seamless",
-      "description": "Secure payment rails, compliance automation, and business intelligence for property transactions with trusted onboarding.",
-      "value_props": [
-        "Secure payment rails, compliance automation, and business intelligence for property transactions",
-        "Trusted onboarding and risk management for real estate professionals",
-        "Automated property verification and due diligence",
-        "Cross-border investment facilitation with compliance"
-      ]
-    },
-    "public_sector": {
-      "name": "Public Sector & NGOs",
-      "hero": "Public Innovation: Transparent, Efficient, Impactful",
-      "description": "Digital compliance, payments, and financial inclusion tools for government and NGOs with secure, scalable infrastructure.",
-      "value_props": [
-        "Digital compliance, payments, and financial inclusion tools for government and NGOs",
-        "Secure, scalable infrastructure for public sector innovation and empowerment",
-        "Transparent fund management and impact tracking",
-        "Citizen services digitization with AI-powered efficiency"
-      ]
-    },
-    "value_props": "Key Value Propositions:",
-    "learn_more": "Learn More",
-    "learn_more_suffix": "solutions by Lan Onasis",
-    "cta_title": "Ready to Transform Your Industry?",
-    "cta_subtitle": "Join the revolution. Let's build the future of your sector together with AI-powered solutions.",
-    "cta_primary": "Schedule a Consultation",
-    "cta_secondary": "Explore Our Ecosystem"
+    "value_props": "What stays the same:",
+    "learn_more": "See how it works",
+    "learn_more_suffix": "in your workflow",
+    "cta_title": "Want to see your week through a continuity lens?",
+    "cta_subtitle": "Walk through how the Concierge would carry one of your real threads forward.",
+    "cta_primary": "Walk through an example",
+    "cta_secondary": "Read the /why page"
   },
   "vision": {
-    "title": "Our Vision",
+    "title": "What we are building",
     "points": [
-      "To build Africa's most intelligent tech ecosystem",
-      "To expand globally with secure, compliant, AI-enhanced platforms",
-      "To empower businesses and regulators to innovate without borders"
+      "Continuity intelligence for everyone whose work crosses days, tools, and teammates",
+      "A longitudinal layer that follows the user, not the storage bucket",
+      "A thinking partner that stays a step removed from the decision, so the user stays the decision-maker"
     ],
-    "description": "Lan Onasis isn't just pivoting—we're redefining modern business systems through innovative technology and forward-thinking solutions."
+    "description": "Lan Onasis is a continuity concierge: a longitudinal thinking partner that carries decisions, threads, and momentum across time."
   },
   "ecosystem": {
-    "title": "The Vortex Ecosystem",
-    "subtitle": "A comprehensive suite of intelligent solutions powering the future of business"
+    "title": "The continuity layer",
+    "subtitle": "One continuity surface that follows your work across the tools you already use."
   },
   "platform_services": {
-    "title": "Platform Services Now Live",
-    "badge": "🚀 Newly Deployed Services",
-    "subtitle": "Experience our latest suite of developer tools and enterprise services, now available for immediate integration",
+    "title": "Continuity surface, live now",
+    "badge": "Continuity surface",
+    "subtitle": "The Continuity Concierge, available through the dashboard, the API, and MCP.",
     "memory_service": {
-      "title": "Memory-as-a-Service",
-      "description": "Vector-enabled memory storage for AI agents with semantic search and persistent context management.",
-      "dashboard": "Dashboard UI at api.lanonasis.com",
+      "title": "Continuity Concierge",
+      "description": "A longitudinal thinking partner that carries your decisions across sessions and tools.",
+      "dashboard": "Dashboard at dashboard.lanonasis.com",
       "api": "REST API at api.lanonasis.com",
-      "cta": "Access Dashboard"
+      "cta": "Open the dashboard"
     },
     "cli_tool": {
-      "title": "CLI Tool",
-      "description": "Professional command-line interface for memory management with MCP support.",
+      "title": "Continuity CLI",
+      "description": "Capture a thread, mark a decision, or pick up where you left off — from your terminal.",
       "cta": "View on npm"
     },
     "sdk": {
-      "title": "TypeScript SDK",
-      "description": "Complete SDK with React hooks for seamless memory integration in your applications.",
-      "cta": "SDK Documentation"
+      "title": "Continuity SDK",
+      "description": "TypeScript SDK with React hooks so any app can join the continuity layer.",
+      "cta": "SDK documentation"
     },
     "api_keys": {
-      "title": "API Key Management",
-      "description": "Secure key storage with MCP integration for zero-secret development workflows.",
+      "title": "API key management",
+      "description": "Secure key storage with MCP integration so you never have to paste a secret into a chat.",
       "zero_trust": "Zero-trust proxy tokens",
       "mcp_support": "MCP protocol support",
-      "cta": "Manage Keys"
+      "cta": "Manage keys"
     },
-  "developer_portal": {
-    "title": "Developer Portal",
-    "description": "Comprehensive documentation, API reference, and interactive sandbox environment.",
-    "cta": "Explore Docs"
-  },
-  "mcp": {
-    "title": "MCP Integration",
-    "description": "Model Context Protocol support for intelligent assistants with secure Lan Onasis tooling access.",
-    "cta": "Connect via MCP"
-  },
+    "developer_portal": {
+      "title": "Developer portal",
+      "description": "Documentation, API reference, and an interactive sandbox for the continuity surface.",
+      "cta": "Explore docs"
+    },
+    "mcp": {
+      "title": "MCP integration",
+      "description": "Model Context Protocol support so any AI assistant can carry the user's threads.",
+      "cta": "Connect via MCP"
+    },
     "community": {
       "title": "Community",
-      "description": "Join our developer community"
+      "description": "Join the continuity conversation"
     },
-    "get_started_title": "Get Started Today",
-    "view_documentation": "View Documentation",
-    "sign_up_free": "Sign Up Free"
+    "get_started_title": "Get started today",
+    "view_documentation": "View documentation",
+    "sign_up_free": "Sign up free"
   },
   "hero_section": {
-    "transforming": "Transforming",
-    "africas_tech": "Africa's Tech",
-    "ecosystem": "Ecosystem",
-    "tagline": "Powering Africa's Digital Future",
-    "description": "Revolutionary AI platform driving innovation across compliance tech, financial services, and digital transformation throughout the African tech ecosystem.",
+    "continuity": "Continuity",
+    "intelligence": "intelligence",
+    "for_thinking_partners": "for thinking partners",
+    "tagline": "A continuity concierge, not a memory store.",
+    "description": "Lan Onasis carries your decisions, threads, and momentum forward across sessions, projects, and tools — so the next defensible step is always close at hand.",
     "features": {
-      "vortexcore_ai": "VortexCore AI Platform",
-      "compliance_tech": "Compliance Technology",
-      "financial_services": "Financial Services",
-      "digital_ecosystem": "Digital Ecosystem"
+      "continuity_not_retrieval": "Continuity, not retrieval",
+      "reflection_not_storage": "Reflection, not storage",
+      "identity_over_time": "Identity over time",
+      "briefing_not_query": "Briefing, not query"
     },
-    "explore_platform": "Explore {{platformName}}",
-    "learn_more": "Learn More",
+    "explore_how": "See how it works",
+    "learn_more": "Why continuity",
     "stats": {
-      "african_markets": "African Markets",
-      "transactions_processed": "Transactions Processed",
-      "uptime_guarantee": "Uptime Guarantee"
+      "threads_carried": "Threads",
+      "threads_carried_label": "carried forward across sessions",
+      "decisions_continued": "Decisions",
+      "decisions_continued_label": "continued across tools and time",
+      "uptime_guarantee": "99.9%",
+      "uptime_guarantee_label": "Continuity uptime"
     }
   },
+  "how_page": {
+    "badge": "How it works",
+    "title": "How continuity actually moves",
+    "subtitle": "The Continuity Concierge is not a chatbot. It is a longitudinal surface that carries your threads, your in-flight decisions, and the open loops you said you would come back to.",
+    "meta_title": "How LanOnasis carries continuity",
+    "meta_description": "How the LanOnasis Continuity Concierge carries decisions, threads, and momentum across sessions, projects, and tools.",
+    "pipeline_title": "The continuity loop",
+    "principles_title": "What stays the same",
+    "principles_subtitle": "Four shifts that distinguish a continuity surface from a memory surface.",
+    "principles": {
+      "continuity_over_retrieval": {
+        "title": "Continuity, not retrieval",
+        "body": "The Concierge surfaces the thread that matches your intent, not the record that matches your query."
+      },
+      "reflection_over_storage": {
+        "title": "Reflection, not storage",
+        "body": "A thread is held with its surrounding context, so it still feels live when you return next month."
+      },
+      "identity_over_time": {
+        "title": "Identity over time",
+        "body": "Continuity accumulates as a working relationship between you and the Concierge, not as a folder of snapshots."
+      },
+      "briefing_over_query": {
+        "title": "Briefing, not query",
+        "body": "Open the dashboard and the Concierge briefs you on what matters next, instead of waiting to be asked."
+      }
+    },
+    "steps": {
+      "capture": {
+        "title": "1. Capture a thread",
+        "body": "Save a moment, a decision, or a half-formed idea. The Concierge treats it as a thread — not a record — so the surrounding context stays alive."
+      },
+      "reflect": {
+        "title": "2. Reflect across time",
+        "body": "When you come back, the Concierge reconnects the thread to what you have been doing since — meetings, PRs, half-finished docs — without you having to re-explain."
+      },
+      "synthesize": {
+        "title": "3. Synthesize the briefing",
+        "body": "At the start of each session, the Concierge hands you a briefing: the open threads, the decisions still in flight, and the next defensible step in each."
+      },
+      "brief": {
+        "title": "4. One durable next step",
+        "body": "Continuity is built one decision at a time. The Concierge prefers one move you can defend six months from now over ten flashy suggestions."
+      }
+    },
+    "closing_title": "Want to see the argument?",
+    "closing_body": "Read the /why page for the case against storage-as-a-service and for continuity-as-a-relationship.",
+    "cta_primary": "Read /why",
+    "cta_secondary": "Back to overview"
+  },
+  "why_page": {
+    "badge": "Why continuity",
+    "title": "Why continuity, not memory",
+    "subtitle": "Memory is what you stored. Continuity is what you are still doing. The difference matters more than the model you use to query it.",
+    "meta_title": "Why continuity — LanOnasis",
+    "meta_description": "Why LanOnasis is built around continuity rather than memory, and why a longitudinal thinking partner beats a smarter chatbot for real work.",
+    "problem_title": "The problem with a smarter chatbot",
+    "problem_body": "A memory surface optimises for recall. A continuity surface optimises for the next defensible step in work that is already in motion. Most of what you actually need help with is the second one — and it is the one storage-shaped products have never been incentivised to solve.",
+    "pillars_title": "Four shifts",
+    "pillars_subtitle": "What changes when the product is built around continuity rather than around storage.",
+    "pillars": {
+      "continuity": {
+        "title": "Continuity",
+        "body": "We optimise for the next defensible step, not for the next-best answer to a question you already know how to ask."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "body": "Threads are held with their context, so a thread you started last month still feels alive — not archived, not summarised away."
+      },
+      "identity": {
+        "title": "Identity",
+        "body": "Continuity accumulates as a working relationship between you and the Concierge. The Concierge gets better at your work the longer it carries it."
+      },
+      "briefing": {
+        "title": "Briefing",
+        "body": "The Concierge briefs you on what matters next, instead of waiting to be queried. The dashboard opens with what you owe yourself, not with an empty search box."
+      }
+    },
+    "shift_title": "From memory to continuity",
+    "shift": {
+      "retrieval_to_continuity": {
+        "from": "Retrieval of stored records",
+        "to": "Continuity of in-flight work"
+      },
+      "storage_to_reflection": {
+        "from": "Storage of facts",
+        "to": "Reflection across time"
+      },
+      "memory_to_identity": {
+        "from": "A folder of memory snapshots",
+        "to": "A working relationship that accumulates"
+      },
+      "query_to_briefing": {
+        "from": "Wait to be queried",
+        "to": "Brief you on what matters next"
+      }
+    },
+    "trust_title": "You stay the decision-maker",
+    "trust_body": "The Continuity Concierge is a chief of staff, not an autopilot. The framing of continuity keeps you as the decision-maker and gives you a partner who has been paying attention for years. The framing of a smarter chatbot hands the decision over.",
+    "closing_title": "See how it works",
+    "closing_body": "Walk through how the Concierge would carry one of your real threads forward, step by step.",
+    "cta_primary": "Read /how",
+    "cta_secondary": "Back to overview"
+  },
   "footer": {
-    "company_description": "Transforming Africa's financial technology landscape with AI-powered solutions.",
+    "company_description": "Continuity intelligence for thinking partners.",
     "platform_section": "Platform",
     "resources_section": "Resources",
     "social_links": {
@@ -246,10 +293,10 @@
       "github": "GitHub"
     },
     "platform_links": {
-      "vortexcore_ai": "VortexCore AI",
-      "vortexpay": "VortexPay",
-      "bizgenie": "BizGenie",
-      "vortexsecure": "VortexSecure",
+      "continuity_concierge": "Continuity Concierge",
+      "continuity_cli": "Continuity CLI",
+      "continuity_sdk": "Continuity SDK",
+      "api_keys": "API Keys",
       "api_gateway": "API Gateway"
     },
     "resource_links": {
@@ -261,34 +308,34 @@
     "copyright": "© 2024 Lan Onasis. All rights reserved."
   },
   "pricing": {
-    "plans": "Choose Your Plan",
+    "plans": "Choose your continuity plan",
     "tiers": {
       "starter": {
         "name": "Starter",
-        "description": "Perfect for individuals and small projects",
+        "description": "For individuals carrying a few threads forward",
         "features": [
-          "Basic Analytics",
-          "5 Team Members",
-          "Basic Support"
+          "Continuity Concierge basics",
+          "1 seat",
+          "Email support"
         ]
       },
       "pro": {
         "name": "Pro",
-        "description": "Ideal for growing teams and businesses",
+        "description": "For thinking partners whose work crosses days and tools",
         "features": [
-          "Advanced Analytics",
-          "Unlimited Team Members",
-          "Priority Support"
+          "Longitudinal layer across your tools",
+          "Unlimited seats",
+          "Priority support"
         ],
         "badge": "Most Popular"
       },
       "enterprise": {
         "name": "Enterprise",
-        "description": "For large organizations and enterprises",
+        "description": "For organisations whose continuity crosses teams",
         "features": [
-          "Custom Analytics",
-          "Dedicated Support",
-          "API Access"
+          "Multi-tenant continuity surface",
+          "Dedicated support",
+          "API access"
         ]
       }
     }
@@ -297,136 +344,76 @@
     "items": [
       {
         "name": "Michael O.",
-        "profession": "FinTech Director",
-        "description": "VortexCore AI has transformed our approach to compliance across multiple African markets. Their innovative solutions and quick turnaround time made our partnership incredibly successful."
+        "profession": "Engineering lead",
+        "description": "The Continuity Concierge is the first AI surface that has actually shortened our Monday mornings. We pick up where we left off — not where we last saved."
       },
       {
         "name": "Amina K.",
-        "profession": "Compliance Officer",
-        "description": "The attention to detail and regulatory knowledge in Lan Onasis's compliance technology is exceptional. Their platform has significantly reduced our risk exposure across our operations in Ghana and Kenya."
+        "profession": "Researcher",
+        "description": "Half-formed ideas used to die at the end of a working session. The Concierge holds them as live threads and surfaces them when they are relevant again."
       },
       {
         "name": "Chike N.",
-        "profession": "Bank Executive",
-        "description": "Working with the Lan Onasis team was a game-changer for our digital transformation strategy. Their expertise in financial technology and deep understanding of African markets exceeded our expectations."
+        "profession": "Product manager",
+        "description": "I stopped treating my assistant as a place to dump notes. The continuity framing changed how I use it — the Concierge briefs me, it does not wait for queries."
       },
       {
         "name": "Fatima M.",
-        "profession": "RegTech Analyst",
-        "description": "The quality of Lan Onasis's financial services platform and communication throughout our implementation was outstanding. Their team truly understands the unique challenges of operating in emerging African markets."
+        "profession": "Strategy analyst",
+        "description": "The Concierge carries decisions across tools without losing provenance. A decision made in a PR review lands in the planning doc with the reasoning still attached."
       }
     ]
   },
   "display_cards": {
-    "vortexcore_ai": {
-      "title": "VortexCore AI",
-      "description": "Intelligent compliance automation and business insights",
+    "continuity_concierge": {
+      "title": "Continuity Concierge",
+      "description": "A longitudinal thinking partner that carries your decisions across time",
       "status": "Live"
     },
-    "vortexpay": {
-      "title": "VortexPay",
-      "description": "Instant B2B payments with multi-currency support",
+    "continuity_cli": {
+      "title": "Continuity CLI",
+      "description": "Capture a thread or pick up where you left off, from your terminal",
       "status": "Active"
     },
-    "bizgenie": {
-      "title": "BizGenie",
-      "description": "AI-powered SME insights and cash flow forecasting",
+    "continuity_sdk": {
+      "title": "Continuity SDK",
+      "description": "Join the continuity layer from any TypeScript or React app",
       "status": "Beta"
     }
   },
   "partners": {
-    "section_title": "Trusted by Industry Leaders",
-    "section_subtitle": "Partnering with Africa's leading financial institutions and global technology companies to drive innovation across the continent",
-    "financial_institutions": "Financial Institutions",
-    "technology_partners": "Technology Partners",
+    "section_title": "Continuity across the tools you already use",
+    "section_subtitle": "The Concierge sits above the surfaces you already work in — the tools stay the same, the continuity follows you.",
+    "continuity_surfaces": "Continuity surfaces",
+    "tech_partners": "Tool partners",
     "financial": {
-      "ecobank": "Ecobank",
-      "first_bank": "First Bank Nigeria",
-      "standard_chartered": "Standard Chartered",
-      "mtn": "MTN Group",
-      "access_bank": "Access Bank",
-      "safaricom": "Safaricom",
-      "gtbank": "Guaranty Trust Bank",
-      "absa": "Absa Group"
+      "github": "GitHub",
+      "clickup": "ClickUp",
+      "notion": "Notion",
+      "slack": "Slack",
+      "linear": "Linear",
+      "figma": "Figma",
+      "obsidian": "Obsidian",
+      "vscode": "VS Code"
     },
     "tech": {
-      "stripe": "Stripe",
-      "paypal": "PayPal",
       "openai": "OpenAI",
-      "supabase": "Supabase",
-      "github": "GitHub",
-      "vercel": "Vercel",
       "anthropic": "Anthropic",
-      "aws": "Amazon AWS",
-      "azure": "Microsoft Azure",
-      "slack": "Slack",
-      "notion": "Notion",
-      "figma": "Figma"
+      "supabase": "Supabase",
+      "vercel": "Vercel",
+      "stripe": "Stripe",
+      "aws": "Amazon AWS"
     }
   },
   "timeline": {
-    "innovation_award": {
-      "year": "2023",
-      "title": "Innovation Award",
-      "description": "Recognized as \"Most Innovative FinTech Solution\" at Africa Tech Summit."
+    "continuity_release": {
+      "year": "2026",
+      "title": "Continuity intelligence release",
+      "description": "Continuity Concierge and the longitudinal layer shipped as the public surface."
     }
   },
-  "mcp_connection": {
-    "title": "MCP Remote Connection",
-    "subtitle": "Connect external MCP clients to your LanOnasis Memory Service",
-    "step1_title": "1. Get Your API Key",
-    "step1_description": "First, you need an API key from your LanOnasis dashboard to authenticate MCP connections.",
-    "get_api_key": "Get API Key from Dashboard →",
-    "step2_title": "2. Test Your Connection",
-    "api_key_label": "Enter your API Key:",
-    "api_key_placeholder": "your-api-key-here",
-    "test_connection": "Test Connection",
-    "testing": "Testing...",
-    "connection_successful": "Connection successful! Your API key is valid.",
-    "invalid_api_key": "Invalid API key. Please check your key and try again.",
-    "connection_failed": "Connection failed",
-    "connection_error": "Connection error",
-    "not_connected": "Not connected",
-    "testing_connection": "Testing connection...",
-    "enter_api_key": "Please enter your API key",
-    "step3_title": "3. Configure Claude Desktop",
-    "step3_description": "Add this configuration to your Claude Desktop MCP settings:",
-    "copy_configuration": "📋 Copy Configuration",
-    "show_instructions": "Show Detailed Instructions",
-    "hide_instructions": "Hide Detailed Instructions",
-    "detailed_instructions_title": "Detailed Setup Instructions",
-    "claude_desktop_setup": "For Claude Desktop:",
-    "cursor_setup": "For Cursor/Windsurf:",
-    "available_tools": "Available MCP Tools:",
-    "need_help_title": "Need Help?",
-    "need_help_description": "If you're having trouble connecting, check our documentation or contact support.",
-    "documentation": "📚 Documentation",
-    "contact_support": "✉️ Contact Support",
-    "config_copied": "Configuration copied to clipboard!",
-    "copy_failed": "Failed to copy to clipboard",
-    "claude_steps": [
-      "Open Claude Desktop application",
-      "Go to Settings → Developer → MCP Servers",
-      "Add the configuration shown above",
-      "Restart Claude Desktop",
-      "You should see \"LanOnasis-memory\" tools available"
-    ],
-    "cursor_steps": [
-      "Install the LanOnasis extension from the marketplace",
-      "Set your API key in extension settings",
-      "Use Ctrl+Shift+P → \"LanOnasis: Connect Memory Service\""
-    ],
-    "mcp_tools": [
-      "create_memory - Create new memories",
-      "search_memories - Search existing memories",
-      "list_memories - List all memories",
-      "update_memory - Update existing memories",
-      "delete_memory - Delete memories",
-      "get_analytics - Get memory usage analytics"
-    ]
-  },
   "story_section": {
-    "title": "Our Story",
-    "subtitle": "From launching pioneering AI platforms to empowering enterprises across Africa, our journey is rooted in innovation and trust."
+    "title": "Our story",
+    "subtitle": "From a smarter chatbot to a continuity concierge: how the product stopped optimising for what you stored and started optimising for what you are still doing."
   }
 }
