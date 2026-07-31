@@ -9,6 +9,8 @@
     "developers": "开发者",
     "products": "产品",
     "industries": "行业",
+    "how": "工作原理",
+    "why": "为什么是连续性",
     "services": "服务",
     "contact": "联系我们",
     "home": "首页",
@@ -19,9 +21,9 @@
     "ecosystem": "生态系统",
     "pricing": "价格",
     "testimonials": "客户推荐",
+    "story": "Our Story",
     "get_started": "开始使用",
-    "select_language": "选择语言",
-    "story": "Our Story"
+    "select_language": "选择语言"
   },
   "hero": {
     "badge": "介绍 VortexCore AI",

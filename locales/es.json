@@ -9,6 +9,8 @@
     "developers": "Desarrolladores",
     "products": "Productos",
     "industries": "Industrias",
+    "how": "Cómo funciona",
+    "why": "Por qué la continuidad",
     "services": "Servicios",
     "contact": "Contacto",
     "home": "Inicio",
@@ -19,9 +21,9 @@
     "ecosystem": "Ecosistema",
     "pricing": "Precios",
     "testimonials": "Testimonios",
+    "story": "Our Story",
     "get_started": "Comenzar",
-    "select_language": "Seleccionar Idioma",
-    "story": "Our Story"
+    "select_language": "Seleccionar Idioma"
   },
   "hero": {
     "badge": "Presentando VortexCore AI",

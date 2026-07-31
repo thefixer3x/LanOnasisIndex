@@ -9,6 +9,8 @@
     "developers": "المطورون",
     "products": "المنتجات",
     "industries": "الصناعات",
+    "how": "كيف يعمل",
+    "why": "لماذا الاستمرارية",
     "services": "الخدمات",
     "contact": "اتصل بنا",
     "home": "الرئيسية",
@@ -19,9 +21,9 @@
     "ecosystem": "النظام البيئي",
     "pricing": "الأسعار",
     "testimonials": "الشهادات",
+    "story": "Our Story",
     "get_started": "ابدأ الآن",
-    "select_language": "اختر اللغة",
-    "story": "Our Story"
+    "select_language": "اختر اللغة"
   },
   "hero": {
     "badge": "تقديم VortexCore AI",
