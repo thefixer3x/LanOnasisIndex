@@ -38,7 +38,9 @@ jobs:
         run: bun run build
 
       - name: Install Netlify CLI
-        run: bun add -g netlify-cli
+        # Pinned to 27.1.1 (verified 2026-08-23): newer CLIs are not required for
+        # this deploy; pinning keeps edge-fn bundling behavior reproducible.
+        run: bun add -g netlify-cli@27.1.1
 
       - name: Deploy to Netlify
         env:
