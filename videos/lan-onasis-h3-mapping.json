@@ -1,0 +1,16 @@
+{
+  "provider_task_id": "436835326292209",
+  "submitted_model": "MiniMax-H3",
+  "duration": 15,
+  "ratio": "16:9",
+  "resolution": "2K",
+  "input_mode": "multimodal_references",
+  "reference_image_count": 1,
+  "output_file_path": "videos/436835326292209.mp4",
+  "submitted_at_ms": 1788202714000,
+  "last_query_at_ms": 1788203400000,
+  "next_query_due_at_ms": null,
+  "terminal_status": "delivered",
+  "polling_cron_task_id": null,
+  "polling_cron_name": null
+}
