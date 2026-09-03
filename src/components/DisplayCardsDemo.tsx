@@ -10,9 +10,9 @@ const DisplayCardsDemo = () => {
   const platformCards = [
     {
       icon: <Brain className="size-5 text-blue-400" />,
-      title: t('display_cards.vortexcore_ai.title'),
-      description: t('display_cards.vortexcore_ai.description'),
-      date: t('display_cards.vortexcore_ai.status'),
+      title: t('display_cards.continuity_concierge.title'),
+      description: t('display_cards.continuity_concierge.description'),
+      date: t('display_cards.continuity_concierge.status'),
       iconClassName: "text-blue-500",
       titleClassName: "text-blue-500 font-semibold",
       className:

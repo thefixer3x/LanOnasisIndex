@@ -9,6 +9,8 @@
     "developers": "Разработчики",
     "products": "Продукты",
     "industries": "Отрасли",
+    "how": "Как это работает",
+    "why": "Зачем непрерывность",
     "services": "Услуги",
     "contact": "Контакты",
     "home": "Главная",
@@ -19,9 +21,9 @@
     "ecosystem": "Экосистема",
     "pricing": "Цены",
     "testimonials": "Отзывы",
+    "story": "Our Story",
     "get_started": "Начать",
-    "select_language": "Выбрать язык",
-    "story": "Our Story"
+    "select_language": "Выбрать язык"
   },
   "hero": {
     "badge": "Представляем VortexCore AI",

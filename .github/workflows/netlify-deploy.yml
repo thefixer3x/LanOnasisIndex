@@ -22,9 +22,12 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
@@ -38,7 +41,9 @@ jobs:
         run: bun run build
 
       - name: Install Netlify CLI
-        run: bun add -g netlify-cli
+        # Pinned to 27.1.1 (verified 2026-08-23): newer CLIs are not required for
+        # this deploy; pinning keeps edge-fn bundling behavior reproducible.
+        run: bun add -g netlify-cli@27.1.1
 
       - name: Deploy to Netlify
         env:
@@ -48,7 +53,7 @@ jobs:
 
       - name: Comment on PR with deploy URL
         if: github.event_name == 'pull_request'
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |

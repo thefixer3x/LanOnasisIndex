@@ -9,6 +9,8 @@
     "developers": "開発者",
     "products": "製品",
     "industries": "業界",
+    "how": "使い方",
+    "why": "なぜ継続性か",
     "services": "サービス",
     "contact": "お問い合わせ",
     "home": "ホーム",
@@ -19,9 +21,9 @@
     "ecosystem": "エコシステム",
     "pricing": "料金",
     "testimonials": "お客様の声",
+    "story": "Our Story",
     "get_started": "始める",
-    "select_language": "言語選択",
-    "story": "Our Story"
+    "select_language": "言語選択"
   },
   "hero": {
     "badge": "VortexCore AI の紹介",
