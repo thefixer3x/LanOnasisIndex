@@ -6,49 +6,49 @@ import '../components/ui/logo-carousel.css'
 // Financial Institution Partners
 const financialPartners = [
   {
-    src: "https://logo.clearbit.com/ecobank.com",
+    src: "/logos/ecobank.png",
     alt: "Ecobank",
     href: "https://ecobank.com",
     fallback: "EB"
   },
   {
-    src: "https://logo.clearbit.com/firstbanknigeria.com", 
+    src: "/logos/_missing.svg",
     alt: "First Bank Nigeria",
     href: "https://firstbanknigeria.com",
     fallback: "FBN"
   },
   {
-    src: "https://logo.clearbit.com/sc.com",
+    src: "/logos/standard-chartered.png",
     alt: "Standard Chartered",
     href: "https://standardchartered.com",
     fallback: "SC"
   },
   {
-    src: "https://logo.clearbit.com/mtn.com",
+    src: "/logos/mtn.png",
     alt: "MTN Group",
     href: "https://mtn.com",
     fallback: "MTN"
   },
   {
-    src: "https://logo.clearbit.com/accessbankplc.com",
+    src: "/logos/_missing.svg",
     alt: "Access Bank",
     href: "https://accessbankplc.com",
     fallback: "AB"
   },
   {
-    src: "https://logo.clearbit.com/safaricom.co.ke",
+    src: "/logos/safaricom.png",
     alt: "Safaricom",
     href: "https://safaricom.co.ke",
     fallback: "SF"
   },
   {
-    src: "https://logo.clearbit.com/gtbank.com",
+    src: "/logos/_missing.svg",
     alt: "Guaranty Trust Bank",
     href: "https://gtbank.com",
     fallback: "GTB"
   },
   {
-    src: "https://logo.clearbit.com/absa.africa",
+    src: "/logos/absa.png",
     alt: "Absa Group",
     href: "https://absa.africa",
     fallback: "ABSA"
@@ -58,73 +58,73 @@ const financialPartners = [
 // Technology Partners
 const techPartners = [
   {
-    src: "https://logo.clearbit.com/stripe.com",
+    src: "/logos/stripe.png",
     alt: "Stripe",
     href: "https://stripe.com",
     fallback: "ST"
   },
   {
-    src: "https://logo.clearbit.com/paypal.com",
-    alt: "PayPal", 
+    src: "/logos/paypal.svg",
+    alt: "PayPal",
     href: "https://paypal.com",
     fallback: "PP"
   },
   {
-    src: "https://logo.clearbit.com/openai.com",
+    src: "/logos/openai.svg",
     alt: "OpenAI",
     href: "https://openai.com",
     fallback: "AI"
   },
   {
-    src: "https://logo.clearbit.com/supabase.com",
+    src: "/logos/supabase.png",
     alt: "Supabase",
     href: "https://supabase.com",
     fallback: "SB"
   },
   {
-    src: "https://logo.clearbit.com/github.com",
+    src: "/logos/github.png",
     alt: "GitHub",
     href: "https://github.com",
     fallback: "GH"
   },
   {
-    src: "https://logo.clearbit.com/vercel.com",
+    src: "/logos/vercel.svg",
     alt: "Vercel",
     href: "https://vercel.com",
     fallback: "VC"
   },
   {
-    src: "https://logo.clearbit.com/anthropic.com",
+    src: "/logos/anthropic.png",
     alt: "Anthropic",
     href: "https://anthropic.com",
     fallback: "AN"
   },
   {
-    src: "https://logo.clearbit.com/aws.amazon.com",
+    src: "/logos/aws.png",
     alt: "Amazon AWS",
     href: "https://aws.amazon.com",
     fallback: "AWS"
   },
   {
-    src: "https://logo.clearbit.com/azure.microsoft.com",
+    src: "/logos/azure.png",
     alt: "Microsoft Azure",
     href: "https://azure.microsoft.com",
     fallback: "AZ"
   },
   {
-    src: "https://logo.clearbit.com/slack.com",
+    src: "/logos/slack.png",
     alt: "Slack",
     href: "https://slack.com",
     fallback: "SL"
   },
   {
-    src: "https://logo.clearbit.com/notion.so",
+    src: "/logos/notion.svg",
     alt: "Notion",
     href: "https://notion.so",
     fallback: "NO"
   },
   {
-    src: "https://logo.clearbit.com/figma.com",
+    src: "/logos/figma.svg",
     alt: "Figma",
     href: "https://figma.com",
     fallback: "FG"
