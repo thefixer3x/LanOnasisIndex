@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!--
+    Terms of Service — Lan Onasis
+    Server-rendered static page (deliberately OUTSIDE the SPA) so that
+    crawlers and OAuth verifiers read full text on first byte, not the JS shell.
+    Served at: https://lanonasis.com/terms
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Service — Lan Onasis</title>
+  <meta name="description" content="The terms that govern use of the Lan Onasis continuity intelligence platform: the Continuity Concierge, dashboard.lanonasis.com, api.lanonasis.com, the SDK, the CLI, and the MCP integration.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lanonasis.com/terms">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#0A1930">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lanonasis.com/terms">
+  <meta property="og:title" content="Terms of Service — Lan Onasis">
+  <meta property="og:description" content="The terms that govern use of the Lan Onasis continuity intelligence platform.">
+  <meta property="og:site_name" content="Lan Onasis">
+  <meta property="og:image" content="https://lanonasis.com/og/lanonasis.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Terms of Service — Lan Onasis">
+  <meta name="twitter:description" content="The terms that govern use of the Lan Onasis continuity intelligence platform.">
+  <meta name="twitter:image" content="https://lanonasis.com/og/lanonasis.png">
+  <meta name="twitter:site" content="@lanonasis">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Terms of Service — Lan Onasis",
+    "url": "https://lanonasis.com/terms",
+    "dateModified": "2026-11-10",
+    "inLanguage": "en",
+    "isPartOf": { "@type": "WebSite", "name": "Lan Onasis", "url": "https://lanonasis.com/" },
+    "about": { "@type": "Thing", "name": "Terms of service" },
+    "publisher": { "@type": "Organization", "name": "Lan Onasis LLC", "url": "https://lanonasis.com", "email": "info@lanonasis.com" }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0A1930; --bg-darker: #050F1C; --bg-deepest: #030A14;
+      --secondary: #00B4FF; --accent: #39FF14;
+      --purple-300: #d8b4fe; --purple-400: #c084fc; --pink-400: #f472b6;
+      --gray-300: #d1d5db; --gray-400: #9ca3af; --gray-500: #6b7280;
+      --white-05: rgba(255,255,255,0.05); --white-10: rgba(255,255,255,0.10); --white-20: rgba(255,255,255,0.20);
+      --radius: 16px;
+      --font-body: "SF Pro Display", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --font-head: Inter, "SF Pro Display", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body { margin: 0; background: var(--bg); color: #f3f4f6; font-family: var(--font-body); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--secondary); text-decoration: none; transition: color .2s ease; }
+    a:hover { color: var(--purple-300); }
+
+    .nav { position: sticky; top: 0; z-index: 50; background: rgba(10,25,48,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--white-10); }
+    .nav-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; height: 4rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 1.25rem; font-weight: 800; color: var(--secondary); letter-spacing: -0.01em; }
+    .logo:hover { color: var(--secondary); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; font-size: 0.925rem; }
+    .nav-links a { color: var(--gray-300); }
+    .nav-links a:hover { color: var(--secondary); }
+    .nav-cta { background: var(--secondary); color: #fff !important; padding: 0.5rem 1.1rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; transition: box-shadow .2s ease, background .2s ease; }
+    .nav-cta:hover { background: #0393d4; box-shadow: 0 8px 24px rgba(0,180,255,0.25); }
+
+    .hero { position: relative; overflow: hidden; padding: 6rem 1.5rem 4rem; text-align: center; }
+    .glow { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.35; pointer-events: none; }
+    .glow.purple { top: 30%; right: 22%; width: 24rem; height: 24rem; background: rgba(168,85,247,0.20); }
+    .glow.blue   { bottom: 30%; left: 22%; width: 18rem; height: 18rem; background: rgba(0,180,255,0.18); }
+    .badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.45rem 1rem; border-radius: 9999px; background: rgba(0,180,255,0.10); border: 1px solid rgba(0,180,255,0.30); color: var(--secondary); font-size: 0.85rem; font-weight: 600; margin-bottom: 1.75rem; }
+    .badge svg { width: 0.95rem; height: 0.95rem; }
+    h1 { font-family: var(--font-head); font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.12; margin: 0 0 1.25rem; background: linear-gradient(90deg, var(--purple-300), var(--pink-400)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .subtitle { font-size: 1.15rem; color: var(--gray-300); max-width: 46rem; margin: 0 auto; line-height: 1.7; }
+    .meta { margin-top: 2rem; color: var(--gray-400); font-size: 0.9rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+    .meta span + span::before { content: "·"; margin-right: 0.5rem; color: var(--gray-500); }
+
+    main { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem 5rem; }
+    .layout { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start; }
+    @media (min-width: 1024px) { .layout { grid-template-columns: 260px 1fr; } }
+
+    .toc { position: sticky; top: 5.5rem; background: var(--white-05); border: 1px solid var(--white-10); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+    .toc-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-400); margin: 0 0 0.75rem; }
+    .toc ul { list-style: none; margin: 0; padding: 0; }
+    .toc li + li { margin-top: 0.4rem; }
+    .toc a { color: var(--gray-400); font-size: 0.875rem; }
+    .toc a:hover { color: var(--secondary); }
+
+    .doc { min-width: 0; }
+    section { border-top: 1px solid var(--white-10); padding: 2.5rem 0 0.5rem; }
+    section:first-of-type { border-top: 0; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--secondary); letter-spacing: -0.01em; margin: 0 0 1rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: #fff; margin: 1.75rem 0 0.5rem; }
+    p { margin: 0 0 1rem; color: var(--gray-300); }
+    strong { color: #fff; font-weight: 600; }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--gray-300); }
+    li { margin: 0.45rem 0; }
+
+```
+Wait — I got cut off and I realize terms.html is a big file. Approach: I'll write the full file but it takes space. Let me continue writing it. Actually, since the page template was already established in privacy.html, I can write a complete terms.html. Let me finish.<|close|>think<|sep|><|open|>response<|sep|>The draft is confirmed really gone. Continuing with the actual build — now `terms.html`.<|close|>response<|sep|><|open|>tools<|sep|><|open|>call tool="write_file" index="1"<|sep|><|open|>argument key="content" type="string"<|sep|><!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!--
+    Terms of Service — Lan Onasis
+    Server-rendered static page (deliberately OUTSIDE the SPA) so that
+    crawlers and OAuth verifiers read full text on first byte, not the JS shell.
+    Served at: https://lanonasis.com/terms
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Service — Lan Onasis</title>
+  <meta name="description" content="The terms that govern use of the Lan Onasis continuity intelligence platform: the Continuity Concierge, dashboard.lanonasis.com, api.lanonasis.com, the SDK, the CLI, and the MCP integration.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lanonasis.com/terms">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#0A1930">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lanonasis.com/terms">
+  <meta property="og:title" content="Terms of Service — Lan Onasis">
+  <meta property="og:description" content="The terms that govern use of the Lan Onasis continuity intelligence platform.">
+  <meta property="og:site_name" content="Lan Onasis">
+  <meta property="og:image" content="https://lanonasis.com/og/lanonasis.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Terms of Service — Lan Onasis">
+  <meta name="twitter:description" content="The terms that govern use of the Lan Onasis continuity intelligence platform.">
+  <meta name="twitter:image" content="https://lanonasis.com/og/lanonasis.png">
+  <meta name="twitter:site" content="@lanonasis">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Terms of Service — Lan Onasis",
+    "url": "https://lanonasis.com/terms",
+    "dateModified": "2026-11-10",
+    "inLanguage": "en",
+    "isPartOf": { "@type": "WebSite", "name": "Lan Onasis", "url": "https://lanonasis.com/" },
+    "about": { "@type": "Thing", "name": "Terms of service" },
+    "publisher": { "@type": "Organization", "name": "Lan Onasis LLC", "url": "https://lanonasis.com", "email": "info@lanonasis.com" }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0A1930; --bg-darker: #050F1C; --bg-deepest: #030A14;
+      --secondary: #00B4FF; --accent: #39FF14;
+      --purple-300: #d8b4fe; --purple-400: #c084fc; --pink-400: #f472b6;
+      --gray-300: #d1d5db; --gray-400: #9ca3af; --gray-500: #6b7280;
+      --white-05: rgba(255,255,255,0.05); --white-10: rgba(255,255,255,0.10); --white-20: rgba(255,255,255,0.20);
+      --radius: 16px;
+      --font-body: "SF Pro Display", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --font-head: Inter, "SF Pro Display", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body { margin: 0; background: var(--bg); color: #f3f4f6; font-family: var(--font-body); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: var(--secondary); text-decoration: none; transition: color .2s ease; }
+    a:hover { color: var(--purple-300); }
+
+    .nav { position: sticky; top: 0; z-index: 50; background: rgba(10,25,48,0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--white-10); }
+    .nav-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; height: 4rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 1.25rem; font-weight: 800; color: var(--secondary); letter-spacing: -0.01em; }
+    .logo:hover { color: var(--secondary); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; font-size: 0.925rem; }
+    .nav-links a { color: var(--gray-300); }
+    .nav-links a:hover { color: var(--secondary); }
+    .nav-cta { background: var(--secondary); color: #fff !important; padding: 0.5rem 1.1rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem; transition: box-shadow .2s ease, background .2s ease; }
+    .nav-cta:hover { background: #0393d4; box-shadow: 0 8px 24px rgba(0,180,255,0.25); }
+
+    .hero { position: relative; overflow: hidden; padding: 6rem 1.5rem 4rem; text-align: center; }
+    .glow { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.35; pointer-events: none; }
+    .glow.purple { top: 30%; right: 22%; width: 24rem; height: 24rem; background: rgba(168,85,247,0.20); }
+    .glow.blue   { bottom: 30%; left: 22%; width: 18rem; height: 18rem; background: rgba(0,180,255,0.18); }
+    .badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.45rem 1rem; border-radius: 9999px; background: rgba(0,180,255,0.10); border: 1px solid rgba(0,180,255,0.30); color: var(--secondary); font-size: 0.85rem; font-weight: 600; margin-bottom: 1.75rem; }
+    .badge svg { width: 0.95rem; height: 0.95rem; }
+    h1 { font-family: var(--font-head); font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.12; margin: 0 0 1.25rem; background: linear-gradient(90deg, var(--purple-300), var(--pink-400)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .subtitle { font-size: 1.15rem; color: var(--gray-300); max-width: 46rem; margin: 0 auto; line-height: 1.7; }
+    .meta { margin-top: 2rem; color: var(--gray-400); font-size: 0.9rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+    .meta span + span::before { content: "·"; margin-right: 0.5rem; color: var(--gray-500); }
+
+    main { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem 5rem; }
+    .layout { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start; }
+    @media (min-width: 1024px) { .layout { grid-template-columns: 260px 1fr; } }
+
+    .toc { position: sticky; top: 5.5rem; background: var(--white-05); border: 1px solid var(--white-10); border-radius: var(--radius); padding: 1.25rem 1.5rem; }
+    .toc-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-400); margin: 0 0 0.75rem; }
+    .toc ul { list-style: none; margin: 0; padding: 0; }
+    .toc li + li { margin-top: 0.4rem; }
+    .toc a { color: var(--gray-400); font-size: 0.875rem; }
+    .toc a:hover { color: var(--secondary); }
+
+    .doc { min-width: 0; }
+    section { border-top: 1px solid var(--white-10); padding: 2.5rem 0 0.5rem; }
+    section:first-of-type { border-top: 0; }
+    h2 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--secondary); letter-spacing: -0.01em; margin: 0 0 1rem; }
+    h3 { font-size: 1.05rem; font-weight: 600; color: #fff; margin: 1.75rem 0 0.5rem; }
+    p { margin: 0 0 1rem; color: var(--gray-300); }
+    strong { color: #fff; font-weight: 600; }
+    ul { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--gray-300); }
+    li { margin: 0.45rem 0; }
+    li > ul { margin-top: 0.4rem; }
+
+    .card { background: var(--white-05); border: 1px solid var(--white-10); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.25rem 0; backdrop-filter: blur(4px); }
+    .card.callout { border-color: rgba(0,180,255,0.35); }
+    .card.callout h3 { margin-top: 0; color: var(--secondary); }
+    .card.gold { border-color: rgba(0,180,255,0.45); }
+    .card p:last-child { margin-bottom: 0; }
+    .commitment { border-inline-start: 3px solid var(--secondary); padding: 0.75rem 1rem; margin: 1.25rem 0; background: rgba(0,180,255,0.06); color: var(--gray-300); }
+    .commitment strong { color: #d8edfb; }
+
+    footer { background: var(--bg-darker); border-top: 1px solid var(--white-10); margin-top: 4rem; }
+    .foot-inner { max-width: 80rem; margin: 0 auto; padding: 3rem 1.5rem 2rem; display: grid; gap: 2rem; grid-template-columns: 1fr; }
+    @media (min-width: 768px) { .foot-inner { grid-template-columns: 2fr 1fr 1fr; } }
+    .foot-brand h3 { color: var(--secondary); font-size: 1.25rem; margin: 0 0 0.75rem; }
+    .foot-brand p { color: var(--gray-400); font-size: 0.925rem; max-width: 24rem; }
+    .foot-col h4 { font-size: 0.95rem; font-weight: 600; color: #fff; margin: 0 0 1rem; }
+    .foot-col ul { list-style: none; margin: 0; padding: 0; }
+    .foot-col li { margin: 0.5rem 0; }
+    .foot-col a { color: var(--gray-400); font-size: 0.925rem; }
+    .foot-col a:hover { color: var(--secondary); }
+    .foot-bottom { border-top: 1px solid var(--white-10); padding: 1.5rem; text-align: center; color: var(--gray-400); font-size: 0.875rem; display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; align-items: center; }
+    .foot-bottom nav { display: flex; gap: 1rem; }
+    .foot-bottom a { color: var(--gray-400); }
+    .foot-bottom a:hover { color: var(--secondary); }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    @media (max-width: 640px) { .nav-links a.hide-sm { display: none; } .hero { padding: 4rem 1rem 3rem; } .toc { position: static; } }
+  </style>
+</head>
+<body id="top">
+
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="logo" href="/">Lan Onasis</a>
+      <div class="nav-links">
+        <a class="hide-sm" href="https://docs.lanonasis.com" rel="noopener">Docs</a>
+        <a class="hide-sm" href="/terms" aria-current="page">Terms of Service</a>
+        <a class="hide-sm" href="/privacy">Privacy</a>
+        <a class="nav-cta" href="https://dashboard.lanonasis.com/">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="glow purple" aria-hidden="true"></div>
+    <div class="glow blue" aria-hidden="true"></div>
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Agreement
+    </div>
+    <h1>Terms of Service</h1>
+    <p class="subtitle">
+      These terms govern your use of the Lan Onasis continuity intelligence platform —
+      the Continuity Concierge, dashboard.lanonasis.com, the api.lanonasis.com backend,
+      the SDK, the CLI, and the MCP integration.
+    </p>
+    <div class="meta">
+      <span>Effective date: <strong>10 November 2026</strong></span>
+      <span>Last updated: <strong>10 November 2026</strong></span>
+      <span>Questions? <a href="mailto:info@lanonasis.com">info@lanonasis.com</a></span>
+    </div>
+  </header>
+
+  <main>
+    <div class="layout">
+
+      <aside class="toc" aria-label="Table of contents">
+        <p class="toc-title">On this page</p>
+        <ul>
+          <li><a href="#acceptance">1. Acceptance</a></li>
+          <li><a href="#services">2. The Services</a></li>
+          <li><a href="#accounts">3. Accounts, keys &amp; security</a></li>
+          <li><a href="#acceptable-use">4. Acceptable use</a></li>
+          <li><a href="#your-content">5. Your Content &amp; license</a></li>
+          <li><a href="#our-ip">6. Our intellectual property</a></li>
+          <li><a href="#billing">7. Plans &amp; billing</a></li>
+          <li><a href="#third-party">8. Third-party services</a></li>
+          <li><a href="#api-terms">9. API &amp; integration terms</a></li>
+          <li><a href="#disclaimers">10. Disclaimers</a></li>
+          <li><a href="#liability">11. Limitation of liability</a></li>
+          <li><a href="#indemnification">12. Indemnification</a></li>
+          <li><a href="#termination">13. Term &amp; termination</a></li>
+          <li><a href="#changes">14. Changes to these terms</a></li>
+          <li><a href="#misc">15. Miscellaneous</a></li>
+          <li><a href="#contact">16. Contact</a></li>
+        </ul>
+      </aside>
+
+      <article class="doc">
+
+        <section id="acceptance">
+          <h2>1. Acceptance</h2>
+          <p>
+            These Terms of Service (“Terms”) are a binding agreement between you and
+            <strong>Lan Onasis LLC</strong> (organised in the United States), together with its affiliate
+            <strong>LanOnasis Ltd</strong> (registered in Nigeria). “Lan Onasis”, “we”, “us”, “our” refer to
+            those entities collectively.
+          </p>
+          <p>
+            By accessing or using the Services, creating an account, generating an API key, or clicking
+            “I accept”, you agree to these Terms and to our <a href="/privacy">Privacy Policy</a>, which is
+            incorporated by reference. If you do not agree, do not use the Services.
+          </p>
+          <p>
+            If you use the Services on behalf of an organisation, you represent that you have authority to
+            bind it, and “you” refers to that organisation.
+          </p>
+        </section>
+
+        <section id="services">
+          <h2>2. The Services</h2>
+          <p>The “Services” comprise the Lan Onasis continuity intelligence platform:</p>
+          <ul>
+            <li><strong><a href="https://lanonasis.com">lanonasis.com</a></strong> — the welcome and entrypoint site;</li>
+            <li><strong><a href="https://dashboard.lanonasis.com">dashboard.lanonasis.com</a></strong> — the user application interface (the Continuity Concierge / MaaS dashboard);</li>
+            <li><strong><a href="https://api.lanonasis.com">api.lanonasis.com</a></strong> — the REST/aggregation API (the backend core);</li>
+            <li><strong><a href="https://auth.lanonasis.com">auth.lanonasis.com</a></strong> — the Central Auth Gateway (OAuth 2.0 sign-in, sessions and API keys);</li>
+            <li><strong><a href="https://mcp.lanonasis.com">mcp.lanonasis.com</a></strong> — the production MCP server;</li>
+            <li><strong><a href="https://docs.lanonasis.com">docs.lanonasis.com</a></strong> — developer documentation;</li>
+            <li><strong><a href="https://vortexshield.lanonasis.com">vortexshield.lanonasis.com</a></strong> — API key management;</li>
+            <li>the <strong>Continuity SDK</strong>, the <strong>LanOnasis CLI</strong>, and the <strong>MCP</strong> server integration;</li>
+            <li>and related key-management, analytics, and security tooling.</li>
+          </ul>
+          <p>
+            The Services act as a longitudinal surface that carries your working context — threads,
+            decisions, and open loops — across sessions and tools. We may change or discontinue features
+            from time to time; we will not materially degrade the core of a paid plan mid-term without
+            reasonable notice.
+          </p>
+        </section>
+
+        <section id="accounts">
+          <h2>3. Accounts, keys &amp; security</h2>
+          <ul>
+            <li>Provide accurate registration information and keep it current.</li>
+            <li>Keep your password, SSO session, and any <strong>API keys</strong> or scoped tokens confidential. Treat keys like passwords.</li>
+            <li><strong>API keys are shown once at creation; we store only a digest.</strong> If you lose a key, rotate and re-issue.</li>
+            <li>You are responsible for all activity under your account and keys. Tell us immediately at <a href="mailto:support@lanonasis.com">support@lanonasis.com</a> if you suspect compromise.</li>
+            <li>Do not share credentials/keys with third parties except as the Services explicitly support (e.g., scoped integration keys), and never in plaintext logs, repos, or client-side code.</li>
+            <li>You must be of the age of majority in your jurisdiction to use the paid Services. The Services are not directed to children (see our <a href="/privacy">Privacy Policy</a>).</li>
+          </ul>
+        </section>
+
+        <section id="acceptable-use">
+          <h2>4. Acceptable use</h2>
+          <p>You will not (and will not allow others to):</p>
+          <ul>
+            <li>Use the Services for anything unlawful, harmful, defamatory, fraudulent, harassing, or infringing;</li>
+            <li>Process, store, or transmit:
+              <ul>
+                <li>content you have no right to (including cross-tenant or stolen data);</li>
+                <li>special-category personal data or children’s data where prohibited by our <a href="/privacy">Privacy Policy</a>;</li>
+                <li>malware, exploit code, or code designed to attack systems;</li>
+              </ul>
+            </li>
+            <li>Probe, scan, or test the vulnerability of the Services or any network except via our security-reporting channel with explicit authorisation;</li>
+            <li>Bypass authentication or authorisation; exceed rate limits you did not contract for; scrape (except as we explicitly permit); reverse-engineer non-open-sourced parts;</li>
+            <li>Misleadingly present generated output as wholly human-authored where that attribution is deceptive in context;</li>
+            <li>Resell, sublicense, or white-label the Services without a written partnership agreement.</li>
+          </ul>
+          <p>We may suspend access for violations, proportionate to the risk, and will notify you when feasible.</p>
+        </section>
+
+        <section id="your-content">
+          <h2>5. Your Content &amp; license</h2>
+          <p>
+            <strong>“Your Content”</strong> is what you store in or submit to the Services — threads, decisions,
+            notes, memories, and other working material the Concierge carries forward.
+          </p>
+          <div class="commitment">
+            <p><strong>You retain all ownership of Your Content.</strong> We do not claim intellectual-property rights over it.</p>
+          </div>
+          <p>
+            You grant us a limited, non-exclusive license to host, process, transmit, and display Your Content
+            only as necessary to operate the Services for you (to carry your threads across sessions, to answer
+            queries you send, and to generate analytics for your account). That license ends when you delete
+            Your Content or your account (subject to our <a href="/privacy#retention">retention cycle</a>).
+          </p>
+          <ul>
+            <li>You represent that you have all necessary rights to Your Content.</li>
+            <li>We do not use Your Content to train machine-learning models (see our <a href="/privacy#ai">training stance</a>).</li>
+            <li>Aggregated/anonymised telemetry (feature and usage statistics that don’t identify you) is used to operate and improve the Services and is not “Your Content”.</li>
+          </ul>
+        </section>
+
+        <section id="our-ip">
+          <h2>6. Our intellectual property</h2>
+          <p>
+            The Services — including the underlying software, models, design, trademarks (including “Lan
+            Onasis” and the VortexCore marks), the SDK and CLI as software, documentation, and all
+            improvements — remain our property and that of our licensors. Nothing in these Terms transfers
+            ownership. You may use our SDK/CLI and documentation only as necessary to build against the
+            Services.
+          </p>
+          <p>
+            “Generated output” produced for you via the Services is, as between you and us and to the extent the
+            law permits, assigned to you — with the caveat that output may be similar for other users given
+            similar inputs.
+          </p>
+        </section>
+
+        <section id="billing">
+          <h2>7. Plans &amp; billing</h2>
+          <ul>
+            <li><strong>Free tier:</strong> we may offer a free tier with usage limits, which can change on reasonable notice.</li>
+            <li><strong>Paid plans:</strong> billed in advance for recurring periods (monthly/annual) via Stripe. Fees are non-refundable except as required by law or explicitly stated.</li>
+            <li><strong>Auto-renewal:</strong> plans renew automatically unless cancelled before period end; cancellation keeps service active until the end of the paid period.</li>
+            <li><strong>Pricing changes:</strong> at least 30 days’ notice; the increase applies to the next renewal.</li>
+            <li><strong>Overage:</strong> metered plans are charged at the plan’s listed rates.</li>
+            <li><strong>Taxes:</strong> fees are exclusive of applicable taxes, which you are responsible for.</li>
+          </ul>
+          <p>Enterprise arrangements are governed by their written orders; in case of conflict, the order prevails for the conflicting term.</p>
+        </section>
+
+        <section id="third-party">
+          <h2>8. Third-party services</h2>
+          <ul>
+            <li>When you connect a third-party service (“Sign in with Google”, an MCP-connected tool, or payment via Stripe), the third party’s own terms and privacy practices apply to that interaction.</li>
+            <li>We are not responsible for third-party services’ availability, accuracy, or conduct.</li>
+            <li>Your Google sign-in is governed by Google’s Terms of Service; our handling of the basic profile data we receive is governed by our <a href="/privacy">Privacy Policy</a>.</li>
+          </ul>
+        </section>
+
+        <section id="api-terms">
+          <h2>9. API &amp; integration terms</h2>
+          <ul>
+            <li>Use the API, SDK, CLI, and MCP integration only with the keys/scopes issued to you and within your plan limits.</li>
+            <li>Keep your keys server-side; a key embedded in a public client is a security violation and may be rotated or revoked.</li>
+            <li>Honor rate limits. We may throttle to protect the platform; we publish the limits that apply to your plan and will not throttle a paying customer unreasonably mid-term.</li>
+            <li>You are responsible for your integrations’ compliance with these Terms and applicable law (including obtaining end-user consents where required).</li>
+          </ul>
+        </section>
+
+        <section id="disclaimers">
+          <h2>10. Disclaimers</h2>
+          <div class="card callout">
+            <h3>To the fullest extent permitted by law</h3>
+            <p>
+              The Services are provided <strong>“as is” and “as available”</strong>. We disclaim all warranties,
+              express or implied, including merchantability, fitness for a particular purpose, and
+              non-infringement.
+            </p>
+          </div>
+          <ul>
+            <li><strong>AI-generated output:</strong> output from the Concierge is informational and may be incorrect or incomplete, and reflects the data you supplied. Do not rely on it as professional (legal, financial, medical, or other) advice; verify independently. You are responsible for your use of output.</li>
+            <li><strong>Continuity:</strong> we work to carry your threads reliably across sessions, but do not warrant uninterrupted, error-free, or perfectly preserved continuity. Keep your own backups of irreplaceable material.</li>
+            <li><strong>Beta features:</strong> are provided for evaluation and may change without notice.</li>
+          </ul>
+        </section>
+
+        <section id="liability">
+          <h2>11. Limitation of liability</h2>
+          <ul>
+            <li>To the fullest extent permitted by law, <strong>we are not liable</strong> for indirect, incidental, special, consequential, or punitive damages, or for loss of profits, data, goodwill, or business opportunity, arising out of the Services.</li>
+            <li>Our aggregate liability arising from the Services is capped at the <strong>fees you paid us in the twelve (12) months</strong> preceding the first event giving rise to the claim — or, for a free tier, one hundred US dollars (US$100).</li>
+            <li>Nothing limits liability that cannot by law be limited (for example, for fraud, wilful misconduct, or liability that cannot be contracted away under the NDPA or GDPR).</li>
+          </ul>
+        </section>
+
+        <section id="indemnification">
+          <h2>12. Indemnification</h2>
+          <p>
+            You will defend, indemnify, and hold harmless Lan Onasis and our affiliates, officers, employees,
+            and agents from and against claims, damages, and costs arising from (a) Your Content violating law
+            or third-party rights, (b) your breach of these Terms, or (c) your misuse of the Services.
+          </p>
+        </section>
+
+        <section id="termination">
+          <h2>13. Term &amp; termination</h2>
+          <ul>
+            <li>These Terms apply while you use the Services.</li>
+            <li>You may close your account at any time from <em>Settings</em>, or by emailing <a href="mailto:info@lanonasis.com">info@lanonasis.com</a>.</li>
+            <li>We may suspend or terminate for breach, security risk, non-payment, or prohibited use — proportionate to severity, with notice where feasible. We may also suspend prolonged inactivity on a free tier after reasonable notice.</li>
+            <li>On termination: your right to use the Services ends; Your Content is handled per our <a href="/privacy#retention">retention cycle</a> (active-system deletion within 30 days; backups expire with their cycle). Accrued payment obligations survive.</li>
+          </ul>
+          <p>Provisions that by nature survive (IP, disclaimers, liability, indemnification, governing law, disputes) survive termination.</p>
+        </section>
+
+        <section id="changes">
+          <h2>14. Changes to these terms</h2>
+          <p>
+            We may update these Terms; material changes are announced in the dashboard or by email at least
+            <strong>30 days</strong> before taking effect for existing paid customers. Continued use after the
+            effective date means acceptance. If you disagree, stop using the Services and close your account
+            before the changes take effect.
+          </p>
+        </section>
+
+        <section id="misc">
+          <h2>15. Miscellaneous</h2>
+          <ul>
+            <li><strong>Governing law:</strong> for customers contracting with Lan Onasis LLC, the laws of the jurisdiction in which Lan Onasis LLC is organised, excluding conflict-of-laws principles; for customers contracting with LanOnasis Ltd, the laws of the Federal Republic of Nigeria.</li>
+            <li><strong>Venue:</strong> the exclusive jurisdiction of the courts in that same territory, except injunctive relief for IP misuse anywhere.</li>
+            <li><strong>Force majeure:</strong> neither party is liable for delays/failures due to events beyond reasonable control.</li>
+            <li><strong>Severability:</strong> if a provision is unenforceable, the rest stays in force.</li>
+            <li><strong>Waiver:</strong> failure to enforce a term is not a waiver of it.</li>
+            <li><strong>Assignment:</strong> you may not assign these Terms without our consent; we may assign in connection with a merger, acquisition, or sale.</li>
+            <li><strong>Entire agreement:</strong> these Terms plus the <a href="/privacy">Privacy Policy</a> (and any enterprise order) are the whole agreement about the Services.</li>
+          </ul>
+        </section>
+
+        <section id="contact">
+          <h2>16. Contact</h2>
+          <div class="card gold">
+            <p><strong>Lan Onasis LLC</strong> · organised in the United States</p>
+            <p><strong>LanOnasis Ltd</strong> · registered in Nigeria (Lagos)</p>
+            <p>
+              General &amp; legal: <a href="mailto:info@lanonasis.com">info@lanonasis.com</a><br>
+              Privacy &amp; data requests: <a href="mailto:privacy@lanonasis.com">privacy@lanonasis.com</a><br>
+              Support: <a href="mailto:support@lanonasis.com">support@lanonasis.com</a><br>
+              Security reports: <a href="mailto:security@lanonasis.com">security@lanonasis.com</a><br>
+              Enterprise &amp; compliance: <a href="mailto:enterprise@lanonasis.com">enterprise@lanonasis.com</a><br>
+              Website: <a href="https://lanonasis.com">lanonasis.com</a>
+            </p>
+          </div>
+          <p style="margin-top:2rem">
+            <a href="#top">↑ Back to top</a> · <a href="/privacy">Privacy Policy</a> · <a href="/">Home</a>
+          </p>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <h3>Lan Onasis</h3>
+        <p>Continuity intelligence for thinking partners — threads, decisions, and open loops carried forward across your tools.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="https://dashboard.lanonasis.com">Continuity Concierge</a></li>
+          <li><a href="https://dashboard.lanonasis.com">Continuity SDK</a></li>
+          <li><a href="https://api.lanonasis.com">API &amp; API Keys</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Legal &amp; Resources</h4>
+        <ul>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="https://docs.lanonasis.com">Documentation</a></li>
+          <li><a href="mailto:support@lanonasis.com">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Lan Onasis LLC · LanOnasis Ltd. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

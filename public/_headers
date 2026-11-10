@@ -29,6 +29,24 @@
   X-Robots-Tag: noarchive
 
 # ============================================
+# Legal pages (/privacy, /terms)
+# Placed AFTER the global /* block on purpose: Netlify applies header rules in
+# file order and the LAST matching rule wins for a given header name (verified
+# against a live deploy 2026-11-10), so the specific /privacy and /terms rules
+# must follow the /* wildcard to override its X-Robots-Tag: noarchive.
+# Without this, Google refuses to index the policy text.
+# Kept in sync with the matching [[headers]] rules in netlify.toml.
+# ============================================
+
+/privacy
+  X-Robots-Tag: index, follow
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/terms
+  X-Robots-Tag: index, follow
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# ============================================
 # Sensitive file protection
 # ============================================
 

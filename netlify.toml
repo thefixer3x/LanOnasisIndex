@@ -466,6 +466,26 @@
   force = true
 
 # ============================================
+# STATIC LEGAL PAGES (force=true, first-byte HTML)
+# Why: the SPA catch-all below swallows every route and returns the app shell
+# (200 + index.html) for /privacy and /terms. Neither Googlebot nor the OAuth
+# verifier ever sees the policy text. These rules serve the real static HTML
+# files BEFORE the catch-all. pretty_urls=true already 301s /privacy.html → /
+# privacy, but explicit force=true makes the serving independent of that.
+# ============================================
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200
+  force = true
+
+# ============================================
 # SPA FALLBACK - MUST BE LAST
 # ============================================
 
@@ -478,6 +498,12 @@
 # SECURITY HEADERS
 # ============================================
 
+# Legal pages — indexable, short cache, never noarchive (Google must crawl fresh content).
+# NOTE: these must come AFTER the /* block below. Netlify applies header rules in
+# file order and the LAST matching rule wins per header name, so the specific
+# /privacy and /terms rules must follow the /* wildcard to override its
+# X-Robots-Tag: noarchive. Verified on a live deploy 2026-11-10.
+# The same ordering is mirrored in public/_headers.
 [[headers]]
   for = "/*"
   [headers.values]
@@ -488,6 +514,18 @@
     Permissions-Policy = "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(self), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-Robots-Tag = "noarchive"
+
+[[headers]]
+  for = "/privacy"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+    X-Robots-Tag = "index, follow"
+
+[[headers]]
+  for = "/terms"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+    X-Robots-Tag = "index, follow"
 
 # Sensitive file headers
 [[headers]]

@@ -74,7 +74,12 @@
       "support": "지원",
       "contact": "연락처"
     },
-    "copyright": " 2024 Lan Onasis. 모든 권리 보유."
+    "copyright": " 2024 Lan Onasis. 모든 권리 보유.",
+    "legal_section": "법적 정보",
+    "legal_links": {
+      "privacy": "개인정보 처리방침",
+      "terms": "서비스 이용 약관"
+    }
   },
   "pricing": {
     "plans": "플랜 선택",

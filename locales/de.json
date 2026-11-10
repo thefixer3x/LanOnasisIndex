@@ -74,7 +74,12 @@
       "support": "Support",
       "contact": "Kontakt"
     },
-    "copyright": "© 2024 Lan Onasis. Alle Rechte vorbehalten."
+    "copyright": "© 2024 Lan Onasis. Alle Rechte vorbehalten.",
+    "legal_section": "Rechtliches",
+    "legal_links": {
+      "privacy": "Datenschutzerklärung",
+      "terms": "Nutzungsbedingungen"
+    }
   },
   "pricing": {
     "plans": "Wählen Sie Ihren Plan",

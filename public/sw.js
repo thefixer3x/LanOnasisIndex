@@ -1,5 +1,8 @@
 // Service Worker for Lan Onasis PWA
-const CACHE_NAME = 'lan-onasis-v1';
+// NOTE: v2 — bump clears the v1 cache that held the index.html SPA shell for
+// /privacy and /terms (Netlify previously served the app shell at those URLs).
+// Legal pages are now network-first so their HTML is always fresh for Google.
+const CACHE_NAME = 'lan-onasis-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -8,6 +11,9 @@ const urlsToCache = [
   '/src/App.tsx',
   '/src/index.css'
 ];
+
+// Legal pages: always try the network first (never serve stale app shell)
+const NETWORK_FIRST_PATHS = ['/privacy', '/terms', '/privacy.html', '/terms.html'];
 
 // Install event - cache assets
 self.addEventListener('install', (event) => {
@@ -47,6 +53,26 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   // Skip non-GET requests
   if (event.request.method !== 'GET') return;
+
+  const url = new URL(event.request.url);
+
+  // Legal pages (and their raw files) - network first; cache is a fallback only.
+  // The whole point of /privacy and /terms is that Google reads live HTML, so
+  // don't let a stale cached app shell mask a fix on these routes.
+  if (NETWORK_FIRST_PATHS.some((p) => url.pathname === p)) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200 && response.type === 'basic') {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
 
   event.respondWith(
     caches.match(event.request)

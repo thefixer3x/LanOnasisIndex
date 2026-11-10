@@ -156,6 +156,15 @@ function App() {
               </ul>
             </div>
           </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 mt-8 pt-8">
+            <div>
+              <h4 className="font-semibold mb-4">{t('footer.legal_section')}</h4>
+              <ul className="space-y-2">
+                <li><a href="/privacy" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.legal_links.privacy')}</a></li>
+                <li><a href="/terms" className="text-gray-400 hover:text-secondary transition-colors">{t('footer.legal_links.terms')}</a></li>
+              </ul>
+            </div>
+          </div>
           <div className="border-t border-white/10 mt-8 pt-8 text-center">
             <p className="text-gray-400">{t('footer.copyright')}</p>
           </div>

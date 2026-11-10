@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <!--
+    Privacy Policy — Lan Onasis
+    Server-rendered static page (deliberately OUTSIDE the SPA) so that
+    crawlers and OAuth verifiers see the full text on first Byte instead of
+    the JavaScript app shell. Do NOT move this into a React route.
+
+    Served at: https://lanonasis.com/privacy  (force=true rewrite in netlify.toml)
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Lan Onasis</title>
+  <meta name="description" content="How Lan Onasis LLC collects, uses, protects, and retains personal data across lanonasis.com, the Continuity dashboard, the api.lanonasis.com backend, the SDK, the CLI, and the MCP integration.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lanonasis.com/privacy">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#0A1930">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lanonasis.com/privacy">
+  <meta property="og:title" content="Privacy Policy — Lan Onasis">
+  <meta property="og:description" content="How Lan Onasis collects, uses, protects, and retains personal data across its continuity intelligence platform.">
+  <meta property="og:site_name" content="Lan Onasis">
+  <meta property="og:image" content="https://lanonasis.com/og/lanonasis.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy — Lan Onasis">
+  <meta name="twitter:description" content="How Lan Onasis collects, uses, protects, and retains personal data across its continuity intelligence platform.">
+  <meta name="twitter:image" content="https://lanonasis.com/og/lanonasis.png">
+  <meta name="twitter:site" content="@lanonasis">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy — Lan Onasis",
+    "url": "https://lanonasis.com/privacy",
+    "dateModified": "2026-11-10",
+    "inLanguage": "en",
+    "isPartOf": { "@type": "WebSite", "name": "Lan Onasis", "url": "https://lanonasis.com/" },
+    "about": { "@type": "Thing", "name": "Privacy" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Lan Onasis LLC",
+      "url": "https://lanonasis.com",
+      "email": "info@lanonasis.com"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0A1930;
+      --bg-darker: #050F1C;
+      --bg-deepest: #030A14;
+      --secondary: #00B4FF;
+      --accent: #39FF14;
+      --purple-300: #d8b4fe;
+      --purple-400: #c084fc;
+      --pink-400: #f472b6;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --white-05: rgba(255,255,255,0.05);
+      --white-10: rgba(255,255,255,0.10);
+      --white-20: rgba(255,255,255,0.20);
+      --radius: 16px;
+      --font-body: "SF Pro Display", Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --font-head: Inter, "SF Pro Display", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f3f4f6;
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--secondary); text-decoration: none; transition: color .2s ease; }
+    a:hover { color: var(--purple-300); }
+
+    /* ---------- Top navigation (mirrors the SPA navbar) ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,25,48,0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--white-10);
+    }
+    .nav-inner {
+      max-width: 80rem; margin: 0 auto;
+      padding: 0 1.5rem; height: 4rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-size: 1.25rem; font-weight: 800; color: var(--secondary); letter-spacing: -0.01em; }
+    .logo:hover { color: var(--secondary); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; font-size: 0.925rem; }
+    .nav-links a { color: var(--gray-300); }
+    .nav-links a:hover { color: var(--secondary); }
+    .nav-cta {
+      background: var(--secondary); color: #fff !important;
+      padding: 0.5rem 1.1rem; border-radius: 9999px;
+      font-weight: 600; font-size: 0.875rem;
+      transition: box-shadow .2s ease, background .2s ease;
+    }
+    .nav-cta:hover { background: #0393d4; box-shadow: 0 8px 24px rgba(0,180,255,0.25); }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; overflow: hidden; padding: 6rem 1.5rem 4rem; text-align: center; }
+    .glow { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.35; pointer-events: none; }
+    .glow.purple { top: 30%; right: 22%; width: 24rem; height: 24rem; background: rgba(168,85,247,0.20); }
+    .glow.blue   { bottom: 30%; left: 22%; width: 18rem; height: 18rem; background: rgba(0,180,255,0.18); }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.45rem 1rem; border-radius: 9999px;
+      background: rgba(168,85,247,0.10);
+      border: 1px solid rgba(168,85,247,0.25);
+      color: var(--purple-400); font-size: 0.85rem; font-weight: 600;
+      margin-bottom: 1.75rem;
+    }
+    .badge svg { width: 0.95rem; height: 0.95rem; }
+    h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800; letter-spacing: -0.02em; line-height: 1.12;
+      margin: 0 0 1.25rem;
+      background: linear-gradient(90deg, var(--purple-300), var(--pink-400));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .subtitle {
+      font-size: 1.15rem; color: var(--gray-300);
+      max-width: 46rem; margin: 0 auto; line-height: 1.7;
+    }
+    .meta {
+      margin-top: 2rem; color: var(--gray-400); font-size: 0.9rem;
+      display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;
+    }
+    .meta span + span::before { content: "·"; margin-right: 0.5rem; color: var(--gray-500); }
+
+    /* ---------- Layout ---------- */
+    main { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem 5rem; }
+    .layout { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start; }
+    @media (min-width: 1024px) {
+      .layout { grid-template-columns: 240px 1fr; }
+    }
+
+    /* ---------- Table of contents ---------- */
+    .toc {
+      position: sticky; top: 5.5rem;
+      background: var(--white-05); border: 1px solid var(--white-10);
+      border-radius: var(--radius); padding: 1.25rem 1.5rem;
+    }
+    .toc-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-400); margin: 0 0 0.75rem; }
+    .toc ul { list-style: none; margin: 0; padding: 0; }
+    .toc li + li { margin-top: 0.4rem; }
+    .toc a { color: var(--gray-400); font-size: 0.875rem; }
+    .toc a:hover { color: var(--secondary); }
+
+    /* ---------- Policy body ---------- */
+    .doc { min-width: 0; }
+    section {
+      border-top: 1px solid var(--white-10);
+      padding: 2.5rem 0 0.5rem;
+    }
+    section:first-of-type { border-top: 0; }
+    h2 {
+      font-family: var(--font-head);
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--secondary); letter-spacing: -0.01em;
+      margin: 0 0 1rem;
+    }
+    h3 {
+      font-size: 1.05rem; font-weight: 600; color: #fff;
+      margin: 1.75rem 0 0.5rem;
+    }
+    p { margin: 0 0 1rem; color: var(--gray-300); }
+    p.lead { color: #e5e7eb; font-size: 1.05rem; }
+    strong { color: #fff; font-weight: 600; }
+    ul { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--gray-300); }
+    li { margin: 0.45rem 0; }
+    li > ul { margin-top: 0.4rem; }
+
+    .card {
+      background: var(--white-05);
+      border: 1px solid var(--white-10);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+      backdrop-filter: blur(4px);
+    }
+    .card.callout { border-color: rgba(168,85,247,0.35); }
+    .card.callout h3 { margin-top: 0; color: var(--purple-300); }
+    .card.gold { border-color: rgba(0,180,255,0.35); }
+    .card p:last-child { margin-bottom: 0; }
+    .callout p { color: var(--gray-300); }
+
+    table {
+      width: 100%; border-collapse: collapse; margin: 1.25rem 0;
+      font-size: 0.925rem;
+    }
+    th, td {
+      text-align: start; padding: 0.75rem 1rem;
+      border: 1px solid var(--white-10);
+      vertical-align: top;
+    }
+    th {
+      background: var(--white-05);
+      color: #fff; font-weight: 600; font-family: var(--font-head);
+    }
+    td { color: var(--gray-300); }
+    td:first-child { color: var(--gray-400); white-space: nowrap; }
+    caption { text-align: start; color: var(--gray-500); font-size: 0.82rem; padding-bottom: 0.5rem; caption-side: top; }
+
+    .commitment {
+      border-inline-start: 3px solid var(--accent);
+      padding: 0.75rem 1rem; margin: 1.25rem 0;
+      background: rgba(57,255,20,0.05);
+      color: var(--gray-300);
+    }
+    .commitment strong { color: #dff9d4; }
+
+    /* ---------- Footer (mirrors the SPA footer) ---------- */
+    footer {
+      background: var(--bg-darker);
+      border-top: 1px solid var(--white-10);
+      margin-top: 4rem;
+    }
+    .foot-inner {
+      max-width: 80rem; margin: 0 auto;
+      padding: 3rem 1.5rem 2rem;
+      display: grid; gap: 2rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) { .foot-inner { grid-template-columns: 2fr 1fr 1fr; } }
+    .foot-brand h3 { color: var(--secondary); font-size: 1.25rem; margin: 0 0 0.75rem; }
+    .foot-brand p { color: var(--gray-400); font-size: 0.925rem; max-width: 24rem; }
+    .foot-col h4 { font-size: 0.95rem; font-weight: 600; color: #fff; margin: 0 0 1rem; }
+    .foot-col ul { list-style: none; margin: 0; padding: 0; }
+    .foot-col li { margin: 0.5rem 0; }
+    .foot-col a { color: var(--gray-400); font-size: 0.925rem; }
+    .foot-col a:hover { color: var(--secondary); }
+    .foot-bottom {
+      border-top: 1px solid var(--white-10);
+      padding: 1.5rem; text-align: center;
+      color: var(--gray-400); font-size: 0.875rem;
+      display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; align-items: center;
+    }
+    .foot-bottom nav { display: flex; gap: 1rem; }
+    .foot-bottom a { color: var(--gray-400); }
+    .foot-bottom a:hover { color: var(--secondary); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+    @media (max-width: 640px) {
+      .nav-links a.hide-sm { display: none; }
+      .hero { padding: 4rem 1rem 3rem; }
+      .toc { position: static; }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="logo" href="/">Lan Onasis</a>
+      <div class="nav-links">
+        <a class="hide-sm" href="https://docs.lanonasis.com" rel="noopener">Docs</a>
+        <a class="hide-sm" href="/terms">Terms of Service</a>
+        <a class="hide-sm" href="/privacy" aria-current="page">Privacy</a>
+        <a class="nav-cta" href="https://dashboard.lanonasis.com/">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="glow purple" aria-hidden="true"></div>
+    <div class="glow blue" aria-hidden="true"></div>
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Data protection
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">
+      How Lan Onasis collects, uses, protects, and retains your information across the
+      Continuity Concierge, the dashboard at <strong>dashboard.lanonasis.com</strong>, the
+      backend core at <strong>api.lanonasis.com</strong>, the SDK, the CLI, and the MCP integration.
+    </p>
+    <div class="meta">
+      <span>Effective date: <strong>10 November 2026</strong></span>
+      <span>Last updated: <strong>10 November 2026</strong></span>
+      <span>Questions? <a href="mailto:info@lanonasis.com">info@lanonasis.com</a></span>
+    </div>
+  </header>
+
+  <main>
+    <div class="layout">
+
+      <aside class="toc" aria-label="Table of contents">
+        <p class="toc-title">On this page</p>
+        <ul>
+          <li><a href="#who-we-are">1. Who we are</a></li>
+          <li><a href="#services">2. Services covered</a></li>
+          <li><a href="#collect">3. Information we collect</a></li>
+          <li><a href="#use">4. How we use information</a></li>
+          <li><a href="#ai">5. Your Content &amp; model training</a></li>
+          <li><a href="#share">6. How we share information</a></li>
+          <li><a href="#retention">7. Data retention</a></li>
+          <li><a href="#security">8. Security</a></li>
+          <li><a href="#rights">9. Your rights &amp; choices</a></li>
+          <li><a href="#transfers">10. International transfers</a></li>
+          <li><a href="#children">11. Children's privacy</a></li>
+          <li><a href="#changes">12. Changes to this policy</a></li>
+          <li><a href="#contact">13. Contact us</a></li>
+        </ul>
+      </aside>
+
+      <article class="doc">
+
+        <section id="who-we-are">
+          <h2>1. Who we are</h2>
+          <p>
+            Lan Onasis is operated by <strong>Lan Onasis LLC</strong>, a company organised in the
+            United States, together with its affiliate <strong>LanOnasis Ltd</strong>, registered in
+            Nigeria. “Lan Onasis”, “we”, “us”, and “our” refer to those entities collectively.
+          </p>
+          <p>
+            For the purposes of applicable data-protection law (including the EU/UK GDPR and Nigeria’s
+            <em>Data Protection Act 2023</em> (“NDPA”)), the Lan Onasis entity with which you contract is the
+            data controller of your personal information.
+          </p>
+        </section>
+
+        <section id="services">
+          <h2>2. Services covered</h2>
+          <p>This policy applies to all of the following (collectively, the “Services”):</p>
+          <ul>
+            <li><strong><a href="https://lanonasis.com">lanonasis.com</a></strong> — the welcome and entrypoint site;</li>
+            <li><strong><a href="https://dashboard.lanonasis.com">dashboard.lanonasis.com</a></strong> — the user application interface (the Continuity Concierge / MaaS dashboard);</li>
+            <li><strong><a href="https://api.lanonasis.com">api.lanonasis.com</a></strong> — the backend core and aggregation API;</li>
+            <li><strong><a href="https://auth.lanonasis.com">auth.lanonasis.com</a></strong> — the Central Auth Gateway (OAuth 2.0 sign-in, sessions and API keys);</li>
+            <li><strong><a href="https://mcp.lanonasis.com">mcp.lanonasis.com</a></strong> — the production MCP server;</li>
+            <li><strong><a href="https://docs.lanonasis.com">docs.lanonasis.com</a></strong> — the developer documentation;</li>
+            <li><strong><a href="https://vortexshield.lanonasis.com">vortexshield.lanonasis.com</a></strong> — API key management;</li>
+            <li>the <strong>Continuity SDK</strong>, the <strong>LanOnasis CLI</strong> (<code>@lanonasis/cli</code>), and the <strong>MCP</strong> server integration.</li>
+          </ul>
+          <p>
+            By using the Services you acknowledge this policy. If you do not agree, please do not use the Services.
+          </p>
+        </section>
+
+        <section id="collect">
+          <h2>3. Information we collect</h2>
+
+          <h3>3.1 Information you provide directly</h3>
+          <ul>
+            <li><strong>Account information:</strong> your name, email address, and authentication credentials when you register.</li>
+            <li><strong>Your Content:</strong> threads, decisions, notes, memories, and other working material you ask the Continuity Concierge to carry forward across sessions.</li>
+            <li><strong>Billing information:</strong> plan selections and payment details are processed by <strong>Stripe, Inc.</strong>; we store only Stripe customer and charge identifiers — never full card numbers.</li>
+            <li><strong>Support and contact correspondence</strong>, including emails you send us.</li>
+          </ul>
+
+          <h3>3.2 Information collected automatically</h3>
+          <ul>
+            <li><strong>Usage data:</strong> pages and features used, interactions with the Concierge, and timestamps.</li>
+            <li><strong>Device and log data:</strong> IP address, browser type, operating system, and diagnostic logs used for security and reliability.</li>
+            <li><strong>API telemetry:</strong> request metadata (endpoints called, latency, error rates) associated with your account and API keys; key usage analytics are surfaced to you in the dashboard.</li>
+          </ul>
+
+          <h3>3.3 Information from third parties</h3>
+          <div class="card callout">
+            <h3>Sign in with Google</h3>
+            <p>
+              If you choose “Sign in with Google”, we use OAuth 2.0 through our Central Auth Gateway with the
+              standard <strong><code>email</code></strong> and <strong><code>profile</code></strong> scopes only
+              (plus the <code>openid</code> identifier required to establish a session). From that sign-in we
+              receive your <strong>name, email address, and profile picture/profile identifier</strong> — used
+              solely to create and maintain your account, and to authenticate you on subsequent visits.
+            </p>
+            <p>
+              <strong>We do not request or receive access to Gmail, Google Calendar, Google Drive, YouTube, or
+              any other restricted or sensitive Google scope</strong>, and we do not verify your account with any
+              of those services. We do not read your email inboxes.
+            </p>
+          </div>
+          <ul>
+            <li><strong>Integrated tools:</strong> if you connect third-party services through the MCP integration or API keys, we access only the data you authorise in those connections.</li>
+          </ul>
+        </section>
+
+        <section id="use">
+          <h2>4. How we use information</h2>
+          <ul>
+            <li>Provide, operate, and maintain the Services, including carrying your threads and decisions across sessions and tools.</li>
+            <li>Authenticate you and secure your account, sessions, and API keys.</li>
+            <li>Improve reliability and the Services, including diagnosing errors and understanding feature usage.</li>
+            <li>Communicate with you about service, security, and billing notices.</li>
+            <li>Enforce our terms, and comply with legal obligations.</li>
+          </ul>
+          <p>
+            We do not use first-party usage data for third-party advertising, and the marketing website does not
+            embed third-party advertising or cross-site tracking technologies.
+          </p>
+        </section>
+
+        <section id="ai">
+          <h2>5. Your Content &amp; model training</h2>
+          <div class="commitment">
+            <p><strong>We do not use Your Content to train machine-learning models.</strong></p>
+          </div>
+          <p>
+            Your Content — the threads, decisions, and material the Continuity Concierge carries — is processed
+            to operate the continuity features you invoke, and to generate responses you request. It is used for
+            <strong>your account only</strong>. We do not sell it, and we do not reuse it to train or fine-tune
+            models (ours or anyone else’s).
+          </p>
+          <p>
+            When a query is answered, the content you submit is passed to the large-language-model provider that
+            powers the response. That processing is transient inference, not training; your content is not used
+            by the provider for model training under our agreements with them.
+          </p>
+          <p>
+            If your account settings offer a choice (for example, an enterprise opt-in to fine-tune on your
+            workspace), we do that only with your explicit prior consent.
+          </p>
+        </section>
+
+        <section id="share">
+          <h2>6. How we share information</h2>
+          <p><strong>We do not sell your personal information.</strong> We share it only in these circumstances:</p>
+
+          <div class="commitment">
+            <p><strong>Google user data:</strong> We do not share Google user data with third parties except as required to provide and improve the Services, to comply with law, or with your explicit consent.</p>
+          </div>
+
+          <h3>6.1 Service providers</h3>
+          <p>Vendors process data on our behalf under data-processing obligations. Our core infrastructure partners include:</p>
+          <table>
+            <caption>Primary subprocessors (non-exhaustive; enterprise customers can request the current list at any time)</caption>
+            <thead>
+              <tr><th>Provider</th><th>Service</th><th>Region</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Netlify, Inc.</td><td>CDN &amp; web hosting — lanonasis.com and dashboard.lanonasis.com</td><td>Global edge network</td></tr>
+              <tr><td>Vercel Inc.</td><td>Web hosting — docs.lanonasis.com and vortexshield.lanonasis.com</td><td>Global</td></tr>
+              <tr><td>Hostinger International Ltd.</td><td>Server runtime for api.lanonasis.com, auth.lanonasis.com and mcp.lanonasis.com</td><td>United States (Boston, MA)</td></tr>
+              <tr><td>Supabase, Inc.</td><td>PostgreSQL — primary platform database (memory &amp; intelligence data)</td><td>United States (us-east-1, N. Virginia)</td></tr>
+              <tr><td>Supabase, Inc.</td><td>PostgreSQL — separate identity database (accounts, sessions, audit data)</td><td>United Kingdom (eu-west-2, London)</td></tr>
+              <tr><td>Redis Cloud (Redis Ltd.)</td><td>Caching &amp; queues</td><td>United States (Google Cloud, us-east4, Iowa)</td></tr>
+              <tr><td>Google LLC</td><td>“Sign in with Google” authentication; Google Cloud Platform</td><td>United States / global</td></tr>
+              <tr><td>Stripe, Inc.</td><td>Payment processing</td><td>United States / global</td></tr>
+            </tbody>
+          </table>
+          <p>
+            We operate a primary platform database and a separate, access-restricted identity database, so that
+            credential and session data are isolated from application data. A legacy replica database is retained
+            in a frozen state solely as an emergency-recovery path; it is not a source of truth for live data and
+            does not receive live writes.
+          </p>
+
+          <h3>6.2 Other limited circumstances</h3>
+          <ul>
+            <li><strong>With your direction</strong>, for example when you explicitly connect an integration.</li>
+            <li><strong>For legal reasons</strong>, if required by law, regulation, or a valid legal process.</li>
+            <li><strong>In a business transfer</strong> (merger, acquisition, or sale of assets), subject to this policy.</li>
+          </ul>
+        </section>
+
+        <section id="retention">
+          <h2>7. Data retention</h2>
+          <p>We keep data only as long as is needed for the purposes in this policy:</p>
+          <ul>
+            <li><strong>Account data:</strong> retained for as long as your account is active.</li>
+            <li><strong>Your Content:</strong> retained until you delete it or close your account, and deleted from active systems within <strong>30 days</strong> of deletion or account closure. Residual copies in backups expire with the backup cycle (up to <strong>30 days</strong>).</li>
+            <li><strong>Log &amp; telemetry data:</strong> retained for up to <strong>90 days</strong>, then deleted or anonymised.</li>
+            <li><strong>Support correspondence:</strong> retained to resolve your case, then as reasonable for a minimal history.</li>
+            <li><strong>Billing records:</strong> retained as required by tax and accounting law.</li>
+          </ul>
+          <p>Enterprise customers may negotiate different retention terms in their service agreement.</p>
+        </section>
+
+        <section id="security">
+          <h2>8. Security</h2>
+          <p>We protect your information with layered, industry-standard controls:</p>
+          <ul>
+            <li><strong>Encryption</strong> in transit (TLS) and at rest (AES-256) via our infrastructure providers;</li>
+            <li><strong>Scoped API keys and tokens</strong> with least-privilege project and per-service scoping, issued through our central auth gateway;</li>
+            <li><strong>Row-level security (RLS)</strong> on tenant boundaries, with no cross-project shortcuts;</li>
+            <li><strong>Dev-dedicated key management</strong> — vendor credentials are isolated in a dedicated key store (API keys are stored as secrets, never in plaintext);</li>
+            <li><strong>Abuse and anomaly monitoring</strong>, rate limiting, and alert-driven response at the gateway and CDN edges;</li>
+            <li><strong>PII hygiene</strong>: automated secret- and PII-scanning in our developer workflow (<code>@lanonasis/privacy-sdk</code> and the prescan gate).</li>
+          </ul>
+          <p>
+            No method of transmission or storage is 100% secure. If you believe you have found a vulnerability,
+            please report it to <a href="mailto:security@lanonasis.com">security@lanonasis.com</a>.
+          </p>
+
+          <h3>8.1 Compliance &amp; attestations</h3>
+          <p>
+            Our security and key-management service (<strong>v-secure</strong>) maintains a SOC 2 Type II
+            certification and an ISO 27001-certified information security management system, and is built to
+            meet GDPR and PCI DSS requirements. Those certifications cover v-secure and the controls it
+            operates; they are not a blanket certification of every Lan Onasis service.
+          </p>
+          <p>
+            Detailed compliance documentation — including SOC 2 Type II reports, penetration-test results,
+            security audit reports and data processing agreements — is available on request. To request
+            materials or a compliance call, contact
+            <a href="mailto:compliance@lanonasis.com">compliance@lanonasis.com</a> or read the
+            <a href="https://docs.lanonasis.com/v-secure/compliance/overview" rel="noopener">compliance overview</a>.
+          </p>
+          <p>
+            Our implementation approach to access controls, data protection, key classes, audit logging and
+            boundary enforcement is documented publicly at
+            <a href="https://docs.lanonasis.com/security/privacy-implementation" rel="noopener">docs.lanonasis.com/security/privacy-implementation</a>.
+          </p>
+        </section>
+
+        <section id="rights">
+          <h2>9. Your rights &amp; choices</h2>
+          <p>Where applicable law grants rights (GDPR/UK GDPR, Nigeria’s NDPA, and others), we honour them:</p>
+          <ul>
+            <li><strong>Access &amp; export:</strong> request a copy of your personal data.</li>
+            <li><strong>Correction:</strong> update inaccurate account information (in the dashboard settings or by emailing us).</li>
+            <li><strong>Deletion:</strong> delete Your Content from the dashboard, or close your account from <em>Settings</em> in the dashboard, or by emailing us.</li>
+            <li><strong>Revoking sign-in:</strong> disconnect Google sign-in at any time in your Google account settings and in ours.</li>
+            <li><strong>Restriction &amp; objection:</strong> object to or restrict certain processing.</li>
+            <li><strong>Marketing:</strong> opt out of non-essential communications at any time (every marketing email carries an unsubscribe link).</li>
+          </ul>
+          <p>
+            To exercise any right, email <a href="mailto:privacy@lanonasis.com">privacy@lanonasis.com</a> from the
+            address associated with your account. We respond within <strong>30 days</strong>.
+          </p>
+          <p>
+            If you are in the EEA/UK you may also complain to your data-protection authority; if you are in
+            Nigeria, to the Nigerian Data Protection Commission (NDPC). We invite you to contact us first so we
+            can try to resolve the issue directly.
+          </p>
+        </section>
+
+        <section id="transfers">
+          <h2>10. International transfers</h2>
+          <p>
+            The platform is served from a global CDN, and our databases and application runtimes are located in
+            the <strong>United States</strong> and the <strong>United Kingdom</strong>:
+          </p>
+          <ul>
+            <li><strong>United States</strong> — primary platform database (N. Virginia), caching and queues
+                (Iowa), and the API, authentication and MCP runtime (Boston, Massachusetts);</li>
+            <li><strong>United Kingdom</strong> — the separate identity database that stores accounts, sessions
+                and audit records (London);</li>
+            <li><strong>Global</strong> — CDN and static-asset delivery, and edge functions that serve our
+                public pages.</li>
+          </ul>
+          <p>
+            Because your data is processed in more than one jurisdiction, we rely on appropriate safeguards for
+            international transfers, including the European Commission’s Standard Contractual Clauses and the
+            UK’s International Data Transfer Agreement, together with our providers’ own compliance programmes.
+          </p>
+          <p>
+            Where our infrastructure permits, enterprise customers can restrict processing to an agreed region.
+            Contact us to discuss data-residency requirements before entering into an enterprise agreement.
+          </p>
+        </section>
+
+        <section id="children">
+          <h2>11. Children's privacy</h2>
+          <p>
+            The Services are not directed to children under <strong>16</strong> (or under <strong>18</strong>
+            where a higher age of consent applies in your jurisdiction, such as Nigeria under the NDPA). We do
+            not knowingly collect personal information from children. If you believe a child has provided us
+            data, contact us and we will delete it.
+          </p>
+        </section>
+
+        <section id="changes">
+          <h2>12. Changes to this policy</h2>
+          <p>
+            We may update this policy from time to time. The “Last updated” date at the top reflects the latest
+            version. We will notify you of material changes in the dashboard or by email. Your continued use of
+            the Services after a change means you accept the updated policy.
+          </p>
+        </section>
+
+        <section id="contact">
+          <h2>13. Contact us</h2>
+          <div class="card gold">
+            <p><strong>Lan Onasis LLC</strong> · organised in the United States</p>
+            <p><strong>LanOnasis Ltd</strong> · registered in Nigeria (Lagos)</p>
+            <p>
+              Privacy &amp; data requests: <a href="mailto:privacy@lanonasis.com">privacy@lanonasis.com</a><br>
+              General enquiries: <a href="mailto:info@lanonasis.com">info@lanonasis.com</a><br>
+              Support: <a href="mailto:support@lanonasis.com">support@lanonasis.com</a><br>
+              Security reports: <a href="mailto:security@lanonasis.com">security@lanonasis.com</a><br>
+              Compliance &amp; DPAs: <a href="mailto:compliance@lanonasis.com">compliance@lanonasis.com</a><br>
+              Website: <a href="https://lanonasis.com">lanonasis.com</a>
+            </p>
+          </div>
+          <p style="margin-top:2rem">
+            <a href="#top">↑ Back to top</a> · <a href="/terms">Terms of Service</a> · <a href="/">Home</a>
+          </p>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <h3>Lan Onasis</h3>
+        <p>Continuity intelligence for thinking partners — threads, decisions, and open loops carried forward across your tools.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="https://dashboard.lanonasis.com">Continuity Concierge</a></li>
+          <li><a href="https://dashboard.lanonasis.com">Continuity SDK</a></li>
+          <li><a href="https://api.lanonasis.com">API &amp; API Keys</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Legal &amp; Resources</h4>
+        <ul>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+          <li><a href="https://docs.lanonasis.com">Documentation</a></li>
+          <li><a href="mailto:support@lanonasis.com">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Lan Onasis LLC · LanOnasis Ltd. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

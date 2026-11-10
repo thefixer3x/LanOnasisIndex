@@ -74,7 +74,12 @@
       "support": "サポート",
       "contact": "お問い合わせ"
     },
-    "copyright": " 2024 Lan Onasis. "
+    "copyright": " 2024 Lan Onasis. ",
+    "legal_section": "法務情報",
+    "legal_links": {
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約"
+    }
   },
   "pricing": {
     "plans": "プランを選択",

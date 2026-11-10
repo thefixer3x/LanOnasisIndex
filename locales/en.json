@@ -307,7 +307,12 @@
       "support": "Support",
       "contact": "Contact"
     },
-    "copyright": "© 2024 Lan Onasis. All rights reserved."
+    "copyright": "© 2024 Lan Onasis. All rights reserved.",
+    "legal_section": "Legal",
+    "legal_links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
   },
   "pricing": {
     "plans": "Choose your continuity plan",
